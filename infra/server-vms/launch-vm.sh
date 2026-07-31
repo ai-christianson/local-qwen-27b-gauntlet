@@ -7,6 +7,8 @@ vcpus="${3:-8}"
 memory_mib="${4:-12288}"
 site="${5:-unspecified}"
 vm_root="${QG_VM_ROOT:-/srv/qwen-gauntlet-vms}"
+bridge_hostname="${QG_GUEST_BRIDGE_HOSTNAME:-}"
+bridge_port="${QG_GUEST_BRIDGE_PORT:-}"
 
 if [[ ! "$arm" =~ ^[a-z0-9][a-z0-9-]{1,47}$ ]]; then
   echo "invalid arm name" >&2
@@ -21,6 +23,20 @@ fi
 if (( vcpus < 2 || vcpus > 16 || memory_mib < 4096 || memory_mib > 24576 )); then
   echo "resource request outside experiment bounds" >&2
   exit 2
+fi
+
+bridge_hosts_line="# no host-gateway inference bridge"
+bridge_nft_line="# no host-gateway inference bridge"
+if [[ -n "$bridge_hostname" || -n "$bridge_port" ]]; then
+  if [[ ! "$bridge_hostname" =~ ^[a-zA-Z0-9.-]+$ ||
+        ! "$bridge_port" =~ ^[0-9]+$ ||
+        "$bridge_port" -lt 1024 ||
+        "$bridge_port" -gt 65535 ]]; then
+    echo "invalid host-gateway bridge configuration" >&2
+    exit 2
+  fi
+  bridge_hosts_line="10.0.2.2 $bridge_hostname"
+  bridge_nft_line="ip daddr 10.0.2.2 tcp dport $bridge_port accept"
 fi
 
 base_image="$vm_root/base/noble-server-cloudimg-amd64.img"
@@ -52,6 +68,8 @@ pubkey="$(< "$vm_root/controller_ed25519.pub")"
 sed \
   -e "s/__HOSTNAME__/$arm/g" \
   -e "s|__SSH_PUBLIC_KEY__|$pubkey|g" \
+  -e "s|__BRIDGE_HOSTS_LINE__|$bridge_hosts_line|g" \
+  -e "s|__BRIDGE_NFT_LINE__|$bridge_nft_line|g" \
   "$infra_dir/cloud-init.yaml.tpl" > "$arm_dir/user-data"
 sed -e "s/__HOSTNAME__/$arm/g" \
   "$infra_dir/meta-data.yaml.tpl" > "$arm_dir/meta-data"
@@ -80,4 +98,3 @@ printf '%s\t%s\t%s\t%s\t%s\t%s\t%s\n' \
   "$(date -Is)" "$site" "$arm" "$(< "$pid_file")" "$ssh_port" "$vcpus" "$memory_mib" \
   >> "$vm_root/registry.tsv"
 echo "launched $arm pid=$(< "$pid_file") ssh=127.0.0.1:$ssh_port"
-

@@ -70,6 +70,7 @@ write_files:
           ct state established,related accept
           ip daddr 10.0.2.0/24 udp dport { 53, 67, 68 } accept
           ip daddr 10.0.2.0/24 tcp dport 53 accept
+          __BRIDGE_NFT_LINE__
           ip daddr 10.0.0.0/8 reject
           ip daddr 172.16.0.0/12 reject
           ip daddr 192.168.0.0/16 reject
@@ -81,6 +82,7 @@ write_files:
       NFT
       nft list ruleset > /etc/nftables.conf
       systemctl enable nftables
+      printf '%s\n' '__BRIDGE_HOSTS_LINE__' >> /etc/hosts
 
       gpasswd -d qg sudo || true
       rm -f /etc/sudoers.d/90-cloud-init-users
