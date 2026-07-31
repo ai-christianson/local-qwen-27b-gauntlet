@@ -1,0 +1,26 @@
+{
+    "programs": [
+
+    ],
+    "stream_groups": [
+
+    ],
+    "streams": [
+        {
+            "codec_name": "h264",
+            "width": 1920,
+            "height": 1080,
+            "pix_fmt": "yuvj420p",
+            "r_frame_rate": "60/1",
+            "avg_frame_rate": "60/1",
+            "duration": "84.000000",
+            "nb_frames": "5040",
+            "nb_read_frames": "5040",
+            "side_data_list": [
+                {
+
+                }
+            ]
+        }
+    ]
+}

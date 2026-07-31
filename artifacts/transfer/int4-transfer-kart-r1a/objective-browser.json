@@ -1,0 +1,316 @@
+{
+  "schema": "qwen-gauntlet-objective-browser-v1",
+  "startedAt": "2026-07-31T03:26:57.386Z",
+  "finishedAt": "2026-07-31T03:27:49.830Z",
+  "url": "http://127.0.0.1:4173/?demo=1&seed=1337",
+  "httpStatus": 200,
+  "initialDom": {
+    "title": "Apex Karts 64",
+    "text": "TIME 00:00.00 LAP 0 / 1 SPEED 0 km/h LAP APEX KARTS 64 GRAND PRIX PLAYDEMO W / UP — Accelerate | S / DOWN — Brake A / LEFT — Steer Left | D / RIGHT — Steer Right SPACE — Drift",
+    "canvases": [
+      {
+        "width": 154,
+        "height": 154,
+        "clientWidth": 154,
+        "clientHeight": 154
+      }
+    ],
+    "buttons": [
+      {
+        "text": "PLAY",
+        "disabled": false
+      },
+      {
+        "text": "DEMO",
+        "disabled": false
+      },
+      {
+        "text": "REPLAY",
+        "disabled": false
+      },
+      {
+        "text": "MENU",
+        "disabled": false
+      }
+    ]
+  },
+  "finalDom": {
+    "title": "Apex Karts 64",
+    "text": "TIME 00:00.00 LAP 0 / 1 SPEED 0 km/h LAP APEX KARTS 64 GRAND PRIX PLAYDEMO W / UP — Accelerate | S / DOWN — Brake A / LEFT — Steer Left | D / RIGHT — Steer Right SPACE — Drift",
+    "canvases": [
+      {
+        "width": 154,
+        "height": 154,
+        "clientWidth": 154,
+        "clientHeight": 154
+      }
+    ]
+  },
+  "actions": [
+    {
+      "at": "2026-07-31T03:27:01.644Z",
+      "action": "click-error",
+      "rule": "demo",
+      "text": "DEMO",
+      "error": "locator.click: Timeout 2000ms exceeded.\nCall log:\n  - waiting for getByRole('button', { name: /demo/i }).first()\n    - locator resolved to <button id=\"btn-demo\" class=\"btn btn-demo\">DEMO</button>\n  - attempting click action\n    2 × waiting for element to be visible, enabled and stable\n      - element is visible, enabled and stable\n      - scrolling into view if needed\n      - done scrolling\n      - <vite-error-overlay></vite-error-overlay> intercepts pointer events\n    - retrying click action\n    - waiting 20ms\n    2 × waiting for element to be visible, enabled and stable\n      - element is visible, enabled and stable\n      - scrolling into view if needed\n      - done scrolling\n      - <vite-error-overlay></vite-error-overlay> intercepts pointer events\n    - retrying click action\n      - waiting 100ms\n    4 × waiting for element to be visible, enabled and stable\n      - element is visible, enabled and stable\n      - scrolling into view if needed\n      - done scrolling\n      - <vite-err"
+    },
+    {
+      "at": "2026-07-31T03:27:03.659Z",
+      "action": "click-error",
+      "rule": "start-play-race",
+      "text": "PLAY",
+      "error": "locator.click: Timeout 2000ms exceeded.\nCall log:\n  - waiting for getByRole('button', { name: /start|play|race/i }).first()\n    - locator resolved to <button id=\"btn-play\" class=\"btn btn-play\">PLAY</button>\n  - attempting click action\n    2 × waiting for element to be visible, enabled and stable\n      - element is visible, enabled and stable\n      - scrolling into view if needed\n      - done scrolling\n      - <vite-error-overlay></vite-error-overlay> intercepts pointer events\n    - retrying click action\n    - waiting 20ms\n    2 × waiting for element to be visible, enabled and stable\n      - element is visible, enabled and stable\n      - scrolling into view if needed\n      - done scrolling\n      - <vite-error-overlay></vite-error-overlay> intercepts pointer events\n    - retrying click action\n      - waiting 100ms\n    4 × waiting for element to be visible, enabled and stable\n      - element is visible, enabled and stable\n      - scrolling into view if needed\n      - done scrolling\n      "
+    },
+    {
+      "at": "2026-07-31T03:27:03.663Z",
+      "action": "keypress",
+      "key": "Enter",
+      "rule": "no-visible-start-button"
+    },
+    {
+      "at": "2026-07-31T03:27:07.274Z",
+      "action": "fixed-keyboard-sequence",
+      "sequence": "ArrowUp 3.6s; ArrowLeft 0.8s; ArrowRight 0.8s"
+    },
+    {
+      "at": "2026-07-31T03:27:46.719Z",
+      "action": "keypress",
+      "key": "r",
+      "rule": "fixed-reset-probe"
+    }
+  ],
+  "screenshots": [
+    {
+      "filename": "objective-02s.png",
+      "sha256": "9d5cda4ae7238c331620ef7eb275cbc1b95a16a3c4a380609b288b4e488f6681",
+      "bytes": 112709
+    },
+    {
+      "filename": "objective-06s.png",
+      "sha256": "9d5cda4ae7238c331620ef7eb275cbc1b95a16a3c4a380609b288b4e488f6681",
+      "bytes": 112709
+    },
+    {
+      "filename": "objective-16s.png",
+      "sha256": "9d5cda4ae7238c331620ef7eb275cbc1b95a16a3c4a380609b288b4e488f6681",
+      "bytes": 112709
+    },
+    {
+      "filename": "objective-45s.png",
+      "sha256": "9d5cda4ae7238c331620ef7eb275cbc1b95a16a3c4a380609b288b4e488f6681",
+      "bytes": 112709
+    },
+    {
+      "filename": "objective-after-reset.png",
+      "sha256": "9d5cda4ae7238c331620ef7eb275cbc1b95a16a3c4a380609b288b4e488f6681",
+      "bytes": 112709
+    }
+  ],
+  "distinctScreenshotHashes": 1,
+  "cadence": {
+    "durationMs": 10000,
+    "frames": 602,
+    "fps": 60.2,
+    "intervalMs": {
+      "p50": 16.69999999999891,
+      "p95": 16.700000000000728,
+      "p99": 16.80000000000109,
+      "max": 16.80000000000291
+    }
+  },
+  "textTimeline": [
+    {
+      "elapsedMs": 5,
+      "text": "TIME 00:00.00 LAP 0 / 1 SPEED 0 km/h LAP APEX KARTS 64 GRAND PRIX PLAYDEMO W / UP — Accelerate | S / DOWN — Brake A / LEFT — Steer Left | D / RIGHT — Steer Right SPACE — Drift",
+      "completionSignal": false,
+      "lapSignal": true
+    },
+    {
+      "elapsedMs": 1011,
+      "text": "TIME 00:00.00 LAP 0 / 1 SPEED 0 km/h LAP APEX KARTS 64 GRAND PRIX PLAYDEMO W / UP — Accelerate | S / DOWN — Brake A / LEFT — Steer Left | D / RIGHT — Steer Right SPACE — Drift",
+      "completionSignal": false,
+      "lapSignal": true
+    },
+    {
+      "elapsedMs": 2017,
+      "text": "TIME 00:00.00 LAP 0 / 1 SPEED 0 km/h LAP APEX KARTS 64 GRAND PRIX PLAYDEMO W / UP — Accelerate | S / DOWN — Brake A / LEFT — Steer Left | D / RIGHT — Steer Right SPACE — Drift",
+      "completionSignal": false,
+      "lapSignal": true
+    },
+    {
+      "elapsedMs": 3023,
+      "text": "TIME 00:00.00 LAP 0 / 1 SPEED 0 km/h LAP APEX KARTS 64 GRAND PRIX PLAYDEMO W / UP — Accelerate | S / DOWN — Brake A / LEFT — Steer Left | D / RIGHT — Steer Right SPACE — Drift",
+      "completionSignal": false,
+      "lapSignal": true
+    },
+    {
+      "elapsedMs": 4028,
+      "text": "TIME 00:00.00 LAP 0 / 1 SPEED 0 km/h LAP APEX KARTS 64 GRAND PRIX PLAYDEMO W / UP — Accelerate | S / DOWN — Brake A / LEFT — Steer Left | D / RIGHT — Steer Right SPACE — Drift",
+      "completionSignal": false,
+      "lapSignal": true
+    },
+    {
+      "elapsedMs": 5034,
+      "text": "TIME 00:00.00 LAP 0 / 1 SPEED 0 km/h LAP APEX KARTS 64 GRAND PRIX PLAYDEMO W / UP — Accelerate | S / DOWN — Brake A / LEFT — Steer Left | D / RIGHT — Steer Right SPACE — Drift",
+      "completionSignal": false,
+      "lapSignal": true
+    },
+    {
+      "elapsedMs": 6039,
+      "text": "TIME 00:00.00 LAP 0 / 1 SPEED 0 km/h LAP APEX KARTS 64 GRAND PRIX PLAYDEMO W / UP — Accelerate | S / DOWN — Brake A / LEFT — Steer Left | D / RIGHT — Steer Right SPACE — Drift",
+      "completionSignal": false,
+      "lapSignal": true
+    },
+    {
+      "elapsedMs": 7044,
+      "text": "TIME 00:00.00 LAP 0 / 1 SPEED 0 km/h LAP APEX KARTS 64 GRAND PRIX PLAYDEMO W / UP — Accelerate | S / DOWN — Brake A / LEFT — Steer Left | D / RIGHT — Steer Right SPACE — Drift",
+      "completionSignal": false,
+      "lapSignal": true
+    },
+    {
+      "elapsedMs": 8049,
+      "text": "TIME 00:00.00 LAP 0 / 1 SPEED 0 km/h LAP APEX KARTS 64 GRAND PRIX PLAYDEMO W / UP — Accelerate | S / DOWN — Brake A / LEFT — Steer Left | D / RIGHT — Steer Right SPACE — Drift",
+      "completionSignal": false,
+      "lapSignal": true
+    },
+    {
+      "elapsedMs": 9055,
+      "text": "TIME 00:00.00 LAP 0 / 1 SPEED 0 km/h LAP APEX KARTS 64 GRAND PRIX PLAYDEMO W / UP — Accelerate | S / DOWN — Brake A / LEFT — Steer Left | D / RIGHT — Steer Right SPACE — Drift",
+      "completionSignal": false,
+      "lapSignal": true
+    },
+    {
+      "elapsedMs": 10059,
+      "text": "TIME 00:00.00 LAP 0 / 1 SPEED 0 km/h LAP APEX KARTS 64 GRAND PRIX PLAYDEMO W / UP — Accelerate | S / DOWN — Brake A / LEFT — Steer Left | D / RIGHT — Steer Right SPACE — Drift",
+      "completionSignal": false,
+      "lapSignal": true
+    },
+    {
+      "elapsedMs": 11066,
+      "text": "TIME 00:00.00 LAP 0 / 1 SPEED 0 km/h LAP APEX KARTS 64 GRAND PRIX PLAYDEMO W / UP — Accelerate | S / DOWN — Brake A / LEFT — Steer Left | D / RIGHT — Steer Right SPACE — Drift",
+      "completionSignal": false,
+      "lapSignal": true
+    },
+    {
+      "elapsedMs": 12070,
+      "text": "TIME 00:00.00 LAP 0 / 1 SPEED 0 km/h LAP APEX KARTS 64 GRAND PRIX PLAYDEMO W / UP — Accelerate | S / DOWN — Brake A / LEFT — Steer Left | D / RIGHT — Steer Right SPACE — Drift",
+      "completionSignal": false,
+      "lapSignal": true
+    },
+    {
+      "elapsedMs": 13074,
+      "text": "TIME 00:00.00 LAP 0 / 1 SPEED 0 km/h LAP APEX KARTS 64 GRAND PRIX PLAYDEMO W / UP — Accelerate | S / DOWN — Brake A / LEFT — Steer Left | D / RIGHT — Steer Right SPACE — Drift",
+      "completionSignal": false,
+      "lapSignal": true
+    },
+    {
+      "elapsedMs": 14080,
+      "text": "TIME 00:00.00 LAP 0 / 1 SPEED 0 km/h LAP APEX KARTS 64 GRAND PRIX PLAYDEMO W / UP — Accelerate | S / DOWN — Brake A / LEFT — Steer Left | D / RIGHT — Steer Right SPACE — Drift",
+      "completionSignal": false,
+      "lapSignal": true
+    },
+    {
+      "elapsedMs": 15084,
+      "text": "TIME 00:00.00 LAP 0 / 1 SPEED 0 km/h LAP APEX KARTS 64 GRAND PRIX PLAYDEMO W / UP — Accelerate | S / DOWN — Brake A / LEFT — Steer Left | D / RIGHT — Steer Right SPACE — Drift",
+      "completionSignal": false,
+      "lapSignal": true
+    },
+    {
+      "elapsedMs": 16090,
+      "text": "TIME 00:00.00 LAP 0 / 1 SPEED 0 km/h LAP APEX KARTS 64 GRAND PRIX PLAYDEMO W / UP — Accelerate | S / DOWN — Brake A / LEFT — Steer Left | D / RIGHT — Steer Right SPACE — Drift",
+      "completionSignal": false,
+      "lapSignal": true
+    },
+    {
+      "elapsedMs": 17095,
+      "text": "TIME 00:00.00 LAP 0 / 1 SPEED 0 km/h LAP APEX KARTS 64 GRAND PRIX PLAYDEMO W / UP — Accelerate | S / DOWN — Brake A / LEFT — Steer Left | D / RIGHT — Steer Right SPACE — Drift",
+      "completionSignal": false,
+      "lapSignal": true
+    },
+    {
+      "elapsedMs": 18100,
+      "text": "TIME 00:00.00 LAP 0 / 1 SPEED 0 km/h LAP APEX KARTS 64 GRAND PRIX PLAYDEMO W / UP — Accelerate | S / DOWN — Brake A / LEFT — Steer Left | D / RIGHT — Steer Right SPACE — Drift",
+      "completionSignal": false,
+      "lapSignal": true
+    },
+    {
+      "elapsedMs": 19104,
+      "text": "TIME 00:00.00 LAP 0 / 1 SPEED 0 km/h LAP APEX KARTS 64 GRAND PRIX PLAYDEMO W / UP — Accelerate | S / DOWN — Brake A / LEFT — Steer Left | D / RIGHT — Steer Right SPACE — Drift",
+      "completionSignal": false,
+      "lapSignal": true
+    },
+    {
+      "elapsedMs": 20110,
+      "text": "TIME 00:00.00 LAP 0 / 1 SPEED 0 km/h LAP APEX KARTS 64 GRAND PRIX PLAYDEMO W / UP — Accelerate | S / DOWN — Brake A / LEFT — Steer Left | D / RIGHT — Steer Right SPACE — Drift",
+      "completionSignal": false,
+      "lapSignal": true
+    },
+    {
+      "elapsedMs": 21115,
+      "text": "TIME 00:00.00 LAP 0 / 1 SPEED 0 km/h LAP APEX KARTS 64 GRAND PRIX PLAYDEMO W / UP — Accelerate | S / DOWN — Brake A / LEFT — Steer Left | D / RIGHT — Steer Right SPACE — Drift",
+      "completionSignal": false,
+      "lapSignal": true
+    },
+    {
+      "elapsedMs": 22120,
+      "text": "TIME 00:00.00 LAP 0 / 1 SPEED 0 km/h LAP APEX KARTS 64 GRAND PRIX PLAYDEMO W / UP — Accelerate | S / DOWN — Brake A / LEFT — Steer Left | D / RIGHT — Steer Right SPACE — Drift",
+      "completionSignal": false,
+      "lapSignal": true
+    },
+    {
+      "elapsedMs": 23123,
+      "text": "TIME 00:00.00 LAP 0 / 1 SPEED 0 km/h LAP APEX KARTS 64 GRAND PRIX PLAYDEMO W / UP — Accelerate | S / DOWN — Brake A / LEFT — Steer Left | D / RIGHT — Steer Right SPACE — Drift",
+      "completionSignal": false,
+      "lapSignal": true
+    },
+    {
+      "elapsedMs": 24128,
+      "text": "TIME 00:00.00 LAP 0 / 1 SPEED 0 km/h LAP APEX KARTS 64 GRAND PRIX PLAYDEMO W / UP — Accelerate | S / DOWN — Brake A / LEFT — Steer Left | D / RIGHT — Steer Right SPACE — Drift",
+      "completionSignal": false,
+      "lapSignal": true
+    },
+    {
+      "elapsedMs": 25133,
+      "text": "TIME 00:00.00 LAP 0 / 1 SPEED 0 km/h LAP APEX KARTS 64 GRAND PRIX PLAYDEMO W / UP — Accelerate | S / DOWN — Brake A / LEFT — Steer Left | D / RIGHT — Steer Right SPACE — Drift",
+      "completionSignal": false,
+      "lapSignal": true
+    },
+    {
+      "elapsedMs": 26140,
+      "text": "TIME 00:00.00 LAP 0 / 1 SPEED 0 km/h LAP APEX KARTS 64 GRAND PRIX PLAYDEMO W / UP — Accelerate | S / DOWN — Brake A / LEFT — Steer Left | D / RIGHT — Steer Right SPACE — Drift",
+      "completionSignal": false,
+      "lapSignal": true
+    },
+    {
+      "elapsedMs": 27145,
+      "text": "TIME 00:00.00 LAP 0 / 1 SPEED 0 km/h LAP APEX KARTS 64 GRAND PRIX PLAYDEMO W / UP — Accelerate | S / DOWN — Brake A / LEFT — Steer Left | D / RIGHT — Steer Right SPACE — Drift",
+      "completionSignal": false,
+      "lapSignal": true
+    },
+    {
+      "elapsedMs": 28151,
+      "text": "TIME 00:00.00 LAP 0 / 1 SPEED 0 km/h LAP APEX KARTS 64 GRAND PRIX PLAYDEMO W / UP — Accelerate | S / DOWN — Brake A / LEFT — Steer Left | D / RIGHT — Steer Right SPACE — Drift",
+      "completionSignal": false,
+      "lapSignal": true
+    }
+  ],
+  "completionSignals": 0,
+  "consoleEvents": [
+    {
+      "at": "2026-07-31T03:26:57.450Z",
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 500 (Internal Server Error)"
+    },
+    {
+      "at": "2026-07-31T03:26:57.477Z",
+      "type": "debug",
+      "text": "[vite] connecting..."
+    },
+    {
+      "at": "2026-07-31T03:26:57.485Z",
+      "type": "debug",
+      "text": "[vite] connected."
+    }
+  ],
+  "pageErrors": []
+}

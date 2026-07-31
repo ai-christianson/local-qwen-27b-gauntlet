@@ -1,0 +1,51 @@
+
+
+Now I have a complete picture. Here is the diagnosis:
+
+---
+
+## Diagnosis: Wheel Spin Axis Error — Wheels Wobble Instead of Spin
+
+**Defect:** Wheel meshes rotate around the **wrong axis**, causing visible wobbling/flapping instead of axle spin.
+
+### Source Evidence
+
+**Line 279** — Wheel construction:
+```javascript
+var tire=new THREE.Mesh(new THREE.CylinderGeometry(.35,.35,.3,8),wMat);
+tire.rotation.x=Math.PI/2;
+```
+`CylinderGeometry` defaults to Y-axis orientation. Setting `rotation.x = PI/2` rotates the cylinder 90° so its long axis (the axle) points along **local X**.
+
+**Line 360-362** — Wheel spin update:
+```javascript
+// Wheel rotation: spin around local Z (the axle after rotation.x=PI/2)
+var wheelRPM=KS.spd*dt*2.5;
+kw.forEach(function(wg){wg.children.forEach(function(c){c.rotation.z+=wheelRPM;});});
+```
+
+**The factual error in the comment:** The axle is along **local X**, not local Z. After `rotation.x = PI/2`, the cylinder's Y axis maps to local X — that IS the axle.
+
+### Consequence
+
+By accumulating `rotation.z`, the wheel does **not** spin around its axle. Instead, the cylinder's long axis (axle) traces a circular path — the wheel **wobbles/flaps** like a spinning coin going from flat → edge-on → flat → edge-on as `rotation.z` cycles through 0 → π/2 → π → 3π/2.
+
+**Frame evidence (frame-000240, t=0:04.00):** The visible wheel shapes on the kart appear tilted at odd, non-horizontal angles consistent with the axle being swung out of alignment by `rotation.z`. A correctly spinning wheel at any instant would present its circular face flat toward the viewer.
+
+### Smallest Plausible Repair
+
+**Line 362**, change `rotation.z` → `rotation.x`:
+
+```javascript
+// Before (broken):
+c.rotation.z+=wheelRPM;
+
+// After (correct):
+c.rotation.x+=wheelRPM;
+```
+
+This makes the cumulative `rotation.x` value spin the cylinder around its own long axis (the axle), producing proper wheel rotation. The initial `rotation.x=PI/2` orients the wheel, and adding to the same axis spins it in place.
+
+---
+
+**Secondary defect (not edited):** No front-wheel steering is applied to `kw[2]` and `kw[3]` (z=0.7). This is separate from the axis error and would require additional logic to compute steer angle from turn input.

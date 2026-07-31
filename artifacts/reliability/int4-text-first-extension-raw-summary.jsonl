@@ -1,0 +1,80 @@
+{
+  "run": "int4-text-first-r4",
+  "tokens": 600935,
+  "exitStopReasons": {
+    "toolUse": 21
+  },
+  "completionSignals": 0,
+  "finalText": "« DRIFT » 🏁 RACE COMPLETE! Time: 0:40.14 Top Speed: 101 km/h MAIN MENU REPLAY",
+  "fps": 18.1
+}
+{
+  "run": "int4-text-first-r5",
+  "tokens": 1195623,
+  "exitStopReasons": {
+    "toolUse": 39
+  },
+  "completionSignals": 0,
+  "finalText": "LAP 0/1 TIME 0:44.34 SPEED LAP PROGRESS",
+  "fps": 19.7
+}
+{
+  "run": "int4-text-first-r6",
+  "tokens": 548298,
+  "exitStopReasons": {
+    "toolUse": 20
+  },
+  "completionSignals": 0,
+  "finalText": "LAP 0/1 TIME 0:44.45 SPEED LAP PROGRESS",
+  "fps": 17.3
+}
+{
+  "run": "int4-text-first-r7",
+  "tokens": 668439,
+  "exitStopReasons": {
+    "toolUse": 25
+  },
+  "completionSignals": 27,
+  "finalText": "🏁 RACE COMPLETE! Time: 0:11.50 Top Speed: 101 km/h MAIN MENU REPLAY",
+  "fps": 18.2
+}
+{
+  "run": "int4-text-first-r8",
+  "tokens": 1283297,
+  "exitStopReasons": {
+    "toolUse": 42
+  },
+  "completionSignals": 20,
+  "finalText": "« DRIFT » 🏁 RACE COMPLETE! Time: 0:20.28 Top Speed: 101 km/h MAIN MENU REPLAY",
+  "fps": 16.8
+}
+{
+  "run": "int4-text-first-r9",
+  "tokens": 824897,
+  "exitStopReasons": {
+    "toolUse": 30
+  },
+  "completionSignals": 0,
+  "finalText": "LAP 0/1 TIME 0:33.68 SPEED LAP PROGRESS",
+  "fps": 15.9
+}
+{
+  "run": "int4-text-first-r10",
+  "tokens": 626631,
+  "exitStopReasons": {
+    "toolUse": 21
+  },
+  "completionSignals": 0,
+  "finalText": "LAP 0/1 TIME 0:44.44 SPEED LAP PROGRESS",
+  "fps": 20.5
+}
+{
+  "run": "int4-text-first-r11",
+  "tokens": 889380,
+  "exitStopReasons": {
+    "toolUse": 30
+  },
+  "completionSignals": 0,
+  "finalText": "« DRIFT » 🏁 RACE COMPLETE! Time: 0:44.99 Top Speed: 101 km/h MAIN MENU REPLAY",
+  "fps": 19
+}

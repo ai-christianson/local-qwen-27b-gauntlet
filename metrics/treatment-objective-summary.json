@@ -1,0 +1,812 @@
+{
+  "schema": "qwen-gauntlet-treatment-summary-v1",
+  "note": "boot_clean is a narrow executable boot/capture check, not the full microgame gate; same-model reports are not independent scores",
+  "parent_run": "int4-baseline-s2",
+  "treatments": [
+    {
+      "run": "int4-baseline-s2",
+      "treatment": "baseline-parent",
+      "site": "site-a",
+      "precision": "int4",
+      "model": "qwen36-27b",
+      "pi": "0.83.0",
+      "prompt_sha256": "b8574eb6f99d2733322875c384eda7271903804edbda97f464e0a19e13184516",
+      "exit_code": "controller-hard-stop",
+      "started_at": "2026-07-31T00:34:20+00:00",
+      "finished_at": "2026-07-31T01:15:18+00:00",
+      "browser": {
+        "http_status": 200,
+        "canvas_count": 2,
+        "distinct_screenshot_hashes": 5,
+        "cadence_fps": 13.8,
+        "completion_signals": 0,
+        "console_error_count": 0,
+        "page_error_count": 0,
+        "first_error": null,
+        "boot_clean": true
+      },
+      "pi_session": {
+        "assistant_turns": 42,
+        "tool_results": 42,
+        "tool_errors": 1,
+        "provider_reported_total_tokens": 1904859,
+        "provider_reported_output_tokens": 51087,
+        "tools": {
+          "bash": 20,
+          "write": 13,
+          "read": 9
+        }
+      },
+      "termination": {
+        "image_limit_error": false,
+        "stderr_tail": [
+          ""
+        ]
+      },
+      "source_delta": {
+        "changed_file_count": 0,
+        "changed_files": []
+      },
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "run": "int4-fresh-plain-r1",
+      "treatment": "fresh-plain",
+      "site": "site-a",
+      "precision": "int4",
+      "model": "qwen3.6-27b",
+      "pi": "0.83.0",
+      "prompt_sha256": "93d5e22cb7e2dd9d618ea0eee7e48390e1b1da1c346f3daa2d4966ab3d3dfc3f",
+      "exit_code": 1,
+      "started_at": "2026-07-31T01:46:27+00:00",
+      "finished_at": "2026-07-31T01:52:40+00:00",
+      "browser": {
+        "http_status": 200,
+        "canvas_count": 2,
+        "distinct_screenshot_hashes": 5,
+        "cadence_fps": 16.3,
+        "completion_signals": 0,
+        "console_error_count": 0,
+        "page_error_count": 0,
+        "first_error": null,
+        "boot_clean": true
+      },
+      "pi_session": {
+        "assistant_turns": 19,
+        "tool_results": 29,
+        "tool_errors": 4,
+        "provider_reported_total_tokens": 399485,
+        "provider_reported_output_tokens": 6957,
+        "tools": {
+          "bash": 8,
+          "read": 18,
+          "edit": 3
+        }
+      },
+      "termination": {
+        "image_limit_error": true,
+        "stderr_tail": [
+          "400: {\"message\":\"At most 12 image(s) may be provided in one prompt. (parameter=image)\",\"type\":\"BadRequestError\",\"param\":\"image\",\"code\":400}"
+        ]
+      },
+      "source_delta": {
+        "changed_file_count": 17,
+        "changed_files": [
+          "./apex-karts-64/index.html",
+          "./apex-karts-64/node_modules/.vite/deps/_metadata.json",
+          "./apex-karts-64/node_modules/.vite/deps/package.json",
+          "./apex-karts-64/s2_drift.png",
+          "./apex-karts-64/s2_race1.png",
+          "./apex-karts-64/s2_race2.png",
+          "./apex-karts-64/s2_race3.png",
+          "./apex-karts-64/s2_race4.png",
+          "./apex-karts-64/s2_race5.png",
+          "./apex-karts-64/screenshot_drift.png",
+          "./apex-karts-64/screenshot_driving.png",
+          "./apex-karts-64/screenshot_race.png",
+          "./apex-karts-64/screenshot_race1.png",
+          "./apex-karts-64/screenshot_race2.png",
+          "./apex-karts-64/screenshot_race3.png",
+          "./apex-karts-64/screenshot_title.png",
+          "./apex-karts-64/screenshot_turning.png"
+        ]
+      },
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "run": "int4-fresh-plain-r2",
+      "treatment": "fresh-plain",
+      "site": "site-b",
+      "precision": "int4",
+      "model": "qwen3.6-27b",
+      "pi": "0.83.0",
+      "prompt_sha256": "93d5e22cb7e2dd9d618ea0eee7e48390e1b1da1c346f3daa2d4966ab3d3dfc3f",
+      "exit_code": 1,
+      "started_at": "2026-07-31T01:46:28+00:00",
+      "finished_at": "2026-07-31T01:49:55+00:00",
+      "browser": {
+        "http_status": 200,
+        "canvas_count": 2,
+        "distinct_screenshot_hashes": 5,
+        "cadence_fps": 12,
+        "completion_signals": 0,
+        "console_error_count": 0,
+        "page_error_count": 0,
+        "first_error": null,
+        "boot_clean": true
+      },
+      "pi_session": {
+        "assistant_turns": 12,
+        "tool_results": 27,
+        "tool_errors": 0,
+        "provider_reported_total_tokens": 202395,
+        "provider_reported_output_tokens": 4529,
+        "tools": {
+          "bash": 7,
+          "read": 19,
+          "edit": 1
+        }
+      },
+      "termination": {
+        "image_limit_error": true,
+        "stderr_tail": [
+          "400: {\"message\":\"At most 12 image(s) may be provided in one prompt. (parameter=image)\",\"type\":\"BadRequestError\",\"param\":\"image\",\"code\":400}"
+        ]
+      },
+      "source_delta": {
+        "changed_file_count": 10,
+        "changed_files": [
+          "./apex-karts-64/index.html",
+          "./apex-karts-64/node_modules/.vite/deps/_metadata.json",
+          "./apex-karts-64/node_modules/.vite/deps/package.json",
+          "./apex-karts-64/s2_drift.png",
+          "./apex-karts-64/s2_race1.png",
+          "./apex-karts-64/s2_race2.png",
+          "./apex-karts-64/s2_race3.png",
+          "./apex-karts-64/s2_race4.png",
+          "./apex-karts-64/s2_race5.png",
+          "./apex-karts-64/test-results/.last-run.json"
+        ]
+      },
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "run": "int4-grounded-critic-r1",
+      "treatment": "grounded-critic",
+      "site": "site-a",
+      "precision": "int4",
+      "model": "qwen3.6-27b",
+      "pi": "0.83.0",
+      "prompt_sha256": "8e3cd4d134dcea5e55a429cab11a47b9553b9d8b151977d8c95fe445c6fe5883",
+      "exit_code": 0,
+      "started_at": "2026-07-31T01:46:28+00:00",
+      "finished_at": "2026-07-31T01:47:15+00:00",
+      "browser": {
+        "http_status": 200,
+        "canvas_count": 2,
+        "distinct_screenshot_hashes": 5,
+        "cadence_fps": 16.6,
+        "completion_signals": 0,
+        "console_error_count": 0,
+        "page_error_count": 0,
+        "first_error": null,
+        "boot_clean": true
+      },
+      "pi_session": {
+        "assistant_turns": 1,
+        "tool_results": 0,
+        "tool_errors": 0,
+        "provider_reported_total_tokens": 13806,
+        "provider_reported_output_tokens": 2008,
+        "tools": {}
+      },
+      "termination": {
+        "image_limit_error": false,
+        "stderr_tail": [
+          ""
+        ]
+      },
+      "source_delta": {
+        "changed_file_count": 2,
+        "changed_files": [
+          "./apex-karts-64/node_modules/.vite/deps/_metadata.json",
+          "./apex-karts-64/node_modules/.vite/deps/package.json"
+        ]
+      },
+      "stdout_sha256": "ccf800b985c7a4c953f4ea7fbbf957e6f74c251850cc07d1c38a71551fd63484"
+    },
+    {
+      "run": "int4-grounded-critic-r2",
+      "treatment": "grounded-critic",
+      "site": "site-b",
+      "precision": "int4",
+      "model": "qwen3.6-27b",
+      "pi": "0.83.0",
+      "prompt_sha256": "8e3cd4d134dcea5e55a429cab11a47b9553b9d8b151977d8c95fe445c6fe5883",
+      "exit_code": 0,
+      "started_at": "2026-07-31T01:46:29+00:00",
+      "finished_at": "2026-07-31T01:49:55+00:00",
+      "browser": {
+        "http_status": 200,
+        "canvas_count": 2,
+        "distinct_screenshot_hashes": 5,
+        "cadence_fps": 11.7,
+        "completion_signals": 0,
+        "console_error_count": 0,
+        "page_error_count": 0,
+        "first_error": null,
+        "boot_clean": true
+      },
+      "pi_session": {
+        "assistant_turns": 7,
+        "tool_results": 12,
+        "tool_errors": 0,
+        "provider_reported_total_tokens": 144987,
+        "provider_reported_output_tokens": 6479,
+        "tools": {
+          "ls": 3,
+          "read": 9
+        }
+      },
+      "termination": {
+        "image_limit_error": false,
+        "stderr_tail": [
+          ""
+        ]
+      },
+      "source_delta": {
+        "changed_file_count": 2,
+        "changed_files": [
+          "./apex-karts-64/node_modules/.vite/deps/_metadata.json",
+          "./apex-karts-64/node_modules/.vite/deps/package.json"
+        ]
+      },
+      "stdout_sha256": "facc83c22e3a3295c6967fc8f49f9063cffb6ca512f42b323157b2fa5dffeee9"
+    },
+    {
+      "run": "int4-same-context-s2",
+      "treatment": "same-context",
+      "site": "site-a",
+      "precision": "int4",
+      "model": "qwen3.6-27b",
+      "pi": "0.83.0",
+      "prompt_sha256": "93d5e22cb7e2dd9d618ea0eee7e48390e1b1da1c346f3daa2d4966ab3d3dfc3f",
+      "exit_code": 1,
+      "started_at": "2026-07-31T01:35:27+00:00",
+      "finished_at": "2026-07-31T01:40:07+00:00",
+      "browser": {
+        "http_status": 200,
+        "canvas_count": 2,
+        "distinct_screenshot_hashes": 5,
+        "cadence_fps": 15.9,
+        "completion_signals": 0,
+        "console_error_count": 0,
+        "page_error_count": 0,
+        "first_error": null,
+        "boot_clean": true
+      },
+      "pi_session": {
+        "assistant_turns": 53,
+        "tool_results": 52,
+        "tool_errors": 3,
+        "provider_reported_total_tokens": 2583169,
+        "provider_reported_output_tokens": 55947,
+        "tools": {
+          "bash": 22,
+          "write": 14,
+          "read": 14,
+          "edit": 2
+        }
+      },
+      "termination": {
+        "image_limit_error": true,
+        "stderr_tail": [
+          "400: {\"message\":\"At most 12 image(s) may be provided in one prompt. (parameter=image)\",\"type\":\"BadRequestError\",\"param\":\"image\",\"code\":400}"
+        ]
+      },
+      "source_delta": {
+        "changed_file_count": 9,
+        "changed_files": [
+          "./apex-karts-64/index.html",
+          "./apex-karts-64/node_modules/.vite/deps/_metadata.json",
+          "./apex-karts-64/node_modules/.vite/deps/package.json",
+          "./apex-karts-64/v_drift.png",
+          "./apex-karts-64/v_race1.png",
+          "./apex-karts-64/v_race2.png",
+          "./apex-karts-64/v_race3.png",
+          "./apex-karts-64/v_race4.png",
+          "./apex-karts-64/verify.js"
+        ]
+      },
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "run": "int4-skills-r1",
+      "treatment": "skills",
+      "site": "site-a",
+      "precision": "int4",
+      "model": "qwen3.6-27b",
+      "pi": "0.83.0",
+      "prompt_sha256": "93d5e22cb7e2dd9d618ea0eee7e48390e1b1da1c346f3daa2d4966ab3d3dfc3f",
+      "exit_code": 1,
+      "started_at": "2026-07-31T01:46:28+00:00",
+      "finished_at": "2026-07-31T01:56:46+00:00",
+      "browser": {
+        "http_status": 200,
+        "canvas_count": 2,
+        "distinct_screenshot_hashes": 5,
+        "cadence_fps": 14.7,
+        "completion_signals": 0,
+        "console_error_count": 0,
+        "page_error_count": 0,
+        "first_error": null,
+        "boot_clean": true
+      },
+      "pi_session": {
+        "assistant_turns": 18,
+        "tool_results": 35,
+        "tool_errors": 2,
+        "provider_reported_total_tokens": 505546,
+        "provider_reported_output_tokens": 16505,
+        "tools": {
+          "bash": 10,
+          "read": 22,
+          "edit": 3
+        }
+      },
+      "termination": {
+        "image_limit_error": true,
+        "stderr_tail": [
+          "400: {\"message\":\"At most 12 image(s) may be provided in one prompt. (parameter=image)\",\"type\":\"BadRequestError\",\"param\":\"image\",\"code\":400}"
+        ]
+      },
+      "source_delta": {
+        "changed_file_count": 8,
+        "changed_files": [
+          "./apex-karts-64/index.html",
+          "./apex-karts-64/node_modules/.vite/deps/_metadata.json",
+          "./apex-karts-64/node_modules/.vite/deps/package.json",
+          "./apex-karts-64/screenshot_driving.png",
+          "./apex-karts-64/screenshot_race.png",
+          "./apex-karts-64/screenshot_title.png",
+          "./apex-karts-64/screenshot_turning.png",
+          "./apex-karts-64/test-results/.last-run.json"
+        ]
+      },
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "run": "int4-skills-r2",
+      "treatment": "skills",
+      "site": "site-c",
+      "precision": "int4",
+      "model": "qwen3.6-27b",
+      "pi": "0.83.0",
+      "prompt_sha256": "93d5e22cb7e2dd9d618ea0eee7e48390e1b1da1c346f3daa2d4966ab3d3dfc3f",
+      "exit_code": 1,
+      "started_at": "2026-07-31T01:47:33+00:00",
+      "finished_at": "2026-07-31T01:51:25+00:00",
+      "browser": {
+        "http_status": 200,
+        "canvas_count": 2,
+        "distinct_screenshot_hashes": 5,
+        "cadence_fps": 16.3,
+        "completion_signals": 0,
+        "console_error_count": 0,
+        "page_error_count": 0,
+        "first_error": null,
+        "boot_clean": true
+      },
+      "pi_session": {
+        "assistant_turns": 23,
+        "tool_results": 38,
+        "tool_errors": 2,
+        "provider_reported_total_tokens": 455513,
+        "provider_reported_output_tokens": 5046,
+        "tools": {
+          "bash": 19,
+          "read": 19
+        }
+      },
+      "termination": {
+        "image_limit_error": true,
+        "stderr_tail": [
+          "400: {\"message\":\"At most 12 image(s) may be provided in one prompt. (parameter=image)\",\"type\":\"BadRequestError\",\"param\":\"image\",\"code\":400}"
+        ]
+      },
+      "source_delta": {
+        "changed_file_count": 10,
+        "changed_files": [
+          "./apex-karts-64/node_modules/.vite/deps/_metadata.json",
+          "./apex-karts-64/node_modules/.vite/deps/package.json",
+          "./apex-karts-64/screenshot_drift.png",
+          "./apex-karts-64/screenshot_driving.png",
+          "./apex-karts-64/screenshot_race.png",
+          "./apex-karts-64/screenshot_race1.png",
+          "./apex-karts-64/screenshot_race2.png",
+          "./apex-karts-64/screenshot_race3.png",
+          "./apex-karts-64/screenshot_title.png",
+          "./apex-karts-64/screenshot_turning.png"
+        ]
+      },
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "run": "int4-subagent-r1",
+      "treatment": "subagent",
+      "site": "site-a",
+      "precision": "int4",
+      "model": "qwen3.6-27b",
+      "pi": "0.83.0",
+      "prompt_sha256": "bb3f193ab043a75552821439114736d5505eee22bb9126a2d84d1032e96367bc",
+      "exit_code": 1,
+      "started_at": "2026-07-31T01:46:28+00:00",
+      "finished_at": "2026-07-31T01:56:09+00:00",
+      "browser": {
+        "http_status": 200,
+        "canvas_count": 2,
+        "distinct_screenshot_hashes": 5,
+        "cadence_fps": 13.6,
+        "completion_signals": 0,
+        "console_error_count": 0,
+        "page_error_count": 0,
+        "first_error": null,
+        "boot_clean": true
+      },
+      "pi_session": {
+        "assistant_turns": 51,
+        "tool_results": 62,
+        "tool_errors": 2,
+        "provider_reported_total_tokens": 1294926,
+        "provider_reported_output_tokens": 14584,
+        "tools": {
+          "bash": 30,
+          "read": 18,
+          "edit": 10,
+          "write": 4
+        }
+      },
+      "termination": {
+        "image_limit_error": true,
+        "stderr_tail": [
+          "400: {\"message\":\"At most 12 image(s) may be provided in one prompt. (parameter=image)\",\"type\":\"BadRequestError\",\"param\":\"image\",\"code\":400}"
+        ]
+      },
+      "source_delta": {
+        "changed_file_count": 21,
+        "changed_files": [
+          "./apex-karts-64/final_drift_1.png",
+          "./apex-karts-64/final_drift_2.png",
+          "./apex-karts-64/final_drive.png",
+          "./apex-karts-64/final_release.png",
+          "./apex-karts-64/index.html",
+          "./apex-karts-64/node_modules/.vite/deps/_metadata.json",
+          "./apex-karts-64/node_modules/.vite/deps/package.json",
+          "./apex-karts-64/server.js",
+          "./apex-karts-64/test_after_drift.png",
+          "./apex-karts-64/test_continue.png",
+          "./apex-karts-64/test_drift_1.png",
+          "./apex-karts-64/test_drift_2.png",
+          "./apex-karts-64/test_drift_7777.js",
+          "./apex-karts-64/test_drift_8081.js",
+          "./apex-karts-64/test_drift_particles.js",
+          "./apex-karts-64/test_drift_release.png",
+          "./apex-karts-64/test_drift_sparks.png",
+          "./apex-karts-64/test_drift_sparks2.png",
+          "./apex-karts-64/test_final.js",
+          "./apex-karts-64/test_release_1.png",
+          "./apex-karts-64/test_release_2.png"
+        ]
+      },
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "run": "int4-subagent-r2",
+      "treatment": "subagent",
+      "site": "site-b",
+      "precision": "int4",
+      "model": "qwen3.6-27b",
+      "pi": "0.83.0",
+      "prompt_sha256": "bb3f193ab043a75552821439114736d5505eee22bb9126a2d84d1032e96367bc",
+      "exit_code": 0,
+      "started_at": "2026-07-31T01:46:29+00:00",
+      "finished_at": "2026-07-31T01:55:57+00:00",
+      "browser": {
+        "http_status": 200,
+        "canvas_count": 2,
+        "distinct_screenshot_hashes": 5,
+        "cadence_fps": 12.8,
+        "completion_signals": 0,
+        "console_error_count": 0,
+        "page_error_count": 0,
+        "first_error": null,
+        "boot_clean": true
+      },
+      "pi_session": {
+        "assistant_turns": 47,
+        "tool_results": 50,
+        "tool_errors": 10,
+        "provider_reported_total_tokens": 1044510,
+        "provider_reported_output_tokens": 11592,
+        "tools": {
+          "bash": 30,
+          "read": 8,
+          "edit": 9,
+          "write": 3
+        }
+      },
+      "termination": {
+        "image_limit_error": false,
+        "stderr_tail": [
+          ""
+        ]
+      },
+      "source_delta": {
+        "changed_file_count": 11,
+        "changed_files": [
+          "./apex-karts-64/index.html",
+          "./apex-karts-64/node_modules/.vite/deps/_metadata.json",
+          "./apex-karts-64/node_modules/.vite/deps/package.json",
+          "./apex-karts-64/s2_drift.png",
+          "./apex-karts-64/s2_race3.png",
+          "./apex-karts-64/s2_race4.png",
+          "./apex-karts-64/s2_race5.png",
+          "./apex-karts-64/screenshot_drift.png",
+          "./apex-karts-64/screenshot_race1.png",
+          "./apex-karts-64/screenshot_race2.png",
+          "./apex-karts-64/screenshot_race3.png"
+        ]
+      },
+      "stdout_sha256": "f0636fe75edcf5a41f76ec81a4b7c3e6bd7c47cfdb70991bc92b8eb7650a9cb9"
+    },
+    {
+      "run": "int4-system-r1",
+      "treatment": "reliability-system",
+      "site": "site-a",
+      "precision": "int4",
+      "model": "qwen3.6-27b",
+      "pi": "0.83.0",
+      "prompt_sha256": "93d5e22cb7e2dd9d618ea0eee7e48390e1b1da1c346f3daa2d4966ab3d3dfc3f",
+      "exit_code": 1,
+      "started_at": "2026-07-31T01:46:28+00:00",
+      "finished_at": "2026-07-31T01:49:22+00:00",
+      "browser": {
+        "http_status": 200,
+        "canvas_count": 2,
+        "distinct_screenshot_hashes": 5,
+        "cadence_fps": 14.8,
+        "completion_signals": 0,
+        "console_error_count": 0,
+        "page_error_count": 0,
+        "first_error": null,
+        "boot_clean": true
+      },
+      "pi_session": {
+        "assistant_turns": 15,
+        "tool_results": 35,
+        "tool_errors": 0,
+        "provider_reported_total_tokens": 266336,
+        "provider_reported_output_tokens": 4621,
+        "tools": {
+          "bash": 12,
+          "read": 20,
+          "edit": 3
+        }
+      },
+      "termination": {
+        "image_limit_error": true,
+        "stderr_tail": [
+          "400: {\"message\":\"At most 12 image(s) may be provided in one prompt. (parameter=image)\",\"type\":\"BadRequestError\",\"param\":\"image\",\"code\":400}"
+        ]
+      },
+      "source_delta": {
+        "changed_file_count": 10,
+        "changed_files": [
+          "./apex-karts-64/index.html",
+          "./apex-karts-64/node_modules/.vite/deps/_metadata.json",
+          "./apex-karts-64/node_modules/.vite/deps/package.json",
+          "./apex-karts-64/s2_drift.png",
+          "./apex-karts-64/s2_race1.png",
+          "./apex-karts-64/s2_race2.png",
+          "./apex-karts-64/s2_race3.png",
+          "./apex-karts-64/s2_race4.png",
+          "./apex-karts-64/s2_race5.png",
+          "./apex-karts-64/test-results/.last-run.json"
+        ]
+      },
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "run": "int4-system-r2",
+      "treatment": "reliability-system",
+      "site": "site-c",
+      "precision": "int4",
+      "model": "qwen3.6-27b",
+      "pi": "0.83.0",
+      "prompt_sha256": "93d5e22cb7e2dd9d618ea0eee7e48390e1b1da1c346f3daa2d4966ab3d3dfc3f",
+      "exit_code": 0,
+      "started_at": "2026-07-31T01:47:33+00:00",
+      "finished_at": "2026-07-31T01:57:33+00:00",
+      "browser": {
+        "http_status": 200,
+        "canvas_count": 2,
+        "distinct_screenshot_hashes": 5,
+        "cadence_fps": 14.1,
+        "completion_signals": 0,
+        "console_error_count": 0,
+        "page_error_count": 0,
+        "first_error": null,
+        "boot_clean": true
+      },
+      "pi_session": {
+        "assistant_turns": 36,
+        "tool_results": 47,
+        "tool_errors": 3,
+        "provider_reported_total_tokens": 989109,
+        "provider_reported_output_tokens": 16483,
+        "tools": {
+          "bash": 30,
+          "read": 16,
+          "edit": 1
+        }
+      },
+      "termination": {
+        "image_limit_error": false,
+        "stderr_tail": [
+          ""
+        ]
+      },
+      "source_delta": {
+        "changed_file_count": 24,
+        "changed_files": [
+          "./apex-karts-64/index.html",
+          "./apex-karts-64/node_modules/.vite/deps/_metadata.json",
+          "./apex-karts-64/node_modules/.vite/deps/package.json",
+          "./apex-karts-64/s2_after_drift.png",
+          "./apex-karts-64/s2_after_race1.png",
+          "./apex-karts-64/s2_after_race2.png",
+          "./apex-karts-64/s2_after_race3.png",
+          "./apex-karts-64/s2_after_title.png",
+          "./apex-karts-64/s2_drift.png",
+          "./apex-karts-64/s2_race1.png",
+          "./apex-karts-64/s2_race2.png",
+          "./apex-karts-64/s2_race3.png",
+          "./apex-karts-64/s2_race4.png",
+          "./apex-karts-64/s2_race5.png",
+          "./apex-karts-64/screenshot_drift.png",
+          "./apex-karts-64/screenshot_driving.png",
+          "./apex-karts-64/screenshot_race.png",
+          "./apex-karts-64/screenshot_race1.png",
+          "./apex-karts-64/screenshot_race2.png",
+          "./apex-karts-64/screenshot_race3.png",
+          "./apex-karts-64/screenshot_title.png",
+          "./apex-karts-64/screenshot_turning.png",
+          "./apex-karts-64/server.js",
+          "./test-results/.last-run.json"
+        ]
+      },
+      "stdout_sha256": "e0df4442fba96be77ef39a5a87f939b16d80f5b6360cb830b45630311f4fea5e"
+    },
+    {
+      "run": "int4-web-r1",
+      "treatment": "web-assisted",
+      "site": "site-c",
+      "precision": "int4",
+      "model": "qwen3.6-27b",
+      "pi": "0.83.0",
+      "prompt_sha256": "ea4d0e37a5e2063b2aa102e31102e551afc3ac4563f68895643bafa26bd941f6",
+      "exit_code": 1,
+      "started_at": "2026-07-31T01:46:28+00:00",
+      "finished_at": "2026-07-31T01:56:20+00:00",
+      "browser": {
+        "http_status": 200,
+        "canvas_count": 2,
+        "distinct_screenshot_hashes": 5,
+        "cadence_fps": 16.5,
+        "completion_signals": 0,
+        "console_error_count": 0,
+        "page_error_count": 0,
+        "first_error": null,
+        "boot_clean": true
+      },
+      "pi_session": {
+        "assistant_turns": 32,
+        "tool_results": 46,
+        "tool_errors": 4,
+        "provider_reported_total_tokens": 807703,
+        "provider_reported_output_tokens": 12229,
+        "tools": {
+          "bash": 19,
+          "read": 24,
+          "edit": 3
+        }
+      },
+      "termination": {
+        "image_limit_error": true,
+        "stderr_tail": [
+          "400: {\"message\":\"At most 12 image(s) may be provided in one prompt. (parameter=image)\",\"type\":\"BadRequestError\",\"param\":\"image\",\"code\":400}"
+        ]
+      },
+      "source_delta": {
+        "changed_file_count": 16,
+        "changed_files": [
+          "./apex-karts-64/index.html",
+          "./apex-karts-64/node_modules/.vite/deps/_metadata.json",
+          "./apex-karts-64/node_modules/.vite/deps/package.json",
+          "./apex-karts-64/s2_drift.png",
+          "./apex-karts-64/s2_race1.png",
+          "./apex-karts-64/s2_race3.png",
+          "./apex-karts-64/s2_race4.png",
+          "./apex-karts-64/s2_race5.png",
+          "./apex-karts-64/screenshot_drift.png",
+          "./apex-karts-64/screenshot_driving.png",
+          "./apex-karts-64/screenshot_race.png",
+          "./apex-karts-64/screenshot_race1.png",
+          "./apex-karts-64/screenshot_race2.png",
+          "./apex-karts-64/screenshot_race3.png",
+          "./apex-karts-64/screenshot_title.png",
+          "./apex-karts-64/screenshot_turning.png"
+        ]
+      },
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "aggregates": {
+    "baseline-parent": {
+      "runs": 1,
+      "clean_exit": 0,
+      "boot_clean": 1,
+      "completion": 0,
+      "image_limit_error": 0
+    },
+    "fresh-plain": {
+      "runs": 2,
+      "clean_exit": 0,
+      "boot_clean": 2,
+      "completion": 0,
+      "image_limit_error": 2
+    },
+    "grounded-critic": {
+      "runs": 2,
+      "clean_exit": 2,
+      "boot_clean": 2,
+      "completion": 0,
+      "image_limit_error": 0
+    },
+    "same-context": {
+      "runs": 1,
+      "clean_exit": 0,
+      "boot_clean": 1,
+      "completion": 0,
+      "image_limit_error": 1
+    },
+    "skills": {
+      "runs": 2,
+      "clean_exit": 0,
+      "boot_clean": 2,
+      "completion": 0,
+      "image_limit_error": 2
+    },
+    "subagent": {
+      "runs": 2,
+      "clean_exit": 1,
+      "boot_clean": 2,
+      "completion": 0,
+      "image_limit_error": 1
+    },
+    "reliability-system": {
+      "runs": 2,
+      "clean_exit": 1,
+      "boot_clean": 2,
+      "completion": 0,
+      "image_limit_error": 1
+    },
+    "web-assisted": {
+      "runs": 1,
+      "clean_exit": 0,
+      "boot_clean": 1,
+      "completion": 0,
+      "image_limit_error": 1
+    }
+  }
+}

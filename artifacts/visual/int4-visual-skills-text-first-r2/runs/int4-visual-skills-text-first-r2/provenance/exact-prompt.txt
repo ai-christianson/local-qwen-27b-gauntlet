@@ -1,0 +1,11 @@
+Improve this game's final visual quality without changing its basic rules.
+Keep the coherent late-1990s low-poly art direction, but add tasteful eye
+candy where it helps: lighting, atmosphere, materials or simple shaders,
+particles, impact feedback, and a polished HUD. Fix visibly wrong motion such
+as reversed wheel or prop rotation, implausible steering, camera jumps, or
+animation discontinuities. Preserve the deterministic Demo button and its
+completion state.
+
+Work text-first: inspect source and browser text or console state before visual
+inspection. Do not open existing image files. Capture and inspect no more than
+four new screenshots. Leave the game playable and clean in the browser console.

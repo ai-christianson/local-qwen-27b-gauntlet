@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="data:;base64,">
+<title>Neon Arena 64</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: #0a0a1a; overflow: hidden; font-family: 'Courier New', monospace; }
+canvas { display: block; }
+#ui-overlay { position: absolute; top: 0; left: 0; width: 100%; pointer-events: none; z-index: 10; }
+#hud { display: flex; justify-content: space-between; align-items: flex-start; padding: 16px 24px; color: #0ff; font-size: 16px; text-shadow: 0 0 8px #0ff; }
+#hud-left, #hud-right { display: flex; flex-direction: column; gap: 6px; }
+#hud-center { text-align: center; position: relative; top: 0; }
+#health-bar-container { width: 200px; height: 16px; background: #1a0020; border: 2px solid #f0f; border-radius: 2px; overflow: hidden; }
+#health-bar { width: 100%; height: 100%; background: linear-gradient(90deg, #f0f, #f0a); transition: width 0.3s; }
+#score-display { font-size: 20px; color: #ff0; text-shadow: 0 0 8px #ff0; }
+#drone-count { color: #f0a; text-shadow: 0 0 8px #f0a; }
+#controls-hint { position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); color: #888; font-size: 13px; text-align: center; pointer-events: none; }
+#controls-hint span { color: #0ff; }
+#demo-btn { pointer-events: all; cursor: pointer; background: linear-gradient(180deg, #0a4, #082); color: #0ff; border: 2px solid #0ff; padding: 8px 24px; font-family: 'Courier New', monospace; font-size: 16px; text-shadow: 0 0 6px #0ff; box-shadow: 0 0 12px #0a4; transition: all 0.2s; border-radius: 2px; }
+#demo-btn:hover { background: linear-gradient(180deg, #0c6, #0a4); box-shadow: 0 0 20px #0ff; }
+#demo-btn.active { background: linear-gradient(180deg, #f00, #800); border-color: #f00; color: #fff; box-shadow: 0 0 20px #f00; }
+#message-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: none; justify-content: center; align-items: center; flex-direction: column; background: rgba(5,0,15,0.85); z-index: 25; }
+#message-overlay.show { display: flex; }
+#message-title { font-size: 48px; color: #0ff; text-shadow: 0 0 20px #0ff, 0 0 40px #0ff; margin-bottom: 16px; letter-spacing: 4px; }
+#message-sub { font-size: 20px; color: #ff0; text-shadow: 0 0 10px #ff0; }
+#message-restart { margin-top: 24px; pointer-events: all; cursor: pointer; background: transparent; color: #0ff; border: 2px solid #0ff; padding: 10px 30px; font-family: 'Courier New', monospace; font-size: 16px; text-shadow: 0 0 6px #0ff; transition: all 0.2s; }
+#message-restart:hover { background: #0a4; }
+#crosshair { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 24px; height: 24px; pointer-events: none; z-index: 11; }
+#crosshair::before, #crosshair::after { content: ''; position: absolute; background: rgba(0,255,255,0.5); }
+#crosshair::before { width: 2px; height: 24px; left: 11px; }
+#crosshair::after { width: 24px; height: 2px; top: 11px; }
+#demo-label { display: none; position: absolute; top: 55px; left: 50%; transform: translateX(-50%); color: #f00; font-size: 14px; text-shadow: 0 0 6px #f00; letter-spacing: 2px; }
+#demo-label.show { display: block; }
+#hit-flash { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(255,0,0,0.3); pointer-events: none; opacity: 0; z-index: 15; transition: opacity 0.1s; }
+#title-screen { position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; background: rgba(5,0,15,0.95); z-index: 30; pointer-events: all; transition: opacity 0.5s; }
+#title-screen.hidden { opacity: 0; pointer-events: none; z-index: -1; }
+#title-logo { font-size: 64px; color: #0ff; text-shadow: 0 0 30px #0ff, 0 0 60px #0ff, 0 0 90px #08f; letter-spacing: 8px; margin-bottom: 12px; }
+#title-sub { font-size: 18px; color: #f0f; text-shadow: 0 0 10px #f0f; margin-bottom: 40px; letter-spacing: 4px; }
+#title-start { pointer-events: all; cursor: pointer; background: transparent; color: #0ff; border: 2px solid #0ff; padding: 14px 40px; font-family: 'Courier New', monospace; font-size: 20px; text-shadow: 0 0 8px #0ff; box-shadow: 0 0 15px #0a4; transition: all 0.2s; letter-spacing: 2px; }
+#title-start:hover { background: #0a4; box-shadow: 0 0 25px #0ff; }
+#title-seed { position: absolute; bottom: 20px; color: #444; font-size: 12px; }
+</style>
+</head>
+<body>
+
+<div id="ui-overlay">
+  <div id="hud">
+    <div id="hud-left">
+      <div style="color:#f0f;text-shadow:0 0 8px #f0f">SHIELD</div>
+      <div id="health-bar-container"><div id="health-bar"></div></div>
+    </div>
+    <div id="hud-center">
+      <button id="demo-btn">▶ DEMO MODE</button>
+      <div id="demo-label">DEMO AUTOPLAY</div>
+    </div>
+    <div id="hud-right">
+      <div id="score-display">SCORE: 0</div>
+      <div id="drone-count">DRONES: 3</div>
+    </div>
+  </div>
+  <div id="crosshair"></div>
+  <div id="controls-hint">
+    <span>WASD / Arrows</span> Move &nbsp; <span>SPACE</span> Fire &nbsp; <span>SHIFT</span> Boost
+  </div>
+</div>
+
+<div id="hit-flash"></div>
+<div id="title-screen">
+  <div id="title-logo">NEON ARENA 64</div>
+  <div id="title-sub">FIGHT THE DRONES</div>
+  <button id="title-start">START GAME</button>
+  <div id="title-seed">SEED: 6464</div>
+</div>
+<div id="message-overlay">
+  <div id="message-title">NEON ARENA 64</div>
+  <div id="message-sub">All drones destroyed!</div>
+  <button id="message-restart">PLAY AGAIN</button>
+</div>
+
+<script type="module">
+import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js';
+
+// ============================================================
+//  SEEDED PRNG (mulberry32)
+// ============================================================
+function mulberry32(seed) {
+  return function() {
+    seed |= 0; seed = seed + 0x6D2B79F5 | 0;
+    let t = Math.imul(seed ^ seed >>> 15, 1 | seed);
+    t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t;
+    return ((t ^ t >>> 14) >>> 0) / 4294967296;
+  };
+}
+
+const params = new URLSearchParams(window.location.search);
+const DEMO_FROM_URL = params.get('demo') === '1';
+const SEED_FROM_URL = params.has('seed') ? parseInt(params.get('seed'), 10) : 6464;
+const GAME_SEED = SEED_FROM_URL;
+const rng = mulberry32(GAME_SEED);
+
+// ============================================================
+//  CONSTANTS
+// ============================================================
+const ARENA_RADIUS = 40;
+const WALL_HEIGHT = 12;
+const PLAYER_SPEED = 18;
+const BOOST_MULT = 1.6;
+const BULLET_SPEED = 45;
+const BULLET_COOLDOWN = 0.18;
+const DRONE_SPEED = 8;
+const DRONE_ATTACK_RANGE = 20;
+const DRONE_ATTACK_COOLDOWN = 3.0;
+const DRONE_HEALTH = 3;
+const PLAYER_MAX_HEALTH = 100;
+const NUM_DRONES = 3;
+
+const COLORS = {
+  neonCyan:   new THREE.Color(0x00ffff),
+  neonMagenta: new THREE.Color(0xff00ff),
+  neonYellow: new THREE.Color(0xffff00),
+  neonGreen:  new THREE.Color(0x00ff44),
+  neonOrange: new THREE.Color(0xff8800),
+};
+
+// ============================================================
+//  SCENE SETUP
+// ============================================================
+const scene = new THREE.Scene();
+scene.fog = new THREE.FogExp2(0x050515, 0.012);
+
+const camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.5, 200);
+camera.position.set(0, 30, 35);
+camera.lookAt(0, 0, 0);
+
+const renderer = new THREE.WebGLRenderer({ antialias: true });
+renderer.setSize(window.innerWidth, window.innerHeight);
+renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+renderer.shadowMap.enabled = true;
+renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+renderer.toneMapping = THREE.ACESFilmicToneMapping;
+renderer.toneMappingExposure = 1.2;
+document.body.appendChild(renderer.domElement);
+
+window.addEventListener('resize', () => {
+  camera.aspect = window.innerWidth / window.innerHeight;
+  camera.updateProjectionMatrix();
+  renderer.setSize(window.innerWidth, window.innerHeight);
+});
+
+// ============================================================
+//  LIGHTING
+// ============================================================
+scene.add(new THREE.AmbientLight(0x222244, 0.6));
+
+const dirLight = new THREE.DirectionalLight(0xffffff, 0.8);
+dirLight.position.set(20, 40, 20);
+dirLight.castShadow = true;
+dirLight.shadow.mapSize.set(1024, 1024);
+dirLight.shadow.camera.near = 1;
+dirLight.shadow.camera.far = 100;
+dirLight.shadow.camera.left = -50;
+dirLight.shadow.camera.right = 50;
+dirLight.shadow.camera.top = 50;
+dirLight.shadow.camera.bottom = -50;
+scene.add(dirLight);
+
+// Neon point lights
+for (let i = 0; i < 6; i++) {
+  const angle = (i / 6) * Math.PI * 2;
+  const pl = new THREE.PointLight(i % 2 === 0 ? 0x00ffff : 0xff00ff, 2, 35);
+  pl.position.set(Math.cos(angle) * 32, 8, Math.sin(angle) * 32);
+  scene.add(pl);
+}
+
+// ============================================================
+//  MATERIALS
+// ============================================================
+function makeGlowMat(color, emissiveIntensity = 0.8) {
+  return new THREE.MeshStandardMaterial({
+    color: color.clone().multiplyScalar(0.3),
+    emissive: color,
+    emissiveIntensity: emissiveIntensity,
+    roughness: 0.3,
+    metalness: 0.7,
+    flatShading: true,
+  });
+}
+
+const floorMat = new THREE.MeshStandardMaterial({ color: 0x050515, roughness: 0.8, metalness: 0.2, flatShading: true });
+const wallMat = makeGlowMat(COLORS.neonMagenta, 0.4);
+const playerMat = makeGlowMat(COLORS.neonCyan, 1.0);
+const droneMats = [
+  makeGlowMat(COLORS.neonOrange, 1.0),
+  makeGlowMat(COLORS.neonYellow, 1.0),
+  makeGlowMat(COLORS.neonGreen, 1.0),
+];
+
+// ============================================================
+//  ARENA
+// ============================================================
+function buildArena() {
+  // Floor
+  const floor = new THREE.Mesh(new THREE.CylinderGeometry(ARENA_RADIUS, ARENA_RADIUS, 0.5, 8), floorMat);
+  floor.position.y = -0.25;
+  floor.receiveShadow = true;
+  scene.add(floor);
+
+  // Grid lines
+  const gridMat = new THREE.LineBasicMaterial({ color: 0x0a2848, transparent: true, opacity: 0.4 });
+  for (let i = -ARENA_RADIUS; i <= ARENA_RADIUS; i += 4) {
+    const g1 = new THREE.BufferGeometry().setFromPoints([
+      new THREE.Vector3(i, 0.02, -ARENA_RADIUS), new THREE.Vector3(i, 0.02, ARENA_RADIUS)
+    ]);
+    const g2 = new THREE.BufferGeometry().setFromPoints([
+      new THREE.Vector3(-ARENA_RADIUS, 0.02, i), new THREE.Vector3(ARENA_RADIUS, 0.02, i)
+    ]);
+    scene.add(new THREE.Line(g1, gridMat));
+    scene.add(new THREE.Line(g2, gridMat));
+  }
+
+  // Walls - 8 panels
+  for (let i = 0; i < 8; i++) {
+    const a1 = (i / 8) * Math.PI * 2 + Math.PI / 8;
+    const a2 = ((i + 1) / 8) * Math.PI * 2 + Math.PI / 8;
+    const x1 = Math.cos(a1) * ARENA_RADIUS, z1 = Math.sin(a1) * ARENA_RADIUS;
+    const x2 = Math.cos(a2) * ARENA_RADIUS, z2 = Math.sin(a2) * ARENA_RADIUS;
+    const wLen = Math.sqrt((x2-x1)**2 + (z2-z1)**2);
+    const wall = new THREE.Mesh(new THREE.BoxGeometry(wLen, WALL_HEIGHT, 1.5), wallMat);
+    wall.position.set((x1+x2)/2, WALL_HEIGHT/2, (z1+z2)/2);
+    wall.rotation.y = Math.atan2(z2-z1, x2-x1) + Math.PI/2;
+    wall.castShadow = true;
+    wall.receiveShadow = true;
+    scene.add(wall);
+  }
+
+  // Neon ring at top of walls
+  const ring = new THREE.Mesh(
+    new THREE.TorusGeometry(ARENA_RADIUS, 0.3, 6, 8),
+    makeGlowMat(COLORS.neonCyan, 1.5)
+  );
+  ring.position.y = WALL_HEIGHT;
+  ring.rotation.x = Math.PI / 2;
+  scene.add(ring);
+
+  // Center pillar
+  const pillar = new THREE.Mesh(
+    new THREE.CylinderGeometry(2, 3, 6, 6),
+    makeGlowMat(COLORS.neonMagenta, 0.6)
+  );
+  pillar.position.y = 3;
+  pillar.castShadow = true;
+  scene.add(pillar);
+
+  // Hologram disc
+  hologramDisc = new THREE.Mesh(
+    new THREE.CylinderGeometry(1.5, 1.5, 0.2, 6),
+    makeGlowMat(COLORS.neonCyan, 2.0)
+  );
+  hologramDisc.position.y = 6.2;
+  scene.add(hologramDisc);
+
+  // Scatter crates
+  for (let i = 0; i < 12; i++) {
+    const a = rng() * Math.PI * 2;
+    const r = 5 + rng() * 25;
+    const size = 0.8 + rng() * 1.5;
+    const crate = new THREE.Mesh(
+      new THREE.BoxGeometry(size, size, size),
+      makeGlowMat(
+        [COLORS.neonYellow, COLORS.neonOrange, COLORS.neonGreen][Math.floor(rng()*3)],
+        0.3
+      )
+    );
+    crate.position.set(Math.cos(a)*r, size/2, Math.sin(a)*r);
+    crate.rotation.set(rng()*0.5, rng()*Math.PI, rng()*0.5);
+    crate.castShadow = true;
+    crate.receiveShadow = true;
+    scene.add(crate);
+  }
+}
+
+// ============================================================
+//  PLAYER
+// ============================================================
+function createPlayer() {
+  const group = new THREE.Group();
+
+  // Body - chunky pyramid ship
+  const body = new THREE.Mesh(new THREE.ConeGeometry(1.2, 3.5, 4), playerMat);
+  body.rotation.x = Math.PI;
+  body.castShadow = true;
+  group.add(body);
+
+  // Wings
+  const wings = new THREE.Mesh(new THREE.BoxGeometry(4, 0.3, 1.5), playerMat);
+  wings.position.z = 0.5;
+  wings.castShadow = true;
+  group.add(wings);
+
+  // Engine glow
+  const engine = new THREE.Mesh(
+    new THREE.SphereGeometry(0.4, 6, 4),
+    new THREE.MeshBasicMaterial({ color: 0x00ffff })
+  );
+  engine.position.z = -1.8;
+  group.add(engine);
+
+  group.position.y = 1.5;
+  scene.add(group);
+
+  return {
+    mesh: group,
+    velocity: new THREE.Vector3(),
+    health: PLAYER_MAX_HEALTH,
+    cooldown: 0,
+    boosting: false,
+    alive: true,
+    facingDir: new THREE.Vector3(0, 0, -1),
+  };
+}
+
+// ============================================================
+//  DRONES
+// ============================================================
+function createDrone(index, position) {
+  const group = new THREE.Group();
+  const mat = droneMats[index % droneMats.length];
+
+  // Body - chunky diamond
+  const body = new THREE.Mesh(new THREE.OctahedronGeometry(1.2, 0), mat);
+  body.castShadow = true;
+  group.add(body);
+
+  // Spinning ring
+  const ring = new THREE.Mesh(new THREE.TorusGeometry(1.8, 0.15, 4, 6), mat);
+  ring.rotation.x = Math.PI / 2;
+  group.add(ring);
+
+  // Eye
+  const eye = new THREE.Mesh(
+    new THREE.SphereGeometry(0.4, 4, 4),
+    new THREE.MeshBasicMaterial({ color: 0xffffff })
+  );
+  eye.position.z = 0.8;
+  group.add(eye);
+
+  group.position.copy(position);
+  group.position.y = 2 + rng() * 2;
+  scene.add(group);
+
+  return {
+    mesh: group,
+    health: DRONE_HEALTH,
+    cooldown: rng() * 2,
+    speed: DRONE_SPEED + rng() * 3,
+    targetAngle: rng() * Math.PI * 2,
+    changeTimer: 0,
+    alive: true,
+    flashTimer: 0,
+    index: index,
+  };
+}
+
+// ============================================================
+//  PROJECTILES
+// ============================================================
+function createProjectile(position, direction, isPlayer) {
+  const color = isPlayer ? 0x00ffff : 0xff4400;
+  const geo = new THREE.SphereGeometry(isPlayer ? 0.3 : 0.5, 6, 4);
+  const mat = new THREE.MeshBasicMaterial({ color });
+  const mesh = new THREE.Mesh(geo, mat);
+  mesh.position.copy(position);
+  scene.add(mesh);
+
+  // Trail - oriented along velocity
+  const trail = new THREE.Mesh(
+    new THREE.CylinderGeometry(0.05, 0.2, 2, 4),
+    new THREE.MeshBasicMaterial({ color, transparent: true, opacity: 0.5 })
+  );
+  mesh.add(trail);
+  trail.position.z = 1.2;
+  trail.rotation.x = Math.PI / 2;
+  // Orient trail along velocity direction
+  if (direction.length() > 0.01) {
+    trail.quaternion.setFromUnitVectors(new THREE.Vector3(0, 1, 0), direction.normalize());
+  }
+
+  return {
+    mesh,
+    velocity: direction.clone().multiplyScalar(isPlayer ? BULLET_SPEED : 15),
+    isPlayer,
+    life: 3,
+  };
+}
+
+// ============================================================
+//  PARTICLES
+// ============================================================
+const particles = [];
+function spawnParticles(position, color, count = 15) {
+  for (let i = 0; i < count; i++) {
+    const mesh = new THREE.Mesh(
+      new THREE.TetrahedronGeometry(0.2 + rng() * 0.4, 0),
+      new THREE.MeshBasicMaterial({ color })
+    );
+    mesh.position.copy(position);
+    scene.add(mesh);
+    particles.push({
+      mesh,
+      velocity: new THREE.Vector3((rng()-0.5)*12, rng()*8+2, (rng()-0.5)*12),
+      life: 0.5 + rng() * 0.8,
+    });
+  }
+}
+
+// ============================================================
+//  GAME STATE
+// ============================================================
+let player, drones = [], bullets = [];
+let hologramDisc = null;
+let score = 0;
+let gameOver = false;
+let demoMode = false;
+let demoTimer = 0;
+let gameStarted = false;
+let engineTrailTimer = 0;
+let hitFlashTimer = 0;
+const keys = {};
+const clock = new THREE.Clock();
+
+// ============================================================
+//  INPUT
+// ============================================================
+window.addEventListener('keydown', e => {
+  keys[e.code] = true;
+  if (['Space','ArrowUp','ArrowDown','ArrowLeft','ArrowRight'].includes(e.code)) e.preventDefault();
+});
+window.addEventListener('keyup', e => { keys[e.code] = false; });
+
+// ============================================================
+//  DEMO MODE AI - Smart kiting & dodging
+// ============================================================
+function getDemoAction() {
+  // Find nearest alive drone
+  let target = null, minDist = Infinity;
+  for (const d of drones) {
+    if (!d.alive) continue;
+    const dist = player.mesh.position.distanceTo(d.mesh.position);
+    if (dist < minDist) { minDist = dist; target = d; }
+  }
+  if (!target) return { dx: 0, dz: 0, fire: false };
+
+  const dx = target.mesh.position.x - player.mesh.position.x;
+  const dz = target.mesh.position.z - player.mesh.position.z;
+  const dist = Math.sqrt(dx*dx + dz*dz);
+  const ndx = dx / dist, ndz = dz / dist;
+
+  // Optimal engagement range: 10-16 units
+  const optimalDist = 13;
+  let moveX = 0, moveZ = 0;
+  let shouldFire = false;
+
+  if (dist < 10) {
+    // Too close - back away
+    moveX = -ndx;
+    moveZ = -ndz;
+  } else if (dist > 18) {
+    // Too far - approach
+    moveX = ndx;
+    moveZ = ndz;
+  } else {
+    // In range - circle strafe perpendicular to target
+    const strafeAngle = demoTimer * 2.5;
+    moveX = Math.cos(strafeAngle);
+    moveZ = Math.sin(strafeAngle);
+    shouldFire = true;
+  }
+
+  // Dodge incoming enemy bullets
+  for (const b of bullets) {
+    if (!b.isPlayer) {
+      const bDist = b.mesh.position.distanceTo(player.mesh.position);
+      if (bDist < 12) {
+        // Move away from bullet
+        const bdx = player.mesh.position.x - b.mesh.position.x;
+        const bdz = player.mesh.position.z - b.mesh.position.z;
+        const bLen = Math.sqrt(bdx*bdx + bdz*bdz) || 1;
+        moveX += (bdx/bLen) * 1.5;
+        moveZ += (bdz/bLen) * 1.5;
+      }
+    }
+  }
+
+  // Normalize if non-zero
+  const mLen = Math.sqrt(moveX*moveX + moveZ*moveZ);
+  if (mLen > 0.1) {
+    moveX = moveX / mLen;
+    moveZ = moveZ / mLen;
+  }
+
+  return { dx: moveX, dz: moveZ, fire: shouldFire };
+}
+
+// ============================================================
+//  COLLISION
+// ============================================================
+function clampToArena(pos) {
+  const dx = pos.x, dz = pos.z;
+  const dist = Math.sqrt(dx*dx + dz*dz);
+  const maxR = ARENA_RADIUS - 2;
+  if (dist > maxR) {
+    pos.x = (dx / dist) * maxR;
+    pos.z = (dz / dist) * maxR;
+  }
+}
+
+// ============================================================
+//  INIT GAME
+// ============================================================
+function initGame() {
+  // Clear old
+  if (player) scene.remove(player.mesh);
+  for (const d of drones) scene.remove(d.mesh);
+  for (const b of bullets) scene.remove(b.mesh);
+  for (const p of particles) scene.remove(p.mesh);
+
+  drones = []; bullets = []; particles.length = 0;
+  score = 0; gameOver = false;
+  demoTimer = 0;
+
+  // Player
+  player = createPlayer();
+  player.mesh.position.set(0, 1.5, 25);
+  player.facingDir.set(0, 0, -1);
+
+  // Drones
+  const dronePositions = [
+    new THREE.Vector3(0, 0, -15),
+    new THREE.Vector3(-20, 0, 5),
+    new THREE.Vector3(20, 0, 5),
+  ];
+  for (let i = 0; i < NUM_DRONES; i++) {
+    drones.push(createDrone(i, dronePositions[i]));
+  }
+
+  updateHUD();
+  document.getElementById('message-overlay').classList.remove('show');
+  document.getElementById('message-title').textContent = 'NEON ARENA 64';
+  document.getElementById('message-sub').textContent = 'All drones destroyed!';
+  gameStarted = true;
+}
+
+// ============================================================
+//  HUD
+// ============================================================
+function updateHUD() {
+  document.getElementById('health-bar').style.width = Math.max(0, player.health / PLAYER_MAX_HEALTH * 100) + '%';
+  document.getElementById('score-display').textContent = 'SCORE: ' + score;
+  const alive = drones.filter(d => d.alive).length;
+  document.getElementById('drone-count').textContent = 'DRONES: ' + alive;
+
+  if (alive === 0 && !gameOver) {
+    gameOver = true;
+    score += 1000;
+    document.getElementById('score-display').textContent = 'SCORE: ' + score;
+    console.log('[NeonArena] WIN: Arena cleared! Score: ' + score + (demoMode ? ' (DEMO MODE)' : ''));
+    setTimeout(() => {
+      document.getElementById('message-title').textContent = 'ARENA CLEARED';
+      document.getElementById('message-sub').textContent = 'All drones destroyed! Score: ' + score;
+      document.getElementById('message-overlay').classList.add('show');
+    }, 500);
+  }
+}
+
+// ============================================================
+//  UPDATE
+// ============================================================
+function update(dt) {
+  if (!gameStarted || gameOver) return;
+
+  // Demo mode input injection (keys only — facingDir set after movement)
+  if (demoMode) {
+    demoTimer += dt;
+    const action = getDemoAction();
+    // Map continuous values to discrete keys with hysteresis
+    keys['KeyA'] = action.dx < -0.3;
+    keys['KeyD'] = action.dx > 0.3;
+    keys['KeyW'] = action.dz < -0.3;
+    keys['KeyS'] = action.dz > 0.3;
+    keys['Space'] = action.fire;
+    keys['ShiftLeft'] = false;
+    // Clear arrow keys to prevent stale input from before demo mode
+    keys['ArrowUp'] = false; keys['ArrowDown'] = false;
+    keys['ArrowLeft'] = false; keys['ArrowRight'] = false;
+  }
+
+  // --- Player movement ---
+  if (player.alive) {
+    const moveDir = new THREE.Vector3();
+    if (keys['KeyW'] || keys['ArrowUp']) moveDir.z -= 1;
+    if (keys['KeyS'] || keys['ArrowDown']) moveDir.z += 1;
+    if (keys['KeyA'] || keys['ArrowLeft']) moveDir.x -= 1;
+    if (keys['KeyD'] || keys['ArrowRight']) moveDir.x += 1;
+
+    player.boosting = !!keys['ShiftLeft'];
+    const speed = PLAYER_SPEED * (player.boosting ? BOOST_MULT : 1);
+
+    if (moveDir.length() > 0) {
+      moveDir.normalize();
+      player.velocity.lerp(moveDir.multiplyScalar(speed), 0.15);
+      player.facingDir.copy(moveDir);
+    } else {
+      player.velocity.lerp(new THREE.Vector3(), 0.1);
+    }
+
+    player.mesh.position.add(player.velocity.clone().multiplyScalar(dt));
+    clampToArena(player.mesh.position);
+
+    // Ship tilt
+    player.mesh.rotation.z = -player.velocity.x * 0.04;
+    player.mesh.rotation.x = Math.PI + player.velocity.z * 0.02;
+
+    // Demo mode: override facingDir so ship aims at target (before shooting)
+    if (demoMode) {
+      let bestTarget = null, bestDist = Infinity;
+      for (const d of drones) {
+        if (!d.alive) continue;
+        const dd = player.mesh.position.distanceTo(d.mesh.position);
+        if (dd < bestDist) { bestDist = dd; bestTarget = d; }
+      }
+      if (bestTarget) {
+        // facingDir must point AWAY from target so negate() in shooting fires TOWARD it
+        const dir = player.mesh.position.clone().sub(bestTarget.mesh.position);
+        if (dir.length() > 0.1) {
+          dir.normalize();
+          player.facingDir.set(dir.x, 0, dir.z);
+        }
+      }
+    }
+
+    // Shooting
+    player.cooldown -= dt;
+    if (keys['Space'] && player.cooldown <= 0) {
+      player.cooldown = BULLET_COOLDOWN;
+      const dir = player.facingDir.clone().negate();
+      if (dir.length() < 0.1) dir.set(0, 0, -1);
+      dir.normalize();
+      const spawnPos = player.mesh.position.clone();
+      spawnPos.y += 0.5;
+      bullets.push(createProjectile(spawnPos, dir, true));
+    }
+    
+    // Engine trail particles
+    engineTrailTimer += dt;
+    if (player.velocity.length() > 2 && engineTrailTimer > 0.05) {
+      engineTrailTimer = 0;
+      const trailPos = player.mesh.position.clone();
+      trailPos.add(player.facingDir.clone().multiplyScalar(1.5));
+      trailPos.y -= 0.2;
+      const tp = new THREE.Mesh(
+        new THREE.TetrahedronGeometry(0.15 + Math.random() * 0.15, 0),
+        new THREE.MeshBasicMaterial({ color: 0x00ffff, transparent: true, opacity: 0.6 })
+      );
+      tp.position.copy(trailPos);
+      scene.add(tp);
+      particles.push({
+        mesh: tp,
+        velocity: player.facingDir.clone().multiplyScalar(-3).add(
+          new THREE.Vector3((Math.random()-0.5)*2, 0.5 + Math.random(), (Math.random()-0.5)*2)
+        ),
+        life: 0.4 + Math.random() * 0.3,
+      });
+    }
+  }
+
+  // --- Drone AI ---
+  for (const drone of drones) {
+    if (!drone.alive) continue;
+
+    // Spin & bob
+    drone.mesh.children[1].rotation.z += dt * 2;
+    drone.mesh.children[0].rotation.y += dt * 1.5;
+    drone.mesh.position.y = 2 + Math.sin(performance.now() * 0.002 + drone.index) * 0.5;
+
+    const toPlayer = player.mesh.position.clone().sub(drone.mesh.position);
+    const distToPlayer = toPlayer.length();
+
+    // Movement target changes
+    drone.changeTimer -= dt;
+    if (drone.changeTimer <= 0) {
+      drone.changeTimer = 1 + rng() * 2;
+      drone.targetAngle = Math.atan2(toPlayer.z, toPlayer.x) + (rng()-0.5) * 1.5;
+    }
+
+    const moveSpeed = distToPlayer < DRONE_ATTACK_RANGE ? drone.speed * 0.6 : drone.speed;
+    const targetX = player.mesh.position.x + Math.cos(drone.targetAngle) * 10;
+    const targetZ = player.mesh.position.z + Math.sin(drone.targetAngle) * 10;
+    const ddx = targetX - drone.mesh.position.x;
+    const ddz = targetZ - drone.mesh.position.z;
+    const ddDist = Math.sqrt(ddx*ddx + ddz*ddz);
+    if (ddDist > 1) {
+      drone.mesh.position.x += (ddx/ddDist) * moveSpeed * dt;
+      drone.mesh.position.z += (ddz/ddDist) * moveSpeed * dt;
+    }
+    clampToArena(drone.mesh.position);
+
+    // Face player
+    drone.mesh.rotation.y = Math.atan2(toPlayer.x, toPlayer.z);
+
+    // Attack
+    drone.cooldown -= dt;
+    if (distToPlayer < DRONE_ATTACK_RANGE && drone.cooldown <= 0) {
+      drone.cooldown = DRONE_ATTACK_COOLDOWN;
+      const dir = toPlayer.clone().normalize();
+      bullets.push(createProjectile(drone.mesh.position.clone(), dir, false));
+    }
+
+    // Flash on hit
+    if (drone.flashTimer > 0) {
+      drone.flashTimer -= dt;
+      drone.mesh.children[0].material.emissiveIntensity = 2 + Math.sin(drone.flashTimer * 40) * 1.5;
+    } else {
+      drone.mesh.children[0].material.emissiveIntensity = 1.0;
+    }
+  }
+
+  // --- Bullets ---
+  for (let i = bullets.length - 1; i >= 0; i--) {
+    const b = bullets[i];
+    b.mesh.position.add(b.velocity.clone().multiplyScalar(dt));
+    b.life -= dt;
+
+    if (b.life <= 0 || b.mesh.position.length() > ARENA_RADIUS + 5) {
+      scene.remove(b.mesh);
+      bullets.splice(i, 1);
+      continue;
+    }
+
+    if (b.isPlayer) {
+      for (const drone of drones) {
+        if (!drone.alive) continue;
+        if (b.mesh.position.distanceTo(drone.mesh.position) < 2) {
+          drone.health--;
+          drone.flashTimer = 0.3;
+          const col = droneMats[drone.index % droneMats.length].emissive.getHex();
+          spawnParticles(b.mesh.position, col, 8);
+          scene.remove(b.mesh);
+          bullets.splice(i, 1);
+
+          if (drone.health <= 0) {
+            drone.alive = false;
+            console.log('[NeonArena] Drone ' + drone.index + ' destroyed. Remaining: ' + (drones.filter(d => d.alive).length));
+            spawnParticles(drone.mesh.position, col, 30);
+            scene.remove(drone.mesh);
+            score += 500;
+          }
+          updateHUD();
+          break;
+        }
+      }
+    } else {
+      if (player.alive) {
+        if (b.mesh.position.distanceTo(player.mesh.position) < 1.8) {
+          player.health -= 12;
+          spawnParticles(b.mesh.position, 0xff4400, 6);
+          scene.remove(b.mesh);
+          bullets.splice(i, 1);
+          
+          // Hit flash
+          hitFlashTimer = 0.15;
+
+          if (player.health <= 0) {
+            player.alive = false;
+            console.log('[NeonArena] PLAYER DEAD: ' + (demoMode ? 'DEMO MODE' : 'MANUAL') + ' | Drones remaining: ' + drones.filter(d => d.alive).length);
+            spawnParticles(player.mesh.position, 0x00ffff, 40);
+            player.health = 0;
+            gameOver = true;
+            setTimeout(() => {
+              document.getElementById('message-title').textContent = 'SHIELD DEPLETED';
+              document.getElementById('message-sub').textContent = 'The drones prevailed...';
+              document.getElementById('message-overlay').classList.add('show');
+            }, 800);
+          }
+          updateHUD();
+        }
+      }
+    }
+  }
+
+  // --- Particles ---
+  for (let i = particles.length - 1; i >= 0; i--) {
+    const p = particles[i];
+    p.velocity.y -= 12 * dt; // gravity
+    p.mesh.position.add(p.velocity.clone().multiplyScalar(dt));
+    p.life -= dt;
+    p.mesh.material.opacity = Math.max(0, p.life);
+    p.mesh.material.transparent = true;
+    p.mesh.scale.multiplyScalar(0.98);
+    if (p.life <= 0) {
+      scene.remove(p.mesh);
+      particles.splice(i, 1);
+    }
+  }
+}
+
+// ============================================================
+//  CAMERA
+// ============================================================
+function updateCamera() {
+  if (!player) return;
+  const target = player.mesh.position.clone();
+  target.y += 22;
+  target.z += 28;
+  camera.position.lerp(target, 0.05);
+  camera.lookAt(player.mesh.position.x, 1, player.mesh.position.z);
+  
+  // Hit flash overlay
+  const hitFlash = document.getElementById('hit-flash');
+  if (hitFlashTimer > 0) {
+    hitFlashTimer -= 0.016;
+    hitFlash.style.opacity = Math.max(0, hitFlashTimer / 0.15).toString();
+  } else {
+    hitFlash.style.opacity = '0';
+  }
+  
+  // Animate hologram disc rotation
+  if (hologramDisc) {
+    hologramDisc.rotation.y += 0.02;
+  }
+}
+
+// ============================================================
+//  GAME LOOP
+// ============================================================
+function animate() {
+  requestAnimationFrame(animate);
+  const dt = Math.min(clock.getDelta(), 0.05);
+  update(dt);
+  updateCamera();
+  renderer.render(scene, camera);
+}
+
+// ============================================================
+//  UI BINDINGS
+// ============================================================
+document.getElementById('demo-btn').addEventListener('click', () => {
+  demoMode = !demoMode;
+  console.log('[NeonArena] Demo mode: ' + (demoMode ? 'ON' : 'OFF'));
+  document.getElementById('demo-btn').classList.toggle('active', demoMode);
+  document.getElementById('demo-label').classList.toggle('show', demoMode);
+});
+
+document.getElementById('message-restart').addEventListener('click', () => {
+  initGame();
+});
+
+document.getElementById('title-start').addEventListener('click', () => {
+  document.getElementById('title-screen').classList.add('hidden');
+  initGame();
+});
+
+// ============================================================
+//  START - Show title screen first, init on START click
+// ============================================================
+buildArena();
+animate();
+
+// Auto-start demo mode if ?demo=1 is in URL
+if (DEMO_FROM_URL) {
+  document.getElementById('title-screen').classList.add('hidden');
+  initGame();
+  demoMode = true;
+  document.getElementById('demo-btn').classList.add('active');
+  document.getElementById('demo-label').classList.add('show');
+  console.log('[NeonArena] Auto-starting DEMO MODE with seed: ' + GAME_SEED);
+}
+
+</script>
+</body>
+</html>

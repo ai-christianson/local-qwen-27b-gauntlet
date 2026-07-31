@@ -1,0 +1,18 @@
+
+
+## Summary
+
+**Bug**: Demo shots fired in the wrong direction because `fireBullet()` read `player.aimDirX/aimDirZ` (set to `mouseX/-1`) before the "aim at nearest enemy" logic updated them.
+
+**Fix**: Swapped two blocks in the demo branch of the game loop (`index.html`): moved the "aim at nearest enemy" calculation to execute **before** `fireBullet()` is called, so bullets are properly directed at enemies.
+
+**Verification**:
+| Time | Before Fix | After Fix |
+|------|-----------|-----------|
+| 2s | ENEMIES:3 SCORE:0 | ENEMIES:3 SCORE:0 |
+| 6s | ENEMIES:3 SCORE:0 | ENEMIES:3 SCORE:0 |
+| 14s | ENEMIES:3 SCORE:0 | ENEMIES:2 SCORE:100 |
+| 34s | ENEMIES:3 SCORE:0 | ENEMIES:1 SCORE:200 |
+| 38s | ENEMIES:3 SCORE:0 | ENEMIES:0 SCORE:300 YOU WIN! |
+
+No console errors, game remains fully playable with proper combat rules intact.

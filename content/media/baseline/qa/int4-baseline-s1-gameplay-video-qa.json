@@ -1,0 +1,25 @@
+{
+  "schema": "qwen-gauntlet-video-qa-v1",
+  "video": "gameplay-1080p60.mp4",
+  "contact_sheet": "int4-baseline-s1-gameplay-contact-sheet.jpg",
+  "container": {
+    "codec": "h264",
+    "width": 1920,
+    "height": 1080,
+    "avg_frame_rate": "60/1",
+    "duration_seconds": 30.000000,
+    "frame_count": 1800,
+    "pass": true
+  },
+  "temporal_change": {
+    "method": "1 Hz successive-frame absolute difference; YAVG signal",
+    "samples": 29,
+    "mean": 0.003823719,
+    "max": 0.110857000,
+    "samples_at_or_above_0_5": 0,
+    "samples_at_or_above_1_0": 0,
+    "pass": false
+  },
+  "automated_accept": false,
+  "human_contact_sheet_review_required": true
+}

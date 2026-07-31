@@ -1,0 +1,9 @@
+{
+  "schema": "qwen-gauntlet-routerd-precision-swap-v1",
+  "original_sha256": "636858ad0d0fe251655e68bb43a619960bba2e8472548221a6f8db4b2ace35a6",
+  "bf16_sha256": "7a3b5cd35a4a7cf91a7a6d06f2c0d76f0f26d5629c13c77ad0748154115d1976",
+  "backup_file": "routerd.toml.pre-qg-bf16.20260731T041936Z",
+  "model": "qwen36-27b-bf16",
+  "tensor_parallel_size": 4,
+  "gpu_count": 4
+}

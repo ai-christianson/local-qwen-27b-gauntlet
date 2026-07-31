@@ -1,0 +1,5 @@
+Read `/home/qg/review/critic.txt` and the frozen evidence. Implement the
+smallest repair for the critic's single highest-impact diagnosis. Do not weaken
+completion, hide the defect, or replace the game with a simulator. Test the
+real browser path, inspect at most four new screenshots, and leave the
+deterministic Demo and ordinary controls working.

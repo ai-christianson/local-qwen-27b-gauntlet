@@ -1,0 +1,85 @@
+{
+  "schema": "qwen-gauntlet-fixed-step-capture-v1",
+  "disclosure": "Controller-side deterministic Chrome virtual-time capture; game source unchanged. This is not a real-time performance measurement.",
+  "startedAt": "2026-07-31T03:01:06.795Z",
+  "finishedAt": "2026-07-31T03:15:19.298Z",
+  "url": "http://127.0.0.1:4174/?demo=1&seed=1337",
+  "httpStatus": 200,
+  "fps": 60,
+  "frameBudgetMs": 16.666666666666668,
+  "requestedDurationSeconds": 12,
+  "capturedFrames": 480,
+  "encodedDurationSeconds": 8,
+  "distinctFrameHashes": 405,
+  "completionFrame": 420,
+  "action": {
+    "kind": "click",
+    "text": "DEMO MODE"
+  },
+  "sampledDom": [
+    {
+      "frame": 0,
+      "virtualTimeMs": 16.666666666666668,
+      "text": "LAP 0/1 TIME 0:00.00 SPEED LAP PROGRESS",
+      "completionSignal": false
+    },
+    {
+      "frame": 60,
+      "virtualTimeMs": 1016.6666666666667,
+      "text": "LAP 0/1 TIME 0:01.00 SPEED LAP PROGRESS",
+      "completionSignal": false
+    },
+    {
+      "frame": 120,
+      "virtualTimeMs": 2016.6666666666667,
+      "text": "LAP 0/1 TIME 0:02.00 SPEED LAP PROGRESS",
+      "completionSignal": false
+    },
+    {
+      "frame": 180,
+      "virtualTimeMs": 3016.666666666667,
+      "text": "LAP 0/1 TIME 0:03.00 SPEED LAP PROGRESS",
+      "completionSignal": false
+    },
+    {
+      "frame": 240,
+      "virtualTimeMs": 4016.666666666667,
+      "text": "LAP 0/1 TIME 0:04.00 SPEED LAP PROGRESS",
+      "completionSignal": false
+    },
+    {
+      "frame": 300,
+      "virtualTimeMs": 5016.666666666667,
+      "text": "LAP 0/1 TIME 0:05.00 SPEED LAP PROGRESS",
+      "completionSignal": false
+    },
+    {
+      "frame": 360,
+      "virtualTimeMs": 6016.666666666667,
+      "text": "LAP 0/1 TIME 0:06.00 SPEED LAP PROGRESS",
+      "completionSignal": false
+    },
+    {
+      "frame": 420,
+      "virtualTimeMs": 7016.666666666667,
+      "text": "🏁 RACE COMPLETE! Time: 0:06.63 Top Speed: 101 km/h MAIN MENU REPLAY",
+      "completionSignal": true
+    }
+  ],
+  "consoleEvents": [
+    {
+      "frame": 0,
+      "type": "debug",
+      "text": "[vite] connecting..."
+    },
+    {
+      "frame": 0,
+      "type": "debug",
+      "text": "[vite] connected."
+    }
+  ],
+  "pageErrors": [],
+  "wallCaptureSeconds": 852.503,
+  "firstFrameSha256": "ffa9ac384b399948b0b9add5775fe3d8baeba854d5f3df4453a2e25c25f18196",
+  "lastFrameSha256": "3f09a54bf6e740ab25c259834301d2eeb2543c4b884fa43b625a69b2c952ab0e"
+}

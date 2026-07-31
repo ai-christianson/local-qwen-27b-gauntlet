@@ -1,0 +1,350 @@
+{
+  "schema": "qwen-gauntlet-objective-browser-v2",
+  "startedAt": "2026-07-31T04:29:06.950Z",
+  "finishedAt": "2026-07-31T04:30:09.327Z",
+  "url": "http://127.0.0.1:4173/?demo=1&seed=1337",
+  "httpStatus": 200,
+  "initialDom": {
+    "title": "Neon Arena 64",
+    "text": "SHIELD ▶ DEMO MODE DEMO AUTOPLAY SCORE: 0 DRONES: 3 WASD / Arrows Move SPACE Fire SHIFT Boost NEON ARENA 64 FIGHT THE DRONES START GAME SEED: 6464",
+    "canvases": [
+      {
+        "width": 1920,
+        "height": 1080,
+        "clientWidth": 1920,
+        "clientHeight": 1080
+      }
+    ],
+    "buttons": [
+      {
+        "text": "▶ DEMO MODE",
+        "disabled": false
+      },
+      {
+        "text": "START GAME",
+        "disabled": false
+      },
+      {
+        "text": "PLAY AGAIN",
+        "disabled": false
+      }
+    ]
+  },
+  "finalDom": {
+    "title": "Neon Arena 64",
+    "text": "SHIELD ▶ DEMO MODE DEMO AUTOPLAY SCORE: 2500 DRONES: 0 WASD / Arrows Move SPACE Fire SHIFT Boost NEON ARENA 64 FIGHT THE DRONES START GAME SEED: 6464 ARENA CLEARED All drones destroyed! Score: 2500 PLAY AGAIN",
+    "canvases": [
+      {
+        "width": 1920,
+        "height": 1080,
+        "clientWidth": 1920,
+        "clientHeight": 1080
+      }
+    ]
+  },
+  "actions": [
+    {
+      "at": "2026-07-31T04:29:14.887Z",
+      "action": "click-error",
+      "rule": "demo",
+      "text": "▶ DEMO MODE",
+      "error": "locator.click: Timeout 2000ms exceeded.\nCall log:\n  - waiting for getByRole('button', { name: /demo/i }).first()\n    - locator resolved to <button id=\"demo-btn\" class=\"active\">▶ DEMO MODE</button>\n  - attempting click action\n    - waiting for element to be visible, enabled and stable\n    - element is visible, enabled and stable\n    - scrolling into view if needed\n    - done scrolling\n    - performing click action\n"
+    },
+    {
+      "at": "2026-07-31T04:29:17.849Z",
+      "action": "click-error",
+      "rule": "start-play-race",
+      "text": "START GAME",
+      "error": "locator.click: Timeout 2000ms exceeded.\nCall log:\n  - waiting for getByRole('button', { name: /start|play|race/i }).first()\n    - locator resolved to <button id=\"title-start\">START GAME</button>\n  - attempting click action\n    - waiting for element to be visible, enabled and stable\n    - element is visible, enabled and stable\n    - scrolling into view if needed\n    - done scrolling\n    - <canvas width=\"1920\" height=\"1080\" data-engine=\"three.js r160\"></canvas> intercepts pointer events\n  - retrying click action\n    - waiting for element to be visible, enabled and stable\n    - element is visible, enabled and stable\n    - scrolling into view if needed\n    - done scrolling\n"
+    },
+    {
+      "at": "2026-07-31T04:29:18.078Z",
+      "action": "keypress",
+      "key": "Enter",
+      "rule": "no-visible-start-button"
+    },
+    {
+      "at": "2026-07-31T04:29:22.304Z",
+      "action": "fixed-keyboard-sequence",
+      "sequence": "ArrowUp 3.6s; ArrowLeft 0.8s; ArrowRight 0.8s"
+    },
+    {
+      "at": "2026-07-31T04:30:05.139Z",
+      "action": "keypress",
+      "key": "r",
+      "rule": "fixed-reset-probe"
+    }
+  ],
+  "screenshots": [
+    {
+      "filename": "objective-02s.png",
+      "sha256": "85739dbe2148083faa8997f5d72a17475c6c49753ccc377ecc20a9865d76f19d",
+      "bytes": 246378
+    },
+    {
+      "filename": "objective-06s.png",
+      "sha256": "17010d244551d8a0f9b3fafaad2ef61ef649194fc61686959a3160218bda1142",
+      "bytes": 183937
+    },
+    {
+      "filename": "objective-16s.png",
+      "sha256": "e4a6e5dcecd4dbb0a09a7c50bcfb7f0e931c6aa6ab7566de57bd2e33e7a0ecd7",
+      "bytes": 141756
+    },
+    {
+      "filename": "objective-45s.png",
+      "sha256": "ff6e6c9baf417480cf8b98a064410e5243cc43b3762b2b64464bd0c8eef0dbb4",
+      "bytes": 141574
+    },
+    {
+      "filename": "objective-after-reset.png",
+      "sha256": "cd48a30412ca538cd3caf70a6e5471d3a83db4cc3b102ec93220f2ae1a1853ba",
+      "bytes": 141616
+    }
+  ],
+  "distinctScreenshotHashes": 5,
+  "cadence": {
+    "durationMs": 10000,
+    "frames": 75,
+    "fps": 7.5,
+    "intervalMs": {
+      "p50": 133.39999999999782,
+      "p95": 150,
+      "p99": 166.60000000000218,
+      "max": 166.60000000000218
+    }
+  },
+  "textTimeline": [
+    {
+      "elapsedMs": 147,
+      "text": "SHIELD ▶ DEMO MODE DEMO AUTOPLAY SCORE: 2500 DRONES: 0 WASD / Arrows Move SPACE Fire SHIFT Boost NEON ARENA 64 FIGHT THE DRONES START GAME SEED: 6464 ARENA CLEARED All drones destroyed! Score: 2500 PLAY AGAIN",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 1218,
+      "text": "SHIELD ▶ DEMO MODE DEMO AUTOPLAY SCORE: 2500 DRONES: 0 WASD / Arrows Move SPACE Fire SHIFT Boost NEON ARENA 64 FIGHT THE DRONES START GAME SEED: 6464 ARENA CLEARED All drones destroyed! Score: 2500 PLAY AGAIN",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 2287,
+      "text": "SHIELD ▶ DEMO MODE DEMO AUTOPLAY SCORE: 2500 DRONES: 0 WASD / Arrows Move SPACE Fire SHIFT Boost NEON ARENA 64 FIGHT THE DRONES START GAME SEED: 6464 ARENA CLEARED All drones destroyed! Score: 2500 PLAY AGAIN",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 3389,
+      "text": "SHIELD ▶ DEMO MODE DEMO AUTOPLAY SCORE: 2500 DRONES: 0 WASD / Arrows Move SPACE Fire SHIFT Boost NEON ARENA 64 FIGHT THE DRONES START GAME SEED: 6464 ARENA CLEARED All drones destroyed! Score: 2500 PLAY AGAIN",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 4438,
+      "text": "SHIELD ▶ DEMO MODE DEMO AUTOPLAY SCORE: 2500 DRONES: 0 WASD / Arrows Move SPACE Fire SHIFT Boost NEON ARENA 64 FIGHT THE DRONES START GAME SEED: 6464 ARENA CLEARED All drones destroyed! Score: 2500 PLAY AGAIN",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 5506,
+      "text": "SHIELD ▶ DEMO MODE DEMO AUTOPLAY SCORE: 2500 DRONES: 0 WASD / Arrows Move SPACE Fire SHIFT Boost NEON ARENA 64 FIGHT THE DRONES START GAME SEED: 6464 ARENA CLEARED All drones destroyed! Score: 2500 PLAY AGAIN",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 6577,
+      "text": "SHIELD ▶ DEMO MODE DEMO AUTOPLAY SCORE: 2500 DRONES: 0 WASD / Arrows Move SPACE Fire SHIFT Boost NEON ARENA 64 FIGHT THE DRONES START GAME SEED: 6464 ARENA CLEARED All drones destroyed! Score: 2500 PLAY AGAIN",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 7694,
+      "text": "SHIELD ▶ DEMO MODE DEMO AUTOPLAY SCORE: 2500 DRONES: 0 WASD / Arrows Move SPACE Fire SHIFT Boost NEON ARENA 64 FIGHT THE DRONES START GAME SEED: 6464 ARENA CLEARED All drones destroyed! Score: 2500 PLAY AGAIN",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 8816,
+      "text": "SHIELD ▶ DEMO MODE DEMO AUTOPLAY SCORE: 2500 DRONES: 0 WASD / Arrows Move SPACE Fire SHIFT Boost NEON ARENA 64 FIGHT THE DRONES START GAME SEED: 6464 ARENA CLEARED All drones destroyed! Score: 2500 PLAY AGAIN",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 9948,
+      "text": "SHIELD ▶ DEMO MODE DEMO AUTOPLAY SCORE: 2500 DRONES: 0 WASD / Arrows Move SPACE Fire SHIFT Boost NEON ARENA 64 FIGHT THE DRONES START GAME SEED: 6464 ARENA CLEARED All drones destroyed! Score: 2500 PLAY AGAIN",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 11022,
+      "text": "SHIELD ▶ DEMO MODE DEMO AUTOPLAY SCORE: 2500 DRONES: 0 WASD / Arrows Move SPACE Fire SHIFT Boost NEON ARENA 64 FIGHT THE DRONES START GAME SEED: 6464 ARENA CLEARED All drones destroyed! Score: 2500 PLAY AGAIN",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 12078,
+      "text": "SHIELD ▶ DEMO MODE DEMO AUTOPLAY SCORE: 2500 DRONES: 0 WASD / Arrows Move SPACE Fire SHIFT Boost NEON ARENA 64 FIGHT THE DRONES START GAME SEED: 6464 ARENA CLEARED All drones destroyed! Score: 2500 PLAY AGAIN",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 13174,
+      "text": "SHIELD ▶ DEMO MODE DEMO AUTOPLAY SCORE: 2500 DRONES: 0 WASD / Arrows Move SPACE Fire SHIFT Boost NEON ARENA 64 FIGHT THE DRONES START GAME SEED: 6464 ARENA CLEARED All drones destroyed! Score: 2500 PLAY AGAIN",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 14274,
+      "text": "SHIELD ▶ DEMO MODE DEMO AUTOPLAY SCORE: 2500 DRONES: 0 WASD / Arrows Move SPACE Fire SHIFT Boost NEON ARENA 64 FIGHT THE DRONES START GAME SEED: 6464 ARENA CLEARED All drones destroyed! Score: 2500 PLAY AGAIN",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 15400,
+      "text": "SHIELD ▶ DEMO MODE DEMO AUTOPLAY SCORE: 2500 DRONES: 0 WASD / Arrows Move SPACE Fire SHIFT Boost NEON ARENA 64 FIGHT THE DRONES START GAME SEED: 6464 ARENA CLEARED All drones destroyed! Score: 2500 PLAY AGAIN",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 16454,
+      "text": "SHIELD ▶ DEMO MODE DEMO AUTOPLAY SCORE: 2500 DRONES: 0 WASD / Arrows Move SPACE Fire SHIFT Boost NEON ARENA 64 FIGHT THE DRONES START GAME SEED: 6464 ARENA CLEARED All drones destroyed! Score: 2500 PLAY AGAIN",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 17522,
+      "text": "SHIELD ▶ DEMO MODE DEMO AUTOPLAY SCORE: 2500 DRONES: 0 WASD / Arrows Move SPACE Fire SHIFT Boost NEON ARENA 64 FIGHT THE DRONES START GAME SEED: 6464 ARENA CLEARED All drones destroyed! Score: 2500 PLAY AGAIN",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 18579,
+      "text": "SHIELD ▶ DEMO MODE DEMO AUTOPLAY SCORE: 2500 DRONES: 0 WASD / Arrows Move SPACE Fire SHIFT Boost NEON ARENA 64 FIGHT THE DRONES START GAME SEED: 6464 ARENA CLEARED All drones destroyed! Score: 2500 PLAY AGAIN",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 19661,
+      "text": "SHIELD ▶ DEMO MODE DEMO AUTOPLAY SCORE: 2500 DRONES: 0 WASD / Arrows Move SPACE Fire SHIFT Boost NEON ARENA 64 FIGHT THE DRONES START GAME SEED: 6464 ARENA CLEARED All drones destroyed! Score: 2500 PLAY AGAIN",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 20748,
+      "text": "SHIELD ▶ DEMO MODE DEMO AUTOPLAY SCORE: 2500 DRONES: 0 WASD / Arrows Move SPACE Fire SHIFT Boost NEON ARENA 64 FIGHT THE DRONES START GAME SEED: 6464 ARENA CLEARED All drones destroyed! Score: 2500 PLAY AGAIN",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 21841,
+      "text": "SHIELD ▶ DEMO MODE DEMO AUTOPLAY SCORE: 2500 DRONES: 0 WASD / Arrows Move SPACE Fire SHIFT Boost NEON ARENA 64 FIGHT THE DRONES START GAME SEED: 6464 ARENA CLEARED All drones destroyed! Score: 2500 PLAY AGAIN",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 22978,
+      "text": "SHIELD ▶ DEMO MODE DEMO AUTOPLAY SCORE: 2500 DRONES: 0 WASD / Arrows Move SPACE Fire SHIFT Boost NEON ARENA 64 FIGHT THE DRONES START GAME SEED: 6464 ARENA CLEARED All drones destroyed! Score: 2500 PLAY AGAIN",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 24090,
+      "text": "SHIELD ▶ DEMO MODE DEMO AUTOPLAY SCORE: 2500 DRONES: 0 WASD / Arrows Move SPACE Fire SHIFT Boost NEON ARENA 64 FIGHT THE DRONES START GAME SEED: 6464 ARENA CLEARED All drones destroyed! Score: 2500 PLAY AGAIN",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 25205,
+      "text": "SHIELD ▶ DEMO MODE DEMO AUTOPLAY SCORE: 2500 DRONES: 0 WASD / Arrows Move SPACE Fire SHIFT Boost NEON ARENA 64 FIGHT THE DRONES START GAME SEED: 6464 ARENA CLEARED All drones destroyed! Score: 2500 PLAY AGAIN",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 26317,
+      "text": "SHIELD ▶ DEMO MODE DEMO AUTOPLAY SCORE: 2500 DRONES: 0 WASD / Arrows Move SPACE Fire SHIFT Boost NEON ARENA 64 FIGHT THE DRONES START GAME SEED: 6464 ARENA CLEARED All drones destroyed! Score: 2500 PLAY AGAIN",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 27347,
+      "text": "SHIELD ▶ DEMO MODE DEMO AUTOPLAY SCORE: 2500 DRONES: 0 WASD / Arrows Move SPACE Fire SHIFT Boost NEON ARENA 64 FIGHT THE DRONES START GAME SEED: 6464 ARENA CLEARED All drones destroyed! Score: 2500 PLAY AGAIN",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 28447,
+      "text": "SHIELD ▶ DEMO MODE DEMO AUTOPLAY SCORE: 2500 DRONES: 0 WASD / Arrows Move SPACE Fire SHIFT Boost NEON ARENA 64 FIGHT THE DRONES START GAME SEED: 6464 ARENA CLEARED All drones destroyed! Score: 2500 PLAY AGAIN",
+      "completionSignal": false,
+      "lapSignal": false
+    }
+  ],
+  "completionSignals": 0,
+  "consoleEvents": [
+    {
+      "at": "2026-07-31T04:29:07.050Z",
+      "type": "debug",
+      "text": "[vite] connecting..."
+    },
+    {
+      "at": "2026-07-31T04:29:07.059Z",
+      "type": "debug",
+      "text": "[vite] connected."
+    },
+    {
+      "at": "2026-07-31T04:29:07.393Z",
+      "type": "log",
+      "text": "[NeonArena] Auto-starting DEMO MODE with seed: 1337"
+    },
+    {
+      "at": "2026-07-31T04:29:08.179Z",
+      "type": "warning",
+      "text": "[.WebGL-0x4400159000]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels"
+    },
+    {
+      "at": "2026-07-31T04:29:08.510Z",
+      "type": "warning",
+      "text": "[.WebGL-0x4400159000]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels"
+    },
+    {
+      "at": "2026-07-31T04:29:08.790Z",
+      "type": "warning",
+      "text": "[.WebGL-0x4400159000]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels"
+    },
+    {
+      "at": "2026-07-31T04:29:09.040Z",
+      "type": "warning",
+      "text": "[.WebGL-0x4400159000]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels (this message will no longer repeat)"
+    },
+    {
+      "at": "2026-07-31T04:29:14.316Z",
+      "type": "log",
+      "text": "[NeonArena] Drone 1 destroyed. Remaining: 2"
+    },
+    {
+      "at": "2026-07-31T04:29:14.982Z",
+      "type": "log",
+      "text": "[NeonArena] Demo mode: OFF"
+    },
+    {
+      "at": "2026-07-31T04:29:17.938Z",
+      "type": "log",
+      "text": "[NeonArena] Demo mode: ON"
+    },
+    {
+      "at": "2026-07-31T04:29:21.008Z",
+      "type": "log",
+      "text": "[NeonArena] Drone 2 destroyed. Remaining: 1"
+    },
+    {
+      "at": "2026-07-31T04:29:24.268Z",
+      "type": "log",
+      "text": "[NeonArena] Drone 0 destroyed. Remaining: 0"
+    },
+    {
+      "at": "2026-07-31T04:29:24.270Z",
+      "type": "log",
+      "text": "[NeonArena] WIN: Arena cleared! Score: 2500 (DEMO MODE)"
+    }
+  ],
+  "pageErrors": []
+}

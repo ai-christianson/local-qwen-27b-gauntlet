@@ -1,0 +1,33 @@
+{
+  "schema": "qwen-gauntlet-video-qa-v2",
+  "video": "gameplay-fixed-step-1080p60.mp4",
+  "contact_sheet": "plain-fixed-contact-sheet.jpg",
+  "container": {
+    "codec": "h264",
+    "width": 1920,
+    "height": 1080,
+    "avg_frame_rate": "60/1",
+    "duration_seconds": 8.000000,
+    "minimum_duration_seconds": 8,
+    "frame_count": 480,
+    "pass": true
+  },
+  "temporal_change": {
+    "method": "1 Hz successive-frame absolute difference; YAVG signal",
+    "samples": 7,
+    "mean": 22.316404286,
+    "max": 101.865000000,
+    "samples_at_or_above_0_5": 7,
+    "samples_at_or_above_1_0": 7,
+    "pass": true
+  },
+  "smooth_motion": {
+    "method": "FFmpeg mpdecimate visually-distinct frame count divided by duration",
+    "distinct_frames": 448,
+    "estimated_distinct_frames_per_second": 56.000000,
+    "minimum_distinct_frames_per_second": 45,
+    "pass": true
+  },
+  "automated_accept": true,
+  "human_contact_sheet_review_required": true
+}

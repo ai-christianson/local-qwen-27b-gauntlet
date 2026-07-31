@@ -1,0 +1,17 @@
+
+
+**Fix applied.** One line added in the `loop()` function (line 431-432):
+
+```javascript
+// Post-race reset: R key when race is finished
+if(keys['KeyR']&&GM==='finished'){keys['KeyR']=false;initGame();GM=cdTargetGM;startTime=clk.getElapsedTime();document.getElementById('rs').style.display='none';showHUD();}
+```
+
+**What it does:** When `GM==='finished'` and `KeyR` is pressed, it calls `initGame()` to reinitialize the kart state, switches `GM` back to `cdTargetGM` (racing or demo), restarts the timer, hides the results overlay, and shows the HUD.
+
+**Verified:**
+- **Before R**: Race Complete screen frozen with identical screenshot hash (matching the critic's evidence)
+- **After R**: Kart back at start, HUD live (LAP 0/1, TIME counting), minimap visible, kart driving along track
+- **In-race R**: Still works (speed resets to 0, GM stays 'racing')
+- **Normal START RACE path**: Still works (countdown → racing → gameplay)
+- **Demo mode**: Still works and correctly resets to 'demo' mode after finish

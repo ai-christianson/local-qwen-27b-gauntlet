@@ -1,0 +1,8 @@
+Apply only the critic's highest-value repair to the running artifact. Preserve
+all passing gates. Run the regression and capture commands, inspect the new
+evidence, and leave the repository in a verified state. If the requested repair
+cannot be completed safely within the budget, record that clearly instead of
+claiming success.
+
+The critic's verbatim verdict is in
+`/home/qg/review/critic-verdict.txt`. Read it first.

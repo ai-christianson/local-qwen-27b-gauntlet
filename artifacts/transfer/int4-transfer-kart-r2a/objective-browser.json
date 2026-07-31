@@ -1,0 +1,312 @@
+{
+  "schema": "qwen-gauntlet-objective-browser-v1",
+  "startedAt": "2026-07-31T03:26:59.405Z",
+  "finishedAt": "2026-07-31T03:27:53.926Z",
+  "url": "http://127.0.0.1:4173/?demo=1&seed=1337",
+  "httpStatus": 200,
+  "initialDom": {
+    "title": "Apex Karts 64",
+    "text": "SPEED 0 km/h TIME 00:00.00 LAP 0 / 1 START DEMO RESET WS Accel/Brake AD Steer SPACE Handbrake",
+    "canvases": [
+      {
+        "width": 1920,
+        "height": 1080,
+        "clientWidth": 1920,
+        "clientHeight": 1080
+      }
+    ],
+    "buttons": [
+      {
+        "text": "START",
+        "disabled": false
+      },
+      {
+        "text": "DEMO",
+        "disabled": false
+      },
+      {
+        "text": "RESET",
+        "disabled": false
+      }
+    ]
+  },
+  "finalDom": {
+    "title": "Apex Karts 64",
+    "text": "SPEED 160 km/h TIME 00:07.80 LAP 1 / 1 START DEMO RESET Time: 00:07.80 GO! WS Accel/Brake AD Steer SPACE Handbrake",
+    "canvases": [
+      {
+        "width": 1920,
+        "height": 1080,
+        "clientWidth": 1920,
+        "clientHeight": 1080
+      }
+    ]
+  },
+  "actions": [
+    {
+      "at": "2026-07-31T03:27:04.254Z",
+      "action": "click",
+      "rule": "demo",
+      "text": "DEMO"
+    },
+    {
+      "at": "2026-07-31T03:27:08.323Z",
+      "action": "fixed-keyboard-sequence",
+      "sequence": "ArrowUp 3.6s; ArrowLeft 0.8s; ArrowRight 0.8s"
+    },
+    {
+      "at": "2026-07-31T03:27:50.029Z",
+      "action": "keypress",
+      "key": "r",
+      "rule": "fixed-reset-probe"
+    }
+  ],
+  "screenshots": [
+    {
+      "filename": "objective-02s.png",
+      "sha256": "11d10bf53a0bf109317e30cbbd4799619f4066d00968a4b999a0742e938974a0",
+      "bytes": 493161
+    },
+    {
+      "filename": "objective-06s.png",
+      "sha256": "68a5fdf0a948a13e08c7ac50de2b7ecf294385d53d687b776ed04ea373850924",
+      "bytes": 768395
+    },
+    {
+      "filename": "objective-16s.png",
+      "sha256": "08ac8c96825930d99aede26f044322cdd84d25966ae1d882289174adabd7bf82",
+      "bytes": 673908
+    },
+    {
+      "filename": "objective-45s.png",
+      "sha256": "3e5ec93718347cb3212d057a8c3fcd4fedb1f242f277b5fffeec720cb1a2a05c",
+      "bytes": 698329
+    },
+    {
+      "filename": "objective-after-reset.png",
+      "sha256": "3e5ec93718347cb3212d057a8c3fcd4fedb1f242f277b5fffeec720cb1a2a05c",
+      "bytes": 698329
+    }
+  ],
+  "distinctScreenshotHashes": 4,
+  "cadence": {
+    "durationMs": 10000,
+    "frames": 97,
+    "fps": 9.7,
+    "intervalMs": {
+      "p50": 116.59999999999854,
+      "p95": 133.29999999999927,
+      "p99": 133.39999999999964,
+      "max": 133.39999999999964
+    }
+  },
+  "textTimeline": [
+    {
+      "elapsedMs": 79,
+      "text": "SPEED 160 km/h TIME 00:03.45 LAP 0 / 1 START DEMO RESET GO! WS Accel/Brake AD Steer SPACE Handbrake",
+      "completionSignal": false,
+      "lapSignal": true
+    },
+    {
+      "elapsedMs": 1146,
+      "text": "SPEED 160 km/h TIME 00:04.10 LAP 0 / 1 START DEMO RESET GO! WS Accel/Brake AD Steer SPACE Handbrake",
+      "completionSignal": false,
+      "lapSignal": true
+    },
+    {
+      "elapsedMs": 2225,
+      "text": "SPEED 160 km/h TIME 00:04.75 LAP 0 / 1 START DEMO RESET GO! WS Accel/Brake AD Steer SPACE Handbrake",
+      "completionSignal": false,
+      "lapSignal": true
+    },
+    {
+      "elapsedMs": 3300,
+      "text": "SPEED 160 km/h TIME 00:05.40 LAP 0 / 1 START DEMO RESET GO! WS Accel/Brake AD Steer SPACE Handbrake",
+      "completionSignal": false,
+      "lapSignal": true
+    },
+    {
+      "elapsedMs": 4379,
+      "text": "SPEED 160 km/h TIME 00:06.05 LAP 0 / 1 START DEMO RESET GO! WS Accel/Brake AD Steer SPACE Handbrake",
+      "completionSignal": false,
+      "lapSignal": true
+    },
+    {
+      "elapsedMs": 5451,
+      "text": "SPEED 160 km/h TIME 00:06.70 LAP 0 / 1 START DEMO RESET GO! WS Accel/Brake AD Steer SPACE Handbrake",
+      "completionSignal": false,
+      "lapSignal": true
+    },
+    {
+      "elapsedMs": 6525,
+      "text": "SPEED 160 km/h TIME 00:07.35 LAP 0 / 1 START DEMO RESET GO! WS Accel/Brake AD Steer SPACE Handbrake",
+      "completionSignal": false,
+      "lapSignal": true
+    },
+    {
+      "elapsedMs": 7604,
+      "text": "SPEED 160 km/h TIME 00:07.80 LAP 1 / 1 START DEMO RESET FINISH! GO! WS Accel/Brake AD Steer SPACE Handbrake",
+      "completionSignal": true,
+      "lapSignal": true
+    },
+    {
+      "elapsedMs": 8644,
+      "text": "SPEED 160 km/h TIME 00:07.80 LAP 1 / 1 START DEMO RESET FINISH! GO! WS Accel/Brake AD Steer SPACE Handbrake",
+      "completionSignal": true,
+      "lapSignal": true
+    },
+    {
+      "elapsedMs": 9677,
+      "text": "SPEED 160 km/h TIME 00:07.80 LAP 1 / 1 START DEMO RESET Time: 00:07.80 GO! WS Accel/Brake AD Steer SPACE Handbrake",
+      "completionSignal": false,
+      "lapSignal": true
+    },
+    {
+      "elapsedMs": 10694,
+      "text": "SPEED 160 km/h TIME 00:07.80 LAP 1 / 1 START DEMO RESET Time: 00:07.80 GO! WS Accel/Brake AD Steer SPACE Handbrake",
+      "completionSignal": false,
+      "lapSignal": true
+    },
+    {
+      "elapsedMs": 11707,
+      "text": "SPEED 160 km/h TIME 00:07.80 LAP 1 / 1 START DEMO RESET Time: 00:07.80 GO! WS Accel/Brake AD Steer SPACE Handbrake",
+      "completionSignal": false,
+      "lapSignal": true
+    },
+    {
+      "elapsedMs": 12722,
+      "text": "SPEED 160 km/h TIME 00:07.80 LAP 1 / 1 START DEMO RESET Time: 00:07.80 GO! WS Accel/Brake AD Steer SPACE Handbrake",
+      "completionSignal": false,
+      "lapSignal": true
+    },
+    {
+      "elapsedMs": 13732,
+      "text": "SPEED 160 km/h TIME 00:07.80 LAP 1 / 1 START DEMO RESET Time: 00:07.80 GO! WS Accel/Brake AD Steer SPACE Handbrake",
+      "completionSignal": false,
+      "lapSignal": true
+    },
+    {
+      "elapsedMs": 14812,
+      "text": "SPEED 160 km/h TIME 00:07.80 LAP 1 / 1 START DEMO RESET Time: 00:07.80 GO! WS Accel/Brake AD Steer SPACE Handbrake",
+      "completionSignal": false,
+      "lapSignal": true
+    },
+    {
+      "elapsedMs": 15843,
+      "text": "SPEED 160 km/h TIME 00:07.80 LAP 1 / 1 START DEMO RESET Time: 00:07.80 GO! WS Accel/Brake AD Steer SPACE Handbrake",
+      "completionSignal": false,
+      "lapSignal": true
+    },
+    {
+      "elapsedMs": 16864,
+      "text": "SPEED 160 km/h TIME 00:07.80 LAP 1 / 1 START DEMO RESET Time: 00:07.80 GO! WS Accel/Brake AD Steer SPACE Handbrake",
+      "completionSignal": false,
+      "lapSignal": true
+    },
+    {
+      "elapsedMs": 17896,
+      "text": "SPEED 160 km/h TIME 00:07.80 LAP 1 / 1 START DEMO RESET Time: 00:07.80 GO! WS Accel/Brake AD Steer SPACE Handbrake",
+      "completionSignal": false,
+      "lapSignal": true
+    },
+    {
+      "elapsedMs": 18906,
+      "text": "SPEED 160 km/h TIME 00:07.80 LAP 1 / 1 START DEMO RESET Time: 00:07.80 GO! WS Accel/Brake AD Steer SPACE Handbrake",
+      "completionSignal": false,
+      "lapSignal": true
+    },
+    {
+      "elapsedMs": 19915,
+      "text": "SPEED 160 km/h TIME 00:07.80 LAP 1 / 1 START DEMO RESET Time: 00:07.80 GO! WS Accel/Brake AD Steer SPACE Handbrake",
+      "completionSignal": false,
+      "lapSignal": true
+    },
+    {
+      "elapsedMs": 20937,
+      "text": "SPEED 160 km/h TIME 00:07.80 LAP 1 / 1 START DEMO RESET Time: 00:07.80 GO! WS Accel/Brake AD Steer SPACE Handbrake",
+      "completionSignal": false,
+      "lapSignal": true
+    },
+    {
+      "elapsedMs": 21969,
+      "text": "SPEED 160 km/h TIME 00:07.80 LAP 1 / 1 START DEMO RESET Time: 00:07.80 GO! WS Accel/Brake AD Steer SPACE Handbrake",
+      "completionSignal": false,
+      "lapSignal": true
+    },
+    {
+      "elapsedMs": 22986,
+      "text": "SPEED 160 km/h TIME 00:07.80 LAP 1 / 1 START DEMO RESET Time: 00:07.80 GO! WS Accel/Brake AD Steer SPACE Handbrake",
+      "completionSignal": false,
+      "lapSignal": true
+    },
+    {
+      "elapsedMs": 23992,
+      "text": "SPEED 160 km/h TIME 00:07.80 LAP 1 / 1 START DEMO RESET Time: 00:07.80 GO! WS Accel/Brake AD Steer SPACE Handbrake",
+      "completionSignal": false,
+      "lapSignal": true
+    },
+    {
+      "elapsedMs": 25001,
+      "text": "SPEED 160 km/h TIME 00:07.80 LAP 1 / 1 START DEMO RESET Time: 00:07.80 GO! WS Accel/Brake AD Steer SPACE Handbrake",
+      "completionSignal": false,
+      "lapSignal": true
+    },
+    {
+      "elapsedMs": 26010,
+      "text": "SPEED 160 km/h TIME 00:07.80 LAP 1 / 1 START DEMO RESET Time: 00:07.80 GO! WS Accel/Brake AD Steer SPACE Handbrake",
+      "completionSignal": false,
+      "lapSignal": true
+    },
+    {
+      "elapsedMs": 27035,
+      "text": "SPEED 160 km/h TIME 00:07.80 LAP 1 / 1 START DEMO RESET Time: 00:07.80 GO! WS Accel/Brake AD Steer SPACE Handbrake",
+      "completionSignal": false,
+      "lapSignal": true
+    },
+    {
+      "elapsedMs": 28055,
+      "text": "SPEED 160 km/h TIME 00:07.80 LAP 1 / 1 START DEMO RESET Time: 00:07.80 GO! WS Accel/Brake AD Steer SPACE Handbrake",
+      "completionSignal": false,
+      "lapSignal": true
+    }
+  ],
+  "completionSignals": 2,
+  "consoleEvents": [
+    {
+      "at": "2026-07-31T03:26:59.531Z",
+      "type": "warning",
+      "text": "Scripts \"build/three.js\" and \"build/three.min.js\" are deprecated with r150+, and will be removed with r160. Please use ES Modules or alternatives: https://threejs.org/docs/index.html#manual/en/introduction/Installation"
+    },
+    {
+      "at": "2026-07-31T03:27:00.247Z",
+      "type": "warning",
+      "text": "[.WebGL-0x14c400157e00]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels"
+    },
+    {
+      "at": "2026-07-31T03:27:00.360Z",
+      "type": "debug",
+      "text": "[vite] connecting..."
+    },
+    {
+      "at": "2026-07-31T03:27:00.362Z",
+      "type": "warning",
+      "text": "[.WebGL-0x14c400157e00]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels"
+    },
+    {
+      "at": "2026-07-31T03:27:00.434Z",
+      "type": "warning",
+      "text": "[.WebGL-0x14c400157e00]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels"
+    },
+    {
+      "at": "2026-07-31T03:27:00.495Z",
+      "type": "warning",
+      "text": "[.WebGL-0x14c400157e00]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels (this message will no longer repeat)"
+    },
+    {
+      "at": "2026-07-31T03:27:00.547Z",
+      "type": "debug",
+      "text": "[vite] connected."
+    }
+  ],
+  "pageErrors": []
+}

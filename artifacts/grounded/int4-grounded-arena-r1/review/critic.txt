@@ -1,0 +1,27 @@
+
+
+**Root Cause: Unresolved `three` Import — Three.js Never Loads**
+
+**Observation (from screenshots):**
+All four objective screenshots show the identical Vite error overlay:
+> `[plugin:vite:import-analysis] Failed to resolve import "three" from "index.html?html-proxy&index=0.js". Does the file exist?`
+> at `/home/qg/workspace/neon-arena-64/index.html:91:24`
+
+The line in question is `import * as THREE from 'three';` inside `<script type="module">`.
+
+**Source evidence:**
+- `index.html` defines an ES **import map** pointing `"three"` to `https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js` (line ~90).
+- The project has **no `vite.config.js`** and **no local `node_modules`** containing `three`.
+- The `.vite/deps/` folder exists (Vite cached something), but resolution still fails at runtime.
+- `server.js` is a plain static file server — it does not process import maps or bundle anything.
+
+**Why the Demo path never completes:**
+The page is being served through Vite's dev server (evidenced by the Vite error overlay and the `html-proxy` URL pattern). Vite's `vite:import-analysis` plugin intercepts bare `import * as THREE from 'three'` and attempts Node-style module resolution. **Import maps are not processed by Vite's build pipeline** — Vite tries to find `three` in `node_modules`, cannot, and throws before any JavaScript executes.
+
+The game never initializes: no scene, no renderer, no game loop, no demo mode activation. The "START GAME" button is purely static HTML with no attached event handler because the `<script type="module">` block failed to execute.
+
+**Distinction:**
+- **Confirmed fact:** Vite's import-analysis plugin cannot resolve `"three"`; the module script never runs.
+- **Inference:** The runtime environment expected a CDN-based import map to work directly, but Vite's dev server intercepts and replaces that resolution strategy. Either the app should be served via the plain static `server.js` (which would let the browser handle the import map natively), or `three` must be installed locally with a proper `vite.config.js`.
+
+**Impact:** Everything downstream (scene creation, game state, demo autoplay, objectives) is blocked by this single import resolution failure.

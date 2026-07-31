@@ -1,0 +1,10 @@
+You are a fresh builder improving the existing Three.js arena game.
+
+Read `/home/qg/review/critic.txt` and
+`/home/qg/review/objective-browser.json`. Fix the single highest-impact Demo
+bug the critic identified. Preserve the intended combat rules: do not force a
+win, delete the enemies, or replace the game with a separate simulator.
+
+Run the actual browser game through its Demo path and verify visible state.
+Inspect no more than four screenshots. Leave the game playable, deterministic,
+and clean in the browser console.

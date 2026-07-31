@@ -1,0 +1,17 @@
+
+
+## Root Cause: **Missing `three` dependency**
+
+**Observation (evidence from screenshots):** All four objective browser runs (02, 06, 16, 45) show the same fatal Vite error overlay:
+> `Failed to resolve import "three" from "index.html"` at line 48, column 24 — the `import * as THREE from 'three';` statement.
+
+**Source confirmation:**
+- `/home/qg/workspace/skybound64/index.html` line 48 contains `import * as THREE from 'three';` (verified by reading the file).
+- `package.json` in the project root does **not** list `three` as a dependency (grep returned no matches).
+- The `node_modules/` directory contains no `three` folder — only packages for `puppeteer`, `ws`, `zod`, and similar utilities.
+
+**Hypothesis:** The project was either set up without running `npm install three`, or `three` was intended to be installed but the install step was skipped (e.g., only the runtime/testing dependencies like puppeteer were installed). This is not a code bug — it's a missing environment/dependency configuration.
+
+**Impact:** Because the `three` module cannot be resolved at build time, Vite aborts the module graph transformation. No JavaScript ever executes, the Three.js scene is never created, and the game is completely non-functional — it never reaches any gameplay state, let alone an intended completion state. Every objective is blocked by this single import failure.
+
+**Resolution:** Run `npm install three` (or `pnpm add three`) to install the dependency, then restart the dev server.

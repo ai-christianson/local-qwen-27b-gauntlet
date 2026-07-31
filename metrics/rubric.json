@@ -1,0 +1,28 @@
+{
+  "version": 1,
+  "total": 100,
+  "dimensions": {
+    "basic_loop_and_correctness": 25,
+    "handling_readability_feedback": 20,
+    "visual_composition_original_direction": 15,
+    "robustness_determinism_console_health": 15,
+    "performance_and_frame_pacing": 10,
+    "multiplayer_exercised": 10,
+    "finish_and_polish": 5
+  },
+  "anchors": {
+    "0-40": "programmer prototype",
+    "40-60": "competent hobby game",
+    "60-75": "good indie prototype",
+    "75-88": "near-professional vertical slice",
+    "88-95": "shipped AAA presentation"
+  },
+  "hard_rules": [
+    "Visual evidence alone cannot earn multiplayer points.",
+    "An uncaught browser exception caps robustness at 5/15.",
+    "A completion state not reached by the fixed script earns no completion credit.",
+    "A repair that breaks a previously passing gate is not an accepted improvement.",
+    "The same model in a fresh context is not an independent judge."
+  ]
+}
+

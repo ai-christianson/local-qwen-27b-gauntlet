@@ -1,0 +1,298 @@
+{
+  "schema": "qwen-gauntlet-objective-browser-v2",
+  "startedAt": "2026-07-31T03:59:50.724Z",
+  "finishedAt": "2026-07-31T04:00:43.408Z",
+  "url": "http://127.0.0.1:4173/?demo=1&seed=1337",
+  "httpStatus": 200,
+  "initialDom": {
+    "title": "Neon Arena 64",
+    "text": "SHIELD ▶ DEMO MODE SCORE: 0 DRONES: 3 WASD / Arrows Move SPACE Fire SHIFT Boost NEON ARENA 64 FIGHT THE DRONES START GAME SEED: 6464",
+    "canvases": [],
+    "buttons": [
+      {
+        "text": "▶ DEMO MODE",
+        "disabled": false
+      },
+      {
+        "text": "START GAME",
+        "disabled": false
+      },
+      {
+        "text": "PLAY AGAIN",
+        "disabled": false
+      }
+    ]
+  },
+  "finalDom": {
+    "title": "Neon Arena 64",
+    "text": "SHIELD ▶ DEMO MODE SCORE: 0 DRONES: 3 WASD / Arrows Move SPACE Fire SHIFT Boost NEON ARENA 64 FIGHT THE DRONES START GAME SEED: 6464",
+    "canvases": []
+  },
+  "actions": [
+    {
+      "at": "2026-07-31T03:59:55.035Z",
+      "action": "click-error",
+      "rule": "demo",
+      "text": "▶ DEMO MODE",
+      "error": "locator.click: Timeout 2000ms exceeded.\nCall log:\n  - waiting for getByRole('button', { name: /demo/i }).first()\n    - locator resolved to <button id=\"demo-btn\">▶ DEMO MODE</button>\n  - attempting click action\n    2 × waiting for element to be visible, enabled and stable\n      - element is visible, enabled and stable\n      - scrolling into view if needed\n      - done scrolling\n      - <vite-error-overlay></vite-error-overlay> intercepts pointer events\n    - retrying click action\n    - waiting 20ms\n    2 × waiting for element to be visible, enabled and stable\n      - element is visible, enabled and stable\n      - scrolling into view if needed\n      - done scrolling\n      - <vite-error-overlay></vite-error-overlay> intercepts pointer events\n    - retrying click action\n      - waiting 100ms\n    4 × waiting for element to be visible, enabled and stable\n      - element is visible, enabled and stable\n      - scrolling into view if needed\n      - done scrolling\n      - <vite-error-overlay></v"
+    },
+    {
+      "at": "2026-07-31T03:59:57.058Z",
+      "action": "click-error",
+      "rule": "start-play-race",
+      "text": "START GAME",
+      "error": "locator.click: Timeout 2000ms exceeded.\nCall log:\n  - waiting for getByRole('button', { name: /start|play|race/i }).first()\n    - locator resolved to <button id=\"title-start\">START GAME</button>\n  - attempting click action\n    2 × waiting for element to be visible, enabled and stable\n      - element is visible, enabled and stable\n      - scrolling into view if needed\n      - done scrolling\n      - <vite-error-overlay></vite-error-overlay> intercepts pointer events\n    - retrying click action\n    - waiting 20ms\n    2 × waiting for element to be visible, enabled and stable\n      - element is visible, enabled and stable\n      - scrolling into view if needed\n      - done scrolling\n      - <vite-error-overlay></vite-error-overlay> intercepts pointer events\n    - retrying click action\n      - waiting 100ms\n    4 × waiting for element to be visible, enabled and stable\n      - element is visible, enabled and stable\n      - scrolling into view if needed\n      - done scrolling\n      - <vite-erro"
+    },
+    {
+      "at": "2026-07-31T03:59:57.065Z",
+      "action": "keypress",
+      "key": "Enter",
+      "rule": "no-visible-start-button"
+    },
+    {
+      "at": "2026-07-31T04:00:00.684Z",
+      "action": "fixed-keyboard-sequence",
+      "sequence": "ArrowUp 3.6s; ArrowLeft 0.8s; ArrowRight 0.8s"
+    },
+    {
+      "at": "2026-07-31T04:00:40.271Z",
+      "action": "keypress",
+      "key": "r",
+      "rule": "fixed-reset-probe"
+    }
+  ],
+  "screenshots": [
+    {
+      "filename": "objective-02s.png",
+      "sha256": "e595281258bdf691e337dec20667c8079e75b5bdbd3139566862ae04246bf655",
+      "bytes": 109024
+    },
+    {
+      "filename": "objective-06s.png",
+      "sha256": "e595281258bdf691e337dec20667c8079e75b5bdbd3139566862ae04246bf655",
+      "bytes": 109024
+    },
+    {
+      "filename": "objective-16s.png",
+      "sha256": "e595281258bdf691e337dec20667c8079e75b5bdbd3139566862ae04246bf655",
+      "bytes": 109024
+    },
+    {
+      "filename": "objective-45s.png",
+      "sha256": "e595281258bdf691e337dec20667c8079e75b5bdbd3139566862ae04246bf655",
+      "bytes": 109024
+    },
+    {
+      "filename": "objective-after-reset.png",
+      "sha256": "e595281258bdf691e337dec20667c8079e75b5bdbd3139566862ae04246bf655",
+      "bytes": 109024
+    }
+  ],
+  "distinctScreenshotHashes": 1,
+  "cadence": {
+    "durationMs": 10000,
+    "frames": 602,
+    "fps": 60.2,
+    "intervalMs": {
+      "p50": 16.69999999999891,
+      "p95": 16.700000000000728,
+      "p99": 16.799999999999272,
+      "max": 16.80000000000291
+    }
+  },
+  "textTimeline": [
+    {
+      "elapsedMs": 6,
+      "text": "SHIELD ▶ DEMO MODE SCORE: 0 DRONES: 3 WASD / Arrows Move SPACE Fire SHIFT Boost NEON ARENA 64 FIGHT THE DRONES START GAME SEED: 6464",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 1014,
+      "text": "SHIELD ▶ DEMO MODE SCORE: 0 DRONES: 3 WASD / Arrows Move SPACE Fire SHIFT Boost NEON ARENA 64 FIGHT THE DRONES START GAME SEED: 6464",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 2022,
+      "text": "SHIELD ▶ DEMO MODE SCORE: 0 DRONES: 3 WASD / Arrows Move SPACE Fire SHIFT Boost NEON ARENA 64 FIGHT THE DRONES START GAME SEED: 6464",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 3028,
+      "text": "SHIELD ▶ DEMO MODE SCORE: 0 DRONES: 3 WASD / Arrows Move SPACE Fire SHIFT Boost NEON ARENA 64 FIGHT THE DRONES START GAME SEED: 6464",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 4034,
+      "text": "SHIELD ▶ DEMO MODE SCORE: 0 DRONES: 3 WASD / Arrows Move SPACE Fire SHIFT Boost NEON ARENA 64 FIGHT THE DRONES START GAME SEED: 6464",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 5042,
+      "text": "SHIELD ▶ DEMO MODE SCORE: 0 DRONES: 3 WASD / Arrows Move SPACE Fire SHIFT Boost NEON ARENA 64 FIGHT THE DRONES START GAME SEED: 6464",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 6048,
+      "text": "SHIELD ▶ DEMO MODE SCORE: 0 DRONES: 3 WASD / Arrows Move SPACE Fire SHIFT Boost NEON ARENA 64 FIGHT THE DRONES START GAME SEED: 6464",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 7056,
+      "text": "SHIELD ▶ DEMO MODE SCORE: 0 DRONES: 3 WASD / Arrows Move SPACE Fire SHIFT Boost NEON ARENA 64 FIGHT THE DRONES START GAME SEED: 6464",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 8064,
+      "text": "SHIELD ▶ DEMO MODE SCORE: 0 DRONES: 3 WASD / Arrows Move SPACE Fire SHIFT Boost NEON ARENA 64 FIGHT THE DRONES START GAME SEED: 6464",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 9072,
+      "text": "SHIELD ▶ DEMO MODE SCORE: 0 DRONES: 3 WASD / Arrows Move SPACE Fire SHIFT Boost NEON ARENA 64 FIGHT THE DRONES START GAME SEED: 6464",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 10079,
+      "text": "SHIELD ▶ DEMO MODE SCORE: 0 DRONES: 3 WASD / Arrows Move SPACE Fire SHIFT Boost NEON ARENA 64 FIGHT THE DRONES START GAME SEED: 6464",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 11088,
+      "text": "SHIELD ▶ DEMO MODE SCORE: 0 DRONES: 3 WASD / Arrows Move SPACE Fire SHIFT Boost NEON ARENA 64 FIGHT THE DRONES START GAME SEED: 6464",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 12095,
+      "text": "SHIELD ▶ DEMO MODE SCORE: 0 DRONES: 3 WASD / Arrows Move SPACE Fire SHIFT Boost NEON ARENA 64 FIGHT THE DRONES START GAME SEED: 6464",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 13103,
+      "text": "SHIELD ▶ DEMO MODE SCORE: 0 DRONES: 3 WASD / Arrows Move SPACE Fire SHIFT Boost NEON ARENA 64 FIGHT THE DRONES START GAME SEED: 6464",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 14111,
+      "text": "SHIELD ▶ DEMO MODE SCORE: 0 DRONES: 3 WASD / Arrows Move SPACE Fire SHIFT Boost NEON ARENA 64 FIGHT THE DRONES START GAME SEED: 6464",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 15119,
+      "text": "SHIELD ▶ DEMO MODE SCORE: 0 DRONES: 3 WASD / Arrows Move SPACE Fire SHIFT Boost NEON ARENA 64 FIGHT THE DRONES START GAME SEED: 6464",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 16128,
+      "text": "SHIELD ▶ DEMO MODE SCORE: 0 DRONES: 3 WASD / Arrows Move SPACE Fire SHIFT Boost NEON ARENA 64 FIGHT THE DRONES START GAME SEED: 6464",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 17136,
+      "text": "SHIELD ▶ DEMO MODE SCORE: 0 DRONES: 3 WASD / Arrows Move SPACE Fire SHIFT Boost NEON ARENA 64 FIGHT THE DRONES START GAME SEED: 6464",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 18144,
+      "text": "SHIELD ▶ DEMO MODE SCORE: 0 DRONES: 3 WASD / Arrows Move SPACE Fire SHIFT Boost NEON ARENA 64 FIGHT THE DRONES START GAME SEED: 6464",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 19152,
+      "text": "SHIELD ▶ DEMO MODE SCORE: 0 DRONES: 3 WASD / Arrows Move SPACE Fire SHIFT Boost NEON ARENA 64 FIGHT THE DRONES START GAME SEED: 6464",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 20159,
+      "text": "SHIELD ▶ DEMO MODE SCORE: 0 DRONES: 3 WASD / Arrows Move SPACE Fire SHIFT Boost NEON ARENA 64 FIGHT THE DRONES START GAME SEED: 6464",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 21166,
+      "text": "SHIELD ▶ DEMO MODE SCORE: 0 DRONES: 3 WASD / Arrows Move SPACE Fire SHIFT Boost NEON ARENA 64 FIGHT THE DRONES START GAME SEED: 6464",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 22173,
+      "text": "SHIELD ▶ DEMO MODE SCORE: 0 DRONES: 3 WASD / Arrows Move SPACE Fire SHIFT Boost NEON ARENA 64 FIGHT THE DRONES START GAME SEED: 6464",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 23180,
+      "text": "SHIELD ▶ DEMO MODE SCORE: 0 DRONES: 3 WASD / Arrows Move SPACE Fire SHIFT Boost NEON ARENA 64 FIGHT THE DRONES START GAME SEED: 6464",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 24188,
+      "text": "SHIELD ▶ DEMO MODE SCORE: 0 DRONES: 3 WASD / Arrows Move SPACE Fire SHIFT Boost NEON ARENA 64 FIGHT THE DRONES START GAME SEED: 6464",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 25195,
+      "text": "SHIELD ▶ DEMO MODE SCORE: 0 DRONES: 3 WASD / Arrows Move SPACE Fire SHIFT Boost NEON ARENA 64 FIGHT THE DRONES START GAME SEED: 6464",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 26203,
+      "text": "SHIELD ▶ DEMO MODE SCORE: 0 DRONES: 3 WASD / Arrows Move SPACE Fire SHIFT Boost NEON ARENA 64 FIGHT THE DRONES START GAME SEED: 6464",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 27211,
+      "text": "SHIELD ▶ DEMO MODE SCORE: 0 DRONES: 3 WASD / Arrows Move SPACE Fire SHIFT Boost NEON ARENA 64 FIGHT THE DRONES START GAME SEED: 6464",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 28219,
+      "text": "SHIELD ▶ DEMO MODE SCORE: 0 DRONES: 3 WASD / Arrows Move SPACE Fire SHIFT Boost NEON ARENA 64 FIGHT THE DRONES START GAME SEED: 6464",
+      "completionSignal": false,
+      "lapSignal": false
+    }
+  ],
+  "completionSignals": 0,
+  "consoleEvents": [
+    {
+      "at": "2026-07-31T03:59:50.793Z",
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 500 (Internal Server Error)"
+    },
+    {
+      "at": "2026-07-31T03:59:50.821Z",
+      "type": "debug",
+      "text": "[vite] connecting..."
+    },
+    {
+      "at": "2026-07-31T03:59:50.833Z",
+      "type": "debug",
+      "text": "[vite] connected."
+    }
+  ],
+  "pageErrors": []
+}

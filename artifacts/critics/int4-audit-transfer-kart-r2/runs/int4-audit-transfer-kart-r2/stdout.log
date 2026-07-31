@@ -1,0 +1,31 @@
+
+
+**Root Cause: Missing `three` dependency — Vite cannot resolve the bare import.**
+
+**Observation (direct evidence from screenshots):**
+
+All five screenshots show an identical Vite error overlay:
+
+> `[plugin:vite:import-analysis] Failed to resolve import "three" from "index.html?html-proxy&index=0.js". Does the file exist?`
+
+Pointing to `/home/qg/workspace/apex-karts-64/index.html:63:43` — the line `import*as THREE from'three';`.
+
+**Source confirmation:**
+
+- `package.json` declares only `"puppeteer"` as a dependency. `three` is **not listed**.
+- `node_modules/` contains no `three/` directory.
+- `index.html` line 63 uses a `<script type="importmap">` that maps `"three"` to a CDN URL (`https://cdn.jsdelivr.net/npm/three@0.164.1/build/three.module.js`).
+
+**Analysis (hypothesis):**
+
+The import map is a **browser-native** ESM feature. It works when the HTML is opened directly in a browser. However, this project is served through **Vite** (evidenced by the `node_modules/.vite/` cache and the Vite error plugin name). Vite's `import-analysis` plugin intercepts `import` statements *before* the browser processes them and attempts its own module resolution against `node_modules/`. Vite does **not** read `<script type="importmap">` elements — it expects bare-specifier imports like `"three"` to resolve to an installed npm package.
+
+Because `three` is absent from `node_modules`, Vite halts compilation and displays the error overlay. **No JavaScript executes. No Three.js scene renders. The game never starts.**
+
+**Impact:**
+
+This is a **total blocker** — the application cannot reach any state beyond the title screen overlay. The Demo path, racing, finishing, or any gameplay is impossible because the runtime never initializes.
+
+**Fix (one line):**
+
+Add `three` to `package.json` dependencies and run `npm install`, so Vite resolves the bare specifier locally.

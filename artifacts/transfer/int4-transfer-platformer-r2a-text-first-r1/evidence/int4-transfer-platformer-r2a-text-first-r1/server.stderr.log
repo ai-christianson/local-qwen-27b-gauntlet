@@ -1,0 +1,86 @@
+
+Unable to parse HTML; parse5 error code non-conforming-doctype
+ at /home/qg/workspace/skybound64/index.html:1:1
+1  |  <!DOCTYPE Checkpoint>=0){
+   |  ^^^^^^^^^^^^^^^^^^^^^
+2  |        const cp=checkpoints[bestCheckpoint];
+3  |        player.position.set(cp.position.x,5,cp.position.z);
+
+Unable to parse HTML; parse5 error code invalid-first-character-of-tag-name
+ at /home/qg/workspace/skybound64/index.html:32:19
+30 |      if(farch[3])farch[3].rotation.y=time*3;
+31 |      if(farch[3])farch[3].position.y=6.5+Math.sin(time*2)*0.3;
+32 |      for(let i=0;i<5&&i<farch.length-3;i++){
+   |                    ^
+33 |        const fl=farch[4+i];
+34 |        if(fl)fl.position.y=5.5+Math.sin(time*6+i*1.2)*0.15;
+
+Unable to parse HTML; parse5 error code unexpected-character-in-unquoted-attribute-value
+ at /home/qg/workspace/skybound64/index.html:46:59
+44 |      gameTime+=dt;
+45 |      const m=Math.floor(gameTime/60);
+46 |      const s=Math.floor(gameTime%60).toString().padStart(2,'0');
+   |                                                            ^
+47 |      document.getElementById('timer').textContent=m+':'+s;
+48 |    }
+
+Unable to parse HTML; parse5 error code unexpected-character-in-attribute-name
+ at /home/qg/workspace/skybound64/index.html:47:29
+45 |      const m=Math.floor(gameTime/60);
+46 |      const s=Math.floor(gameTime%60).toString().padStart(2,'0');
+47 |      document.getElementById('timer').textContent=m+':'+s;
+   |                              ^
+48 |    }
+49 |    updatePlayer(dt);
+
+Unable to parse HTML; parse5 error code unexpected-solidus-in-tag
+ at /home/qg/workspace/skybound64/index.html:56:3
+54 |  
+55 |  init();
+56 |  </script>
+   |    ^
+57 |  </body>
+58 |  </html>
+
+Unable to parse HTML; parse5 error code non-conforming-doctype
+ at /home/qg/workspace/skybound64/index.html:1:1
+1  |  <!DOCTYPE Checkpoint>=0){
+   |  ^^^^^^^^^^^^^^^^^^^^^
+2  |        const cp=checkpoints[bestCheckpoint];
+3  |        player.position.set(cp.position.x,5,cp.position.z);
+
+Unable to parse HTML; parse5 error code invalid-first-character-of-tag-name
+ at /home/qg/workspace/skybound64/index.html:32:19
+30 |      if(farch[3])farch[3].rotation.y=time*3;
+31 |      if(farch[3])farch[3].position.y=6.5+Math.sin(time*2)*0.3;
+32 |      for(let i=0;i<5&&i<farch.length-3;i++){
+   |                    ^
+33 |        const fl=farch[4+i];
+34 |        if(fl)fl.position.y=5.5+Math.sin(time*6+i*1.2)*0.15;
+
+Unable to parse HTML; parse5 error code unexpected-character-in-unquoted-attribute-value
+ at /home/qg/workspace/skybound64/index.html:46:59
+44 |      gameTime+=dt;
+45 |      const m=Math.floor(gameTime/60);
+46 |      const s=Math.floor(gameTime%60).toString().padStart(2,'0');
+   |                                                            ^
+47 |      document.getElementById('timer').textContent=m+':'+s;
+48 |    }
+
+Unable to parse HTML; parse5 error code unexpected-character-in-attribute-name
+ at /home/qg/workspace/skybound64/index.html:47:29
+45 |      const m=Math.floor(gameTime/60);
+46 |      const s=Math.floor(gameTime%60).toString().padStart(2,'0');
+47 |      document.getElementById('timer').textContent=m+':'+s;
+   |                              ^
+48 |    }
+49 |    updatePlayer(dt);
+
+Unable to parse HTML; parse5 error code unexpected-solidus-in-tag
+ at /home/qg/workspace/skybound64/index.html:56:3
+54 |  
+55 |  init();
+56 |  </script>
+   |    ^
+57 |  </body>
+58 |  </html>

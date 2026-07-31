@@ -1,0 +1,5 @@
+Inspect the running game, its fixed screenshots, and its test report. Make the
+single highest-value improvement you can finish without breaking a passing
+gate. Verify the result yourself. Do not add features merely to make the code
+larger.
+

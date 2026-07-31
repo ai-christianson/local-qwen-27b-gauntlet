@@ -1,0 +1,64 @@
+
+
+Now I have the complete source code. Let me analyze the wheel rotation mechanism against the visual evidence.
+
+## Diagnosis: Wheels Are Not Spinning — Euler Angle Order Mismatch
+
+### Visual evidence
+
+Across all frames and the contact strip, the kart's wheels maintain **identical visual orientation** regardless of speed or time. In the contact frames (top row, straight driving), each wheel's dark octagonal profile (8-segment cylinder) shows the same facet alignment frame-to-frame despite the car traveling at significant speed for multiple seconds. At ~20+ units/s for 2-second intervals, wheels should rotate dozens of full turns — there should be no way the spokes align identically unless they are not spinning.
+
+### Source evidence
+
+**Wheel construction** (lines 277–282):
+```js
+var tire=new THREE.Mesh(new THREE.CylinderGeometry(.35,.35,.3,8),wMat);
+tire.rotation.x=Math.PI/2;  // tilts cylinder so its Y-axis → local Z (the axle)
+wg.add(tire);
+var hub=new THREE.Mesh(new THREE.CylinderGeometry(.15,.15,.32,6),hubMat);
+hub.rotation.x=Math.PI/2;   // same tilt
+wg.add(hub);
+```
+
+**Wheel spin** (lines 360–362):
+```js
+// Wheel rotation: spin around local Z (the axle after rotation.x=PI/2)
+var wheelRPM=KS.spd*dt*2.5;
+kw.forEach(function(wg){wg.children.forEach(function(c){c.rotation.z+=wheelRPM;});});
+```
+
+### Root cause
+
+Three.js Euler order defaults to `'XYZ'`, meaning the composed rotation matrix is:
+
+**R = Rx(x) · Ry(y) · Rz(z)**
+
+With `rotation.x = π/2` (tilt) and `rotation.z = θ` (spin), the net matrix is:
+
+**R = Rx(π/2) · Rz(θ)**
+
+This means Rz(θ) — a rotation around the **global Z** axis — is applied *before* Rx(π/2) in matrix order. The result is the wheel tilting but the "spin" component rotating around the wrong axis (global Z, not the tilted axle). The cylinder's axis wanders instead of staying fixed — the wheel does not spin around its axle at all.
+
+The comment is correct in intent ("spin around local Z") but the Euler angle chosen (`rotation.z`) does not achieve this with XYZ order.
+
+### Smallest repair
+
+Change **one character** on line 362: replace `rotation.z` with `rotation.y`.
+
+```js
+// Before (broken):
+c.rotation.z += wheelRPM;
+
+// After (fixed):
+c.rotation.y += wheelRPM;
+```
+
+With `rotation.x = π/2` and `rotation.y = θ`, the matrix is:
+
+**R = Rx(π/2) · Ry(θ)**
+
+Now:
+- A point on the axle `(0, r, 0)` stays at `(0, 0, r)` — the axle is fixed along local Z ✓
+- A point on the tread `(r, 0, 0)` maps to `(r·cos θ, r·sin θ, 0)` — tracing a circle in the XY plane, perpendicular to the axle ✓
+
+This is correct wheel spin around the local Z axle.

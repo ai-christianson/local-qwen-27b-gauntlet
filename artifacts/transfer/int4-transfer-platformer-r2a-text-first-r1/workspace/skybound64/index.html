@@ -1,0 +1,58 @@
+<!DOCTYPE Checkpoint>=0){
+      const cp=checkpoints[bestCheckpoint];
+      player.position.set(cp.position.x,5,cp.position.z);
+    }else{
+      player.position.set(2,3,0);
+    }
+    PS.vel.set(0,0,0);playerAngle=0;
+  }
+  checkCP();
+  checkFinish();
+}
+
+function updateCamera(){
+  const t=new THREE.Vector3(player.position.x,player.position.y+3,player.position.z+8);
+  camera.position.lerp(t,0.08);
+  camera.lookAt(player.position.x,player.position.y+1,player.position.z);
+}
+
+function updateVisuals(time){
+  const bob=Math.abs(Math.sin(time*16))*0.05;
+  if(player.children[0])player.children[0].position.y=0.9+bob;
+  if(armL){armL.position.y=0.85+bob;armR.position.y=0.85+bob}
+  if(legL){legL.position.y=0.25+bob;legR.position.y=0.25+bob}
+  const wc=Math.sin(time*8)*0.3;
+  if(armL){armL.rotation.x=wc;armR.rotation.x=-wc}
+  if(legL){legL.rotation.x=-wc;legR.rotation.x=wc}
+  cpRings.forEach((r,i)=>{r.rotation.y=time*2+i});
+  if(finishZone){
+    const farch=finishZone.children;
+    if(farch[3])farch[3].rotation.y=time*3;
+    if(farch[3])farch[3].position.y=6.5+Math.sin(time*2)*0.3;
+    for(let i=0;i<5&&i<farch.length-3;i++){
+      const fl=farch[4+i];
+      if(fl)fl.position.y=5.5+Math.sin(time*6+i*1.2)*0.15;
+    }
+  }
+}
+
+function animate(){
+  requestAnimationFrame(animate);
+  const dt=Math.min(clock.getDelta(),0.05);
+  const time=clock.getElapsedTime();
+  if(!gameFinished){
+    gameTime+=dt;
+    const m=Math.floor(gameTime/60);
+    const s=Math.floor(gameTime%60).toString().padStart(2,'0');
+    document.getElementById('timer').textContent=m+':'+s;
+  }
+  updatePlayer(dt);
+  updateCamera();
+  updateVisuals(time);
+  renderer.render(scene,camera);
+}
+
+init();
+</script>
+</body>
+</html>

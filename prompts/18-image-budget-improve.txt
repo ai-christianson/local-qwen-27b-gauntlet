@@ -1,0 +1,8 @@
+Improve this Three.js kart microgame.
+
+Run it, fix the highest-impact problems, and verify that the kart can complete
+the basic loop. Keep the existing scope; do not add multiplayer yet.
+
+The model API accepts at most 12 images in one request. Use no more than eight
+image or screenshot tool results in this session. Prefer console output, text
+measurements, and targeted checks over repeatedly reopening images.

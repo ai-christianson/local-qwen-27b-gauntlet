@@ -1,0 +1,112 @@
+{
+  "schema": "qwen-gauntlet-pi-session-summary-v1",
+  "sessionFiles": [
+    "2026-07-31T00-47-51-196Z_019fb5a4-4b9c-778c-b61d-5783a83359ec.jsonl"
+  ],
+  "messages": {
+    "assistant": 78,
+    "user": 1,
+    "toolResult": 77,
+    "other": 0
+  },
+  "providers": {
+    "routerd": 78
+  },
+  "models": {
+    "qwen36-27b": 78
+  },
+  "stopReasons": {
+    "toolUse": 77,
+    "error": 1
+  },
+  "tools": {
+    "bash": 47,
+    "write": 10,
+    "read": 16,
+    "edit": 4
+  },
+  "sourceMutationCalls": [
+    {
+      "timestamp": "2026-07-31T00:48:00.251Z",
+      "tool": "write",
+      "path": "/home/qg/workspace/apex-karts-64/index.html"
+    },
+    {
+      "timestamp": "2026-07-31T00:49:16.106Z",
+      "tool": "write",
+      "path": null
+    },
+    {
+      "timestamp": "2026-07-31T00:56:42.934Z",
+      "tool": "write",
+      "path": "/home/qg/workspace/apex-karts-64/screenshot.test.js"
+    },
+    {
+      "timestamp": "2026-07-31T00:58:53.322Z",
+      "tool": "write",
+      "path": "/home/qg/workspace/apex-karts-64/gameplay.test.js"
+    },
+    {
+      "timestamp": "2026-07-31T01:01:30.077Z",
+      "tool": "write",
+      "path": "/home/qg/workspace/apex-karts-64/index.html"
+    },
+    {
+      "timestamp": "2026-07-31T01:05:19.495Z",
+      "tool": "edit",
+      "path": "/home/qg/workspace/apex-karts-64/index.html"
+    },
+    {
+      "timestamp": "2026-07-31T01:09:08.027Z",
+      "tool": "write",
+      "path": "/home/qg/workspace/apex-karts-64/fulltest.test.js"
+    },
+    {
+      "timestamp": "2026-07-31T01:09:19.671Z",
+      "tool": "write",
+      "path": "/home/qg/workspace/apex-karts-64/playwright.config.js"
+    },
+    {
+      "timestamp": "2026-07-31T01:11:38.247Z",
+      "tool": "write",
+      "path": "/home/qg/workspace/apex-karts-64/debug.test.js"
+    },
+    {
+      "timestamp": "2026-07-31T01:14:19.219Z",
+      "tool": "edit",
+      "path": "/home/qg/workspace/apex-karts-64/index.html"
+    },
+    {
+      "timestamp": "2026-07-31T01:15:57.911Z",
+      "tool": "write",
+      "path": "/home/qg/workspace/apex-karts-64/server.js"
+    },
+    {
+      "timestamp": "2026-07-31T01:20:16.020Z",
+      "tool": "write",
+      "path": "/home/qg/workspace/apex-karts-64/fulldemo.test.js"
+    },
+    {
+      "timestamp": "2026-07-31T01:22:56.795Z",
+      "tool": "edit",
+      "path": "/home/qg/workspace/apex-karts-64/index.html"
+    },
+    {
+      "timestamp": "2026-07-31T01:24:13.623Z",
+      "tool": "edit",
+      "path": "/home/qg/workspace/apex-karts-64/index.html"
+    }
+  ],
+  "usage": {
+    "input": 4150000,
+    "output": 48506,
+    "cacheRead": 0,
+    "cacheWrite": 0,
+    "reasoning": 0,
+    "totalTokens": 4198506
+  },
+  "toolErrors": 3,
+  "firstTimestamp": "2026-07-31T00:47:51.196Z",
+  "lastTimestamp": "2026-07-31T01:27:44.731Z",
+  "malformedLines": 0
+}

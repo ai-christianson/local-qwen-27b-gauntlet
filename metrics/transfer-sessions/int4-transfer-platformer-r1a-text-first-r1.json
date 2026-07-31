@@ -1,0 +1,56 @@
+{
+  "schema": "qwen-gauntlet-pi-session-summary-v1",
+  "sessionFiles": [
+    "2026-07-31T03-35-59-684Z_019fb63e-3bc4-78ee-988f-35111fb0eefe.jsonl"
+  ],
+  "messages": {
+    "assistant": 24,
+    "user": 1,
+    "toolResult": 24,
+    "other": 0
+  },
+  "providers": {
+    "routerd": 24
+  },
+  "models": {
+    "qwen36-27b": 24
+  },
+  "stopReasons": {
+    "toolUse": 24
+  },
+  "tools": {
+    "bash": 20,
+    "read": 1,
+    "write": 2,
+    "edit": 1
+  },
+  "sourceMutationCalls": [
+    {
+      "timestamp": "2026-07-31T03:42:12.802Z",
+      "tool": "write",
+      "path": "/home/qg/workspace/skybound64/test.js"
+    },
+    {
+      "timestamp": "2026-07-31T03:43:30.035Z",
+      "tool": "edit",
+      "path": "/home/qg/workspace/skybound64/test.js"
+    },
+    {
+      "timestamp": "2026-07-31T03:45:21.953Z",
+      "tool": "write",
+      "path": "/home/qg/workspace/skybound64/test.js"
+    }
+  ],
+  "usage": {
+    "input": 448266,
+    "output": 24470,
+    "cacheRead": 0,
+    "cacheWrite": 0,
+    "reasoning": 0,
+    "totalTokens": 472736
+  },
+  "toolErrors": 4,
+  "firstTimestamp": "2026-07-31T03:35:59.684Z",
+  "lastTimestamp": "2026-07-31T03:54:00.680Z",
+  "malformedLines": 0
+}

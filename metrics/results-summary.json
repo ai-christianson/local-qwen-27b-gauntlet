@@ -1,0 +1,105 @@
+{
+  "schema": "qwen-gauntlet-results-summary-v1",
+  "frozen_at": "2026-07-31T01:55:30-04:00",
+  "subject": {
+    "model": "Qwen3.6-27B",
+    "agent": "@earendil-works/pi-coding-agent@0.83.0",
+    "hardware": "24 production RTX 3090s",
+    "source_edit_author": "Qwen through Pi only",
+    "operator": "GPT-5.6 Sol/Codex for protocol, orchestration, capture, independent scoring, and packaging"
+  },
+  "conditions": [
+    {
+      "id": "int4-empty-workspace",
+      "precision": "INT4",
+      "task": "empty-workspace generation",
+      "n": 12,
+      "accepted": 0,
+      "boot_clean": 1,
+      "wilson_95_percent": [0, 0.2425]
+    },
+    {
+      "id": "int4-text-first-repair",
+      "precision": "INT4",
+      "task": "same frozen weak-parent repair",
+      "n": 10,
+      "accepted": 5,
+      "late_passes": 2,
+      "wilson_95_percent": [0.2366, 0.7634]
+    },
+    {
+      "id": "bf16-empty-workspace",
+      "precision": "official BF16",
+      "task": "empty-workspace generation",
+      "n": 2,
+      "accepted": 0,
+      "boot_clean": 1
+    },
+    {
+      "id": "bf16-text-first-repair",
+      "precision": "official BF16",
+      "task": "same frozen weak-parent repair",
+      "n": 2,
+      "accepted": 0,
+      "provider_reported_tokens_total": 2884016
+    }
+  ],
+  "grounded_handoffs": {
+    "n": 4,
+    "passes": 2,
+    "partials": 1,
+    "failures": 1
+  },
+  "temporal_critics": {
+    "plain": {
+      "n": 2,
+      "correct_primary_wheel_axis_diagnoses": 0,
+      "notes": "one detected the wobble but proposed X; one prioritized a camera defect"
+    },
+    "public_skill_available": {
+      "n": 2,
+      "correct_primary_wheel_axis_diagnoses": 2,
+      "full_skill_reads": 0,
+      "causal_claim": false
+    }
+  },
+  "temporal_builder": {
+    "run": "int4-wheel-builder-r1a",
+    "accepted_narrow_mechanism_repair": true,
+    "source_mutation_calls": 1,
+    "provider_reported_tokens": 493955,
+    "wall_minutes": 4.49,
+    "completion_samples": 25,
+    "completion_time_simulated_seconds": 17.98,
+    "page_errors": 0,
+    "console_errors": 0,
+    "known_remaining_defect": "pre-existing post-finish reset overlay remains"
+  },
+  "transfer": {
+    "distinct_genres": 3,
+    "kart_baseline_passes": "1/2",
+    "arena_baseline_passes": "0/2",
+    "platformer_baseline_passes": "0/2",
+    "multiplayer_gate_reached": false,
+    "aaa_like_claim_supported": false
+  },
+  "capture": {
+    "format": "1920x1080 H.264 constant 60 fps",
+    "mode": "offline fixed-step virtual time",
+    "realtime_60fps_claim": false,
+    "strongest_unique_source_frames": ["480/480", "480/480", "1200/1200"]
+  },
+  "fabric": {
+    "max_active_cards": 22,
+    "active_threshold_percent": 70,
+    "max_scheduler_running": 13,
+    "max_scheduler_queued": 0,
+    "admission_rejections_delta": 0,
+    "max_observed_temperature_c": 81
+  },
+  "verdict": {
+    "bounded_verified_repairs": true,
+    "autonomous_aaa_like_game": false,
+    "best_reusable_lesson": "Compact observations, diverse grounded critics, and executable selection were more useful than raw loop count."
+  }
+}

@@ -1,0 +1,310 @@
+{
+  "schema": "qwen-gauntlet-objective-browser-v2",
+  "startedAt": "2026-07-31T03:37:55.318Z",
+  "finishedAt": "2026-07-31T03:38:56.456Z",
+  "url": "http://127.0.0.1:4175/?demo=1&seed=1337",
+  "httpStatus": 200,
+  "initialDom": {
+    "title": "Neon Arena 64",
+    "text": "HP ENEMIES:3 SCORE:0 ▶ DEMO WASD/ARROWS=MOVE SPACE/FIRE=SHOOT MOUSE=AIM NEON ARENA 64 Destroy all drones to win! START GAME",
+    "canvases": [
+      {
+        "width": 1920,
+        "height": 1080,
+        "clientWidth": 1920,
+        "clientHeight": 1080
+      }
+    ],
+    "buttons": [
+      {
+        "text": "▶ DEMO",
+        "disabled": false
+      },
+      {
+        "text": "START GAME",
+        "disabled": false
+      }
+    ]
+  },
+  "finalDom": {
+    "title": "Neon Arena 64",
+    "text": "HP ENEMIES:3 SCORE:0 ▶ DEMO WASD/ARROWS=MOVE SPACE/FIRE=SHOOT MOUSE=AIM",
+    "canvases": [
+      {
+        "width": 1920,
+        "height": 1080,
+        "clientWidth": 1920,
+        "clientHeight": 1080
+      }
+    ]
+  },
+  "actions": [
+    {
+      "at": "2026-07-31T03:38:01.930Z",
+      "action": "click-error",
+      "rule": "demo",
+      "text": "▶ DEMO",
+      "error": "locator.click: Timeout 2000ms exceeded.\nCall log:\n  - waiting for getByRole('button', { name: /demo/i }).first()\n    - locator resolved to <button id=\"demo-btn\">▶ DEMO</button>\n  - attempting click action\n    2 × waiting for element to be visible, enabled and stable\n      - element is visible, enabled and stable\n      - scrolling into view if needed\n      - done scrolling\n      - <div id=\"message-screen\">…</div> intercepts pointer events\n    - retrying click action\n    - waiting 20ms\n    - waiting for element to be visible, enabled and stable\n"
+    },
+    {
+      "at": "2026-07-31T03:38:03.771Z",
+      "action": "click",
+      "rule": "start-play-race",
+      "text": "START GAME"
+    },
+    {
+      "at": "2026-07-31T03:38:06.388Z",
+      "action": "click",
+      "rule": "demo-after-menu-unblock",
+      "text": "▶ DEMO"
+    },
+    {
+      "at": "2026-07-31T03:38:10.385Z",
+      "action": "fixed-keyboard-sequence",
+      "sequence": "ArrowUp 3.6s; ArrowLeft 0.8s; ArrowRight 0.8s"
+    },
+    {
+      "at": "2026-07-31T03:38:52.601Z",
+      "action": "keypress",
+      "key": "r",
+      "rule": "fixed-reset-probe"
+    }
+  ],
+  "screenshots": [
+    {
+      "filename": "objective-02s.png",
+      "sha256": "eb63a9c023bfc710c3c2198520c14d27e4c1ab7112e8657034f7e981623820cb",
+      "bytes": 163281
+    },
+    {
+      "filename": "objective-06s.png",
+      "sha256": "04299548deced2b97f7c19e53766a6f1e7f75d0baa172a604f189e55780a5771",
+      "bytes": 214472
+    },
+    {
+      "filename": "objective-16s.png",
+      "sha256": "05786f62e41bc1e62dd54df462c8a6db1c45af56b315144885ccf3e36842d03f",
+      "bytes": 169080
+    },
+    {
+      "filename": "objective-45s.png",
+      "sha256": "8f33231ec890a265d176a8bc58e4d0a3bbec5fa1b33aaf2f77d9839d93316f38",
+      "bytes": 162223
+    },
+    {
+      "filename": "objective-after-reset.png",
+      "sha256": "332dbd2638649db116199168a419818b08d0c42247b5c975311984f89a17eec9",
+      "bytes": 129360
+    }
+  ],
+  "distinctScreenshotHashes": 5,
+  "cadence": {
+    "durationMs": 10000,
+    "frames": 73,
+    "fps": 7.3,
+    "intervalMs": {
+      "p50": 133.39999999999782,
+      "p95": 150,
+      "p99": 150.10000000000218,
+      "max": 150.10000000000218
+    }
+  },
+  "textTimeline": [
+    {
+      "elapsedMs": 134,
+      "text": "HP ENEMIES:3 SCORE:0 ▶ DEMO WASD/ARROWS=MOVE SPACE/FIRE=SHOOT MOUSE=AIM",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 1208,
+      "text": "HP ENEMIES:3 SCORE:0 ▶ DEMO WASD/ARROWS=MOVE SPACE/FIRE=SHOOT MOUSE=AIM",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 2305,
+      "text": "HP ENEMIES:3 SCORE:0 ▶ DEMO WASD/ARROWS=MOVE SPACE/FIRE=SHOOT MOUSE=AIM",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 3391,
+      "text": "HP ENEMIES:3 SCORE:0 ▶ DEMO WASD/ARROWS=MOVE SPACE/FIRE=SHOOT MOUSE=AIM",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 4461,
+      "text": "HP ENEMIES:3 SCORE:0 ▶ DEMO WASD/ARROWS=MOVE SPACE/FIRE=SHOOT MOUSE=AIM",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 5534,
+      "text": "HP ENEMIES:3 SCORE:0 ▶ DEMO WASD/ARROWS=MOVE SPACE/FIRE=SHOOT MOUSE=AIM",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 6608,
+      "text": "HP ENEMIES:3 SCORE:0 ▶ DEMO WASD/ARROWS=MOVE SPACE/FIRE=SHOOT MOUSE=AIM",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 7681,
+      "text": "HP ENEMIES:3 SCORE:0 ▶ DEMO WASD/ARROWS=MOVE SPACE/FIRE=SHOOT MOUSE=AIM",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 8757,
+      "text": "HP ENEMIES:3 SCORE:0 ▶ DEMO WASD/ARROWS=MOVE SPACE/FIRE=SHOOT MOUSE=AIM",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 9841,
+      "text": "HP ENEMIES:3 SCORE:0 ▶ DEMO WASD/ARROWS=MOVE SPACE/FIRE=SHOOT MOUSE=AIM",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 10928,
+      "text": "HP ENEMIES:3 SCORE:0 ▶ DEMO WASD/ARROWS=MOVE SPACE/FIRE=SHOOT MOUSE=AIM",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 12016,
+      "text": "HP ENEMIES:3 SCORE:0 ▶ DEMO WASD/ARROWS=MOVE SPACE/FIRE=SHOOT MOUSE=AIM",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 13120,
+      "text": "HP ENEMIES:3 SCORE:0 ▶ DEMO WASD/ARROWS=MOVE SPACE/FIRE=SHOOT MOUSE=AIM",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 14213,
+      "text": "HP ENEMIES:3 SCORE:0 ▶ DEMO WASD/ARROWS=MOVE SPACE/FIRE=SHOOT MOUSE=AIM",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 15306,
+      "text": "HP ENEMIES:3 SCORE:0 ▶ DEMO WASD/ARROWS=MOVE SPACE/FIRE=SHOOT MOUSE=AIM",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 16399,
+      "text": "HP ENEMIES:3 SCORE:0 ▶ DEMO WASD/ARROWS=MOVE SPACE/FIRE=SHOOT MOUSE=AIM",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 17487,
+      "text": "HP ENEMIES:3 SCORE:0 ▶ DEMO WASD/ARROWS=MOVE SPACE/FIRE=SHOOT MOUSE=AIM",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 18557,
+      "text": "HP ENEMIES:3 SCORE:0 ▶ DEMO WASD/ARROWS=MOVE SPACE/FIRE=SHOOT MOUSE=AIM",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 19632,
+      "text": "HP ENEMIES:3 SCORE:0 ▶ DEMO WASD/ARROWS=MOVE SPACE/FIRE=SHOOT MOUSE=AIM",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 20706,
+      "text": "HP ENEMIES:3 SCORE:0 ▶ DEMO WASD/ARROWS=MOVE SPACE/FIRE=SHOOT MOUSE=AIM",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 21791,
+      "text": "HP ENEMIES:3 SCORE:0 ▶ DEMO WASD/ARROWS=MOVE SPACE/FIRE=SHOOT MOUSE=AIM",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 22906,
+      "text": "HP ENEMIES:3 SCORE:0 ▶ DEMO WASD/ARROWS=MOVE SPACE/FIRE=SHOOT MOUSE=AIM",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 24044,
+      "text": "HP ENEMIES:3 SCORE:0 ▶ DEMO WASD/ARROWS=MOVE SPACE/FIRE=SHOOT MOUSE=AIM",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 25175,
+      "text": "HP ENEMIES:3 SCORE:0 ▶ DEMO WASD/ARROWS=MOVE SPACE/FIRE=SHOOT MOUSE=AIM",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 26274,
+      "text": "HP ENEMIES:3 SCORE:0 ▶ DEMO WASD/ARROWS=MOVE SPACE/FIRE=SHOOT MOUSE=AIM",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 27341,
+      "text": "HP ENEMIES:3 SCORE:0 ▶ DEMO WASD/ARROWS=MOVE SPACE/FIRE=SHOOT MOUSE=AIM",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 28386,
+      "text": "HP ENEMIES:3 SCORE:0 ▶ DEMO WASD/ARROWS=MOVE SPACE/FIRE=SHOOT MOUSE=AIM",
+      "completionSignal": false,
+      "lapSignal": false
+    }
+  ],
+  "completionSignals": 0,
+  "consoleEvents": [
+    {
+      "at": "2026-07-31T03:37:55.987Z",
+      "type": "warning",
+      "text": "[.WebGL-0x22cc0014be00]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels"
+    },
+    {
+      "at": "2026-07-31T03:37:56.119Z",
+      "type": "debug",
+      "text": "[vite] connecting..."
+    },
+    {
+      "at": "2026-07-31T03:37:56.120Z",
+      "type": "warning",
+      "text": "[.WebGL-0x22cc0014be00]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels"
+    },
+    {
+      "at": "2026-07-31T03:37:56.247Z",
+      "type": "warning",
+      "text": "[.WebGL-0x22cc0014be00]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels"
+    },
+    {
+      "at": "2026-07-31T03:37:56.369Z",
+      "type": "warning",
+      "text": "[.WebGL-0x22cc0014be00]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels (this message will no longer repeat)"
+    },
+    {
+      "at": "2026-07-31T03:37:56.495Z",
+      "type": "debug",
+      "text": "[vite] connected."
+    }
+  ],
+  "pageErrors": []
+}

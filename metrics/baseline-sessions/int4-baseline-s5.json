@@ -1,0 +1,101 @@
+{
+  "schema": "qwen-gauntlet-pi-session-summary-v1",
+  "sessionFiles": [
+    "2026-07-31T00-37-55-703Z_019fb59b-3577-7cf5-81af-305b36267caf.jsonl"
+  ],
+  "messages": {
+    "assistant": 52,
+    "user": 1,
+    "toolResult": 52,
+    "other": 0
+  },
+  "providers": {
+    "routerd": 52
+  },
+  "models": {
+    "qwen36-27b": 52
+  },
+  "stopReasons": {
+    "toolUse": 52
+  },
+  "tools": {
+    "bash": 34,
+    "write": 9,
+    "edit": 3,
+    "read": 6
+  },
+  "sourceMutationCalls": [
+    {
+      "timestamp": "2026-07-31T00:38:00.773Z",
+      "tool": "write",
+      "path": "/home/qg/workspace/apex-karts-64/index.html"
+    },
+    {
+      "timestamp": "2026-07-31T00:39:13.730Z",
+      "tool": "write",
+      "path": "/home/qg/workspace/apex-karts-64/index.html"
+    },
+    {
+      "timestamp": "2026-07-31T00:41:14.732Z",
+      "tool": "write",
+      "path": "/home/qg/workspace/apex-karts-64/index.html"
+    },
+    {
+      "timestamp": "2026-07-31T00:41:39.098Z",
+      "tool": "write",
+      "path": "/home/qg/workspace/apex-karts-64/game.js"
+    },
+    {
+      "timestamp": "2026-07-31T00:42:47.774Z",
+      "tool": "edit",
+      "path": "/home/qg/workspace/apex-karts-64/game.js"
+    },
+    {
+      "timestamp": "2026-07-31T00:46:26.723Z",
+      "tool": "write",
+      "path": "/home/qg/workspace/apex-karts-64/test.spec.js"
+    },
+    {
+      "timestamp": "2026-07-31T00:46:42.777Z",
+      "tool": "write",
+      "path": "/home/qg/workspace/apex-karts-64/playwright.config.js"
+    },
+    {
+      "timestamp": "2026-07-31T00:47:15.644Z",
+      "tool": "write",
+      "path": "/home/qg/workspace/apex-karts-64/screenshot-test.js"
+    },
+    {
+      "timestamp": "2026-07-31T00:47:41.207Z",
+      "tool": "write",
+      "path": "/home/qg/workspace/apex-karts-64/test-runner.spec.js"
+    },
+    {
+      "timestamp": "2026-07-31T00:56:24.164Z",
+      "tool": "edit",
+      "path": null
+    },
+    {
+      "timestamp": "2026-07-31T00:57:07.690Z",
+      "tool": "edit",
+      "path": null
+    },
+    {
+      "timestamp": "2026-07-31T01:08:35.617Z",
+      "tool": "write",
+      "path": null
+    }
+  ],
+  "usage": {
+    "input": 2233865,
+    "output": 55498,
+    "cacheRead": 0,
+    "cacheWrite": 0,
+    "reasoning": 0,
+    "totalTokens": 2289363
+  },
+  "toolErrors": 10,
+  "firstTimestamp": "2026-07-31T00:37:55.703Z",
+  "lastTimestamp": "2026-07-31T01:13:07.783Z",
+  "malformedLines": 0
+}

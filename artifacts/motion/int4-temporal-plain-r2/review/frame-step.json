@@ -1,0 +1,88 @@
+{
+  "schema": "qwen-gauntlet-fixed-step-capture-v3",
+  "disclosure": "Controller-side deterministic Chrome virtual-time capture; game source unchanged. This is not a real-time performance measurement.",
+  "startedAt": "2026-07-31T04:45:08.774Z",
+  "finishedAt": "2026-07-31T05:20:58.639Z",
+  "url": "http://127.0.0.1:4174/?demo=1&seed=1337",
+  "httpStatus": 200,
+  "fps": 60,
+  "frameBudgetMs": 16.666666666666668,
+  "requestedDurationSeconds": 10,
+  "capturedFrames": 480,
+  "encodedDurationSeconds": 8,
+  "distinctFrameHashes": 474,
+  "completionFrame": 420,
+  "actions": [
+    {
+      "kind": "click",
+      "rule": "demo",
+      "text": "DEMO MODE"
+    }
+  ],
+  "sampledDom": [
+    {
+      "frame": 0,
+      "virtualTimeMs": 16.666666666666668,
+      "text": "LAP 0/1 TIME 0:00.00 SPEED LAP PROGRESS",
+      "completionSignal": false
+    },
+    {
+      "frame": 60,
+      "virtualTimeMs": 1016.6666666666667,
+      "text": "LAP 0/1 TIME 0:01.00 SPEED LAP PROGRESS",
+      "completionSignal": false
+    },
+    {
+      "frame": 120,
+      "virtualTimeMs": 2016.6666666666667,
+      "text": "LAP 0/1 TIME 0:02.00 SPEED LAP PROGRESS",
+      "completionSignal": false
+    },
+    {
+      "frame": 180,
+      "virtualTimeMs": 3016.666666666667,
+      "text": "LAP 0/1 TIME 0:03.00 SPEED LAP PROGRESS",
+      "completionSignal": false
+    },
+    {
+      "frame": 240,
+      "virtualTimeMs": 4016.666666666667,
+      "text": "LAP 0/1 TIME 0:04.00 SPEED LAP PROGRESS",
+      "completionSignal": false
+    },
+    {
+      "frame": 300,
+      "virtualTimeMs": 5016.666666666667,
+      "text": "LAP 0/1 TIME 0:05.00 SPEED LAP PROGRESS",
+      "completionSignal": false
+    },
+    {
+      "frame": 360,
+      "virtualTimeMs": 6016.666666666667,
+      "text": "LAP 0/1 TIME 0:06.00 SPEED LAP PROGRESS",
+      "completionSignal": false
+    },
+    {
+      "frame": 420,
+      "virtualTimeMs": 7016.666666666667,
+      "text": "« DRIFT » 🏁 RACE COMPLETE! Time: 0:06.63 Top Speed: 101 km/h MAIN MENU REPLAY",
+      "completionSignal": true
+    }
+  ],
+  "consoleEvents": [
+    {
+      "frame": 0,
+      "type": "debug",
+      "text": "[vite] connecting..."
+    },
+    {
+      "frame": 0,
+      "type": "debug",
+      "text": "[vite] connected."
+    }
+  ],
+  "pageErrors": [],
+  "wallCaptureSeconds": 2149.865,
+  "firstFrameSha256": "46af0da642ac84d178229550e0594ee29af07de951b0a7248aeef7a342fddcc1",
+  "lastFrameSha256": "832d0812ec3b3b84b622fe604cc43f233a6bb84459d9aac2634a48c3d6f48914"
+}

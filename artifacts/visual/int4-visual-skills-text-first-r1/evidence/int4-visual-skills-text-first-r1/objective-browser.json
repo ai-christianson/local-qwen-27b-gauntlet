@@ -1,0 +1,303 @@
+{
+  "schema": "qwen-gauntlet-objective-browser-v2",
+  "startedAt": "2026-07-31T04:21:00.793Z",
+  "finishedAt": "2026-07-31T04:21:49.719Z",
+  "url": "http://127.0.0.1:4173/?demo=1&seed=1337",
+  "httpStatus": 200,
+  "initialDom": {
+    "title": "Apex Karts 64",
+    "text": "APEX KARTS 64 CHALLENGER'S CIRCUIT START RACE DEMO MODE W/UP Gas S/DN Brake A/LEFT D/RIGHT Steer SPACE Drift R Reset",
+    "canvases": [
+      {
+        "width": 300,
+        "height": 150,
+        "clientWidth": 0,
+        "clientHeight": 0
+      }
+    ],
+    "buttons": [
+      {
+        "text": "START RACE",
+        "disabled": false
+      },
+      {
+        "text": "DEMO MODE",
+        "disabled": false
+      },
+      {
+        "text": "Main Menu",
+        "disabled": false
+      },
+      {
+        "text": "Replay",
+        "disabled": false
+      }
+    ]
+  },
+  "finalDom": {
+    "title": "Apex Karts 64",
+    "text": "APEX KARTS 64 CHALLENGER'S CIRCUIT START RACE DEMO MODE W/UP Gas S/DN Brake A/LEFT D/RIGHT Steer SPACE Drift R Reset",
+    "canvases": [
+      {
+        "width": 300,
+        "height": 150,
+        "clientWidth": 0,
+        "clientHeight": 0
+      }
+    ]
+  },
+  "actions": [
+    {
+      "at": "2026-07-31T04:21:03.382Z",
+      "action": "click",
+      "rule": "demo",
+      "text": "DEMO MODE"
+    },
+    {
+      "at": "2026-07-31T04:21:07.009Z",
+      "action": "fixed-keyboard-sequence",
+      "sequence": "ArrowUp 3.6s; ArrowLeft 0.8s; ArrowRight 0.8s"
+    },
+    {
+      "at": "2026-07-31T04:21:46.575Z",
+      "action": "keypress",
+      "key": "r",
+      "rule": "fixed-reset-probe"
+    }
+  ],
+  "screenshots": [
+    {
+      "filename": "objective-02s.png",
+      "sha256": "26c28fb7ae881499866f8c46fb4b256e4532e99aee2701107cef4433a5396f9c",
+      "bytes": 78248
+    },
+    {
+      "filename": "objective-06s.png",
+      "sha256": "1818308a0867d44f9c86b446556d4480f444f3d518890695f5da5ae152648d24",
+      "bytes": 86473
+    },
+    {
+      "filename": "objective-16s.png",
+      "sha256": "5f17f09c9dfdf5e5a0a4543caf1a0212fe76ad493c0a312578ae1792235ab85d",
+      "bytes": 86413
+    },
+    {
+      "filename": "objective-45s.png",
+      "sha256": "bb36814fd4b345d16454a8302bb0fe4ed3ee5957de756ece96e783b6c530986c",
+      "bytes": 86126
+    },
+    {
+      "filename": "objective-after-reset.png",
+      "sha256": "4fbd1483e5fad00b7f1fb225dc3c0c3a302ddbf1fa7b856ec07de24647f334c8",
+      "bytes": 84982
+    }
+  ],
+  "distinctScreenshotHashes": 5,
+  "cadence": {
+    "durationMs": 10000,
+    "frames": 601,
+    "fps": 60.1,
+    "intervalMs": {
+      "p50": 16.69999999999891,
+      "p95": 16.799999999999272,
+      "p99": 16.80000000000109,
+      "max": 16.80000000000109
+    }
+  },
+  "textTimeline": [
+    {
+      "elapsedMs": 11,
+      "text": "APEX KARTS 64 CHALLENGER'S CIRCUIT START RACE DEMO MODE W/UP Gas S/DN Brake A/LEFT D/RIGHT Steer SPACE Drift R Reset",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 1020,
+      "text": "APEX KARTS 64 CHALLENGER'S CIRCUIT START RACE DEMO MODE W/UP Gas S/DN Brake A/LEFT D/RIGHT Steer SPACE Drift R Reset",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 2029,
+      "text": "APEX KARTS 64 CHALLENGER'S CIRCUIT START RACE DEMO MODE W/UP Gas S/DN Brake A/LEFT D/RIGHT Steer SPACE Drift R Reset",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 3036,
+      "text": "APEX KARTS 64 CHALLENGER'S CIRCUIT START RACE DEMO MODE W/UP Gas S/DN Brake A/LEFT D/RIGHT Steer SPACE Drift R Reset",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 4046,
+      "text": "APEX KARTS 64 CHALLENGER'S CIRCUIT START RACE DEMO MODE W/UP Gas S/DN Brake A/LEFT D/RIGHT Steer SPACE Drift R Reset",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 5053,
+      "text": "APEX KARTS 64 CHALLENGER'S CIRCUIT START RACE DEMO MODE W/UP Gas S/DN Brake A/LEFT D/RIGHT Steer SPACE Drift R Reset",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 6061,
+      "text": "APEX KARTS 64 CHALLENGER'S CIRCUIT START RACE DEMO MODE W/UP Gas S/DN Brake A/LEFT D/RIGHT Steer SPACE Drift R Reset",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 7069,
+      "text": "APEX KARTS 64 CHALLENGER'S CIRCUIT START RACE DEMO MODE W/UP Gas S/DN Brake A/LEFT D/RIGHT Steer SPACE Drift R Reset",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 8075,
+      "text": "APEX KARTS 64 CHALLENGER'S CIRCUIT START RACE DEMO MODE W/UP Gas S/DN Brake A/LEFT D/RIGHT Steer SPACE Drift R Reset",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 9081,
+      "text": "APEX KARTS 64 CHALLENGER'S CIRCUIT START RACE DEMO MODE W/UP Gas S/DN Brake A/LEFT D/RIGHT Steer SPACE Drift R Reset",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 10086,
+      "text": "APEX KARTS 64 CHALLENGER'S CIRCUIT START RACE DEMO MODE W/UP Gas S/DN Brake A/LEFT D/RIGHT Steer SPACE Drift R Reset",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 11092,
+      "text": "APEX KARTS 64 CHALLENGER'S CIRCUIT START RACE DEMO MODE W/UP Gas S/DN Brake A/LEFT D/RIGHT Steer SPACE Drift R Reset",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 12099,
+      "text": "APEX KARTS 64 CHALLENGER'S CIRCUIT START RACE DEMO MODE W/UP Gas S/DN Brake A/LEFT D/RIGHT Steer SPACE Drift R Reset",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 13105,
+      "text": "APEX KARTS 64 CHALLENGER'S CIRCUIT START RACE DEMO MODE W/UP Gas S/DN Brake A/LEFT D/RIGHT Steer SPACE Drift R Reset",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 14111,
+      "text": "APEX KARTS 64 CHALLENGER'S CIRCUIT START RACE DEMO MODE W/UP Gas S/DN Brake A/LEFT D/RIGHT Steer SPACE Drift R Reset",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 15119,
+      "text": "APEX KARTS 64 CHALLENGER'S CIRCUIT START RACE DEMO MODE W/UP Gas S/DN Brake A/LEFT D/RIGHT Steer SPACE Drift R Reset",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 16126,
+      "text": "APEX KARTS 64 CHALLENGER'S CIRCUIT START RACE DEMO MODE W/UP Gas S/DN Brake A/LEFT D/RIGHT Steer SPACE Drift R Reset",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 17132,
+      "text": "APEX KARTS 64 CHALLENGER'S CIRCUIT START RACE DEMO MODE W/UP Gas S/DN Brake A/LEFT D/RIGHT Steer SPACE Drift R Reset",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 18139,
+      "text": "APEX KARTS 64 CHALLENGER'S CIRCUIT START RACE DEMO MODE W/UP Gas S/DN Brake A/LEFT D/RIGHT Steer SPACE Drift R Reset",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 19144,
+      "text": "APEX KARTS 64 CHALLENGER'S CIRCUIT START RACE DEMO MODE W/UP Gas S/DN Brake A/LEFT D/RIGHT Steer SPACE Drift R Reset",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 20151,
+      "text": "APEX KARTS 64 CHALLENGER'S CIRCUIT START RACE DEMO MODE W/UP Gas S/DN Brake A/LEFT D/RIGHT Steer SPACE Drift R Reset",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 21156,
+      "text": "APEX KARTS 64 CHALLENGER'S CIRCUIT START RACE DEMO MODE W/UP Gas S/DN Brake A/LEFT D/RIGHT Steer SPACE Drift R Reset",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 22161,
+      "text": "APEX KARTS 64 CHALLENGER'S CIRCUIT START RACE DEMO MODE W/UP Gas S/DN Brake A/LEFT D/RIGHT Steer SPACE Drift R Reset",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 23166,
+      "text": "APEX KARTS 64 CHALLENGER'S CIRCUIT START RACE DEMO MODE W/UP Gas S/DN Brake A/LEFT D/RIGHT Steer SPACE Drift R Reset",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 24172,
+      "text": "APEX KARTS 64 CHALLENGER'S CIRCUIT START RACE DEMO MODE W/UP Gas S/DN Brake A/LEFT D/RIGHT Steer SPACE Drift R Reset",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 25177,
+      "text": "APEX KARTS 64 CHALLENGER'S CIRCUIT START RACE DEMO MODE W/UP Gas S/DN Brake A/LEFT D/RIGHT Steer SPACE Drift R Reset",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 26184,
+      "text": "APEX KARTS 64 CHALLENGER'S CIRCUIT START RACE DEMO MODE W/UP Gas S/DN Brake A/LEFT D/RIGHT Steer SPACE Drift R Reset",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 27189,
+      "text": "APEX KARTS 64 CHALLENGER'S CIRCUIT START RACE DEMO MODE W/UP Gas S/DN Brake A/LEFT D/RIGHT Steer SPACE Drift R Reset",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 28195,
+      "text": "APEX KARTS 64 CHALLENGER'S CIRCUIT START RACE DEMO MODE W/UP Gas S/DN Brake A/LEFT D/RIGHT Steer SPACE Drift R Reset",
+      "completionSignal": false,
+      "lapSignal": false
+    }
+  ],
+  "completionSignals": 0,
+  "consoleEvents": [
+    {
+      "at": "2026-07-31T04:21:00.983Z",
+      "type": "debug",
+      "text": "[vite] connecting..."
+    },
+    {
+      "at": "2026-07-31T04:21:00.992Z",
+      "type": "debug",
+      "text": "[vite] connected."
+    }
+  ],
+  "pageErrors": [
+    {
+      "at": "2026-07-31T04:21:03.378Z",
+      "message": "startR is not defined",
+      "stack": "ReferenceError: startR is not defined\n    at HTMLButtonElement.onclick (http://127.0.0.1:4173/?demo=1&seed=1337:47:43)"
+    }
+  ]
+}

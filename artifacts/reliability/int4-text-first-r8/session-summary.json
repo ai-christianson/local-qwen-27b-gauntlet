@@ -1,0 +1,81 @@
+{
+  "schema": "qwen-gauntlet-pi-session-summary-v1",
+  "sessionFiles": [
+    "2026-07-31T05-07-29-087Z_019fb691-febf-71cc-aedc-66c2a8f58827.jsonl"
+  ],
+  "messages": {
+    "assistant": 42,
+    "user": 1,
+    "toolResult": 46,
+    "other": 0
+  },
+  "providers": {
+    "routerd": 42
+  },
+  "models": {
+    "qwen36-27b": 42
+  },
+  "stopReasons": {
+    "toolUse": 42
+  },
+  "tools": {
+    "bash": 27,
+    "read": 11,
+    "write": 4,
+    "edit": 4
+  },
+  "sourceMutationCalls": [
+    {
+      "timestamp": "2026-07-31T05:09:55.802Z",
+      "tool": "write",
+      "path": "/home/qg/workspace/apex-karts-64/diag.js"
+    },
+    {
+      "timestamp": "2026-07-31T05:11:21.008Z",
+      "tool": "edit",
+      "path": "/home/qg/workspace/apex-karts-64/diag.js"
+    },
+    {
+      "timestamp": "2026-07-31T05:11:23.706Z",
+      "tool": "edit",
+      "path": "/home/qg/workspace/apex-karts-64/diag.js"
+    },
+    {
+      "timestamp": "2026-07-31T05:11:33.866Z",
+      "tool": "write",
+      "path": "/home/qg/workspace/apex-karts-64/server.js"
+    },
+    {
+      "timestamp": "2026-07-31T05:13:01.335Z",
+      "tool": "write",
+      "path": "/home/qg/workspace/apex-karts-64/race-test.js"
+    },
+    {
+      "timestamp": "2026-07-31T05:15:40.769Z",
+      "tool": "edit",
+      "path": "/home/qg/workspace/apex-karts-64/index.html"
+    },
+    {
+      "timestamp": "2026-07-31T05:18:52.636Z",
+      "tool": "write",
+      "path": "/home/qg/workspace/apex-karts-64/race-full.js"
+    },
+    {
+      "timestamp": "2026-07-31T05:24:02.440Z",
+      "tool": "edit",
+      "path": "/home/qg/workspace/apex-karts-64/index.html"
+    }
+  ],
+  "usage": {
+    "input": 1260164,
+    "output": 23133,
+    "cacheRead": 0,
+    "cacheWrite": 0,
+    "reasoning": 0,
+    "totalTokens": 1283297
+  },
+  "toolErrors": 3,
+  "firstTimestamp": "2026-07-31T05:07:29.087Z",
+  "lastTimestamp": "2026-07-31T05:27:00.789Z",
+  "malformedLines": 0
+}

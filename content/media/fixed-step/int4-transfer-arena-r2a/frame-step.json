@@ -1,0 +1,111 @@
+{
+  "schema": "qwen-gauntlet-fixed-step-capture-v2",
+  "disclosure": "Controller-side deterministic Chrome virtual-time capture; game source unchanged. This is not a real-time performance measurement.",
+  "startedAt": "2026-07-31T03:39:54.560Z",
+  "finishedAt": "2026-07-31T04:22:38.765Z",
+  "url": "http://127.0.0.1:4174/?demo=1&seed=1337",
+  "httpStatus": 200,
+  "fps": 60,
+  "frameBudgetMs": 16.666666666666668,
+  "requestedDurationSeconds": 10,
+  "capturedFrames": 600,
+  "encodedDurationSeconds": 10,
+  "distinctFrameHashes": 600,
+  "completionFrame": null,
+  "actions": [
+    {
+      "kind": "click-error",
+      "rule": "demo",
+      "text": "▶ DEMO",
+      "error": "locator.click: Timeout 2000ms exceeded.\nCall log:\n  - waiting for getByRole('button', { name: /demo/i }).first()\n    - locator resolved to <button id=\"demo-btn\">▶ DEMO</button>\n  - attempting click action\n    2 × waiting for element to be visible, enabled and stable\n      - element is visible, enabled and stable\n      - scrolling into view if needed\n      - done scrolling\n      - <div id=\"message-screen\">…</div> intercepts pointer events\n    - retrying click action\n    - waiting 20ms\n"
+    },
+    {
+      "kind": "click",
+      "rule": "menu-unblock",
+      "text": "START GAME"
+    },
+    {
+      "kind": "click",
+      "rule": "demo-after-menu-unblock",
+      "text": "▶ DEMO"
+    }
+  ],
+  "sampledDom": [
+    {
+      "frame": 0,
+      "virtualTimeMs": 16.666666666666668,
+      "text": "HP ENEMIES:3 SCORE:0 ▶ DEMO WASD/ARROWS=MOVE SPACE/FIRE=SHOOT MOUSE=AIM",
+      "completionSignal": false
+    },
+    {
+      "frame": 60,
+      "virtualTimeMs": 1016.6666666666667,
+      "text": "HP ENEMIES:3 SCORE:0 ▶ DEMO WASD/ARROWS=MOVE SPACE/FIRE=SHOOT MOUSE=AIM",
+      "completionSignal": false
+    },
+    {
+      "frame": 120,
+      "virtualTimeMs": 2016.6666666666667,
+      "text": "HP ENEMIES:3 SCORE:0 ▶ DEMO WASD/ARROWS=MOVE SPACE/FIRE=SHOOT MOUSE=AIM",
+      "completionSignal": false
+    },
+    {
+      "frame": 180,
+      "virtualTimeMs": 3016.666666666667,
+      "text": "HP ENEMIES:3 SCORE:0 ▶ DEMO WASD/ARROWS=MOVE SPACE/FIRE=SHOOT MOUSE=AIM",
+      "completionSignal": false
+    },
+    {
+      "frame": 240,
+      "virtualTimeMs": 4016.666666666667,
+      "text": "HP ENEMIES:3 SCORE:0 ▶ DEMO WASD/ARROWS=MOVE SPACE/FIRE=SHOOT MOUSE=AIM",
+      "completionSignal": false
+    },
+    {
+      "frame": 300,
+      "virtualTimeMs": 5016.666666666667,
+      "text": "HP ENEMIES:3 SCORE:0 ▶ DEMO WASD/ARROWS=MOVE SPACE/FIRE=SHOOT MOUSE=AIM",
+      "completionSignal": false
+    },
+    {
+      "frame": 360,
+      "virtualTimeMs": 6016.666666666667,
+      "text": "HP ENEMIES:3 SCORE:0 ▶ DEMO WASD/ARROWS=MOVE SPACE/FIRE=SHOOT MOUSE=AIM",
+      "completionSignal": false
+    },
+    {
+      "frame": 420,
+      "virtualTimeMs": 7016.666666666667,
+      "text": "HP ENEMIES:3 SCORE:0 ▶ DEMO WASD/ARROWS=MOVE SPACE/FIRE=SHOOT MOUSE=AIM",
+      "completionSignal": false
+    },
+    {
+      "frame": 480,
+      "virtualTimeMs": 8016.666666666667,
+      "text": "HP ENEMIES:3 SCORE:0 ▶ DEMO WASD/ARROWS=MOVE SPACE/FIRE=SHOOT MOUSE=AIM",
+      "completionSignal": false
+    },
+    {
+      "frame": 540,
+      "virtualTimeMs": 9016.666666666668,
+      "text": "HP ENEMIES:3 SCORE:0 ▶ DEMO WASD/ARROWS=MOVE SPACE/FIRE=SHOOT MOUSE=AIM",
+      "completionSignal": false
+    }
+  ],
+  "consoleEvents": [
+    {
+      "frame": 0,
+      "type": "debug",
+      "text": "[vite] connecting..."
+    },
+    {
+      "frame": 0,
+      "type": "debug",
+      "text": "[vite] connected."
+    }
+  ],
+  "pageErrors": [],
+  "wallCaptureSeconds": 2564.205,
+  "firstFrameSha256": "c89043c860007c885c44beaccc57956df98422dbf57d7bc972117bd04e939c54",
+  "lastFrameSha256": "3eba545019918d08a8aad02ce1cf993e1a65926e6091cc1a474ef81707a99835"
+}

@@ -1,0 +1,101 @@
+{
+  "schema": "qwen-gauntlet-pi-session-summary-v1",
+  "sessionFiles": [
+    "2026-07-31T00-47-51-469Z_019fb5a4-4cad-7145-b85e-ff205fc5e5f9.jsonl"
+  ],
+  "messages": {
+    "assistant": 76,
+    "user": 1,
+    "toolResult": 76,
+    "other": 0
+  },
+  "providers": {
+    "routerd": 76
+  },
+  "models": {
+    "qwen36-27b": 76
+  },
+  "stopReasons": {
+    "toolUse": 76
+  },
+  "tools": {
+    "bash": 56,
+    "write": 7,
+    "read": 8,
+    "edit": 5
+  },
+  "sourceMutationCalls": [
+    {
+      "timestamp": "2026-07-31T00:47:55.853Z",
+      "tool": "write",
+      "path": "/home/qg/workspace/apex-karts-64/index.html"
+    },
+    {
+      "timestamp": "2026-07-31T00:49:31.486Z",
+      "tool": "write",
+      "path": null
+    },
+    {
+      "timestamp": "2026-07-31T00:52:09.476Z",
+      "tool": "write",
+      "path": "/home/qg/workspace/apex-karts-64/index.html"
+    },
+    {
+      "timestamp": "2026-07-31T00:52:49.268Z",
+      "tool": "write",
+      "path": "/home/qg/workspace/apex-karts-64/game.js"
+    },
+    {
+      "timestamp": "2026-07-31T00:58:02.363Z",
+      "tool": "write",
+      "path": "/home/qg/workspace/apex-karts-64/server.js"
+    },
+    {
+      "timestamp": "2026-07-31T01:00:01.951Z",
+      "tool": "edit",
+      "path": "/home/qg/workspace/apex-karts-64/game.js"
+    },
+    {
+      "timestamp": "2026-07-31T01:00:29.649Z",
+      "tool": "edit",
+      "path": "/home/qg/workspace/apex-karts-64/index.html"
+    },
+    {
+      "timestamp": "2026-07-31T01:06:14.711Z",
+      "tool": "edit",
+      "path": "/home/qg/workspace/apex-karts-64/game.js"
+    },
+    {
+      "timestamp": "2026-07-31T01:08:23.216Z",
+      "tool": "write",
+      "path": "/home/qg/workspace/apex-karts-64/server.js"
+    },
+    {
+      "timestamp": "2026-07-31T01:13:15.861Z",
+      "tool": "edit",
+      "path": "/home/qg/workspace/apex-karts-64/game.js"
+    },
+    {
+      "timestamp": "2026-07-31T01:17:59.592Z",
+      "tool": "edit",
+      "path": "/home/qg/workspace/apex-karts-64/game.js"
+    },
+    {
+      "timestamp": "2026-07-31T01:22:28.106Z",
+      "tool": "write",
+      "path": "/home/qg/workspace/apex-karts-64/game.js"
+    }
+  ],
+  "usage": {
+    "input": 3568696,
+    "output": 48367,
+    "cacheRead": 0,
+    "cacheWrite": 0,
+    "reasoning": 0,
+    "totalTokens": 3617063
+  },
+  "toolErrors": 7,
+  "firstTimestamp": "2026-07-31T00:47:51.469Z",
+  "lastTimestamp": "2026-07-31T01:27:33.702Z",
+  "malformedLines": 0
+}

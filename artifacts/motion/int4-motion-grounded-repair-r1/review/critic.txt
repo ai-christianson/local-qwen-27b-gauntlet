@@ -1,0 +1,44 @@
+
+
+## Diagnosis: Post-Race Freeze — Reset (`R`) Key Non-Functional
+
+**Evidence from screenshots:**
+- `objective-45s.png` and `objective-after-reset.png` share an **identical sha256 hash** (`d541d129aabe4d9d698dac94411b35324f53428a5b1e7a941b9bc94d98e0d24f`) — the render output is byte-for-byte unchanged after the reset keypress.
+- All 29 entries in the `textTimeline` read `🏁 RACE COMPLETE! Time: 0:07.50 Top Speed: 101 km/h`. The game never transitions out of the results screen.
+
+**Evidence from source** (`index.html`):
+
+1. **Race completion sets `GM = 'finished'`** — inside `checkLap()`:
+   ```javascript
+   if(lap>=1){finished=true;GM='finished';showResults();}
+   ```
+
+2. **`updateKart()` has an early-return guard that blocks all logic when `GM !== 'racing' && GM !== 'demo'`**:
+   ```javascript
+   function updateKart(dt){
+     if(GM!=='racing'&&GM!=='demo')return;   // ← returns before reaching reset
+     // ...
+     if(keys['KeyR']){                        // ← never reached when GM==='finished'
+       // reset code...
+     }
+   ```
+
+3. **Result:** Once `GM` becomes `'finished'`, the reset handler is permanently unreachable. The kart is frozen, the camera is frozen, and the only way out is reloading the page or clicking the overlay buttons (which `pointer-events:none` on `#ov` may or may not block).
+
+**Smallest plausible repair:**
+
+Move the post-completion reset path outside the mode guard. Add a dedicated handler in the game loop that checks for `KeyR` when `GM === 'finished'`, then re-initializes and re-enters racing:
+
+```diff
+ // In loop() or as a new top-level key handler:
++if(keys['KeyR'] && GM==='finished'){
++  keys['KeyR']=false;
++  initGame();
++  GM=cdTargetGM;
++  startTime=clk.getElapsedTime();
++  document.getElementById('rs').style.display='none';
++  showHUD();
++}
+```
+
+This restores the advertised **R Reset** control to work after race completion without touching the in-race reset logic or physics.

@@ -1,0 +1,285 @@
+{
+  "schema": "qwen-gauntlet-objective-browser-v3",
+  "startedAt": "2026-07-31T04:47:30.771Z",
+  "finishedAt": "2026-07-31T04:48:19.297Z",
+  "url": "http://127.0.0.1:4173/?demo=1&seed=1337",
+  "httpStatus": 200,
+  "initialDom": {
+    "title": "Apex Karts 64",
+    "text": "LAP 0 / 1 TIME 0:00.00 0 km/h APEX KARTS 64 🤴 Turbo Circuit 🤴 A Retro Kart Racing Microgame Press ENTER or SPACE to Start Press SHIFT+D for Demo Mode Controls: ↑ / W — Accelerate ↓ / S — Brake/Reverse ← / A → / D — Steer SPACE — Handbrake ENTER — Start Race SHIFT+D — Toggle Demo",
+    "canvases": [
+      {
+        "width": 160,
+        "height": 160,
+        "clientWidth": 154,
+        "clientHeight": 154
+      }
+    ],
+    "buttons": []
+  },
+  "finalDom": {
+    "title": "Apex Karts 64",
+    "text": "LAP 0 / 1 TIME 0:00.00 0 km/h APEX KARTS 64 🤴 Turbo Circuit 🤴 A Retro Kart Racing Microgame Press ENTER or SPACE to Start Press SHIFT+D for Demo Mode Controls: ↑ / W — Accelerate ↓ / S — Brake/Reverse ← / A → / D — Steer SPACE — Handbrake ENTER — Start Race SHIFT+D — Toggle Demo",
+    "canvases": [
+      {
+        "width": 160,
+        "height": 160,
+        "clientWidth": 154,
+        "clientHeight": 154
+      }
+    ]
+  },
+  "actions": [
+    {
+      "at": "2026-07-31T04:47:33.036Z",
+      "action": "keypress",
+      "key": "Enter",
+      "rule": "no-visible-start-button"
+    },
+    {
+      "at": "2026-07-31T04:47:36.655Z",
+      "action": "fixed-keyboard-sequence",
+      "sequence": "ArrowUp 3.6s; ArrowLeft 0.8s; ArrowRight 0.8s"
+    },
+    {
+      "at": "2026-07-31T04:48:16.175Z",
+      "action": "keypress",
+      "key": "r",
+      "rule": "fixed-reset-probe"
+    }
+  ],
+  "screenshots": [
+    {
+      "filename": "objective-02s.png",
+      "sha256": "2c2d9b6e0811446f1db99ed34a7462eeeafeca3d2efae2e03dce336518b06e90",
+      "bytes": 116215
+    },
+    {
+      "filename": "objective-06s.png",
+      "sha256": "84495bda3f5635827ce6af868e9a782b5b03d1e87eb23346b9b5ea97938cf373",
+      "bytes": 115824
+    },
+    {
+      "filename": "objective-16s.png",
+      "sha256": "252c72255e18911435bd8d681bd82106c88d995cece57e6d3fd55b4a9aab08ee",
+      "bytes": 115920
+    },
+    {
+      "filename": "objective-45s.png",
+      "sha256": "b3c7ea1aa78eca5295e8b1320f94fcbeda9c760b9f942926d31b5d519d3cf142",
+      "bytes": 116230
+    },
+    {
+      "filename": "objective-after-reset.png",
+      "sha256": "5ac95a8281c9ebf6367860f32e3b0670f7957af7818cfec78c3cf84cddc5a75d",
+      "bytes": 116187
+    }
+  ],
+  "distinctScreenshotHashes": 5,
+  "cadence": {
+    "durationMs": 10000,
+    "frames": 601,
+    "fps": 60.1,
+    "intervalMs": {
+      "p50": 16.69999999999891,
+      "p95": 16.700000000000728,
+      "p99": 16.80000000000109,
+      "max": 16.80000000000109
+    }
+  },
+  "textTimeline": [
+    {
+      "elapsedMs": 11,
+      "text": "LAP 0 / 1 TIME 0:00.00 0 km/h APEX KARTS 64 🤴 Turbo Circuit 🤴 A Retro Kart Racing Microgame Press ENTER or SPACE to Start Press SHIFT+D for Demo Mode Controls: ↑ / W — Accelerate ↓ / S — Brake/Reverse ← / A → / D — Steer SPACE — Handbrake ENTER — Start Race SHIFT+D — Toggle Demo",
+      "completionSignal": false,
+      "lapSignal": true
+    },
+    {
+      "elapsedMs": 1019,
+      "text": "LAP 0 / 1 TIME 0:00.00 0 km/h APEX KARTS 64 🤴 Turbo Circuit 🤴 A Retro Kart Racing Microgame Press ENTER or SPACE to Start Press SHIFT+D for Demo Mode Controls: ↑ / W — Accelerate ↓ / S — Brake/Reverse ← / A → / D — Steer SPACE — Handbrake ENTER — Start Race SHIFT+D — Toggle Demo",
+      "completionSignal": false,
+      "lapSignal": true
+    },
+    {
+      "elapsedMs": 2027,
+      "text": "LAP 0 / 1 TIME 0:00.00 0 km/h APEX KARTS 64 🤴 Turbo Circuit 🤴 A Retro Kart Racing Microgame Press ENTER or SPACE to Start Press SHIFT+D for Demo Mode Controls: ↑ / W — Accelerate ↓ / S — Brake/Reverse ← / A → / D — Steer SPACE — Handbrake ENTER — Start Race SHIFT+D — Toggle Demo",
+      "completionSignal": false,
+      "lapSignal": true
+    },
+    {
+      "elapsedMs": 3034,
+      "text": "LAP 0 / 1 TIME 0:00.00 0 km/h APEX KARTS 64 🤴 Turbo Circuit 🤴 A Retro Kart Racing Microgame Press ENTER or SPACE to Start Press SHIFT+D for Demo Mode Controls: ↑ / W — Accelerate ↓ / S — Brake/Reverse ← / A → / D — Steer SPACE — Handbrake ENTER — Start Race SHIFT+D — Toggle Demo",
+      "completionSignal": false,
+      "lapSignal": true
+    },
+    {
+      "elapsedMs": 4041,
+      "text": "LAP 0 / 1 TIME 0:00.00 0 km/h APEX KARTS 64 🤴 Turbo Circuit 🤴 A Retro Kart Racing Microgame Press ENTER or SPACE to Start Press SHIFT+D for Demo Mode Controls: ↑ / W — Accelerate ↓ / S — Brake/Reverse ← / A → / D — Steer SPACE — Handbrake ENTER — Start Race SHIFT+D — Toggle Demo",
+      "completionSignal": false,
+      "lapSignal": true
+    },
+    {
+      "elapsedMs": 5048,
+      "text": "LAP 0 / 1 TIME 0:00.00 0 km/h APEX KARTS 64 🤴 Turbo Circuit 🤴 A Retro Kart Racing Microgame Press ENTER or SPACE to Start Press SHIFT+D for Demo Mode Controls: ↑ / W — Accelerate ↓ / S — Brake/Reverse ← / A → / D — Steer SPACE — Handbrake ENTER — Start Race SHIFT+D — Toggle Demo",
+      "completionSignal": false,
+      "lapSignal": true
+    },
+    {
+      "elapsedMs": 6054,
+      "text": "LAP 0 / 1 TIME 0:00.00 0 km/h APEX KARTS 64 🤴 Turbo Circuit 🤴 A Retro Kart Racing Microgame Press ENTER or SPACE to Start Press SHIFT+D for Demo Mode Controls: ↑ / W — Accelerate ↓ / S — Brake/Reverse ← / A → / D — Steer SPACE — Handbrake ENTER — Start Race SHIFT+D — Toggle Demo",
+      "completionSignal": false,
+      "lapSignal": true
+    },
+    {
+      "elapsedMs": 7060,
+      "text": "LAP 0 / 1 TIME 0:00.00 0 km/h APEX KARTS 64 🤴 Turbo Circuit 🤴 A Retro Kart Racing Microgame Press ENTER or SPACE to Start Press SHIFT+D for Demo Mode Controls: ↑ / W — Accelerate ↓ / S — Brake/Reverse ← / A → / D — Steer SPACE — Handbrake ENTER — Start Race SHIFT+D — Toggle Demo",
+      "completionSignal": false,
+      "lapSignal": true
+    },
+    {
+      "elapsedMs": 8066,
+      "text": "LAP 0 / 1 TIME 0:00.00 0 km/h APEX KARTS 64 🤴 Turbo Circuit 🤴 A Retro Kart Racing Microgame Press ENTER or SPACE to Start Press SHIFT+D for Demo Mode Controls: ↑ / W — Accelerate ↓ / S — Brake/Reverse ← / A → / D — Steer SPACE — Handbrake ENTER — Start Race SHIFT+D — Toggle Demo",
+      "completionSignal": false,
+      "lapSignal": true
+    },
+    {
+      "elapsedMs": 9071,
+      "text": "LAP 0 / 1 TIME 0:00.00 0 km/h APEX KARTS 64 🤴 Turbo Circuit 🤴 A Retro Kart Racing Microgame Press ENTER or SPACE to Start Press SHIFT+D for Demo Mode Controls: ↑ / W — Accelerate ↓ / S — Brake/Reverse ← / A → / D — Steer SPACE — Handbrake ENTER — Start Race SHIFT+D — Toggle Demo",
+      "completionSignal": false,
+      "lapSignal": true
+    },
+    {
+      "elapsedMs": 10076,
+      "text": "LAP 0 / 1 TIME 0:00.00 0 km/h APEX KARTS 64 🤴 Turbo Circuit 🤴 A Retro Kart Racing Microgame Press ENTER or SPACE to Start Press SHIFT+D for Demo Mode Controls: ↑ / W — Accelerate ↓ / S — Brake/Reverse ← / A → / D — Steer SPACE — Handbrake ENTER — Start Race SHIFT+D — Toggle Demo",
+      "completionSignal": false,
+      "lapSignal": true
+    },
+    {
+      "elapsedMs": 11081,
+      "text": "LAP 0 / 1 TIME 0:00.00 0 km/h APEX KARTS 64 🤴 Turbo Circuit 🤴 A Retro Kart Racing Microgame Press ENTER or SPACE to Start Press SHIFT+D for Demo Mode Controls: ↑ / W — Accelerate ↓ / S — Brake/Reverse ← / A → / D — Steer SPACE — Handbrake ENTER — Start Race SHIFT+D — Toggle Demo",
+      "completionSignal": false,
+      "lapSignal": true
+    },
+    {
+      "elapsedMs": 12086,
+      "text": "LAP 0 / 1 TIME 0:00.00 0 km/h APEX KARTS 64 🤴 Turbo Circuit 🤴 A Retro Kart Racing Microgame Press ENTER or SPACE to Start Press SHIFT+D for Demo Mode Controls: ↑ / W — Accelerate ↓ / S — Brake/Reverse ← / A → / D — Steer SPACE — Handbrake ENTER — Start Race SHIFT+D — Toggle Demo",
+      "completionSignal": false,
+      "lapSignal": true
+    },
+    {
+      "elapsedMs": 13091,
+      "text": "LAP 0 / 1 TIME 0:00.00 0 km/h APEX KARTS 64 🤴 Turbo Circuit 🤴 A Retro Kart Racing Microgame Press ENTER or SPACE to Start Press SHIFT+D for Demo Mode Controls: ↑ / W — Accelerate ↓ / S — Brake/Reverse ← / A → / D — Steer SPACE — Handbrake ENTER — Start Race SHIFT+D — Toggle Demo",
+      "completionSignal": false,
+      "lapSignal": true
+    },
+    {
+      "elapsedMs": 14096,
+      "text": "LAP 0 / 1 TIME 0:00.00 0 km/h APEX KARTS 64 🤴 Turbo Circuit 🤴 A Retro Kart Racing Microgame Press ENTER or SPACE to Start Press SHIFT+D for Demo Mode Controls: ↑ / W — Accelerate ↓ / S — Brake/Reverse ← / A → / D — Steer SPACE — Handbrake ENTER — Start Race SHIFT+D — Toggle Demo",
+      "completionSignal": false,
+      "lapSignal": true
+    },
+    {
+      "elapsedMs": 15100,
+      "text": "LAP 0 / 1 TIME 0:00.00 0 km/h APEX KARTS 64 🤴 Turbo Circuit 🤴 A Retro Kart Racing Microgame Press ENTER or SPACE to Start Press SHIFT+D for Demo Mode Controls: ↑ / W — Accelerate ↓ / S — Brake/Reverse ← / A → / D — Steer SPACE — Handbrake ENTER — Start Race SHIFT+D — Toggle Demo",
+      "completionSignal": false,
+      "lapSignal": true
+    },
+    {
+      "elapsedMs": 16105,
+      "text": "LAP 0 / 1 TIME 0:00.00 0 km/h APEX KARTS 64 🤴 Turbo Circuit 🤴 A Retro Kart Racing Microgame Press ENTER or SPACE to Start Press SHIFT+D for Demo Mode Controls: ↑ / W — Accelerate ↓ / S — Brake/Reverse ← / A → / D — Steer SPACE — Handbrake ENTER — Start Race SHIFT+D — Toggle Demo",
+      "completionSignal": false,
+      "lapSignal": true
+    },
+    {
+      "elapsedMs": 17109,
+      "text": "LAP 0 / 1 TIME 0:00.00 0 km/h APEX KARTS 64 🤴 Turbo Circuit 🤴 A Retro Kart Racing Microgame Press ENTER or SPACE to Start Press SHIFT+D for Demo Mode Controls: ↑ / W — Accelerate ↓ / S — Brake/Reverse ← / A → / D — Steer SPACE — Handbrake ENTER — Start Race SHIFT+D — Toggle Demo",
+      "completionSignal": false,
+      "lapSignal": true
+    },
+    {
+      "elapsedMs": 18112,
+      "text": "LAP 0 / 1 TIME 0:00.00 0 km/h APEX KARTS 64 🤴 Turbo Circuit 🤴 A Retro Kart Racing Microgame Press ENTER or SPACE to Start Press SHIFT+D for Demo Mode Controls: ↑ / W — Accelerate ↓ / S — Brake/Reverse ← / A → / D — Steer SPACE — Handbrake ENTER — Start Race SHIFT+D — Toggle Demo",
+      "completionSignal": false,
+      "lapSignal": true
+    },
+    {
+      "elapsedMs": 19117,
+      "text": "LAP 0 / 1 TIME 0:00.00 0 km/h APEX KARTS 64 🤴 Turbo Circuit 🤴 A Retro Kart Racing Microgame Press ENTER or SPACE to Start Press SHIFT+D for Demo Mode Controls: ↑ / W — Accelerate ↓ / S — Brake/Reverse ← / A → / D — Steer SPACE — Handbrake ENTER — Start Race SHIFT+D — Toggle Demo",
+      "completionSignal": false,
+      "lapSignal": true
+    },
+    {
+      "elapsedMs": 20121,
+      "text": "LAP 0 / 1 TIME 0:00.00 0 km/h APEX KARTS 64 🤴 Turbo Circuit 🤴 A Retro Kart Racing Microgame Press ENTER or SPACE to Start Press SHIFT+D for Demo Mode Controls: ↑ / W — Accelerate ↓ / S — Brake/Reverse ← / A → / D — Steer SPACE — Handbrake ENTER — Start Race SHIFT+D — Toggle Demo",
+      "completionSignal": false,
+      "lapSignal": true
+    },
+    {
+      "elapsedMs": 21124,
+      "text": "LAP 0 / 1 TIME 0:00.00 0 km/h APEX KARTS 64 🤴 Turbo Circuit 🤴 A Retro Kart Racing Microgame Press ENTER or SPACE to Start Press SHIFT+D for Demo Mode Controls: ↑ / W — Accelerate ↓ / S — Brake/Reverse ← / A → / D — Steer SPACE — Handbrake ENTER — Start Race SHIFT+D — Toggle Demo",
+      "completionSignal": false,
+      "lapSignal": true
+    },
+    {
+      "elapsedMs": 22129,
+      "text": "LAP 0 / 1 TIME 0:00.00 0 km/h APEX KARTS 64 🤴 Turbo Circuit 🤴 A Retro Kart Racing Microgame Press ENTER or SPACE to Start Press SHIFT+D for Demo Mode Controls: ↑ / W — Accelerate ↓ / S — Brake/Reverse ← / A → / D — Steer SPACE — Handbrake ENTER — Start Race SHIFT+D — Toggle Demo",
+      "completionSignal": false,
+      "lapSignal": true
+    },
+    {
+      "elapsedMs": 23134,
+      "text": "LAP 0 / 1 TIME 0:00.00 0 km/h APEX KARTS 64 🤴 Turbo Circuit 🤴 A Retro Kart Racing Microgame Press ENTER or SPACE to Start Press SHIFT+D for Demo Mode Controls: ↑ / W — Accelerate ↓ / S — Brake/Reverse ← / A → / D — Steer SPACE — Handbrake ENTER — Start Race SHIFT+D — Toggle Demo",
+      "completionSignal": false,
+      "lapSignal": true
+    },
+    {
+      "elapsedMs": 24138,
+      "text": "LAP 0 / 1 TIME 0:00.00 0 km/h APEX KARTS 64 🤴 Turbo Circuit 🤴 A Retro Kart Racing Microgame Press ENTER or SPACE to Start Press SHIFT+D for Demo Mode Controls: ↑ / W — Accelerate ↓ / S — Brake/Reverse ← / A → / D — Steer SPACE — Handbrake ENTER — Start Race SHIFT+D — Toggle Demo",
+      "completionSignal": false,
+      "lapSignal": true
+    },
+    {
+      "elapsedMs": 25144,
+      "text": "LAP 0 / 1 TIME 0:00.00 0 km/h APEX KARTS 64 🤴 Turbo Circuit 🤴 A Retro Kart Racing Microgame Press ENTER or SPACE to Start Press SHIFT+D for Demo Mode Controls: ↑ / W — Accelerate ↓ / S — Brake/Reverse ← / A → / D — Steer SPACE — Handbrake ENTER — Start Race SHIFT+D — Toggle Demo",
+      "completionSignal": false,
+      "lapSignal": true
+    },
+    {
+      "elapsedMs": 26148,
+      "text": "LAP 0 / 1 TIME 0:00.00 0 km/h APEX KARTS 64 🤴 Turbo Circuit 🤴 A Retro Kart Racing Microgame Press ENTER or SPACE to Start Press SHIFT+D for Demo Mode Controls: ↑ / W — Accelerate ↓ / S — Brake/Reverse ← / A → / D — Steer SPACE — Handbrake ENTER — Start Race SHIFT+D — Toggle Demo",
+      "completionSignal": false,
+      "lapSignal": true
+    },
+    {
+      "elapsedMs": 27153,
+      "text": "LAP 0 / 1 TIME 0:00.00 0 km/h APEX KARTS 64 🤴 Turbo Circuit 🤴 A Retro Kart Racing Microgame Press ENTER or SPACE to Start Press SHIFT+D for Demo Mode Controls: ↑ / W — Accelerate ↓ / S — Brake/Reverse ← / A → / D — Steer SPACE — Handbrake ENTER — Start Race SHIFT+D — Toggle Demo",
+      "completionSignal": false,
+      "lapSignal": true
+    },
+    {
+      "elapsedMs": 28158,
+      "text": "LAP 0 / 1 TIME 0:00.00 0 km/h APEX KARTS 64 🤴 Turbo Circuit 🤴 A Retro Kart Racing Microgame Press ENTER or SPACE to Start Press SHIFT+D for Demo Mode Controls: ↑ / W — Accelerate ↓ / S — Brake/Reverse ← / A → / D — Steer SPACE — Handbrake ENTER — Start Race SHIFT+D — Toggle Demo",
+      "completionSignal": false,
+      "lapSignal": true
+    }
+  ],
+  "completionSignals": 0,
+  "consoleEvents": [
+    {
+      "at": "2026-07-31T04:47:30.835Z",
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 500 (Internal Server Error)"
+    },
+    {
+      "at": "2026-07-31T04:47:30.858Z",
+      "type": "debug",
+      "text": "[vite] connecting..."
+    },
+    {
+      "at": "2026-07-31T04:47:30.864Z",
+      "type": "debug",
+      "text": "[vite] connected."
+    }
+  ],
+  "pageErrors": []
+}

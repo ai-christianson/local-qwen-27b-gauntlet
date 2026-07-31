@@ -1,0 +1,38 @@
+
+
+## Diagnosis: Wheels Rotate Around the Wrong Axis
+
+### Evidence
+
+**Frames** — Across frame 000240 (0:04) through 000360 (0:06), the kart covers significant track distance but the wheels (visible as dark gray cylinders protruding from the sides) show **no perceptible spin**. The faceted hub/tire silhouettes remain in the same orientation despite the kart accelerating from rest to 101 km/h.
+
+**Source** — Two issues in the wheel rotation block (line 361–362):
+
+```javascript
+// Line 279-280: wheel geometry
+var tire=new THREE.Mesh(new THREE.CylinderGeometry(.35,.35,.3,8),wMat);tire.rotation.x=Math.PI/2;
+var hub=new THREE.Mesh(new THREE.CylinderGeometry(.15,.15,.32,6),hubMat);hub.rotation.x=Math.PI/2;
+
+// Line 361-362: wheel rotation update
+var wheelRPM=KS.spd*dt*2.5;
+kw.forEach(function(wg){wg.children.forEach(function(c){c.rotation.z+=wheelRPM;});});
+```
+
+### Root cause
+
+1. **Wrong axis (primary)** — `CylinderGeometry` builds the cylinder along **+Z**. After `rotation.x=Math.PI/2`, the circular tread face lies in the **XY plane** and the physical axle points along **-Y** (horizontal, left-right). The code then spins around `rotation.z` — which rotates the XY circular face *in its own plane* (like a clock face spinning on a wall). This is **not** axle rotation; it's a useless spin around the cylinder's long axis. The correct axle rotation is `rotation.y`, which would rotate the circular face in the **YZ plane** — exactly how a real wheel rolls.
+
+2. **Arbitrary speed scaling (secondary)** — The formula `spd*dt*2.5` is a magic constant, not derived from kinematics. Physical angular displacement is `Δθ = distance / radius = spd·dt / 0.35 ≈ spd·dt·2.86`. The value `2.5` is coincidentally close but structurally meaningless.
+
+### Smallest repair
+
+**One-character fix on line 362:**
+
+```javascript
+// Before (broken — spins around long axis, not axle)
+c.rotation.z+=wheelRPM;
+// After (correct — spins around axle, visible as rolling)
+c.rotation.y+=wheelRPM;
+```
+
+Optionally tighten the formula from `2.5` → `1/.35` (≈2.86) for physical accuracy, but the axis change alone restores the most important visual cue: wheels visibly spinning as the kart accelerates.

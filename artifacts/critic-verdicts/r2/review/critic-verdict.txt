@@ -1,0 +1,98 @@
+
+
+```json
+{
+  "review": {
+    "game": "Apex Karts 64",
+    "mode": "Demo (seed=1337)",
+    "reviewer_role": "QA Director",
+    "total_score": 42,
+    "max_score": 100,
+    "tier_anchor": "programmer prototype (0-40)",
+    "note": "Scores 42 — technically in the programmer prototype band (0-40). The +2 over the band ceiling comes from solid visual presentation and working menus/reset; this is not a 'competent hobby game'.",
+
+    "dimension_scores": {
+      "basic_loop_and_correctness": {
+        "score": 12,
+        "max": 25,
+        "rationale": "Menu loads, demo mode launches, countdown runs (3→2→1→GO! visible), kart drives, HUD displays, reset to start line works. FATAL: completionSignals=0 across the full textTimeline (29 samples, race time 0:00.00→0:26.55, lap stuck at 0/1). Demo AI (dAI.ti=50) targets only 10% along the 500-point track so it circles near start/finish without passing all checkpoints. Hard rule: 'A completion state not reached by the fixed script earns no completion credit.'"
+      },
+      "handling_readability_feedback": {
+        "score": 9,
+        "max": 20,
+        "rationale": "HUD has speed bar, lap counter, timer, lap progress bar, minimap, and drift indicator — all visually present. However, hard rule: 'Visual evidence alone cannot earn handling points.' We see the kart at start at 16s and again at start at 45s; we cannot verify steering response, drift mechanics, or brake behavior from static screenshots. Keyboard input (ArrowUp/Left/Right) fires during the countdown and is ignored."
+      },
+      "visual_composition_original_direction": {
+        "score": 9,
+        "max": 15,
+        "rationale": "Clean N64-inspired aesthetic. Title screen has strong retro styling with gradient background and animated title. In-game: checkered start/finish, red/white curbs, blue barriers, simple cone trees, sphere clouds, overhead arch. Consistent palette. Minimap rendered as circular overlay. Directional choices are coherent. Deduction: geometry is very primitive (cone trees, box barriers, single-plane road) and lacks the polish expected at higher tiers."
+      },
+      "robustness_determinism_console_health": {
+        "score": 8,
+        "max": 15,
+        "rationale": "pageErrors: [] — no uncaught exceptions, so the 'caps at 5/15' hard rule does NOT trigger. Seeded RNG (R=42) provides deterministic behavior. However, console shows repeated GPU stall warnings ('ReadPixels') and Chromium GL initialization failures (GPU process exits 4× before falling back to EGL/ANGLE). These are not JS exceptions but indicate a fragile rendering path. Deduction for instability."
+      },
+      "performance_and_frame_pacing": {
+        "score": 1,
+        "max": 10,
+        "rationale": "Browser cadence: 13.8 FPS over 10s sample (138 frames). p50 interval 66.7ms, p95/p99 83.4ms. The 60fps video container is meaningless per the README: 'The 60-fps container is not evidence of 60 unique rendered frames.' mpdecimate confirms only 474 unique frames in 1800 (26%). Unplayable. Single point for not crashing entirely."
+      },
+      "multiplayer_exercised": {
+        "score": 0,
+        "max": 10,
+        "rationale": "Hard rule: 'Visual evidence alone cannot earn multiplayer points.' Code analysis confirms zero multiplayer infrastructure — single-player only with a demo AI. No network code, no second kart, no lobby. Score is zero."
+      },
+      "finish_and_polish": {
+        "score": 3,
+        "max": 5,
+        "rationale": "Complete flow: title screen with two buttons → countdown → racing → results screen with MAIN MENU and REPLAY. N64 aesthetic is consistent. Scanline overlay adds atmosphere. Deductions: results screen never reached by the fixed script, and the countdown text ('GO!') is visible in the textTimeline but the oversized '3' in the 02s screenshot suggests UI scale may be too large for 1080p."
+      }
+    },
+
+    "failed_gates": [
+      {
+        "gate": "completion_state_reached_by_fixed_script",
+        "hard_rule": "A completion state not reached by the fixed script earns no completion credit.",
+        "evidence": "completionSignals=0 in objective-browser.json. textTimeline 29 entries all show completionSignal:false. Final DOM text: 'LAP 0/1 TIME 0:31.66'.",
+        "impact": "No completion credit in basic_loop_and_correctness (~5 points lost minimum)."
+      },
+      {
+        "gate": "multiplayer_visual_evidence_cap",
+        "hard_rule": "Visual evidence alone cannot earn multiplayer points.",
+        "evidence": "No multiplayer code exists in index.html. Only single-player racing and demo AI mode.",
+        "impact": "0/10 on multiplayer_exercised — full dimension lost."
+      },
+      {
+        "gate": "playable_frame_pacing",
+        "hard_rule": "Treat objective-browser.json cadence as the performance measurement.",
+        "evidence": "13.8 FPS, p50=66.7ms, p95=83.4ms. Only 474 unique frames in 1800-frame container (26%).",
+        "impact": "1/10 on performance_and_frame_pacing — essentially full dimension lost."
+      }
+    ],
+
+    "evidence_observed": {
+      "screenshots": {
+        "objective-02s": "Countdown '3' visible. Kart at start/finish line facing down-track. HUD shows LAP 0/1, TIME 0:00.00.",
+        "objective-06s": "Countdown 'GO!' visible. Same position. Time still 0:00.00.",
+        "objective-16s": "Kart still at start/finish area after ~16s. Time 0:27.86. Mini-map shows red dot near start. No lap completed.",
+        "objective-45s": "Kart at start/finish, time 0:31.46. This is immediately after the 'r' reset probe (logged at elapsed ~44.5s). Lap still 0/1.",
+        "objective-after-reset": "Kart positioned at start/finish line with checkered floor visible and arch overhead. Time 0:31.46. Reset appears functional."
+      },
+      "console_log": "5 GPU stall warnings (ReadPixels), 4× GPU process init failures (EGL/ANGLE fallback), Vite dev server connected, no JS uncaught exceptions.",
+      "text_timeline": "29 entries spanning ~29s. Race time progresses 0:00.00→0:26.55. Lap remains 0/1 throughout. Zero completion signals.",
+      "video_analysis": "30s @ 60fps container. mpdecimate: 474 unique frames of 1800. ~26% unique content."
+      },
+
+    "highest_value_repair": {
+      "title": "Make demo AI complete the lap within the observation window",
+      "description": "The demo AI look-ahead `dAI.ti=50` targets only 10% along the 500-point track (index 50 vs total 500). The AI circles a short arc near the start and never passes all 4 checkpoints required for lap detection. Changing `dAI.ti=50` to `dAI.ti=200` (40% look-ahead) will cause the AI to drive the full track circuit, passing checkpoints in order and crossing the finish line to trigger lap completion.",
+      "file": "index.html",
+      "exact_change": "Change `var dAI={ti:50};` to `var dAI={ti:200};`",
+      "expected_impact": "The fixed script will observe at least 1 completionSignal in the textTimeline, earning completion credit in basic_loop_and_correctness (+5-8 points). This is the single highest-value change because it unlocks an entire failed gate and moves the game from 'incomplete loop' toward 'competent hobby game' territory. Combined with the existing working menu, countdown, HUD, and reset, this makes the core game loop demonstrably functional."
+    },
+
+    "confidence": 0.92,
+    "confidence_reasoning": "High confidence: I have the complete source code (single index.html), full objective-browser.json with actions/textTimeline/console/cadence, all 5 screenshots with SHA256 hashes, video frame analysis, and the rubric with hard rules. Every score is grounded in specific logged data. The one area of slight uncertainty is whether increasing dAI.ti alone is sufficient to complete a lap within the remaining observation window after countdown, but the math checks out: 200-point look-ahead with max speed 28 m/s should cover a ~200-unit track in ~7-8 seconds, well within the ~25s of post-countdown observation time."
+  }
+}
+```

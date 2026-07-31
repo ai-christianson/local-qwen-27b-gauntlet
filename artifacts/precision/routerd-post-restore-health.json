@@ -1,0 +1,21 @@
+{
+  "schema": "qwen-gauntlet-routerd-post-restore-health-v1",
+  "checked_at": "2026-07-31T05:47:41Z",
+  "restored_config_sha256": "636858ad0d0fe251655e68bb43a619960bba2e8472548221a6f8db4b2ace35a6",
+  "service": {
+    "active": true,
+    "restart_count": 0
+  },
+  "models_api": {
+    "reachable": true,
+    "qwen36_27b_present": true
+  },
+  "completion_probe": {
+    "model": "qwen36-27b",
+    "requested": "Reply with exactly OK.",
+    "content_trimmed": "OK",
+    "finish_reason": "stop",
+    "usage_present": true
+  },
+  "privacy": "No credential, endpoint, address, backend identifier, or private hostname is stored."
+}

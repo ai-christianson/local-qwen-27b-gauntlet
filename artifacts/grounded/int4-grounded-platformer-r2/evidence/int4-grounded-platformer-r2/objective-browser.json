@@ -1,0 +1,271 @@
+{
+  "schema": "qwen-gauntlet-objective-browser-v3",
+  "startedAt": "2026-07-31T04:39:58.016Z",
+  "finishedAt": "2026-07-31T04:40:46.258Z",
+  "url": "http://127.0.0.1:4173/?demo=1&seed=1337",
+  "httpStatus": 200,
+  "initialDom": {
+    "title": "Skybound 64",
+    "text": "LOADING... 0:00 Arrows/WASD: Move | Space: Jump | R: Restart | D: Toggle Demo",
+    "canvases": [],
+    "buttons": []
+  },
+  "finalDom": {
+    "title": "Skybound 64",
+    "text": "LOADING... 0:00 Arrows/WASD: Move | Space: Jump | R: Restart | D: Toggle Demo",
+    "canvases": []
+  },
+  "actions": [
+    {
+      "at": "2026-07-31T04:40:00.215Z",
+      "action": "keypress",
+      "key": "Enter",
+      "rule": "no-visible-start-button"
+    },
+    {
+      "at": "2026-07-31T04:40:03.828Z",
+      "action": "fixed-keyboard-sequence",
+      "sequence": "ArrowUp 3.6s; ArrowLeft 0.8s; ArrowRight 0.8s"
+    },
+    {
+      "at": "2026-07-31T04:40:43.194Z",
+      "action": "keypress",
+      "key": "r",
+      "rule": "fixed-reset-probe"
+    }
+  ],
+  "screenshots": [
+    {
+      "filename": "objective-02s.png",
+      "sha256": "acafb6d6e6ff9d6b69995c7f70dbba4e8968a9f3e7802fa9777fa5e873cec5f8",
+      "bytes": 97275
+    },
+    {
+      "filename": "objective-06s.png",
+      "sha256": "acafb6d6e6ff9d6b69995c7f70dbba4e8968a9f3e7802fa9777fa5e873cec5f8",
+      "bytes": 97275
+    },
+    {
+      "filename": "objective-16s.png",
+      "sha256": "acafb6d6e6ff9d6b69995c7f70dbba4e8968a9f3e7802fa9777fa5e873cec5f8",
+      "bytes": 97275
+    },
+    {
+      "filename": "objective-45s.png",
+      "sha256": "acafb6d6e6ff9d6b69995c7f70dbba4e8968a9f3e7802fa9777fa5e873cec5f8",
+      "bytes": 97275
+    },
+    {
+      "filename": "objective-after-reset.png",
+      "sha256": "acafb6d6e6ff9d6b69995c7f70dbba4e8968a9f3e7802fa9777fa5e873cec5f8",
+      "bytes": 97275
+    }
+  ],
+  "distinctScreenshotHashes": 1,
+  "cadence": {
+    "durationMs": 10000,
+    "frames": 602,
+    "fps": 60.2,
+    "intervalMs": {
+      "p50": 16.69999999999891,
+      "p95": 16.700000000000728,
+      "p99": 16.80000000000109,
+      "max": 16.80000000000109
+    }
+  },
+  "textTimeline": [
+    {
+      "elapsedMs": 5,
+      "text": "LOADING... 0:00 Arrows/WASD: Move | Space: Jump | R: Restart | D: Toggle Demo",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 1008,
+      "text": "LOADING... 0:00 Arrows/WASD: Move | Space: Jump | R: Restart | D: Toggle Demo",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 2012,
+      "text": "LOADING... 0:00 Arrows/WASD: Move | Space: Jump | R: Restart | D: Toggle Demo",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 3021,
+      "text": "LOADING... 0:00 Arrows/WASD: Move | Space: Jump | R: Restart | D: Toggle Demo",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 4025,
+      "text": "LOADING... 0:00 Arrows/WASD: Move | Space: Jump | R: Restart | D: Toggle Demo",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 5029,
+      "text": "LOADING... 0:00 Arrows/WASD: Move | Space: Jump | R: Restart | D: Toggle Demo",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 6035,
+      "text": "LOADING... 0:00 Arrows/WASD: Move | Space: Jump | R: Restart | D: Toggle Demo",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 7041,
+      "text": "LOADING... 0:00 Arrows/WASD: Move | Space: Jump | R: Restart | D: Toggle Demo",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 8045,
+      "text": "LOADING... 0:00 Arrows/WASD: Move | Space: Jump | R: Restart | D: Toggle Demo",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 9050,
+      "text": "LOADING... 0:00 Arrows/WASD: Move | Space: Jump | R: Restart | D: Toggle Demo",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 10056,
+      "text": "LOADING... 0:00 Arrows/WASD: Move | Space: Jump | R: Restart | D: Toggle Demo",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 11060,
+      "text": "LOADING... 0:00 Arrows/WASD: Move | Space: Jump | R: Restart | D: Toggle Demo",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 12063,
+      "text": "LOADING... 0:00 Arrows/WASD: Move | Space: Jump | R: Restart | D: Toggle Demo",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 13068,
+      "text": "LOADING... 0:00 Arrows/WASD: Move | Space: Jump | R: Restart | D: Toggle Demo",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 14071,
+      "text": "LOADING... 0:00 Arrows/WASD: Move | Space: Jump | R: Restart | D: Toggle Demo",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 15076,
+      "text": "LOADING... 0:00 Arrows/WASD: Move | Space: Jump | R: Restart | D: Toggle Demo",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 16083,
+      "text": "LOADING... 0:00 Arrows/WASD: Move | Space: Jump | R: Restart | D: Toggle Demo",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 17087,
+      "text": "LOADING... 0:00 Arrows/WASD: Move | Space: Jump | R: Restart | D: Toggle Demo",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 18099,
+      "text": "LOADING... 0:00 Arrows/WASD: Move | Space: Jump | R: Restart | D: Toggle Demo",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 19106,
+      "text": "LOADING... 0:00 Arrows/WASD: Move | Space: Jump | R: Restart | D: Toggle Demo",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 20109,
+      "text": "LOADING... 0:00 Arrows/WASD: Move | Space: Jump | R: Restart | D: Toggle Demo",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 21119,
+      "text": "LOADING... 0:00 Arrows/WASD: Move | Space: Jump | R: Restart | D: Toggle Demo",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 22122,
+      "text": "LOADING... 0:00 Arrows/WASD: Move | Space: Jump | R: Restart | D: Toggle Demo",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 23125,
+      "text": "LOADING... 0:00 Arrows/WASD: Move | Space: Jump | R: Restart | D: Toggle Demo",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 24133,
+      "text": "LOADING... 0:00 Arrows/WASD: Move | Space: Jump | R: Restart | D: Toggle Demo",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 25136,
+      "text": "LOADING... 0:00 Arrows/WASD: Move | Space: Jump | R: Restart | D: Toggle Demo",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 26139,
+      "text": "LOADING... 0:00 Arrows/WASD: Move | Space: Jump | R: Restart | D: Toggle Demo",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 27143,
+      "text": "LOADING... 0:00 Arrows/WASD: Move | Space: Jump | R: Restart | D: Toggle Demo",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 28151,
+      "text": "LOADING... 0:00 Arrows/WASD: Move | Space: Jump | R: Restart | D: Toggle Demo",
+      "completionSignal": false,
+      "lapSignal": false
+    }
+  ],
+  "completionSignals": 0,
+  "consoleEvents": [
+    {
+      "at": "2026-07-31T04:39:58.076Z",
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 500 (Internal Server Error)"
+    },
+    {
+      "at": "2026-07-31T04:39:58.095Z",
+      "type": "debug",
+      "text": "[vite] connecting..."
+    },
+    {
+      "at": "2026-07-31T04:39:58.102Z",
+      "type": "debug",
+      "text": "[vite] connected."
+    }
+  ],
+  "pageErrors": []
+}

@@ -1,0 +1,77 @@
+{
+  "schema": "qwen-gauntlet-pi-session-summary-v1",
+  "sessionFiles": [
+    "2026-07-31T03-15-38-040Z_019fb62b-97b8-73a8-be20-1997ad214d58.jsonl"
+  ],
+  "messages": {
+    "assistant": 25,
+    "user": 1,
+    "toolResult": 28,
+    "other": 0
+  },
+  "providers": {
+    "routerd": 25
+  },
+  "models": {
+    "qwen36-27b": 25
+  },
+  "stopReasons": {
+    "toolUse": 24,
+    "stop": 1
+  },
+  "tools": {
+    "bash": 14,
+    "read": 7,
+    "edit": 5,
+    "write": 2
+  },
+  "sourceMutationCalls": [
+    {
+      "timestamp": "2026-07-31T03:19:00.019Z",
+      "tool": "edit",
+      "path": "/home/qg/workspace/index.html"
+    },
+    {
+      "timestamp": "2026-07-31T03:20:18.134Z",
+      "tool": "edit",
+      "path": "/home/qg/workspace/index.html"
+    },
+    {
+      "timestamp": "2026-07-31T03:20:26.906Z",
+      "tool": "edit",
+      "path": "/home/qg/workspace/index.html"
+    },
+    {
+      "timestamp": "2026-07-31T03:22:11.992Z",
+      "tool": "write",
+      "path": "/home/qg/workspace/verify-demo.js"
+    },
+    {
+      "timestamp": "2026-07-31T03:23:48.398Z",
+      "tool": "edit",
+      "path": "/home/qg/workspace/index.html"
+    },
+    {
+      "timestamp": "2026-07-31T03:25:02.860Z",
+      "tool": "edit",
+      "path": "/home/qg/workspace/verify-demo.js"
+    },
+    {
+      "timestamp": "2026-07-31T03:27:39.134Z",
+      "tool": "write",
+      "path": "/home/qg/workspace/verify-flow.js"
+    }
+  ],
+  "usage": {
+    "input": 664388,
+    "output": 22975,
+    "cacheRead": 0,
+    "cacheWrite": 0,
+    "reasoning": 0,
+    "totalTokens": 687363
+  },
+  "toolErrors": 1,
+  "firstTimestamp": "2026-07-31T03:15:38.040Z",
+  "lastTimestamp": "2026-07-31T03:29:08.835Z",
+  "malformedLines": 0
+}

@@ -1,0 +1,31 @@
+
+
+Here's a summary of all fixes applied to `index.html`:
+
+### Fixes Made
+
+**1. Critical: Demo mode shooting direction (2-part fix)**
+
+*Root cause:* The original demo mode had two compounding bugs:
+- `facingDir` was set to point **TOWARD** the target, but the shooting code uses `negate()` which sent bullets **AWAY** from the target
+- The `facingDir` override happened **before** player movement, which then overwrote it with the movement direction
+
+*Fix (a):* Reversed the direction vector — now `facingDir` points **AWAY** from the target (`playerPos - targetPos`), so `negate()` correctly fires **TOWARD** it.
+
+*Fix (b):* Moved the `facingDir` override to **after** player movement but **before** shooting, ensuring it's not overwritten by movement logic.
+
+**2. Demo mode stale key cleanup**
+
+Arrow keys (`ArrowUp`, `ArrowDown`, `ArrowLeft`, `ArrowRight`) are now explicitly cleared each frame in demo mode, preventing stale input from before demo activation from interfering.
+
+**3. Fragile hologram disc animation**
+
+Replaced the O(n) `scene.children.find()` with a direct `hologramDisc` reference set at creation time — eliminates the fragile `radiusTop === 1.5` check that could match wrong objects.
+
+**4. Debug logging for verification**
+
+Added `console.log` at key events: demo mode toggle, drone destruction, win condition, and player death. This enables the independent evaluator to verify game outcomes via browser console.
+
+### Verification
+
+Two independent Puppeteer runs confirmed the demo reaches **ARENA CLEARED** (Score: 2500) — all 3 drones destroyed in ~4 seconds. The player takes minimal damage (88% health remaining).

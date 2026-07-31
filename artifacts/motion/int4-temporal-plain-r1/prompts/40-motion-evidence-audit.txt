@@ -1,0 +1,6 @@
+Audit this frozen Three.js game for one highest-impact motion-coherence defect.
+Use the source, browser evidence, and supplied frames. Check whether visible
+wheel or prop rotation, steering, chassis travel, camera motion, collisions,
+and resets agree physically. Distinguish facts visible in evidence from
+inferences. Do not edit files. Return one concise diagnosis with exact source
+evidence and the smallest plausible repair.

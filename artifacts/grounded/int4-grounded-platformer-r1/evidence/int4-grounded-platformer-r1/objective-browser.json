@@ -1,0 +1,304 @@
+{
+  "schema": "qwen-gauntlet-objective-browser-v2",
+  "startedAt": "2026-07-31T04:25:31.340Z",
+  "finishedAt": "2026-07-31T04:26:27.329Z",
+  "url": "http://127.0.0.1:4173/?demo=1&seed=1337",
+  "httpStatus": 200,
+  "initialDom": {
+    "title": "Skybound 64",
+    "text": "SKYBOUND 64 CHECK: 0/3 TIME: 2.1s DEMO WASD/Arrows: Move | SPACE: Jump | R: Restart",
+    "canvases": [
+      {
+        "width": 1920,
+        "height": 1080,
+        "clientWidth": 1920,
+        "clientHeight": 1080
+      }
+    ],
+    "buttons": [
+      {
+        "text": "DEMO",
+        "disabled": false
+      }
+    ]
+  },
+  "finalDom": {
+    "title": "Skybound 64",
+    "text": "SKYBOUND 64 CHECK: 0/3 TIME: 3.9s LIVE WASD/Arrows: Move | SPACE: Jump | R: Restart",
+    "canvases": [
+      {
+        "width": 1920,
+        "height": 1080,
+        "clientWidth": 1920,
+        "clientHeight": 1080
+      }
+    ]
+  },
+  "actions": [
+    {
+      "at": "2026-07-31T04:25:36.689Z",
+      "action": "click",
+      "rule": "demo",
+      "text": "DEMO"
+    },
+    {
+      "at": "2026-07-31T04:25:40.995Z",
+      "action": "fixed-keyboard-sequence",
+      "sequence": "ArrowUp 3.6s; ArrowLeft 0.8s; ArrowRight 0.8s"
+    },
+    {
+      "at": "2026-07-31T04:26:23.325Z",
+      "action": "keypress",
+      "key": "r",
+      "rule": "fixed-reset-probe"
+    }
+  ],
+  "screenshots": [
+    {
+      "filename": "objective-02s.png",
+      "sha256": "5f6be7e79012133a6933a9952e113a5a2211d50efb968049d17e394cb88cb578",
+      "bytes": 117864
+    },
+    {
+      "filename": "objective-06s.png",
+      "sha256": "6c76a5d92d148c596706d1691eeea8c22a220f657d16980faeb2faafeb743969",
+      "bytes": 27981
+    },
+    {
+      "filename": "objective-16s.png",
+      "sha256": "863dae8fef7839f6deef3c7933d607ce2398c52e85b0882ad010537c023102e1",
+      "bytes": 130666
+    },
+    {
+      "filename": "objective-45s.png",
+      "sha256": "30955d4c0716a2f4448bbbe8963a0731df708aeb72dda62f26f87c0c3aee2ecd",
+      "bytes": 99926
+    },
+    {
+      "filename": "objective-after-reset.png",
+      "sha256": "c433348be4600a5f7f92c241404cd2cf41115a0a589b886c1d55dabf954ce844",
+      "bytes": 64872
+    }
+  ],
+  "distinctScreenshotHashes": 5,
+  "cadence": {
+    "durationMs": 10000,
+    "frames": 88,
+    "fps": 8.8,
+    "intervalMs": {
+      "p50": 116.69999999999891,
+      "p95": 199.89999999999964,
+      "p99": 233.40000000000146,
+      "max": 233.40000000000146
+    }
+  },
+  "textTimeline": [
+    {
+      "elapsedMs": 117,
+      "text": "SKYBOUND 64 CHECK: 0/3 TIME: 15.9s LIVE WASD/Arrows: Move | SPACE: Jump | R: Restart",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 1196,
+      "text": "SKYBOUND 64 CHECK: 0/3 TIME: 17.0s LIVE WASD/Arrows: Move | SPACE: Jump | R: Restart",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 2227,
+      "text": "SKYBOUND 64 CHECK: 0/3 TIME: 18.0s LIVE WASD/Arrows: Move | SPACE: Jump | R: Restart",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 3360,
+      "text": "SKYBOUND 64 CHECK: 0/3 TIME: 19.1s LIVE WASD/Arrows: Move | SPACE: Jump | R: Restart",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 4505,
+      "text": "SKYBOUND 64 CHECK: 0/3 TIME: 20.3s LIVE WASD/Arrows: Move | SPACE: Jump | R: Restart",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 5586,
+      "text": "SKYBOUND 64 CHECK: 0/3 TIME: 21.4s LIVE WASD/Arrows: Move | SPACE: Jump | R: Restart",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 6617,
+      "text": "SKYBOUND 64 CHECK: 0/3 TIME: 22.4s LIVE WASD/Arrows: Move | SPACE: Jump | R: Restart",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 7700,
+      "text": "SKYBOUND 64 CHECK: 0/3 TIME: 23.5s LIVE WASD/Arrows: Move | SPACE: Jump | R: Restart",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 8861,
+      "text": "SKYBOUND 64 CHECK: 0/3 TIME: 24.6s LIVE WASD/Arrows: Move | SPACE: Jump | R: Restart",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 9930,
+      "text": "SKYBOUND 64 CHECK: 0/3 TIME: 25.7s LIVE WASD/Arrows: Move | SPACE: Jump | R: Restart",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 10982,
+      "text": "SKYBOUND 64 CHECK: 0/3 TIME: 26.8s LIVE WASD/Arrows: Move | SPACE: Jump | R: Restart",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 12095,
+      "text": "SKYBOUND 64 CHECK: 0/3 TIME: 27.9s LIVE WASD/Arrows: Move | SPACE: Jump | R: Restart",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 13135,
+      "text": "SKYBOUND 64 CHECK: 0/3 TIME: 28.9s LIVE WASD/Arrows: Move | SPACE: Jump | R: Restart",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 14212,
+      "text": "SKYBOUND 64 CHECK: 0/3 TIME: 29.9s LIVE WASD/Arrows: Move | SPACE: Jump | R: Restart",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 15285,
+      "text": "SKYBOUND 64 CHECK: 0/3 TIME: 31.1s LIVE WASD/Arrows: Move | SPACE: Jump | R: Restart",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 16355,
+      "text": "SKYBOUND 64 CHECK: 0/3 TIME: 32.2s LIVE WASD/Arrows: Move | SPACE: Jump | R: Restart",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 17401,
+      "text": "SKYBOUND 64 CHECK: 0/3 TIME: 33.2s LIVE WASD/Arrows: Move | SPACE: Jump | R: Restart",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 18459,
+      "text": "SKYBOUND 64 CHECK: 0/3 TIME: 34.3s LIVE WASD/Arrows: Move | SPACE: Jump | R: Restart",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 19467,
+      "text": "SKYBOUND 64 CHECK: 0/3 TIME: 35.3s LIVE WASD/Arrows: Move | SPACE: Jump | R: Restart",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 20544,
+      "text": "SKYBOUND 64 CHECK: 1/3 TIME: 36.2s LIVE WASD/Arrows: Move | SPACE: Jump | R: Restart",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 21562,
+      "text": "SKYBOUND 64 CHECK: 1/3 TIME: 37.4s LIVE WASD/Arrows: Move | SPACE: Jump | R: Restart",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 22610,
+      "text": "SKYBOUND 64 CHECK: 1/3 TIME: 38.4s LIVE WASD/Arrows: Move | SPACE: Jump | R: Restart",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 23673,
+      "text": "SKYBOUND 64 CHECK: 1/3 TIME: 39.5s LIVE WASD/Arrows: Move | SPACE: Jump | R: Restart",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 24766,
+      "text": "SKYBOUND 64 CHECK: 1/3 TIME: 40.6s LIVE WASD/Arrows: Move | SPACE: Jump | R: Restart",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 25823,
+      "text": "SKYBOUND 64 CHECK: 1/3 TIME: 41.6s LIVE WASD/Arrows: Move | SPACE: Jump | R: Restart",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 26840,
+      "text": "SKYBOUND 64 CHECK: 1/3 TIME: 42.7s LIVE WASD/Arrows: Move | SPACE: Jump | R: Restart",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 27905,
+      "text": "SKYBOUND 64 CHECK: 1/3 TIME: 43.7s LIVE WASD/Arrows: Move | SPACE: Jump | R: Restart",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 29003,
+      "text": "SKYBOUND 64 CHECK: 1/3 TIME: 44.8s LIVE WASD/Arrows: Move | SPACE: Jump | R: Restart",
+      "completionSignal": false,
+      "lapSignal": false
+    }
+  ],
+  "completionSignals": 0,
+  "consoleEvents": [
+    {
+      "at": "2026-07-31T04:25:31.482Z",
+      "type": "debug",
+      "text": "[vite] connecting..."
+    },
+    {
+      "at": "2026-07-31T04:25:31.490Z",
+      "type": "debug",
+      "text": "[vite] connected."
+    },
+    {
+      "at": "2026-07-31T04:25:31.638Z",
+      "type": "warning",
+      "text": "THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead."
+    },
+    {
+      "at": "2026-07-31T04:25:32.210Z",
+      "type": "warning",
+      "text": "[.WebGL-0x210c0014a600]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels"
+    },
+    {
+      "at": "2026-07-31T04:25:32.372Z",
+      "type": "warning",
+      "text": "[.WebGL-0x210c0014a600]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels"
+    },
+    {
+      "at": "2026-07-31T04:25:32.542Z",
+      "type": "warning",
+      "text": "[.WebGL-0x210c0014a600]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels"
+    },
+    {
+      "at": "2026-07-31T04:25:32.699Z",
+      "type": "warning",
+      "text": "[.WebGL-0x210c0014a600]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels (this message will no longer repeat)"
+    }
+  ],
+  "pageErrors": []
+}

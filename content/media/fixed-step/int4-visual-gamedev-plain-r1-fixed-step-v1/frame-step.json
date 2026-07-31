@@ -1,0 +1,88 @@
+{
+  "schema": "qwen-gauntlet-fixed-step-capture-v3",
+  "disclosure": "Controller-side deterministic Chrome virtual-time capture; game source unchanged. This is not a real-time performance measurement.",
+  "startedAt": "2026-07-31T04:45:08.138Z",
+  "finishedAt": "2026-07-31T05:17:19.385Z",
+  "url": "http://127.0.0.1:4174/?demo=1&seed=1337",
+  "httpStatus": 200,
+  "fps": 60,
+  "frameBudgetMs": 16.666666666666668,
+  "requestedDurationSeconds": 10,
+  "capturedFrames": 480,
+  "encodedDurationSeconds": 8,
+  "distinctFrameHashes": 480,
+  "completionFrame": 420,
+  "actions": [
+    {
+      "kind": "click",
+      "rule": "demo",
+      "text": "DEMO MODE"
+    }
+  ],
+  "sampledDom": [
+    {
+      "frame": 0,
+      "virtualTimeMs": 16.666666666666668,
+      "text": "LAP 0/1 TIME 0:00.00 0 KM/H SPEED LAP PROGRESS",
+      "completionSignal": false
+    },
+    {
+      "frame": 60,
+      "virtualTimeMs": 1016.6666666666667,
+      "text": "LAP 0/1 TIME 0:01.00 65 KM/H SPEED LAP PROGRESS",
+      "completionSignal": false
+    },
+    {
+      "frame": 120,
+      "virtualTimeMs": 2016.6666666666667,
+      "text": "LAP 0/1 TIME 0:02.00 101 KM/H SPEED LAP PROGRESS",
+      "completionSignal": false
+    },
+    {
+      "frame": 180,
+      "virtualTimeMs": 3016.666666666667,
+      "text": "LAP 0/1 TIME 0:03.00 101 KM/H SPEED LAP PROGRESS",
+      "completionSignal": false
+    },
+    {
+      "frame": 240,
+      "virtualTimeMs": 4016.666666666667,
+      "text": "LAP 0/1 TIME 0:04.00 101 KM/H SPEED LAP PROGRESS",
+      "completionSignal": false
+    },
+    {
+      "frame": 300,
+      "virtualTimeMs": 5016.666666666667,
+      "text": "LAP 0/1 TIME 0:05.00 101 KM/H SPEED LAP PROGRESS",
+      "completionSignal": false
+    },
+    {
+      "frame": 360,
+      "virtualTimeMs": 6016.666666666667,
+      "text": "LAP 0/1 TIME 0:06.00 101 KM/H SPEED LAP PROGRESS",
+      "completionSignal": false
+    },
+    {
+      "frame": 420,
+      "virtualTimeMs": 7016.666666666667,
+      "text": "🏁 RACE COMPLETE! Time: 0:06.63 Top Speed: 101 km/h MAIN MENU REPLAY",
+      "completionSignal": true
+    }
+  ],
+  "consoleEvents": [
+    {
+      "frame": 0,
+      "type": "debug",
+      "text": "[vite] connecting..."
+    },
+    {
+      "frame": 0,
+      "type": "debug",
+      "text": "[vite] connected."
+    }
+  ],
+  "pageErrors": [],
+  "wallCaptureSeconds": 1931.247,
+  "firstFrameSha256": "45ca0f82e61071a14096a23a143d3687515d2d3bd0c801e0811d422cf1e68512",
+  "lastFrameSha256": "93e48b595c6a18f7fec2c6dee89eaed0d5526732e0fea2c71aa29d4a0f3702ae"
+}

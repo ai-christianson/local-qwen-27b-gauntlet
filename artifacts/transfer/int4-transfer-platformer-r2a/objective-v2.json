@@ -1,0 +1,282 @@
+{
+  "schema": "qwen-gauntlet-objective-browser-v2",
+  "startedAt": "2026-07-31T03:33:53.854Z",
+  "finishedAt": "2026-07-31T03:34:44.340Z",
+  "url": "http://127.0.0.1:4175/?demo=1&seed=1337",
+  "httpStatus": 200,
+  "initialDom": {
+    "title": "Skybound 64",
+    "text": "SKYBOUND 64 Constructing worlds... CHECKPOINT 1 2 3 TIME 0:00 ▶ DEMO WASD / Arrows Move Space Jump R Restart",
+    "canvases": [],
+    "buttons": [
+      {
+        "text": "▶ DEMO",
+        "disabled": false
+      },
+      {
+        "text": "Play Again",
+        "disabled": false
+      }
+    ]
+  },
+  "finalDom": {
+    "title": "Skybound 64",
+    "text": "SKYBOUND 64 Constructing worlds... CHECKPOINT 1 2 3 TIME 0:00 ▶ DEMO WASD / Arrows Move Space Jump R Restart",
+    "canvases": []
+  },
+  "actions": [
+    {
+      "at": "2026-07-31T03:33:58.331Z",
+      "action": "click-error",
+      "rule": "demo",
+      "text": "▶ DEMO",
+      "error": "locator.click: Timeout 2000ms exceeded.\nCall log:\n  - waiting for getByRole('button', { name: /demo/i }).first()\n    - locator resolved to <button id=\"demo-btn\">▶ DEMO</button>\n  - attempting click action\n    2 × waiting for element to be visible, enabled and stable\n      - element is visible, enabled and stable\n      - scrolling into view if needed\n      - done scrolling\n      - <div id=\"loading\">…</div> intercepts pointer events\n    - retrying click action\n    - waiting 20ms\n    2 × waiting for element to be visible, enabled and stable\n      - element is visible, enabled and stable\n      - scrolling into view if needed\n      - done scrolling\n      - <div id=\"loading\">…</div> intercepts pointer events\n    - retrying click action\n      - waiting 100ms\n    4 × waiting for element to be visible, enabled and stable\n      - element is visible, enabled and stable\n      - scrolling into view if needed\n      - done scrolling\n      - <div id=\"loading\">…</div> intercepts pointer events\n    - re"
+    },
+    {
+      "at": "2026-07-31T03:33:58.345Z",
+      "action": "keypress",
+      "key": "Enter",
+      "rule": "no-visible-start-button"
+    },
+    {
+      "at": "2026-07-31T03:34:01.966Z",
+      "action": "fixed-keyboard-sequence",
+      "sequence": "ArrowUp 3.6s; ArrowLeft 0.8s; ArrowRight 0.8s"
+    },
+    {
+      "at": "2026-07-31T03:34:41.286Z",
+      "action": "keypress",
+      "key": "r",
+      "rule": "fixed-reset-probe"
+    }
+  ],
+  "screenshots": [
+    {
+      "filename": "objective-02s.png",
+      "sha256": "13ad29167393a7ac9c3ac2aff3c82447c844db7f989d2f06c219becd44bdc09a",
+      "bytes": 36732
+    },
+    {
+      "filename": "objective-06s.png",
+      "sha256": "13ad29167393a7ac9c3ac2aff3c82447c844db7f989d2f06c219becd44bdc09a",
+      "bytes": 36732
+    },
+    {
+      "filename": "objective-16s.png",
+      "sha256": "13ad29167393a7ac9c3ac2aff3c82447c844db7f989d2f06c219becd44bdc09a",
+      "bytes": 36732
+    },
+    {
+      "filename": "objective-45s.png",
+      "sha256": "13ad29167393a7ac9c3ac2aff3c82447c844db7f989d2f06c219becd44bdc09a",
+      "bytes": 36732
+    },
+    {
+      "filename": "objective-after-reset.png",
+      "sha256": "13ad29167393a7ac9c3ac2aff3c82447c844db7f989d2f06c219becd44bdc09a",
+      "bytes": 36732
+    }
+  ],
+  "distinctScreenshotHashes": 1,
+  "cadence": {
+    "durationMs": 10000,
+    "frames": 602,
+    "fps": 60.2,
+    "intervalMs": {
+      "p50": 16.69999999999891,
+      "p95": 16.700000000000728,
+      "p99": 16.80000000000109,
+      "max": 16.80000000000109
+    }
+  },
+  "textTimeline": [
+    {
+      "elapsedMs": 4,
+      "text": "SKYBOUND 64 Constructing worlds... CHECKPOINT 1 2 3 TIME 0:00 ▶ DEMO WASD / Arrows Move Space Jump R Restart",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 1009,
+      "text": "SKYBOUND 64 Constructing worlds... CHECKPOINT 1 2 3 TIME 0:00 ▶ DEMO WASD / Arrows Move Space Jump R Restart",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 2012,
+      "text": "SKYBOUND 64 Constructing worlds... CHECKPOINT 1 2 3 TIME 0:00 ▶ DEMO WASD / Arrows Move Space Jump R Restart",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 3016,
+      "text": "SKYBOUND 64 Constructing worlds... CHECKPOINT 1 2 3 TIME 0:00 ▶ DEMO WASD / Arrows Move Space Jump R Restart",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 4020,
+      "text": "SKYBOUND 64 Constructing worlds... CHECKPOINT 1 2 3 TIME 0:00 ▶ DEMO WASD / Arrows Move Space Jump R Restart",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 5029,
+      "text": "SKYBOUND 64 Constructing worlds... CHECKPOINT 1 2 3 TIME 0:00 ▶ DEMO WASD / Arrows Move Space Jump R Restart",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 6032,
+      "text": "SKYBOUND 64 Constructing worlds... CHECKPOINT 1 2 3 TIME 0:00 ▶ DEMO WASD / Arrows Move Space Jump R Restart",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 7039,
+      "text": "SKYBOUND 64 Constructing worlds... CHECKPOINT 1 2 3 TIME 0:00 ▶ DEMO WASD / Arrows Move Space Jump R Restart",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 8043,
+      "text": "SKYBOUND 64 Constructing worlds... CHECKPOINT 1 2 3 TIME 0:00 ▶ DEMO WASD / Arrows Move Space Jump R Restart",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 9046,
+      "text": "SKYBOUND 64 Constructing worlds... CHECKPOINT 1 2 3 TIME 0:00 ▶ DEMO WASD / Arrows Move Space Jump R Restart",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 10050,
+      "text": "SKYBOUND 64 Constructing worlds... CHECKPOINT 1 2 3 TIME 0:00 ▶ DEMO WASD / Arrows Move Space Jump R Restart",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 11053,
+      "text": "SKYBOUND 64 Constructing worlds... CHECKPOINT 1 2 3 TIME 0:00 ▶ DEMO WASD / Arrows Move Space Jump R Restart",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 12057,
+      "text": "SKYBOUND 64 Constructing worlds... CHECKPOINT 1 2 3 TIME 0:00 ▶ DEMO WASD / Arrows Move Space Jump R Restart",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 13060,
+      "text": "SKYBOUND 64 Constructing worlds... CHECKPOINT 1 2 3 TIME 0:00 ▶ DEMO WASD / Arrows Move Space Jump R Restart",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 14063,
+      "text": "SKYBOUND 64 Constructing worlds... CHECKPOINT 1 2 3 TIME 0:00 ▶ DEMO WASD / Arrows Move Space Jump R Restart",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 15067,
+      "text": "SKYBOUND 64 Constructing worlds... CHECKPOINT 1 2 3 TIME 0:00 ▶ DEMO WASD / Arrows Move Space Jump R Restart",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 16071,
+      "text": "SKYBOUND 64 Constructing worlds... CHECKPOINT 1 2 3 TIME 0:00 ▶ DEMO WASD / Arrows Move Space Jump R Restart",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 17074,
+      "text": "SKYBOUND 64 Constructing worlds... CHECKPOINT 1 2 3 TIME 0:00 ▶ DEMO WASD / Arrows Move Space Jump R Restart",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 18079,
+      "text": "SKYBOUND 64 Constructing worlds... CHECKPOINT 1 2 3 TIME 0:00 ▶ DEMO WASD / Arrows Move Space Jump R Restart",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 19083,
+      "text": "SKYBOUND 64 Constructing worlds... CHECKPOINT 1 2 3 TIME 0:00 ▶ DEMO WASD / Arrows Move Space Jump R Restart",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 20087,
+      "text": "SKYBOUND 64 Constructing worlds... CHECKPOINT 1 2 3 TIME 0:00 ▶ DEMO WASD / Arrows Move Space Jump R Restart",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 21089,
+      "text": "SKYBOUND 64 Constructing worlds... CHECKPOINT 1 2 3 TIME 0:00 ▶ DEMO WASD / Arrows Move Space Jump R Restart",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 22094,
+      "text": "SKYBOUND 64 Constructing worlds... CHECKPOINT 1 2 3 TIME 0:00 ▶ DEMO WASD / Arrows Move Space Jump R Restart",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 23096,
+      "text": "SKYBOUND 64 Constructing worlds... CHECKPOINT 1 2 3 TIME 0:00 ▶ DEMO WASD / Arrows Move Space Jump R Restart",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 24100,
+      "text": "SKYBOUND 64 Constructing worlds... CHECKPOINT 1 2 3 TIME 0:00 ▶ DEMO WASD / Arrows Move Space Jump R Restart",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 25110,
+      "text": "SKYBOUND 64 Constructing worlds... CHECKPOINT 1 2 3 TIME 0:00 ▶ DEMO WASD / Arrows Move Space Jump R Restart",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 26114,
+      "text": "SKYBOUND 64 Constructing worlds... CHECKPOINT 1 2 3 TIME 0:00 ▶ DEMO WASD / Arrows Move Space Jump R Restart",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 27118,
+      "text": "SKYBOUND 64 Constructing worlds... CHECKPOINT 1 2 3 TIME 0:00 ▶ DEMO WASD / Arrows Move Space Jump R Restart",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 28125,
+      "text": "SKYBOUND 64 Constructing worlds... CHECKPOINT 1 2 3 TIME 0:00 ▶ DEMO WASD / Arrows Move Space Jump R Restart",
+      "completionSignal": false,
+      "lapSignal": false
+    }
+  ],
+  "completionSignals": 0,
+  "consoleEvents": [
+    {
+      "at": "2026-07-31T03:33:54.227Z",
+      "type": "debug",
+      "text": "[vite] connecting..."
+    },
+    {
+      "at": "2026-07-31T03:33:54.229Z",
+      "type": "debug",
+      "text": "[vite] connected."
+    }
+  ],
+  "pageErrors": []
+}

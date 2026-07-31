@@ -1,0 +1,19 @@
+
+
+## Audit Finding: Corrupted `index.html` — Structural File Corruption Prevents Any Game Initialization
+
+**Root Cause: The `index.html` file is structurally corrupted.** The DOCTYPE declaration at line 1 reads `<!DOCTYPE Checkpoint>=0){` — the HTML document type was overwritten and fused with JavaScript code. The entire top of the file (HTML head, `<script>` tags for Three.js, scene setup, platform/checkpoint/finish-zone definitions, `init()` function, and demo-mode startup logic) is **missing entirely**. Only the tail-end functions (`updateCamera`, `updateVisuals`, `animate`, and a fragment of the reset logic) survive, beginning mid-expression with `=0){`.
+
+**Evidence — Observation (confirmed facts):**
+
+1. **Source file corruption** (`index.html:1`): `<!DOCTYPE Checkpoint>=0){` — no valid HTML structure exists. There is no `<head>`, no Three.js import, no `<canvas>`, no `<body>`, and no `init()` function definition anywhere in the file.
+
+2. **Browser evidence** (`objective-browser.json`): All 5 captured screenshots (at 2s, 6s, 16s, 45s, and post-reset) share the **identical SHA-256 hash** (`d723641e1c21def6...`), proving zero visual change across the entire 48-second test. The `initialDom` and `finalDom` both show raw JavaScript source text as page content, with **zero canvases** and **zero buttons**. The page displayed raw source code as a text dump instead of rendering a 3D scene.
+
+3. **No completion signals**: `completionSignals: 0` across 29 timeline entries. Every `completionSignal` and `lapSignal` is `false`. The browser's demo-mode keyboard actions (ArrowUp 3.6s, ArrowLeft 0.8s, ArrowRight 0.8s) had no effect because no game logic ever initialized.
+
+4. **Console shows only Vite connecting** — no JavaScript runtime errors were logged, meaning the browser simply rendered the file as plain text/HTML soup rather than executing any script.
+
+**Hypothesis:** The file was corrupted during a prior build/write operation — likely a build tool or automated process overwrote the HTML file with only the tail portion of the bundled JavaScript, truncating everything before approximately the `updateCamera()` function. Without the `<script>` tags loading Three.js, the scene graph, platform geometry, checkpoints, finish zone, `init()` call, and demo-mode entry point, the browser cannot construct or render anything.
+
+**Impact: Total.** This is not a logic bug — the game literally cannot start. Every downstream failure (no demo path execution, no checkpoint activation, no finish) is a direct consequence of this single file-level corruption.

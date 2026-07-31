@@ -1,0 +1,1 @@
+400: {"message":"At most 12 image(s) may be provided in one prompt. (parameter=image)","type":"BadRequestError","param":"image","code":400}

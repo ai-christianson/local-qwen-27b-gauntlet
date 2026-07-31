@@ -1,0 +1,6 @@
+Inspect this running game but do not edit it. Write a ranked plan of three small
+improvements that would most improve final visual quality, motion coherence,
+and demo reliability. Keep the existing game concept and procedural-art
+constraint. For each task, state a simple observable acceptance check. Prefer
+tasks that can be completed and tested independently. Keep the plan under 500
+words.

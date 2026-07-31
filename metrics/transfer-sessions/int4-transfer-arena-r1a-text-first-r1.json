@@ -1,0 +1,137 @@
+{
+  "schema": "qwen-gauntlet-pi-session-summary-v1",
+  "sessionFiles": [
+    "2026-07-31T03-35-59-211Z_019fb63e-39eb-72d4-99ed-63c59f2b7281.jsonl"
+  ],
+  "messages": {
+    "assistant": 66,
+    "user": 1,
+    "toolResult": 66,
+    "other": 0
+  },
+  "providers": {
+    "routerd": 66
+  },
+  "models": {
+    "qwen36-27b": 66
+  },
+  "stopReasons": {
+    "toolUse": 65,
+    "stop": 1
+  },
+  "tools": {
+    "bash": 42,
+    "read": 5,
+    "edit": 17,
+    "write": 2
+  },
+  "sourceMutationCalls": [
+    {
+      "timestamp": "2026-07-31T03:38:35.442Z",
+      "tool": "edit",
+      "path": "/home/qg/workspace/neon-arena-64/index.html"
+    },
+    {
+      "timestamp": "2026-07-31T03:38:53.846Z",
+      "tool": "edit",
+      "path": "/home/qg/workspace/neon-arena-64/index.html"
+    },
+    {
+      "timestamp": "2026-07-31T03:39:01.070Z",
+      "tool": "edit",
+      "path": null
+    },
+    {
+      "timestamp": "2026-07-31T03:39:22.069Z",
+      "tool": "edit",
+      "path": "/home/qg/workspace/neon-arena-64/index.html"
+    },
+    {
+      "timestamp": "2026-07-31T03:40:05.561Z",
+      "tool": "edit",
+      "path": "/home/qg/workspace/neon-arena-64/index.html"
+    },
+    {
+      "timestamp": "2026-07-31T03:40:51.814Z",
+      "tool": "edit",
+      "path": null
+    },
+    {
+      "timestamp": "2026-07-31T03:41:00.898Z",
+      "tool": "edit",
+      "path": "/home/qg/workspace/neon-arena-64/index.html"
+    },
+    {
+      "timestamp": "2026-07-31T03:42:16.187Z",
+      "tool": "edit",
+      "path": null
+    },
+    {
+      "timestamp": "2026-07-31T03:42:35.767Z",
+      "tool": "edit",
+      "path": "/home/qg/workspace/neon-arena-64/index.html"
+    },
+    {
+      "timestamp": "2026-07-31T03:42:45.375Z",
+      "tool": "edit",
+      "path": "/home/qg/workspace/neon-arena-64/index.html"
+    },
+    {
+      "timestamp": "2026-07-31T03:43:09.439Z",
+      "tool": "edit",
+      "path": null
+    },
+    {
+      "timestamp": "2026-07-31T03:43:15.038Z",
+      "tool": "edit",
+      "path": "/home/qg/workspace/neon-arena-64/index.html"
+    },
+    {
+      "timestamp": "2026-07-31T03:44:50.434Z",
+      "tool": "write",
+      "path": "/home/qg/workspace/neon-arena-64/test-demo.js"
+    },
+    {
+      "timestamp": "2026-07-31T03:48:16.441Z",
+      "tool": "edit",
+      "path": null
+    },
+    {
+      "timestamp": "2026-07-31T03:48:22.745Z",
+      "tool": "edit",
+      "path": "/home/qg/workspace/neon-arena-64/index.html"
+    },
+    {
+      "timestamp": "2026-07-31T03:48:29.484Z",
+      "tool": "edit",
+      "path": null
+    },
+    {
+      "timestamp": "2026-07-31T03:48:36.667Z",
+      "tool": "edit",
+      "path": "/home/qg/workspace/neon-arena-64/index.html"
+    },
+    {
+      "timestamp": "2026-07-31T03:49:13.916Z",
+      "tool": "edit",
+      "path": null
+    },
+    {
+      "timestamp": "2026-07-31T03:51:29.170Z",
+      "tool": "write",
+      "path": "/home/qg/workspace/neon-arena-64/test-demo2.js"
+    }
+  ],
+  "usage": {
+    "input": 1973014,
+    "output": 20552,
+    "cacheRead": 0,
+    "cacheWrite": 0,
+    "reasoning": 0,
+    "totalTokens": 1993566
+  },
+  "toolErrors": 11,
+  "firstTimestamp": "2026-07-31T03:35:59.211Z",
+  "lastTimestamp": "2026-07-31T03:53:20.375Z",
+  "malformedLines": 0
+}

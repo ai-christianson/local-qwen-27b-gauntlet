@@ -1,0 +1,310 @@
+{
+  "schema": "qwen-gauntlet-objective-browser-v2",
+  "startedAt": "2026-07-31T04:06:15.217Z",
+  "finishedAt": "2026-07-31T04:07:14.763Z",
+  "url": "http://127.0.0.1:4173/?demo=1&seed=1337",
+  "httpStatus": 200,
+  "initialDom": {
+    "title": "Neon Arena 64",
+    "text": "HP ENEMIES:3 SCORE:0 ▶ DEMO WASD/ARROWS=MOVE SPACE/FIRE=SHOOT MOUSE=AIM NEON ARENA 64 Destroy all drones to win! START GAME",
+    "canvases": [
+      {
+        "width": 1920,
+        "height": 1080,
+        "clientWidth": 1920,
+        "clientHeight": 1080
+      }
+    ],
+    "buttons": [
+      {
+        "text": "▶ DEMO",
+        "disabled": false
+      },
+      {
+        "text": "START GAME",
+        "disabled": false
+      }
+    ]
+  },
+  "finalDom": {
+    "title": "Neon Arena 64",
+    "text": "HP ENEMIES:0 SCORE:300 ▶ DEMO WASD/ARROWS=MOVE SPACE/FIRE=SHOOT MOUSE=AIM YOU WIN! All drones destroyed! Score: 300 PLAY AGAIN",
+    "canvases": [
+      {
+        "width": 1920,
+        "height": 1080,
+        "clientWidth": 1920,
+        "clientHeight": 1080
+      }
+    ]
+  },
+  "actions": [
+    {
+      "at": "2026-07-31T04:06:21.569Z",
+      "action": "click-error",
+      "rule": "demo",
+      "text": "▶ DEMO",
+      "error": "locator.click: Timeout 2000ms exceeded.\nCall log:\n  - waiting for getByRole('button', { name: /demo/i }).first()\n    - locator resolved to <button id=\"demo-btn\">▶ DEMO</button>\n  - attempting click action\n    2 × waiting for element to be visible, enabled and stable\n      - element is visible, enabled and stable\n      - scrolling into view if needed\n      - done scrolling\n      - <div id=\"message-screen\">…</div> intercepts pointer events\n    - retrying click action\n    - waiting 20ms\n    - waiting for element to be visible, enabled and stable\n    - element is visible, enabled and stable\n    - scrolling into view if needed\n"
+    },
+    {
+      "at": "2026-07-31T04:06:23.181Z",
+      "action": "click",
+      "rule": "start-play-race",
+      "text": "START GAME"
+    },
+    {
+      "at": "2026-07-31T04:06:25.464Z",
+      "action": "click",
+      "rule": "demo-after-menu-unblock",
+      "text": "▶ DEMO"
+    },
+    {
+      "at": "2026-07-31T04:06:29.422Z",
+      "action": "fixed-keyboard-sequence",
+      "sequence": "ArrowUp 3.6s; ArrowLeft 0.8s; ArrowRight 0.8s"
+    },
+    {
+      "at": "2026-07-31T04:07:10.963Z",
+      "action": "keypress",
+      "key": "r",
+      "rule": "fixed-reset-probe"
+    }
+  ],
+  "screenshots": [
+    {
+      "filename": "objective-02s.png",
+      "sha256": "4eee26c3e32ea54bec96a4f5c0e43f38927e11752a884550b117023206a39749",
+      "bytes": 161612
+    },
+    {
+      "filename": "objective-06s.png",
+      "sha256": "fa03293764fde3653b44aebb7ee8609cab16fa893554fc67cdceb608df7ab368",
+      "bytes": 217419
+    },
+    {
+      "filename": "objective-16s.png",
+      "sha256": "fc2ca55c7af8b3ec4a87befe637be5a934d0e44260560063b19cb63345325713",
+      "bytes": 124554
+    },
+    {
+      "filename": "objective-45s.png",
+      "sha256": "e793fb61d52a6088abf5f8d1b8f485b90eb9e6bcfa3f276706f7ce5ca8bcbf1e",
+      "bytes": 168146
+    },
+    {
+      "filename": "objective-after-reset.png",
+      "sha256": "c0e12f275ea954d3cea3256c2de82e24889013c62bcd7a95ecf8803458e943db",
+      "bytes": 183181
+    }
+  ],
+  "distinctScreenshotHashes": 5,
+  "cadence": {
+    "durationMs": 10000,
+    "frames": 90,
+    "fps": 9,
+    "intervalMs": {
+      "p50": 116.60000000000218,
+      "p95": 116.70000000000073,
+      "p99": 116.79999999999927,
+      "max": 116.79999999999927
+    }
+  },
+  "textTimeline": [
+    {
+      "elapsedMs": 107,
+      "text": "HP ENEMIES:2 SCORE:100 ▶ DEMO WASD/ARROWS=MOVE SPACE/FIRE=SHOOT MOUSE=AIM",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 1192,
+      "text": "HP ENEMIES:2 SCORE:100 ▶ DEMO WASD/ARROWS=MOVE SPACE/FIRE=SHOOT MOUSE=AIM",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 2285,
+      "text": "HP ENEMIES:2 SCORE:100 ▶ DEMO WASD/ARROWS=MOVE SPACE/FIRE=SHOOT MOUSE=AIM",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 3377,
+      "text": "HP ENEMIES:2 SCORE:100 ▶ DEMO WASD/ARROWS=MOVE SPACE/FIRE=SHOOT MOUSE=AIM",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 4480,
+      "text": "HP ENEMIES:2 SCORE:100 ▶ DEMO WASD/ARROWS=MOVE SPACE/FIRE=SHOOT MOUSE=AIM",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 5581,
+      "text": "HP ENEMIES:2 SCORE:100 ▶ DEMO WASD/ARROWS=MOVE SPACE/FIRE=SHOOT MOUSE=AIM",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 6688,
+      "text": "HP ENEMIES:2 SCORE:100 ▶ DEMO WASD/ARROWS=MOVE SPACE/FIRE=SHOOT MOUSE=AIM",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 7796,
+      "text": "HP ENEMIES:2 SCORE:100 ▶ DEMO WASD/ARROWS=MOVE SPACE/FIRE=SHOOT MOUSE=AIM",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 8805,
+      "text": "HP ENEMIES:2 SCORE:100 ▶ DEMO WASD/ARROWS=MOVE SPACE/FIRE=SHOOT MOUSE=AIM",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 9902,
+      "text": "HP ENEMIES:2 SCORE:100 ▶ DEMO WASD/ARROWS=MOVE SPACE/FIRE=SHOOT MOUSE=AIM",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 11000,
+      "text": "HP ENEMIES:2 SCORE:100 ▶ DEMO WASD/ARROWS=MOVE SPACE/FIRE=SHOOT MOUSE=AIM",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 12104,
+      "text": "HP ENEMIES:2 SCORE:100 ▶ DEMO WASD/ARROWS=MOVE SPACE/FIRE=SHOOT MOUSE=AIM",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 13205,
+      "text": "HP ENEMIES:2 SCORE:100 ▶ DEMO WASD/ARROWS=MOVE SPACE/FIRE=SHOOT MOUSE=AIM",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 14216,
+      "text": "HP ENEMIES:2 SCORE:100 ▶ DEMO WASD/ARROWS=MOVE SPACE/FIRE=SHOOT MOUSE=AIM",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 15334,
+      "text": "HP ENEMIES:2 SCORE:100 ▶ DEMO WASD/ARROWS=MOVE SPACE/FIRE=SHOOT MOUSE=AIM",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 16366,
+      "text": "HP ENEMIES:2 SCORE:100 ▶ DEMO WASD/ARROWS=MOVE SPACE/FIRE=SHOOT MOUSE=AIM",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 17400,
+      "text": "HP ENEMIES:2 SCORE:100 ▶ DEMO WASD/ARROWS=MOVE SPACE/FIRE=SHOOT MOUSE=AIM",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 18421,
+      "text": "HP ENEMIES:2 SCORE:100 ▶ DEMO WASD/ARROWS=MOVE SPACE/FIRE=SHOOT MOUSE=AIM",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 19521,
+      "text": "HP ENEMIES:2 SCORE:100 ▶ DEMO WASD/ARROWS=MOVE SPACE/FIRE=SHOOT MOUSE=AIM",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 20588,
+      "text": "HP ENEMIES:1 SCORE:200 ▶ DEMO WASD/ARROWS=MOVE SPACE/FIRE=SHOOT MOUSE=AIM",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 21647,
+      "text": "HP ENEMIES:1 SCORE:200 ▶ DEMO WASD/ARROWS=MOVE SPACE/FIRE=SHOOT MOUSE=AIM",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 22714,
+      "text": "HP ENEMIES:1 SCORE:200 ▶ DEMO WASD/ARROWS=MOVE SPACE/FIRE=SHOOT MOUSE=AIM",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 23792,
+      "text": "HP ENEMIES:1 SCORE:200 ▶ DEMO WASD/ARROWS=MOVE SPACE/FIRE=SHOOT MOUSE=AIM",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 24853,
+      "text": "HP ENEMIES:0 SCORE:300 ▶ DEMO WASD/ARROWS=MOVE SPACE/FIRE=SHOOT MOUSE=AIM",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 25920,
+      "text": "HP ENEMIES:0 SCORE:300 ▶ DEMO WASD/ARROWS=MOVE SPACE/FIRE=SHOOT MOUSE=AIM YOU WIN! All drones destroyed! Score: 300 PLAY AGAIN",
+      "completionSignal": true,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 26961,
+      "text": "HP ENEMIES:0 SCORE:300 ▶ DEMO WASD/ARROWS=MOVE SPACE/FIRE=SHOOT MOUSE=AIM YOU WIN! All drones destroyed! Score: 300 PLAY AGAIN",
+      "completionSignal": true,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 28000,
+      "text": "HP ENEMIES:0 SCORE:300 ▶ DEMO WASD/ARROWS=MOVE SPACE/FIRE=SHOOT MOUSE=AIM YOU WIN! All drones destroyed! Score: 300 PLAY AGAIN",
+      "completionSignal": true,
+      "lapSignal": false
+    }
+  ],
+  "completionSignals": 3,
+  "consoleEvents": [
+    {
+      "at": "2026-07-31T04:06:15.870Z",
+      "type": "warning",
+      "text": "[.WebGL-0x29cc00157e00]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels"
+    },
+    {
+      "at": "2026-07-31T04:06:15.979Z",
+      "type": "debug",
+      "text": "[vite] connecting..."
+    },
+    {
+      "at": "2026-07-31T04:06:15.980Z",
+      "type": "warning",
+      "text": "[.WebGL-0x29cc00157e00]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels"
+    },
+    {
+      "at": "2026-07-31T04:06:16.082Z",
+      "type": "warning",
+      "text": "[.WebGL-0x29cc00157e00]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels"
+    },
+    {
+      "at": "2026-07-31T04:06:16.180Z",
+      "type": "warning",
+      "text": "[.WebGL-0x29cc00157e00]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels (this message will no longer repeat)"
+    },
+    {
+      "at": "2026-07-31T04:06:16.280Z",
+      "type": "debug",
+      "text": "[vite] connected."
+    }
+  ],
+  "pageErrors": []
+}

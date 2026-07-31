@@ -1,0 +1,9 @@
+Build a polished, playable Three.js browser microgame called Skybound 64.
+Start small: one original low-poly obstacle course, one controllable runner,
+three checkpoints, and a clear finish state. Give it the cheerful chunky feel
+of a late-1990s console game without copying protected characters, levels,
+names, audio, or assets. Use only code-made procedural art. Add arcade keyboard
+controls, a deterministic seed, and a visible Demo button whose autoplay
+reaches the finish state without game-specific external input. Run it, inspect
+no more than eight screenshots, and make the basic loop actually work. Do not
+add multiplayer yet.

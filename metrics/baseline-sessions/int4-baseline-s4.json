@@ -1,0 +1,151 @@
+{
+  "schema": "qwen-gauntlet-pi-session-summary-v1",
+  "sessionFiles": [
+    "2026-07-31T00-34-21-984Z_019fb597-f2a0-7cd0-9fd1-2fd86aeda815.jsonl"
+  ],
+  "messages": {
+    "assistant": 54,
+    "user": 1,
+    "toolResult": 54,
+    "other": 0
+  },
+  "providers": {
+    "routerd": 54
+  },
+  "models": {
+    "qwen36-27b": 54
+  },
+  "stopReasons": {
+    "toolUse": 54
+  },
+  "tools": {
+    "bash": 24,
+    "write": 21,
+    "read": 8,
+    "edit": 1
+  },
+  "sourceMutationCalls": [
+    {
+      "timestamp": "2026-07-31T00:34:28.088Z",
+      "tool": "write",
+      "path": "/home/qg/workspace/apex-karts-64/index.html"
+    },
+    {
+      "timestamp": "2026-07-31T00:36:04.976Z",
+      "tool": "write",
+      "path": "/home/qg/workspace/apex-karts-64/index.html"
+    },
+    {
+      "timestamp": "2026-07-31T00:42:08.657Z",
+      "tool": "write",
+      "path": "/home/qg/workspace/apex-karts-64/game.p1.js"
+    },
+    {
+      "timestamp": "2026-07-31T00:42:29.677Z",
+      "tool": "write",
+      "path": "/home/qg/workspace/apex-karts-64/game.p2.js"
+    },
+    {
+      "timestamp": "2026-07-31T00:43:18.925Z",
+      "tool": "write",
+      "path": "/home/qg/workspace/apex-karts-64/game.p3.js"
+    },
+    {
+      "timestamp": "2026-07-31T00:44:19.410Z",
+      "tool": "write",
+      "path": "/home/qg/workspace/apex-karts-64/game.p4.js"
+    },
+    {
+      "timestamp": "2026-07-31T00:44:38.068Z",
+      "tool": "write",
+      "path": "/home/qg/workspace/apex-karts-64/game.p5.js"
+    },
+    {
+      "timestamp": "2026-07-31T00:45:07.830Z",
+      "tool": "write",
+      "path": "/home/qg/workspace/apex-karts-64/game.p6.js"
+    },
+    {
+      "timestamp": "2026-07-31T00:45:53.003Z",
+      "tool": "write",
+      "path": "/home/qg/workspace/apex-karts-64/game.p7.js"
+    },
+    {
+      "timestamp": "2026-07-31T00:46:18.149Z",
+      "tool": "write",
+      "path": "/home/qg/workspace/apex-karts-64/index.html"
+    },
+    {
+      "timestamp": "2026-07-31T00:48:11.134Z",
+      "tool": "write",
+      "path": "/home/qg/workspace/apex-karts-64/test-apex.spec.js"
+    },
+    {
+      "timestamp": "2026-07-31T00:49:15.825Z",
+      "tool": "write",
+      "path": "/home/qg/workspace/apex-karts-64/playwright.config.js"
+    },
+    {
+      "timestamp": "2026-07-31T00:55:19.760Z",
+      "tool": "write",
+      "path": "/home/qg/workspace/apex-karts-64/game.p1.js"
+    },
+    {
+      "timestamp": "2026-07-31T00:55:37.996Z",
+      "tool": "write",
+      "path": "/home/qg/workspace/apex-karts-64/game.p2.js"
+    },
+    {
+      "timestamp": "2026-07-31T00:57:17.350Z",
+      "tool": "write",
+      "path": "/home/qg/workspace/apex-karts-64/game.p3.js"
+    },
+    {
+      "timestamp": "2026-07-31T00:58:18.733Z",
+      "tool": "write",
+      "path": "/home/qg/workspace/apex-karts-64/game.p4.js"
+    },
+    {
+      "timestamp": "2026-07-31T01:00:31.463Z",
+      "tool": "write",
+      "path": "/home/qg/workspace/apex-karts-64/game.p5.js"
+    },
+    {
+      "timestamp": "2026-07-31T01:04:02.795Z",
+      "tool": "write",
+      "path": "/home/qg/workspace/apex-karts-64/game.p6.js"
+    },
+    {
+      "timestamp": "2026-07-31T01:05:02.976Z",
+      "tool": "write",
+      "path": "/home/qg/workspace/apex-karts-64/game.p7.js"
+    },
+    {
+      "timestamp": "2026-07-31T01:08:01.656Z",
+      "tool": "write",
+      "path": "/home/qg/workspace/apex-karts-64/game.p5.js"
+    },
+    {
+      "timestamp": "2026-07-31T01:11:58.485Z",
+      "tool": "edit",
+      "path": "/home/qg/workspace/apex-karts-64/game.p7.js"
+    },
+    {
+      "timestamp": "2026-07-31T01:13:01.737Z",
+      "tool": "write",
+      "path": "/home/qg/workspace/apex-karts-64/game.p7.js"
+    }
+  ],
+  "usage": {
+    "input": 2280575,
+    "output": 53983,
+    "cacheRead": 0,
+    "cacheWrite": 0,
+    "reasoning": 0,
+    "totalTokens": 2334558
+  },
+  "toolErrors": 4,
+  "firstTimestamp": "2026-07-31T00:34:21.984Z",
+  "lastTimestamp": "2026-07-31T01:14:22.975Z",
+  "malformedLines": 0
+}

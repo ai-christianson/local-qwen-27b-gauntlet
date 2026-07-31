@@ -1,0 +1,283 @@
+{
+  "schema": "qwen-gauntlet-objective-browser-v1",
+  "startedAt": "2026-07-31T03:30:25.337Z",
+  "finishedAt": "2026-07-31T03:31:15.938Z",
+  "url": "http://127.0.0.1:4173/?demo=1&seed=1337",
+  "httpStatus": 200,
+  "initialDom": {
+    "title": "Skybound 64",
+    "text": "SKYBOUND 64 CHECK: 0/3 TIME: 0.0s DEMO WASD/Arrows: Move | SPACE: Jump | R: Restart LOADING...",
+    "canvases": [],
+    "buttons": [
+      {
+        "text": "DEMO",
+        "disabled": false
+      }
+    ]
+  },
+  "finalDom": {
+    "title": "Skybound 64",
+    "text": "SKYBOUND 64 CHECK: 0/3 TIME: 0.0s DEMO WASD/Arrows: Move | SPACE: Jump | R: Restart LOADING...",
+    "canvases": []
+  },
+  "actions": [
+    {
+      "at": "2026-07-31T03:30:29.667Z",
+      "action": "click-error",
+      "rule": "demo",
+      "text": "DEMO",
+      "error": "locator.click: Timeout 2000ms exceeded.\nCall log:\n  - waiting for getByRole('button', { name: /demo/i }).first()\n    - locator resolved to <button id=\"demo-btn\" onclick=\"toggleDemo()\">DEMO</button>\n  - attempting click action\n    2 × waiting for element to be visible, enabled and stable\n      - element is visible, enabled and stable\n      - scrolling into view if needed\n      - done scrolling\n      - <vite-error-overlay></vite-error-overlay> intercepts pointer events\n    - retrying click action\n    - waiting 20ms\n    2 × waiting for element to be visible, enabled and stable\n      - element is visible, enabled and stable\n      - scrolling into view if needed\n      - done scrolling\n      - <vite-error-overlay></vite-error-overlay> intercepts pointer events\n    - retrying click action\n      - waiting 100ms\n    4 × waiting for element to be visible, enabled and stable\n      - element is visible, enabled and stable\n      - scrolling into view if needed\n      - done scrolling\n      - <vite-e"
+    },
+    {
+      "at": "2026-07-31T03:30:29.676Z",
+      "action": "keypress",
+      "key": "Enter",
+      "rule": "no-visible-start-button"
+    },
+    {
+      "at": "2026-07-31T03:30:33.293Z",
+      "action": "fixed-keyboard-sequence",
+      "sequence": "ArrowUp 3.6s; ArrowLeft 0.8s; ArrowRight 0.8s"
+    },
+    {
+      "at": "2026-07-31T03:31:12.822Z",
+      "action": "keypress",
+      "key": "r",
+      "rule": "fixed-reset-probe"
+    }
+  ],
+  "screenshots": [
+    {
+      "filename": "objective-02s.png",
+      "sha256": "4ef168a3d275dbd3b7385d0ea65ebe6a8bb49a0832a08b3c06de15ab80fff305",
+      "bytes": 113446
+    },
+    {
+      "filename": "objective-06s.png",
+      "sha256": "4ef168a3d275dbd3b7385d0ea65ebe6a8bb49a0832a08b3c06de15ab80fff305",
+      "bytes": 113446
+    },
+    {
+      "filename": "objective-16s.png",
+      "sha256": "4ef168a3d275dbd3b7385d0ea65ebe6a8bb49a0832a08b3c06de15ab80fff305",
+      "bytes": 113446
+    },
+    {
+      "filename": "objective-45s.png",
+      "sha256": "4ef168a3d275dbd3b7385d0ea65ebe6a8bb49a0832a08b3c06de15ab80fff305",
+      "bytes": 113446
+    },
+    {
+      "filename": "objective-after-reset.png",
+      "sha256": "4ef168a3d275dbd3b7385d0ea65ebe6a8bb49a0832a08b3c06de15ab80fff305",
+      "bytes": 113446
+    }
+  ],
+  "distinctScreenshotHashes": 1,
+  "cadence": {
+    "durationMs": 10000,
+    "frames": 602,
+    "fps": 60.2,
+    "intervalMs": {
+      "p50": 16.69999999999891,
+      "p95": 16.799999999999272,
+      "p99": 16.80000000000109,
+      "max": 16.80000000000291
+    }
+  },
+  "textTimeline": [
+    {
+      "elapsedMs": 9,
+      "text": "SKYBOUND 64 CHECK: 0/3 TIME: 0.0s DEMO WASD/Arrows: Move | SPACE: Jump | R: Restart LOADING...",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 1017,
+      "text": "SKYBOUND 64 CHECK: 0/3 TIME: 0.0s DEMO WASD/Arrows: Move | SPACE: Jump | R: Restart LOADING...",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 2023,
+      "text": "SKYBOUND 64 CHECK: 0/3 TIME: 0.0s DEMO WASD/Arrows: Move | SPACE: Jump | R: Restart LOADING...",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 3027,
+      "text": "SKYBOUND 64 CHECK: 0/3 TIME: 0.0s DEMO WASD/Arrows: Move | SPACE: Jump | R: Restart LOADING...",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 4034,
+      "text": "SKYBOUND 64 CHECK: 0/3 TIME: 0.0s DEMO WASD/Arrows: Move | SPACE: Jump | R: Restart LOADING...",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 5042,
+      "text": "SKYBOUND 64 CHECK: 0/3 TIME: 0.0s DEMO WASD/Arrows: Move | SPACE: Jump | R: Restart LOADING...",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 6050,
+      "text": "SKYBOUND 64 CHECK: 0/3 TIME: 0.0s DEMO WASD/Arrows: Move | SPACE: Jump | R: Restart LOADING...",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 7056,
+      "text": "SKYBOUND 64 CHECK: 0/3 TIME: 0.0s DEMO WASD/Arrows: Move | SPACE: Jump | R: Restart LOADING...",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 8063,
+      "text": "SKYBOUND 64 CHECK: 0/3 TIME: 0.0s DEMO WASD/Arrows: Move | SPACE: Jump | R: Restart LOADING...",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 9069,
+      "text": "SKYBOUND 64 CHECK: 0/3 TIME: 0.0s DEMO WASD/Arrows: Move | SPACE: Jump | R: Restart LOADING...",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 10073,
+      "text": "SKYBOUND 64 CHECK: 0/3 TIME: 0.0s DEMO WASD/Arrows: Move | SPACE: Jump | R: Restart LOADING...",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 11079,
+      "text": "SKYBOUND 64 CHECK: 0/3 TIME: 0.0s DEMO WASD/Arrows: Move | SPACE: Jump | R: Restart LOADING...",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 12085,
+      "text": "SKYBOUND 64 CHECK: 0/3 TIME: 0.0s DEMO WASD/Arrows: Move | SPACE: Jump | R: Restart LOADING...",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 13092,
+      "text": "SKYBOUND 64 CHECK: 0/3 TIME: 0.0s DEMO WASD/Arrows: Move | SPACE: Jump | R: Restart LOADING...",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 14098,
+      "text": "SKYBOUND 64 CHECK: 0/3 TIME: 0.0s DEMO WASD/Arrows: Move | SPACE: Jump | R: Restart LOADING...",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 15105,
+      "text": "SKYBOUND 64 CHECK: 0/3 TIME: 0.0s DEMO WASD/Arrows: Move | SPACE: Jump | R: Restart LOADING...",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 16112,
+      "text": "SKYBOUND 64 CHECK: 0/3 TIME: 0.0s DEMO WASD/Arrows: Move | SPACE: Jump | R: Restart LOADING...",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 17118,
+      "text": "SKYBOUND 64 CHECK: 0/3 TIME: 0.0s DEMO WASD/Arrows: Move | SPACE: Jump | R: Restart LOADING...",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 18125,
+      "text": "SKYBOUND 64 CHECK: 0/3 TIME: 0.0s DEMO WASD/Arrows: Move | SPACE: Jump | R: Restart LOADING...",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 19131,
+      "text": "SKYBOUND 64 CHECK: 0/3 TIME: 0.0s DEMO WASD/Arrows: Move | SPACE: Jump | R: Restart LOADING...",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 20136,
+      "text": "SKYBOUND 64 CHECK: 0/3 TIME: 0.0s DEMO WASD/Arrows: Move | SPACE: Jump | R: Restart LOADING...",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 21143,
+      "text": "SKYBOUND 64 CHECK: 0/3 TIME: 0.0s DEMO WASD/Arrows: Move | SPACE: Jump | R: Restart LOADING...",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 22149,
+      "text": "SKYBOUND 64 CHECK: 0/3 TIME: 0.0s DEMO WASD/Arrows: Move | SPACE: Jump | R: Restart LOADING...",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 23155,
+      "text": "SKYBOUND 64 CHECK: 0/3 TIME: 0.0s DEMO WASD/Arrows: Move | SPACE: Jump | R: Restart LOADING...",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 24161,
+      "text": "SKYBOUND 64 CHECK: 0/3 TIME: 0.0s DEMO WASD/Arrows: Move | SPACE: Jump | R: Restart LOADING...",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 25169,
+      "text": "SKYBOUND 64 CHECK: 0/3 TIME: 0.0s DEMO WASD/Arrows: Move | SPACE: Jump | R: Restart LOADING...",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 26175,
+      "text": "SKYBOUND 64 CHECK: 0/3 TIME: 0.0s DEMO WASD/Arrows: Move | SPACE: Jump | R: Restart LOADING...",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 27181,
+      "text": "SKYBOUND 64 CHECK: 0/3 TIME: 0.0s DEMO WASD/Arrows: Move | SPACE: Jump | R: Restart LOADING...",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 28187,
+      "text": "SKYBOUND 64 CHECK: 0/3 TIME: 0.0s DEMO WASD/Arrows: Move | SPACE: Jump | R: Restart LOADING...",
+      "completionSignal": false,
+      "lapSignal": false
+    }
+  ],
+  "completionSignals": 0,
+  "consoleEvents": [
+    {
+      "at": "2026-07-31T03:30:25.401Z",
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 500 (Internal Server Error)"
+    },
+    {
+      "at": "2026-07-31T03:30:25.434Z",
+      "type": "debug",
+      "text": "[vite] connecting..."
+    },
+    {
+      "at": "2026-07-31T03:30:25.441Z",
+      "type": "debug",
+      "text": "[vite] connected."
+    }
+  ],
+  "pageErrors": []
+}

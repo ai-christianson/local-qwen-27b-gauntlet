@@ -1,0 +1,23 @@
+{
+  "name": "qwen-gauntlet-final-video",
+  "private": true,
+  "version": "0.0.0",
+  "scripts": {
+    "studio": "remotion studio src/index.ts",
+    "still": "remotion still src/index.ts QwenGauntlet out/poster.png --frame=1080",
+    "render": "remotion render src/index.ts QwenGauntlet out/qwen-gauntlet-1080p60.mp4 --codec=h264 --crf=10 --pixel-format=yuv420p --audio-codec=aac",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@remotion/cli": "4.0.502",
+    "@remotion/media": "4.0.502",
+    "react": "19.2.8",
+    "react-dom": "19.2.8",
+    "remotion": "4.0.502"
+  },
+  "devDependencies": {
+    "@types/react": "19.2.14",
+    "@types/react-dom": "19.2.3",
+    "typescript": "5.9.3"
+  }
+}

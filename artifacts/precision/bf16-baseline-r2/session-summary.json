@@ -1,0 +1,92 @@
+{
+  "schema": "qwen-gauntlet-pi-session-summary-v1",
+  "sessionFiles": [
+    "2026-07-31T04-24-39-705Z_019fb66a-ca19-7faf-acb7-0a7bd7e840fc.jsonl"
+  ],
+  "messages": {
+    "assistant": 52,
+    "user": 1,
+    "toolResult": 51,
+    "other": 0
+  },
+  "providers": {
+    "routerd": 52
+  },
+  "models": {
+    "qwen36-27b-bf16": 52
+  },
+  "stopReasons": {
+    "toolUse": 51,
+    "length": 1
+  },
+  "tools": {
+    "bash": 30,
+    "write": 7,
+    "read": 11,
+    "edit": 3
+  },
+  "sourceMutationCalls": [
+    {
+      "timestamp": "2026-07-31T04:24:49.433Z",
+      "tool": "write",
+      "path": "/home/qg/workspace/apex-karts-64/index.html"
+    },
+    {
+      "timestamp": "2026-07-31T04:28:15.948Z",
+      "tool": "write",
+      "path": "/home/qg/workspace/apex-karts-64/js/game.js"
+    },
+    {
+      "timestamp": "2026-07-31T04:31:55.504Z",
+      "tool": "write",
+      "path": "/home/qg/workspace/apex-karts-64/index.html"
+    },
+    {
+      "timestamp": "2026-07-31T04:38:19.224Z",
+      "tool": "write",
+      "path": "/home/qg/workspace/apex-karts-64/test-screenshot.mjs"
+    },
+    {
+      "timestamp": "2026-07-31T04:39:29.340Z",
+      "tool": "write",
+      "path": "/home/qg/workspace/apex-karts-64/debug.mjs"
+    },
+    {
+      "timestamp": "2026-07-31T04:40:16.364Z",
+      "tool": "edit",
+      "path": "/home/qg/workspace/apex-karts-64/game.js"
+    },
+    {
+      "timestamp": "2026-07-31T04:40:30.231Z",
+      "tool": "write",
+      "path": "/home/qg/workspace/apex-karts-64/debug.mjs"
+    },
+    {
+      "timestamp": "2026-07-31T04:42:09.197Z",
+      "tool": "write",
+      "path": "/home/qg/workspace/apex-karts-64/debug2.mjs"
+    },
+    {
+      "timestamp": "2026-07-31T04:43:01.331Z",
+      "tool": "edit",
+      "path": "/home/qg/workspace/apex-karts-64/game.js"
+    },
+    {
+      "timestamp": "2026-07-31T04:43:53.457Z",
+      "tool": "edit",
+      "path": null
+    }
+  ],
+  "usage": {
+    "input": 1976872,
+    "output": 40650,
+    "cacheRead": 0,
+    "cacheWrite": 0,
+    "reasoning": 0,
+    "totalTokens": 2017522
+  },
+  "toolErrors": 7,
+  "firstTimestamp": "2026-07-31T04:24:39.705Z",
+  "lastTimestamp": "2026-07-31T04:45:22.643Z",
+  "malformedLines": 0
+}

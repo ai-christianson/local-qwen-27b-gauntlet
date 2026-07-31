@@ -1,0 +1,324 @@
+{
+  "schema": "qwen-gauntlet-objective-browser-v2",
+  "startedAt": "2026-07-31T03:45:51.879Z",
+  "finishedAt": "2026-07-31T03:46:52.771Z",
+  "url": "http://127.0.0.1:4173/?demo=1&seed=1337",
+  "httpStatus": 200,
+  "initialDom": {
+    "title": "Apex Karts 64",
+    "text": "APEX KARTS 64 CHALLENGER'S CIRCUIT START RACE DEMO MODE W/UP Gas S/DN Brake A/LEFT D/RIGHT Steer SPACE Drift R Reset",
+    "canvases": [
+      {
+        "width": 300,
+        "height": 150,
+        "clientWidth": 0,
+        "clientHeight": 0
+      },
+      {
+        "width": 1920,
+        "height": 1080,
+        "clientWidth": 1920,
+        "clientHeight": 1080
+      }
+    ],
+    "buttons": [
+      {
+        "text": "START RACE",
+        "disabled": false
+      },
+      {
+        "text": "DEMO MODE",
+        "disabled": false
+      },
+      {
+        "text": "MAIN MENU",
+        "disabled": false
+      },
+      {
+        "text": "REPLAY",
+        "disabled": false
+      }
+    ]
+  },
+  "finalDom": {
+    "title": "Apex Karts 64",
+    "text": "🏁 RACE COMPLETE! Time: 0:21.16 Top Speed: 101 km/h MAIN MENU REPLAY",
+    "canvases": [
+      {
+        "width": 100,
+        "height": 100,
+        "clientWidth": 0,
+        "clientHeight": 0
+      },
+      {
+        "width": 1920,
+        "height": 1080,
+        "clientWidth": 1920,
+        "clientHeight": 1080
+      }
+    ]
+  },
+  "actions": [
+    {
+      "at": "2026-07-31T03:46:00.309Z",
+      "action": "click-error",
+      "rule": "demo",
+      "text": "DEMO MODE",
+      "error": "locator.click: Timeout 2000ms exceeded.\nCall log:\n  - waiting for getByRole('button', { name: /demo/i }).first()\n    - locator resolved to <button class=\"mb\" onclick=\"startR(true)\">DEMO MODE</button>\n  - attempting click action\n    - waiting for element to be visible, enabled and stable\n    - element is visible, enabled and stable\n    - scrolling into view if needed\n    - done scrolling\n    - performing click action\n    - click action done\n    - waiting for scheduled navigations to finish\n"
+    },
+    {
+      "at": "2026-07-31T03:46:00.500Z",
+      "action": "keypress",
+      "key": "Enter",
+      "rule": "no-visible-start-button"
+    },
+    {
+      "at": "2026-07-31T03:46:05.072Z",
+      "action": "fixed-keyboard-sequence",
+      "sequence": "ArrowUp 3.6s; ArrowLeft 0.8s; ArrowRight 0.8s"
+    },
+    {
+      "at": "2026-07-31T03:46:48.601Z",
+      "action": "keypress",
+      "key": "r",
+      "rule": "fixed-reset-probe"
+    }
+  ],
+  "screenshots": [
+    {
+      "filename": "objective-02s.png",
+      "sha256": "a20e734e4c5d3cdb9bfb55d209688ead9f3af3ff5d5ca9972ace5f06c5038fbb",
+      "bytes": 75973
+    },
+    {
+      "filename": "objective-06s.png",
+      "sha256": "d4f96fa03b91f524dd81621f5bc91a596d94a899764dbc522252f6f0d0320a5c",
+      "bytes": 255829
+    },
+    {
+      "filename": "objective-16s.png",
+      "sha256": "2e63432b1ab626e4f36249566f7f71a516e82451506ba802b68aa3aeebe8d6bb",
+      "bytes": 353844
+    },
+    {
+      "filename": "objective-45s.png",
+      "sha256": "a67822da1af281c659f90b369871f3897e10048173185ed316f6240fbf230f54",
+      "bytes": 157432
+    },
+    {
+      "filename": "objective-after-reset.png",
+      "sha256": "582d66a3f9ebbabfae8adffa26003295e7ec5004d24b3fdeb9b8d158ee839e8f",
+      "bytes": 157128
+    }
+  ],
+  "distinctScreenshotHashes": 5,
+  "cadence": {
+    "durationMs": 10000,
+    "frames": 70,
+    "fps": 7,
+    "intervalMs": {
+      "p50": 133.40000000000146,
+      "p95": 183.39999999999964,
+      "p99": 183.39999999999964,
+      "max": 183.39999999999964
+    }
+  },
+  "textTimeline": [
+    {
+      "elapsedMs": 145,
+      "text": "LAP 0/1 TIME 0:16.95 SPEED LAP PROGRESS",
+      "completionSignal": false,
+      "lapSignal": true
+    },
+    {
+      "elapsedMs": 1219,
+      "text": "LAP 0/1 TIME 0:18.01 SPEED LAP PROGRESS",
+      "completionSignal": false,
+      "lapSignal": true
+    },
+    {
+      "elapsedMs": 2374,
+      "text": "LAP 0/1 TIME 0:19.16 SPEED LAP PROGRESS",
+      "completionSignal": false,
+      "lapSignal": true
+    },
+    {
+      "elapsedMs": 3528,
+      "text": "LAP 0/1 TIME 0:20.32 SPEED LAP PROGRESS",
+      "completionSignal": false,
+      "lapSignal": true
+    },
+    {
+      "elapsedMs": 4675,
+      "text": "🏁 RACE COMPLETE! Time: 0:21.16 Top Speed: 101 km/h MAIN MENU REPLAY",
+      "completionSignal": true,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 5768,
+      "text": "🏁 RACE COMPLETE! Time: 0:21.16 Top Speed: 101 km/h MAIN MENU REPLAY",
+      "completionSignal": true,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 6895,
+      "text": "🏁 RACE COMPLETE! Time: 0:21.16 Top Speed: 101 km/h MAIN MENU REPLAY",
+      "completionSignal": true,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 7998,
+      "text": "🏁 RACE COMPLETE! Time: 0:21.16 Top Speed: 101 km/h MAIN MENU REPLAY",
+      "completionSignal": true,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 9091,
+      "text": "🏁 RACE COMPLETE! Time: 0:21.16 Top Speed: 101 km/h MAIN MENU REPLAY",
+      "completionSignal": true,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 10225,
+      "text": "🏁 RACE COMPLETE! Time: 0:21.16 Top Speed: 101 km/h MAIN MENU REPLAY",
+      "completionSignal": true,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 11304,
+      "text": "🏁 RACE COMPLETE! Time: 0:21.16 Top Speed: 101 km/h MAIN MENU REPLAY",
+      "completionSignal": true,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 12437,
+      "text": "🏁 RACE COMPLETE! Time: 0:21.16 Top Speed: 101 km/h MAIN MENU REPLAY",
+      "completionSignal": true,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 13506,
+      "text": "🏁 RACE COMPLETE! Time: 0:21.16 Top Speed: 101 km/h MAIN MENU REPLAY",
+      "completionSignal": true,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 14559,
+      "text": "🏁 RACE COMPLETE! Time: 0:21.16 Top Speed: 101 km/h MAIN MENU REPLAY",
+      "completionSignal": true,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 15675,
+      "text": "🏁 RACE COMPLETE! Time: 0:21.16 Top Speed: 101 km/h MAIN MENU REPLAY",
+      "completionSignal": true,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 16810,
+      "text": "🏁 RACE COMPLETE! Time: 0:21.16 Top Speed: 101 km/h MAIN MENU REPLAY",
+      "completionSignal": true,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 17891,
+      "text": "🏁 RACE COMPLETE! Time: 0:21.16 Top Speed: 101 km/h MAIN MENU REPLAY",
+      "completionSignal": true,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 18985,
+      "text": "🏁 RACE COMPLETE! Time: 0:21.16 Top Speed: 101 km/h MAIN MENU REPLAY",
+      "completionSignal": true,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 20052,
+      "text": "🏁 RACE COMPLETE! Time: 0:21.16 Top Speed: 101 km/h MAIN MENU REPLAY",
+      "completionSignal": true,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 21165,
+      "text": "🏁 RACE COMPLETE! Time: 0:21.16 Top Speed: 101 km/h MAIN MENU REPLAY",
+      "completionSignal": true,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 22313,
+      "text": "🏁 RACE COMPLETE! Time: 0:21.16 Top Speed: 101 km/h MAIN MENU REPLAY",
+      "completionSignal": true,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 23386,
+      "text": "🏁 RACE COMPLETE! Time: 0:21.16 Top Speed: 101 km/h MAIN MENU REPLAY",
+      "completionSignal": true,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 24395,
+      "text": "🏁 RACE COMPLETE! Time: 0:21.16 Top Speed: 101 km/h MAIN MENU REPLAY",
+      "completionSignal": true,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 25587,
+      "text": "🏁 RACE COMPLETE! Time: 0:21.16 Top Speed: 101 km/h MAIN MENU REPLAY",
+      "completionSignal": true,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 26658,
+      "text": "🏁 RACE COMPLETE! Time: 0:21.16 Top Speed: 101 km/h MAIN MENU REPLAY",
+      "completionSignal": true,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 27732,
+      "text": "🏁 RACE COMPLETE! Time: 0:21.16 Top Speed: 101 km/h MAIN MENU REPLAY",
+      "completionSignal": true,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 28785,
+      "text": "🏁 RACE COMPLETE! Time: 0:21.16 Top Speed: 101 km/h MAIN MENU REPLAY",
+      "completionSignal": true,
+      "lapSignal": false
+    }
+  ],
+  "completionSignals": 23,
+  "consoleEvents": [
+    {
+      "at": "2026-07-31T03:45:53.386Z",
+      "type": "warning",
+      "text": "[.WebGL-0xebc0015b200]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels"
+    },
+    {
+      "at": "2026-07-31T03:45:53.602Z",
+      "type": "debug",
+      "text": "[vite] connecting..."
+    },
+    {
+      "at": "2026-07-31T03:45:53.606Z",
+      "type": "warning",
+      "text": "[.WebGL-0xebc0015b200]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels"
+    },
+    {
+      "at": "2026-07-31T03:45:53.790Z",
+      "type": "warning",
+      "text": "[.WebGL-0xebc0015b200]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels"
+    },
+    {
+      "at": "2026-07-31T03:45:53.969Z",
+      "type": "warning",
+      "text": "[.WebGL-0xebc0015b200]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels (this message will no longer repeat)"
+    },
+    {
+      "at": "2026-07-31T03:45:54.140Z",
+      "type": "debug",
+      "text": "[vite] connected."
+    }
+  ],
+  "pageErrors": []
+}

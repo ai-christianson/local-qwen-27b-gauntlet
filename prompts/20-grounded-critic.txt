@@ -1,0 +1,5 @@
+Review this running game as a skeptical game QA director. Use the supplied
+screenshots, gameplay report, console log, and rubric rather than effort or code
+size. Return JSON with your scores, the evidence you actually observed, failed
+gates, confidence, and exactly one highest-value repair. Do not claim that a
+screenshot proves handling or multiplayer.

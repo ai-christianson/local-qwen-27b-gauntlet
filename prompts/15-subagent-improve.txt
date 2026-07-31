@@ -1,0 +1,3 @@
+Inspect the running game and make one high-value improvement. Use the Qwen
+worker and reviewer subagents if they are helpful. Keep the game playable, test
+the change, and do not add features just to make the code larger.

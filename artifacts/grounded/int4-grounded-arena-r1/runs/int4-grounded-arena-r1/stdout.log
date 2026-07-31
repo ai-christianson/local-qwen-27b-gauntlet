@@ -1,0 +1,19 @@
+
+
+**Summary of fix:**
+
+**Root Cause:** The bare `import * as THREE from 'three'` combined with an `<script type="importmap">` failed because Vite's dev server intercepts bare imports and tries Node-style resolution (looking in `node_modules`), failing since `three` isn't installed locally.
+
+**Fix (3 changes to `index.html`):**
+
+1. **Replaced bare import with CDN URL** — `import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js'` — bypasses Vite's module resolution since it's an absolute URL
+2. **Removed the import map** — no longer needed with direct CDN import
+3. **Added URL parameter handling** — auto-starts demo mode when `?demo=1` is in URL; reads seed from `?seed=1337`
+4. **Added zero-byte favicon** — prevents 404 on `favicon.ico` request for a clean console
+
+**Verification results:**
+- ✅ No Vite error overlay
+- ✅ Three.js canvas renders (1 canvas)
+- ✅ Zero console errors
+- ✅ Demo mode auto-starts, destroys all 3 drones
+- ✅ Victory: "ARENA CLEARED" — Score: 2500

@@ -1,0 +1,18 @@
+
+
+## Summary
+
+**Bug fixed:** Missing `three` dependency
+
+**Root cause:** The game's `index.html` imports `three` (`import * as THREE from 'three'`), but the `three` package was never installed in `node_modules`. Vite could not resolve the import, causing a 500 error on every request and showing the Vite error overlay instead of the game.
+
+**Fix applied:**
+```
+npm install three
+```
+
+**Result:**
+- `three` added to `package.json` as `"three": "^0.185.1"`
+- Game now loads, renders the 3D scene, and runs correctly
+- Demo mode activates and shows visible progress through the course (player reaches checkpoint 1/3)
+- Console is clean (only a benign favicon 404 that all browsers generate)

@@ -1,0 +1,14 @@
+
+Unable to parse HTML; parse5 error code eof-in-element-that-can-contain-only-text
+ at /home/qg/workspace/apex-karts-64/index.html:301:1
+299 |  var dx=tgt.x-KS.x,dz=tgt.z-KS.z,ta=Math.atan2(dx,dz);
+300 |  var diff=ta-KS.h;while(diff>Math.PI)diff-=Math.PI*2;while(diff<-Math.PI
+301 |  
+    |  ^
+
+Unable to parse HTML; parse5 error code eof-in-element-that-can-contain-only-text
+ at /home/qg/workspace/apex-karts-64/index.html:301:1
+299 |  var dx=tgt.x-KS.x,dz=tgt.z-KS.z,ta=Math.atan2(dx,dz);
+300 |  var diff=ta-KS.h;while(diff>Math.PI)diff-=Math.PI*2;while(diff<-Math.PI
+301 |  
+    |  ^

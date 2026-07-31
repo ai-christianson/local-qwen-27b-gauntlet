@@ -1,0 +1,55 @@
+{
+  "schema": "qwen-gauntlet-pi-session-summary-v1",
+  "sessionFiles": [
+    "2026-07-31T04-24-39-601Z_019fb66a-c9b1-7684-9f01-d118dc3c5e7c.jsonl"
+  ],
+  "messages": {
+    "assistant": 16,
+    "user": 1,
+    "toolResult": 15,
+    "other": 0
+  },
+  "providers": {
+    "routerd": 16
+  },
+  "models": {
+    "qwen36-27b-bf16": 16
+  },
+  "stopReasons": {
+    "toolUse": 15,
+    "length": 1
+  },
+  "tools": {
+    "bash": 12,
+    "write": 3
+  },
+  "sourceMutationCalls": [
+    {
+      "timestamp": "2026-07-31T04:24:48.277Z",
+      "tool": "write",
+      "path": null
+    },
+    {
+      "timestamp": "2026-07-31T04:28:08.129Z",
+      "tool": "write",
+      "path": null
+    },
+    {
+      "timestamp": "2026-07-31T04:32:27.161Z",
+      "tool": "write",
+      "path": null
+    }
+  ],
+  "usage": {
+    "input": 740118,
+    "output": 34135,
+    "cacheRead": 0,
+    "cacheWrite": 0,
+    "reasoning": 0,
+    "totalTokens": 774253
+  },
+  "toolErrors": 3,
+  "firstTimestamp": "2026-07-31T04:24:39.601Z",
+  "lastTimestamp": "2026-07-31T04:40:54.995Z",
+  "malformedLines": 0
+}

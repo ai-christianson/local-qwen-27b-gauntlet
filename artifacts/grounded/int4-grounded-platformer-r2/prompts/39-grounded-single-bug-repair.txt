@@ -1,0 +1,11 @@
+You are a fresh builder improving this existing Three.js game.
+
+Read `/home/qg/review/critic.txt` and
+`/home/qg/review/objective-browser.json`. Fix the single highest-impact Demo
+bug the critic identified. Preserve the intended game rules: do not force a
+completion, delete challenges or hazards, lower the win condition, or replace
+the game with a separate simulator.
+
+Run the actual browser game through its Demo path and verify visible progress.
+Inspect no more than four screenshots. Leave the game playable, deterministic,
+and clean in the browser console.

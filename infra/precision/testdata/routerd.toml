@@ -1,0 +1,15 @@
+node_name = "synthetic-test"
+
+[[listeners]]
+name = "normal"
+addr = "127.0.0.1:10000"
+
+[[backends]]
+name = "pair-a"
+base_url = "http://127.0.0.1:8201"
+models = ["qwen36-27b"]
+
+[[backends]]
+name = "pair-b"
+base_url = "http://127.0.0.1:8202"
+models = ["qwen36-27b"]

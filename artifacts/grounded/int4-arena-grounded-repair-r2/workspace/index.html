@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Neon Arena 64</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#000;overflow:hidden;font-family:'Courier New',monospace;color:#fff}
+canvas{display:block}
+#ui-overlay{position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:10}
+#hud{position:absolute;top:12px;left:12px;display:flex;gap:16px;align-items:center;pointer-events:none}
+.hud-item{background:rgba(0,0,0,0.65);border:2px solid #0ff;padding:6px 12px;font-size:13px;color:#0ff;text-transform:uppercase;letter-spacing:1px;text-shadow:0 0 8px #0ff}
+.hud-item.health{border-color:#0f0;color:#0f0;text-shadow:0 0 8px #0f0}
+.hud-item.enemies{border-color:#f0f;color:#f0f;text-shadow:0 0 8px #f0f}
+#health-bar-outer{width:120px;height:12px;background:#333;border:2px solid #0f0;margin-top:4px}
+#health-bar-inner{height:100%;width:100%;background:linear-gradient(90deg,#0f0,#0a0);transition:width .2s}
+#demo-btn{position:absolute;top:12px;right:12px;pointer-events:all;cursor:pointer;background:rgba(0,0,0,0.7);border:2px solid #ff0;color:#ff0;padding:8px 18px;font-family:'Courier New',monospace;font-size:13px;text-transform:uppercase;letter-spacing:2px;text-shadow:0 0 8px #ff0;transition:all .2s}
+#demo-btn:hover{background:#ff0;color:#000;text-shadow:none;box-shadow:0 0 20px #ff0}
+#message-screen{position:absolute;top:0;left:0;width:100%;height:100%;display:flex;flex-direction:column;justify-content:center;align-items:center;background:rgba(0,0,0,0.85);pointer-events:all;z-index:20}
+#message-screen.hidden{display:none}
+#message-title{font-size:42px;text-transform:uppercase;letter-spacing:6px;margin-bottom:12px;text-shadow:0 0 20px currentColor}
+#message-subtitle{font-size:16px;letter-spacing:2px;margin-bottom:28px;opacity:.8}
+#message-btn{pointer-events:all;cursor:pointer;background:transparent;border:2px solid #0ff;color:#0ff;padding:10px 30px;font-family:'Courier New',monospace;font-size:15px;text-transform:uppercase;letter-spacing:2px;text-shadow:0 0 8px #0ff;transition:all .2s}
+#message-btn:hover{background:#0ff;color:#000;text-shadow:none}
+#controls-hint{position:absolute;bottom:12px;left:50%;transform:translateX(-50%);font-size:11px;color:#888;text-align:center;letter-spacing:1px;pointer-events:none}
+#crosshair{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:20px;height:20px;pointer-events:none}
+#crosshair::before,#crosshair::after{content:'';position:absolute;background:#0ff;opacity:.6}
+#crosshair::before{width:2px;height:100%;left:50%;transform:translateX(-50%)}
+#crosshair::after{height:2px;width:100%;top:50%;transform:translateY(-50%)}
+</style>
+</head>
+<body>
+<div id="ui-overlay">
+  <div id="hud">
+    <div class="hud-item health">HP<div id="health-bar-outer"><div id="health-bar-inner"></div></div></div>
+    <div class="hud-item enemies">ENEMIES:<span id="enemy-count">3</span></div>
+    <div class="hud-item">SCORE:<span id="score">0</span></div>
+  </div>
+  <button id="demo-btn">&#9654; DEMO</button>
+  <div id="crosshair"></div>
+  <div id="controls-hint">WASD/ARROWS=MOVE &nbsp; SPACE/FIRE=SHOOT &nbsp; MOUSE=AIM</div>
+</div>
+<div id="message-screen">
+  <div id="message-title" style="color:#0ff">NEON ARENA 64</div>
+  <div id="message-subtitle">DESTROY ALL DRONES TO WIN</div>
+  <button id="message-btn">START GAME</button>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+// === NEON ARENA 64 ===
+// PRNG
+function createRNG(s){return function(){s=(s+0x6D2B79F5)|0;let t=Math.imul(s^(s>>>15),1|s);t=(t+Math.imul(t^(t>>>7),61|t))^t;return((t^(t>>>14))>>>0)/4294967296}}
+const rng=createRNG(64812);
+
+// State
+const S={MENU:0,PLAY:1,WON:2,LOST:3,DEMO:4};
+let gs=S.MENU,score=0,playerHP=100,enemiesAlive=3,isDemo=false;
+
+// Three.js
+const scene=new THREE.Scene();
+scene.background=new THREE.Color(0x050510);
+scene.fog=new THREE.FogExp2(0x050510,0.012);
+const camera=new THREE.PerspectiveCamera(60,window.innerWidth/window.innerHeight,0.5,200);
+camera.position.set(0,16,20);
+camera.lookAt(0,0,0);
+const renderer=new THREE.WebGLRenderer({antialias:true});
+renderer.setSize(window.innerWidth,window.innerHeight);
+renderer.setPixelRatio(Math.min(window.devicePixelRatio,2));
+renderer.shadowMap.enabled=true;
+document.body.appendChild(renderer.domElement);
+
+// Lights
+scene.add(new THREE.AmbientLight(0x112244,0.6));
+const dirLight=new THREE.DirectionalLight(0xffffff,0.8);
+dirLight.position.set(10,20,10);dirLight.castShadow=true;
+dirLight.shadow.mapSize.set(1024,1024);
+dirLight.shadow.camera.near=1;dirLight.shadow.camera.far=60;
+dirLight.shadow.camera.left=-30;dirLight.shadow.camera.right=30;
+dirLight.shadow.camera.top=30;dirLight.shadow.camera.bottom=-30;
+scene.add(dirLight);
+
+// Materials
+const M=(c,e)=>new THREE.MeshStandardMaterial({color:c,emissive:e||0,emissiveIntensity:(e||0)?0.8:0,roughness:0.4,metalness:0.5});
+const floorMat=new THREE.MeshStandardMaterial({color:0x111122,roughness:0.8,metalness:0.2});
+const wallMat=new THREE.MeshStandardMaterial({color:0x1a1a3a,roughness:0.5,metalness:0.4});
+const neonBlue=M(0x00ffff,0x00ffff);
+const neonPink=M(0xff00ff,0xff00ff);
+const neonGreen=M(0x00ff66,0x00ff66);
+const neonYell=M(0xffff00,0xffff00);
+const playerMat=new THREE.MeshStandardMaterial({color:0x00ccff,emissive:0x004466,emissiveIntensity:0.5,roughness:0.3,metalness:0.7});
+const playerGlow=M(0x00ffff,0x00ffff);
+const droneMat=new THREE.MeshStandardMaterial({color:0xff2266,emissive:0xff1144,emissiveIntensity:0.6,roughness:0.3,metalness:0.6});
+const droneEye=M(0xff0044,0xff0044);
+const bulletMat=M(0xffff00,0xffff00);
+const eBulletMat=M(0xff0066,0xff0044);
+const expMat=M(0xff8800,0xff6600);
+
+// Arena
+const arena=new THREE.Group();scene.add(arena);
+const fl=new THREE.Mesh(new THREE.PlaneGeometry(60,60,30,30),floorMat);
+fl.rotation.x=-Math.PI/2;fl.receiveShadow=true;arena.add(fl);
+const grid=new THREE.GridHelper(60,30,0x004466,0x002233);
+grid.position.y=0.01;arena.add(grid);
+
+function wall(w,h,d,x,y,z,m){const g=new THREE.Mesh(new THREE.BoxGeometry(w,h,d),m||wallMat);g.position.set(x,y,z);g.castShadow=true;g.receiveShadow=true;arena.add(g)}
+wall(60,4,1,0,2,-30);wall(60,4,1,0,2,30);wall(1,4,60,-30,2,0);wall(1,4,60,30,2,0);
+
+function strip(w,h,d,x,y,z,m){const g=new THREE.Mesh(new THREE.BoxGeometry(w,h,d),m);g.position.set(x,y,z);arena.add(g)}
+strip(60,.15,.15,0,4.01,-30,neonBlue);strip(60,.15,.15,0,4.01,30,neonPink);
+strip(.15,.15,60,-30,4.01,0,neonBlue);strip(.15,.15,60,30,4.01,0,neonPink);
+
+[[-20,-20],[20,-20],[-20,20],[20,20],[0,-15],[0,15],[-15,0],[15,0]].forEach(([x,z])=>{
+  const p=new THREE.Mesh(new THREE.CylinderGeometry(.8,1,6,8),wallMat);
+  p.position.set(x,3,z);p.castShadow=true;arena.add(p);
+  const r=new THREE.Mesh(new THREE.TorusGeometry(1.1,.1,6,12),neonGreen);
+  r.position.set(x,6.05,z);r.rotation.x=Math.PI/2;arena.add(r);
+});
+
+const plat=new THREE.Mesh(new THREE.CylinderGeometry(3,3.5,.5,8),neonBlue);
+plat.position.set(0,.25,0);arena.add(plat);
+
+const decoCubes=[];
+for(let i=0;i<12;i++){
+  const sz=.4+rng()*.8;const c=new THREE.Mesh(new THREE.BoxGeometry(sz,sz,sz),rng()>.5?neonYell:neonPink);
+  c.position.set((rng()-.5)*40,5+rng()*8,(rng()-.5)*40);
+  c.userData={rs:(rng()-.5)*3,fs:.5+rng()*1.5,by:c.position.y,fo:rng()*Math.PI*2};
+  arena.add(c);decoCubes.push(c);
+}
+
+// Player ship
+const pGroup=new THREE.Group();scene.add(pGroup);
+function buildPlayer(){
+  while(pGroup.children.length)pGroup.remove(pGroup.children[0]);
+  const hull=new THREE.Mesh(new THREE.BoxGeometry(1.2,.5,2),playerMat);hull.castShadow=true;pGroup.add(hull);
+  const nose=new THREE.Mesh(new THREE.ConeGeometry(.5,1.2,4),playerGlow);nose.rotation.x=Math.PI/2;nose.position.z=-1.4;pGroup.add(nose);
+  const wings=new THREE.Mesh(new THREE.BoxGeometry(2.8,.15,1),playerMat);wings.position.set(0,-.1,.3);pGroup.add(wings);
+  [[-1.4],[1.4]].forEach(([x])=>{const t=new THREE.Mesh(new THREE.BoxGeometry(.3,.2,.5),playerGlow);t.position.set(x,-.05,.3);pGroup.add(t)});
+  [[-0.4],[0.4]].forEach(([x])=>{const e=new THREE.Mesh(new THREE.SphereGeometry(.25,6,6),playerGlow);e.position.set(x,-.1,1.1);pGroup.add(e)});
+}
+buildPlayer();
+pGroup.position.set(0,1.5,20);pGroup.rotation.x=-Math.PI/2;
+
+const player={x:0,z:20,speed:8,fireRate:.18,fireCD:0,alive:true,aimDirX:0,aimDirZ:-1};
+
+// Enemies
+const enemies=[];
+const ePositions=[{x:-15,z:-10},{x:15,z:-10},{x:0,z:-22}];
+
+function buildDrone(){
+  const g=new THREE.Group();
+  g.add(Object.assign(new THREE.Mesh(new THREE.CylinderGeometry(.8,1,.6,6),droneMat),{castShadow:true}));
+  const eye=new THREE.Mesh(new THREE.SphereGeometry(.3,6,6),droneEye);eye.position.y=.35;g.add(eye);
+  for(let i=0;i<3;i++){const a=i/3*Math.PI*2;const s=new THREE.Mesh(new THREE.ConeGeometry(.15,.8,4),droneMat);s.position.set(Math.cos(a)*1.1,0,Math.sin(a)*1.1);s.rotation.z=Math.cos(a)*.5;s.rotation.x=-Math.sin(a)*.5;g.add(s)}
+  const ring=new THREE.Mesh(new THREE.TorusGeometry(1.2,.08,4,12),neonPink);ring.rotation.x=Math.PI/2;ring.userData.isRing=true;g.add(ring);
+  return g;
+}
+
+function spawnEnemies(){
+  enemies.forEach(e=>scene.remove(e.group));enemies.length=0;
+  ePositions.forEach((pos,i)=>{
+    const g=buildDrone();g.position.set(pos.x,2,pos.z);scene.add(g);
+    enemies.push({group:g,x:pos.x,z:pos.z,hp:3,alive:true,speed:2.5+rng(),radius:8+rng()*6,angle:rng()*Math.PI*2,fireCD:0,fireRate:1.5+rng(),behaviorTimer:0,behavior:'patrol',cx:pos.x,cz:pos.z,drift:rng()*Math.PI*2});
+  });
+  enemiesAlive=3;updateHUD();
+}
+
+// Bullets
+const bullets=[];
+const eBullets=[];
+
+function fireBullet(){
+  if(!player.alive||player.fireCD>0)return;
+  player.fireCD=player.fireRate;
+  const m=new THREE.Mesh(new THREE.SphereGeometry(.15,4,4),bulletMat);
+  m.position.set(player.x,1.5,player.z);scene.add(m);
+  const d=new THREE.Vector3(player.aimDirX,0,player.aimDirZ).normalize();
+  bullets.push({mesh:m,x:player.x,z:player.z,dx:d.x*25,dz:d.z*25,life:2});
+}
+
+function fireEBullet(e){
+  if(!e.alive)return;e.fireCD=e.fireRate;
+  const m=new THREE.Mesh(new THREE.SphereGeometry(.18,4,4),eBulletMat);
+  m.position.set(e.x,2,e.z);scene.add(m);
+  const dx=player.x-e.x,dz=player.z-e.z,dist=Math.sqrt(dx*dx+dz*dz)||1;
+  eBullets.push({mesh:m,x:e.x,z:e.z,dx:dx/dist*12,dz:dz/dist*12,life:3});
+}
+
+// Explosions
+const explosions=[];
+function createExplosion(x,z,y){
+  const parts=[];const count=8+Math.floor(rng()*6);
+  for(let i=0;i<count;i++){
+    const m=new THREE.Mesh(new THREE.TetrahedronGeometry(.2+rng()*.3,0),rng()>.5?expMat:neonYell);
+    m.position.set(x,y||2,z);scene.add(m);
+    parts.push({mesh:m,dx:(rng()-.5)*8,dy:rng()*6,dz:(rng()-.5)*8,life:.6+rng()*.4});
+  }
+  explosions.push({parts,life:1});
+}
+
+// Input
+const keys={};
+window.addEventListener('keydown',e=>{keys[e.code]=true;if(e.code==='Space')e.preventDefault()});
+window.addEventListener('keyup',e=>{keys[e.code]=false});
+let mouseX=0;
+window.addEventListener('mousemove',e=>{mouseX=(e.clientX/window.innerWidth)*2-1});
+window.addEventListener('mousedown',()=>{if(gs===S.PLAY&&!isDemo)keys['Space']=true});
+window.addEventListener('mouseup',()=>{keys['Space']=false});
+
+// Demo
+let demoTimer=0;
+const demoPath=[
+  {x:0,z:20,t:0},{x:-4,z:14,t:1.5},{x:-10,z:6,t:3.5},{x:-14,z:-4,t:5.5},
+  {x:-8,z:-12,t:7},{x:0,z:-14,t:9},{x:8,z:-10,t:11},{x:14,z:-4,t:13},
+  {x:10,z:4,t:14.5},{x:14,z:-10,t:16.5},{x:0,z:-22,t:19},
+  {x:-4,z:-20,t:21},{x:4,z:-18,t:23}
+];
+let demoFired=[];
+const demoFireTimes=[2,4,6,8,10,12,14,16,18,20,22];
+
+function startDemo(){
+  isDemo=true;gs=S.DEMO;demoTimer=0;
+  demoFired=new Array(demoFireTimes.length).fill(false);
+  resetGame();hideMessage();
+}
+
+function resetGame(){
+  player.x=0;player.z=20;player.alive=true;playerHP=100;player.fireCD=0;
+  player.aimDirX=0;player.aimDirZ=-1;score=0;enemiesAlive=3;
+  pGroup.position.set(0,1.5,20);pGroup.rotation.y=Math.PI;
+  bullets.forEach(b=>scene.remove(b.mesh));bullets.length=0;
+  eBullets.forEach(b=>scene.remove(b.mesh));eBullets.length=0;
+  explosions.forEach(e=>e.parts.forEach(p=>scene.remove(p.mesh)));explosions.length=0;
+  spawnEnemies();updateHUD();
+}
+
+// UI
+function updateHUD(){
+  document.getElementById('health-bar-inner').style.width=playerHP+'%';
+  document.getElementById('enemy-count').textContent=enemiesAlive;
+  document.getElementById('score').textContent=score;
+}
+function showMessage(t,s,b,c){
+  document.getElementById('message-screen').classList.remove('hidden');
+  document.getElementById('message-title').textContent=t;
+  document.getElementById('message-title').style.color=c||'#0ff';
+  document.getElementById('message-subtitle').textContent=s||'';
+  document.getElementById('message-btn').textContent=b||'OK';
+}
+function hideMessage(){document.getElementById('message-screen').classList.add('hidden')}
+
+document.getElementById('message-btn').addEventListener('click',()=>{
+  if(gs===S.MENU||gs===S.WON||gs===S.LOST){isDemo=false;gs=S.PLAY;resetGame();hideMessage()}
+});
+document.getElementById('demo-btn').addEventListener('click',startDemo);
+
+// Collision
+function circHit(x1,z1,r1,x2,z2,r2){const dx=x1-x2,dz=z1-z2;return dx*dx+dz*dz<(r1+r2)*(r1+r2)}
+function clamp(x,z){return[Math.max(-28,Math.min(28,x)),Math.max(-28,Math.min(28,z))]}
+
+// Pillar collision
+const pillars=[[-20,-20],[20,-20],[-20,20],[20,20],[0,-15],[0,15],[-15,0],[15,0]];
+function pillarHit(x,z,r){for(const[px,pz]of pillars){const dx=x-px,dz=z-pz;if(dx*dx+dz*dz<(r+1.5)*(r+1.5))return true}return false}
+
+// Game loop
+let lastTime=performance.now(),gameTime=0;
+
+function update(dt){
+  gameTime+=dt;
+
+  // Animate decorations always
+  decoCubes.forEach(c=>{
+    c.rotation.y+=c.userData.rs*dt;
+    c.position.y=c.userData.by+Math.sin(gameTime*c.userData.fs+c.userData.fo)*.5;
+  });
+
+  if(gs!==S.PLAY&&gs!==S.DEMO){
+    // Camera idle rotation on menu
+    camera.position.set(Math.sin(gameTime*.2)*25,16,Math.cos(gameTime*.2)*25);
+    camera.lookAt(0,0,0);
+    // Animate drones on menu
+    enemies.forEach(e=>{if(e.alive)e.group.children.forEach(ch=>{if(ch.userData.isRing)ch.rotation.z+=3*dt})});
+    return;
+  }
+
+  // Animate drone rings
+  enemies.forEach(e=>{if(e.alive)e.group.children.forEach(ch=>{if(ch.userData.isRing)ch.rotation.z+=3*dt})});
+
+  // Player movement
+  let mx=0,mz=0;
+  if(keys['KeyW']||keys['ArrowUp'])mz-=1;
+  if(keys['KeyS']||keys['ArrowDown'])mz+=1;
+  if(keys['KeyA']||keys['ArrowLeft'])mx-=1;
+  if(keys['KeyD']||keys['ArrowRight'])mx+=1;
+  if(mx||mz){const len=Math.sqrt(mx*mx+mz*mz);mx/=len;mz/=len}
+
+  // Mouse aim
+  const camForward=new THREE.Vector3(0,-.5,-1).normalize();
+  const camRight=new THREE.Vector3(1,0,0);
+  player.aimDirX=mouseX;
+  player.aimDirZ=-1;
+
+  if(!isDemo){
+    player.x+=mx*player.speed*dt;
+    player.z+=mz*player.speed*dt;
+  } else {
+    // Demo path following
+    demoTimer+=dt;
+    let tg=demoPath[0],nt=demoPath[1];
+    for(let i=0;i<demoPath.length-1;i++){
+      if(demoTimer>=demoPath[i].t&&demoTimer<demoPath[i+1].t){tg=demoPath[i];nt=demoPath[i+1];break}
+      if(i===demoPath.length-2&&demoTimer>=demoPath[i+1].t){tg=demoPath[demoPath.length-1];nt=demoPath[demoPath.length-1]}
+    }
+    const sd=nt.t-tg.t;const t2=sd>0?Math.min(1,(demoTimer-tg.t)/sd):1;
+    const st=t2*t2*(3-2*t2);
+    const tx=tg.x+(nt.x-tg.x)*st,tz=tg.z+(nt.z-tg.z)*st;
+    player.x+=(tx-player.x)*Math.min(1,dt*6);
+    player.z+=(tz-player.z)*Math.min(1,dt*6);
+
+    // Demo: enemies stay at fixed positions (demo path designed for this)
+    // Enemy fire disabled during demo to ensure smooth showcase of player ability
+    enemies.forEach(e=>{
+      if(!e.alive)return;
+      const dx2=player.x-e.x,dz2=player.z-e.z;
+      e.group.position.set(e.x,2,e.z);
+      e.group.rotation.y=Math.atan2(dx2,dz2);
+    });
+
+    // Demo: aim at nearest enemy BEFORE firing
+    let nearest=null,nd=Infinity;
+    enemies.forEach(e=>{if(!e.alive)return;const d=Math.sqrt((e.x-player.x)**2+(e.z-player.z)**2);if(d<nd){nd=d;nearest=e}});
+    if(nearest){
+      const dx=nearest.x-player.x,dz=nearest.z-player.z,dist=Math.sqrt(dx*dx+dz*dz)||1;
+      player.aimDirX=dx/dist;player.aimDirZ=dz/dist;
+    }
+
+    // Demo fire
+    demoFired.forEach((f,i)=>{
+      if(!f&&demoTimer>=demoFireTimes[i]&&enemiesAlive>0){
+        demoFired[i]=true;fireBullet();
+      }
+    });
+  }
+
+  // Clamp player
+  let[px,pz]=clamp(player.x,player.z);
+  if(pillarHit(px,pz,1.5)){px=player.x;pz=player.z} // undo move if hitting pillar
+  player.x=px;player.z=pz;
+
+  // Firing
+  if(keys['Space']&&!isDemo)fireBullet();
+  player.fireCD=Math.max(0,player.fireCD-dt);
+
+  // Update player mesh
+  pGroup.position.set(player.x,1.5,player.z);
+  if(isDemo||player.aimDirX||player.aimDirZ!==-1){
+    pGroup.rotation.y=Math.atan2(player.aimDirX,player.aimDirZ);
+  }
+
+  // Update bullets
+  for(let i=bullets.length-1;i>=0;i--){
+    const b=bullets[i];
+    b.x+=b.dx*dt;b.z+=b.dz*dt;b.life-=dt;
+    b.mesh.position.set(b.x,1.5,b.z);
+    let hit=false;
+    // Check enemy hits
+    for(const e of enemies){
+      if(!e.alive)continue;
+      if(circHit(b.x,b.z,.2,e.x,e.z,1.2)){
+        e.hp--;
+        if(e.hp<=0){
+          e.alive=false;scene.remove(e.group);
+          createExplosion(e.x,e.z,2);
+          enemiesAlive--;score+=100;
+          updateHUD();
+          if(enemiesAlive<=0){
+            isDemo=false;
+            gs=S.WON;
+            setTimeout(()=>showMessage('YOU WIN!','All drones destroyed! Score: '+score,'PLAY AGAIN','#0f0'),500);
+          }
+        }
+        hit=true;break;
+      }
+    }
+    if(hit||b.life<=0||b.x<-30||b.x>30||b.z<-30||b.z>30){
+      scene.remove(b.mesh);bullets.splice(i,1);
+    }
+  }
+
+  // Update enemy bullets
+  for(let i=eBullets.length-1;i>=0;i--){
+    const b=eBullets[i];
+    b.x+=b.dx*dt;b.z+=b.dz*dt;b.life-=dt;
+    b.mesh.position.set(b.x,2,b.z);
+    let hit=false;
+    if(circHit(b.x,b.z,.25,player.x,player.z,.8)){
+      playerHP-=10;player.fireCD=0;
+      updateHUD();
+      if(playerHP<=0){
+        player.alive=false;
+        isDemo=false;
+        gs=S.LOST;
+        createExplosion(player.x,player.z,1.5);
+        setTimeout(()=>showMessage('GAME OVER','Your ship was destroyed!','RETRY','#ff4444'),500);
+      }
+      hit=true;
+    }
+    if(hit||b.life<=0||b.x<-30||b.x>30||b.z<-30||b.z>30){
+      scene.remove(b.mesh);eBullets.splice(i,1);
+    }
+  }
+
+  // Demo path timeout: if path exhausted and still in demo, end gracefully
+  if(isDemo&&gs===S.DEMO&&demoTimer>26){
+    isDemo=false;
+    gs=enemiesAlive<=0?S.WON:S.WON;
+    setTimeout(()=>showMessage('DEMO COMPLETE',enemiesAlive<=0?'All drones eliminated!':'Path finished. Score: '+score,enemiesAlive<=0?'PLAY AGAIN':'PLAY AGAIN',enemiesAlive<=0?'#0f0':'#0ff'),100);
+  }
+
+  // Non-demo enemy AI
+  if(!isDemo){
+    enemies.forEach(e=>{
+      if(!e.alive)return;
+      const dx=player.x-e.x,dz=player.z-e.z;
+      const dist=Math.sqrt(dx*dx+dz*dz);
+
+      e.behaviorTimer+=dt;
+      if(dist<15)e.behavior='chase';
+      else if(e.behaviorTimer>3)e.behavior='patrol';
+
+      if(e.behavior==='chase'){
+        // Move toward player
+        const speed=e.speed*dt;
+        if(dist>4){
+          e.x+=dx/dist*speed;
+          e.z+=dz/dist*speed;
+        }
+        // Fire
+        e.fireCD-=dt;
+        if(e.fireCD<=0&&dist<22)fireEBullet(e);
+      } else {
+        // Patrol in orbit
+        e.angle+=.5*dt;
+        e.x=e.cx+Math.cos(e.angle)*e.radius;
+        e.z=e.cz+Math.sin(e.angle)*e.radius;
+        // Occasionally fire at player
+        e.fireCD-=dt;
+        if(e.fireCD<=1&&dist<20&&Math.random()<dt*.3)fireEBullet(e);
+      }
+
+      [e.x,e.z]=clamp(e.x,e.z);
+      e.group.position.set(e.x,2,e.z);
+      // Face player
+      e.group.rotation.y=Math.atan2(dx,dz);
+    });
+  }
+
+  // Explosions
+  for(let i=explosions.length-1;i>=0;i--){
+    const exp=explosions[i];
+    exp.life-=dt;
+    exp.parts.forEach(p=>{
+      p.mesh.position.x+=p.dx*dt;
+      p.mesh.position.y+=p.dy*dt;
+      p.mesh.position.z+=p.dz*dt;
+      p.dy-=15*dt; // gravity
+      p.life-=dt;
+      const s=Math.max(0,p.life);
+      p.mesh.scale.setScalar(s);
+    });
+    if(exp.life<=0){
+      exp.parts.forEach(p=>scene.remove(p.mesh));
+      explosions.splice(i,1);
+    }
+  }
+
+  // Camera follow player
+  const camTargetX=player.x*.3;
+  const camTargetZ=player.z*.3+18;
+  camera.position.x+=(camTargetX-camera.position.x)*dt*2;
+  camera.position.z+=(camTargetZ-camera.position.z)*dt*2;
+  camera.position.y=16;
+  camera.lookAt(player.x*.5,0,player.z*.3);
+}
+
+function animate(){
+  requestAnimationFrame(animate);
+  const now=performance.now();
+  const dt=Math.min(.05,(now-lastTime)/1000);
+  lastTime=now;
+  update(dt);
+  renderer.render(scene,camera);
+}
+
+window.addEventListener('resize',()=>{
+  camera.aspect=window.innerWidth/window.innerHeight;
+  camera.updateProjectionMatrix();
+  renderer.setSize(window.innerWidth,window.innerHeight);
+});
+
+// Show initial menu
+showMessage('NEON ARENA 64','Destroy all drones to win!','START GAME','#0ff');
+animate();
+</script>
+</body>
+</html>

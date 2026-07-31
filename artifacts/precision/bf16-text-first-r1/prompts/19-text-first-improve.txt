@@ -1,0 +1,8 @@
+Improve this Three.js kart microgame.
+
+Run it, fix the highest-impact problems, and verify that the kart can complete
+the basic loop. Keep the existing scope; do not add multiplayer yet.
+
+For this run, do not open screenshots or other image artifacts. Use source
+inspection, browser console output, DOM text, and executable checks. Leave
+visual scoring to the independent evaluator.

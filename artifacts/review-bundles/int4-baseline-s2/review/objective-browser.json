@@ -1,0 +1,329 @@
+{
+  "schema": "qwen-gauntlet-objective-browser-v1",
+  "startedAt": "2026-07-31T01:22:48.917Z",
+  "finishedAt": "2026-07-31T01:23:42.493Z",
+  "url": "http://127.0.0.1:4173/?demo=1&seed=1337",
+  "httpStatus": 200,
+  "initialDom": {
+    "title": "Apex Karts 64",
+    "text": "APEX KARTS 64 CHALLENGER'S CIRCUIT START RACE DEMO MODE W/UP Gas S/DN Brake A/LEFT D/RIGHT Steer SPACE Drift R Reset",
+    "canvases": [
+      {
+        "width": 300,
+        "height": 150,
+        "clientWidth": 0,
+        "clientHeight": 0
+      },
+      {
+        "width": 1920,
+        "height": 1080,
+        "clientWidth": 1920,
+        "clientHeight": 1080
+      }
+    ],
+    "buttons": [
+      {
+        "text": "START RACE",
+        "disabled": false
+      },
+      {
+        "text": "DEMO MODE",
+        "disabled": false
+      },
+      {
+        "text": "MAIN MENU",
+        "disabled": false
+      },
+      {
+        "text": "REPLAY",
+        "disabled": false
+      }
+    ]
+  },
+  "finalDom": {
+    "title": "Apex Karts 64",
+    "text": "LAP 0/1 TIME 0:31.66 SPEED LAP PROGRESS",
+    "canvases": [
+      {
+        "width": 100,
+        "height": 100,
+        "clientWidth": 94,
+        "clientHeight": 94
+      },
+      {
+        "width": 1920,
+        "height": 1080,
+        "clientWidth": 1920,
+        "clientHeight": 1080
+      }
+    ]
+  },
+  "actions": [
+    {
+      "at": "2026-07-31T01:22:53.554Z",
+      "action": "click",
+      "rule": "demo",
+      "text": "DEMO MODE"
+    },
+    {
+      "at": "2026-07-31T01:22:57.423Z",
+      "action": "fixed-keyboard-sequence",
+      "sequence": "ArrowUp 3.6s; ArrowLeft 0.8s; ArrowRight 0.8s"
+    },
+    {
+      "at": "2026-07-31T01:23:38.981Z",
+      "action": "keypress",
+      "key": "r",
+      "rule": "fixed-reset-probe"
+    }
+  ],
+  "screenshots": [
+    {
+      "filename": "objective-02s.png",
+      "sha256": "82b3f676123561aa11db7a1c06c89ce3a5324df95324bdbfdebeb4dc559ca8fb",
+      "bytes": 76539
+    },
+    {
+      "filename": "objective-06s.png",
+      "sha256": "468f4815364243e69b31779c9c3e944818e0defcf003bc495f00258b282a6e37",
+      "bytes": 108047
+    },
+    {
+      "filename": "objective-16s.png",
+      "sha256": "ca2344cd1f6f6b14d58bcdfaacd8f256ec86e107e7d717d7286fb9d2e09b150a",
+      "bytes": 113674
+    },
+    {
+      "filename": "objective-45s.png",
+      "sha256": "cd3b9a0f276615c97689ee983eae6b5e380fdd904de2fd415bbd82ac142deb63",
+      "bytes": 109893
+    },
+    {
+      "filename": "objective-after-reset.png",
+      "sha256": "4f7a8e16c2f4d7f12c58c39c5702a1e777b1e59fe592c2831ca61085e921a975",
+      "bytes": 154236
+    }
+  ],
+  "distinctScreenshotHashes": 5,
+  "cadence": {
+    "durationMs": 10000,
+    "frames": 138,
+    "fps": 13.8,
+    "intervalMs": {
+      "p50": 66.70000000000073,
+      "p95": 83.39999999999964,
+      "p99": 83.40000000000146,
+      "max": 83.40000000000146
+    }
+  },
+  "textTimeline": [
+    {
+      "elapsedMs": 73,
+      "text": "GO! LAP 0/1 TIME 0:00.00 SPEED LAP PROGRESS",
+      "completionSignal": false,
+      "lapSignal": true
+    },
+    {
+      "elapsedMs": 1091,
+      "text": "GO! LAP 0/1 TIME 0:00.00 SPEED LAP PROGRESS",
+      "completionSignal": false,
+      "lapSignal": true
+    },
+    {
+      "elapsedMs": 2105,
+      "text": "GO! LAP 0/1 TIME 0:00.00 SPEED LAP PROGRESS",
+      "completionSignal": false,
+      "lapSignal": true
+    },
+    {
+      "elapsedMs": 3154,
+      "text": "LAP 0/1 TIME 0:00.82 SPEED LAP PROGRESS",
+      "completionSignal": false,
+      "lapSignal": true
+    },
+    {
+      "elapsedMs": 4179,
+      "text": "LAP 0/1 TIME 0:01.84 SPEED LAP PROGRESS",
+      "completionSignal": false,
+      "lapSignal": true
+    },
+    {
+      "elapsedMs": 5207,
+      "text": "LAP 0/1 TIME 0:02.87 SPEED LAP PROGRESS",
+      "completionSignal": false,
+      "lapSignal": true
+    },
+    {
+      "elapsedMs": 6249,
+      "text": "LAP 0/1 TIME 0:03.92 SPEED LAP PROGRESS",
+      "completionSignal": false,
+      "lapSignal": true
+    },
+    {
+      "elapsedMs": 7272,
+      "text": "LAP 0/1 TIME 0:04.94 SPEED LAP PROGRESS",
+      "completionSignal": false,
+      "lapSignal": true
+    },
+    {
+      "elapsedMs": 8302,
+      "text": "LAP 0/1 TIME 0:05.97 SPEED LAP PROGRESS",
+      "completionSignal": false,
+      "lapSignal": true
+    },
+    {
+      "elapsedMs": 9322,
+      "text": "LAP 0/1 TIME 0:06.99 SPEED LAP PROGRESS",
+      "completionSignal": false,
+      "lapSignal": true
+    },
+    {
+      "elapsedMs": 10358,
+      "text": "LAP 0/1 TIME 0:08.02 SPEED LAP PROGRESS",
+      "completionSignal": false,
+      "lapSignal": true
+    },
+    {
+      "elapsedMs": 11397,
+      "text": "LAP 0/1 TIME 0:09.07 SPEED LAP PROGRESS",
+      "completionSignal": false,
+      "lapSignal": true
+    },
+    {
+      "elapsedMs": 12421,
+      "text": "LAP 0/1 TIME 0:10.09 SPEED LAP PROGRESS",
+      "completionSignal": false,
+      "lapSignal": true
+    },
+    {
+      "elapsedMs": 13443,
+      "text": "LAP 0/1 TIME 0:11.11 SPEED LAP PROGRESS",
+      "completionSignal": false,
+      "lapSignal": true
+    },
+    {
+      "elapsedMs": 14472,
+      "text": "LAP 0/1 TIME 0:12.14 SPEED LAP PROGRESS",
+      "completionSignal": false,
+      "lapSignal": true
+    },
+    {
+      "elapsedMs": 15531,
+      "text": "LAP 0/1 TIME 0:13.20 SPEED LAP PROGRESS",
+      "completionSignal": false,
+      "lapSignal": true
+    },
+    {
+      "elapsedMs": 16550,
+      "text": "LAP 0/1 TIME 0:14.22 SPEED LAP PROGRESS",
+      "completionSignal": false,
+      "lapSignal": true
+    },
+    {
+      "elapsedMs": 17577,
+      "text": "LAP 0/1 TIME 0:15.25 SPEED LAP PROGRESS",
+      "completionSignal": false,
+      "lapSignal": true
+    },
+    {
+      "elapsedMs": 18605,
+      "text": "LAP 0/1 TIME 0:16.27 SPEED LAP PROGRESS",
+      "completionSignal": false,
+      "lapSignal": true
+    },
+    {
+      "elapsedMs": 19621,
+      "text": "LAP 0/1 TIME 0:17.29 SPEED LAP PROGRESS",
+      "completionSignal": false,
+      "lapSignal": true
+    },
+    {
+      "elapsedMs": 20673,
+      "text": "LAP 0/1 TIME 0:18.34 SPEED LAP PROGRESS",
+      "completionSignal": false,
+      "lapSignal": true
+    },
+    {
+      "elapsedMs": 21698,
+      "text": "LAP 0/1 TIME 0:19.37 SPEED LAP PROGRESS",
+      "completionSignal": false,
+      "lapSignal": true
+    },
+    {
+      "elapsedMs": 22732,
+      "text": "LAP 0/1 TIME 0:20.40 SPEED LAP PROGRESS",
+      "completionSignal": false,
+      "lapSignal": true
+    },
+    {
+      "elapsedMs": 23764,
+      "text": "LAP 0/1 TIME 0:21.43 SPEED LAP PROGRESS",
+      "completionSignal": false,
+      "lapSignal": true
+    },
+    {
+      "elapsedMs": 24796,
+      "text": "LAP 0/1 TIME 0:22.46 SPEED LAP PROGRESS",
+      "completionSignal": false,
+      "lapSignal": true
+    },
+    {
+      "elapsedMs": 25817,
+      "text": "LAP 0/1 TIME 0:23.49 SPEED LAP PROGRESS",
+      "completionSignal": false,
+      "lapSignal": true
+    },
+    {
+      "elapsedMs": 26845,
+      "text": "LAP 0/1 TIME 0:24.52 SPEED LAP PROGRESS",
+      "completionSignal": false,
+      "lapSignal": true
+    },
+    {
+      "elapsedMs": 27866,
+      "text": "LAP 0/1 TIME 0:25.54 SPEED LAP PROGRESS",
+      "completionSignal": false,
+      "lapSignal": true
+    },
+    {
+      "elapsedMs": 28884,
+      "text": "LAP 0/1 TIME 0:26.55 SPEED LAP PROGRESS",
+      "completionSignal": false,
+      "lapSignal": true
+    }
+  ],
+  "completionSignals": 0,
+  "consoleEvents": [
+    {
+      "at": "2026-07-31T01:22:49.575Z",
+      "type": "warning",
+      "text": "[.WebGL-0x28740015b200]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels"
+    },
+    {
+      "at": "2026-07-31T01:22:49.653Z",
+      "type": "debug",
+      "text": "[vite] connecting..."
+    },
+    {
+      "at": "2026-07-31T01:22:49.655Z",
+      "type": "warning",
+      "text": "[.WebGL-0x28740015b200]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels"
+    },
+    {
+      "at": "2026-07-31T01:22:49.731Z",
+      "type": "warning",
+      "text": "[.WebGL-0x28740015b200]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels"
+    },
+    {
+      "at": "2026-07-31T01:22:49.800Z",
+      "type": "warning",
+      "text": "[.WebGL-0x28740015b200]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels (this message will no longer repeat)"
+    },
+    {
+      "at": "2026-07-31T01:22:49.801Z",
+      "type": "debug",
+      "text": "[vite] connected."
+    }
+  ],
+  "pageErrors": []
+}

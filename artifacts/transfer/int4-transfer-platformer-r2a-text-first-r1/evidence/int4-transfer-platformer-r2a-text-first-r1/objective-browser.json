@@ -1,0 +1,266 @@
+{
+  "schema": "qwen-gauntlet-objective-browser-v2",
+  "startedAt": "2026-07-31T04:00:00.248Z",
+  "finishedAt": "2026-07-31T04:00:48.504Z",
+  "url": "http://127.0.0.1:4173/?demo=1&seed=1337",
+  "httpStatus": 200,
+  "initialDom": {
+    "title": "",
+    "text": "=0){ const cp=checkpoints[bestCheckpoint]; player.position.set(cp.position.x,5,cp.position.z); }else{ player.position.set(2,3,0); } PS.vel.set(0,0,0);playerAngle=0; } checkCP(); checkFinish(); } function updateCamera(){ const t=new THREE.Vector3(player.position.x,player.position.y+3,player.position.z+8); camera.position.lerp(t,0.08); camera.lookAt(player.position.x,player.position.y+1,player.position.z); } function updateVisuals(time){ const bob=Math.abs(Math.sin(time*16))*0.05; if(player.children[0])player.children[0].position.y=0.9+bob; if(armL){armL.position.y=0.85+bob;armR.position.y=0.85+bob} if(legL){legL.position.y=0.25+bob;legR.position.y=0.25+bob} const wc=Math.sin(time*8)*0.3; if(armL){armL.rotation.x=wc;armR.rotation.x=-wc} if(legL){legL.rotation.x=-wc;legR.rotation.x=wc} cpRings.forEach((r,i)=>{r.rotation.y=time*2+i}); if(finishZone){ const farch=finishZone.children; if(farch[3])farch[3].rotation.y=time*3; if(farch[3])farch[3].position.y=6.5+Math.sin(time*2)*0.3; for(let i=0;i<5&&i",
+    "canvases": [],
+    "buttons": []
+  },
+  "finalDom": {
+    "title": "",
+    "text": "=0){ const cp=checkpoints[bestCheckpoint]; player.position.set(cp.position.x,5,cp.position.z); }else{ player.position.set(2,3,0); } PS.vel.set(0,0,0);playerAngle=0; } checkCP(); checkFinish(); } function updateCamera(){ const t=new THREE.Vector3(player.position.x,player.position.y+3,player.position.z+8); camera.position.lerp(t,0.08); camera.lookAt(player.position.x,player.position.y+1,player.position.z); } function updateVisuals(time){ const bob=Math.abs(Math.sin(time*16))*0.05; if(player.children[0])player.children[0].position.y=0.9+bob; if(armL){armL.position.y=0.85+bob;armR.position.y=0.85+bob} if(legL){legL.position.y=0.25+bob;legR.position.y=0.25+bob} const wc=Math.sin(time*8)*0.3; if(armL){armL.rotation.x=wc;armR.rotation.x=-wc} if(legL){legL.rotation.x=-wc;legR.rotation.x=wc} cpRings.forEach((r,i)=>{r.rotation.y=time*2+i}); if(finishZone){ const farch=finishZone.children; if(farch[3])farch[3].rotation.y=time*3; if(farch[3])farch[3].position.y=6.5+Math.sin(time*2)*0.3; for(let i=0;i<5&&i",
+    "canvases": []
+  },
+  "actions": [
+    {
+      "at": "2026-07-31T04:00:02.459Z",
+      "action": "keypress",
+      "key": "Enter",
+      "rule": "no-visible-start-button"
+    },
+    {
+      "at": "2026-07-31T04:00:06.077Z",
+      "action": "fixed-keyboard-sequence",
+      "sequence": "ArrowUp 3.6s; ArrowLeft 0.8s; ArrowRight 0.8s"
+    },
+    {
+      "at": "2026-07-31T04:00:45.441Z",
+      "action": "keypress",
+      "key": "r",
+      "rule": "fixed-reset-probe"
+    }
+  ],
+  "screenshots": [
+    {
+      "filename": "objective-02s.png",
+      "sha256": "d723641e1c21def6dc59b68feb113985bbea0046d2325a9ddb612050c7b041fe",
+      "bytes": 57086
+    },
+    {
+      "filename": "objective-06s.png",
+      "sha256": "d723641e1c21def6dc59b68feb113985bbea0046d2325a9ddb612050c7b041fe",
+      "bytes": 57086
+    },
+    {
+      "filename": "objective-16s.png",
+      "sha256": "d723641e1c21def6dc59b68feb113985bbea0046d2325a9ddb612050c7b041fe",
+      "bytes": 57086
+    },
+    {
+      "filename": "objective-45s.png",
+      "sha256": "d723641e1c21def6dc59b68feb113985bbea0046d2325a9ddb612050c7b041fe",
+      "bytes": 57086
+    },
+    {
+      "filename": "objective-after-reset.png",
+      "sha256": "d723641e1c21def6dc59b68feb113985bbea0046d2325a9ddb612050c7b041fe",
+      "bytes": 57086
+    }
+  ],
+  "distinctScreenshotHashes": 1,
+  "cadence": {
+    "durationMs": 10000,
+    "frames": 602,
+    "fps": 60.2,
+    "intervalMs": {
+      "p50": 16.69999999999891,
+      "p95": 16.700000000000728,
+      "p99": 16.80000000000109,
+      "max": 16.80000000000109
+    }
+  },
+  "textTimeline": [
+    {
+      "elapsedMs": 5,
+      "text": "=0){ const cp=checkpoints[bestCheckpoint]; player.position.set(cp.position.x,5,cp.position.z); }else{ player.position.set(2,3,0); } PS.vel.set(0,0,0);playerAngle=0; } checkCP(); checkFinish(); } function updateCamera(){ const t=new THREE.Vector3(player.position.x,player.position.y+3,player.position.z+8); camera.position.lerp(t,0.08); camera.lookAt(player.position.x,player.position.y+1,player.position.z); } function updateVisuals(time){ const bob=Math.abs(Math.sin(time*16))*0.05; if(player.children[0])player.children[0].position.y=0.9+bob; if(armL){armL.position.y=0.85+bob;armR.position.y=0.85+bob} if(legL){legL.position.y=0.25+bob;legR.position.y=0.25+bob} const wc=Math.sin(time*8)*0.3; if(armL){armL.rotation.x=wc;armR.rotation.x=-wc} if(legL){legL.rotation.x=-wc;legR.rotation.x=wc} cpRings.forEach((r,i)=>{r.rotation.y=time*2+i}); if(finishZone){ const farch=finishZone.children; if(farch[3])farch[3].rotation.y=time*3; if(farch[3])farch[3].position.y=6.5+Math.sin(time*2)*0.3; for(let i=0;i<5&&i",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 1009,
+      "text": "=0){ const cp=checkpoints[bestCheckpoint]; player.position.set(cp.position.x,5,cp.position.z); }else{ player.position.set(2,3,0); } PS.vel.set(0,0,0);playerAngle=0; } checkCP(); checkFinish(); } function updateCamera(){ const t=new THREE.Vector3(player.position.x,player.position.y+3,player.position.z+8); camera.position.lerp(t,0.08); camera.lookAt(player.position.x,player.position.y+1,player.position.z); } function updateVisuals(time){ const bob=Math.abs(Math.sin(time*16))*0.05; if(player.children[0])player.children[0].position.y=0.9+bob; if(armL){armL.position.y=0.85+bob;armR.position.y=0.85+bob} if(legL){legL.position.y=0.25+bob;legR.position.y=0.25+bob} const wc=Math.sin(time*8)*0.3; if(armL){armL.rotation.x=wc;armR.rotation.x=-wc} if(legL){legL.rotation.x=-wc;legR.rotation.x=wc} cpRings.forEach((r,i)=>{r.rotation.y=time*2+i}); if(finishZone){ const farch=finishZone.children; if(farch[3])farch[3].rotation.y=time*3; if(farch[3])farch[3].position.y=6.5+Math.sin(time*2)*0.3; for(let i=0;i<5&&i",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 2012,
+      "text": "=0){ const cp=checkpoints[bestCheckpoint]; player.position.set(cp.position.x,5,cp.position.z); }else{ player.position.set(2,3,0); } PS.vel.set(0,0,0);playerAngle=0; } checkCP(); checkFinish(); } function updateCamera(){ const t=new THREE.Vector3(player.position.x,player.position.y+3,player.position.z+8); camera.position.lerp(t,0.08); camera.lookAt(player.position.x,player.position.y+1,player.position.z); } function updateVisuals(time){ const bob=Math.abs(Math.sin(time*16))*0.05; if(player.children[0])player.children[0].position.y=0.9+bob; if(armL){armL.position.y=0.85+bob;armR.position.y=0.85+bob} if(legL){legL.position.y=0.25+bob;legR.position.y=0.25+bob} const wc=Math.sin(time*8)*0.3; if(armL){armL.rotation.x=wc;armR.rotation.x=-wc} if(legL){legL.rotation.x=-wc;legR.rotation.x=wc} cpRings.forEach((r,i)=>{r.rotation.y=time*2+i}); if(finishZone){ const farch=finishZone.children; if(farch[3])farch[3].rotation.y=time*3; if(farch[3])farch[3].position.y=6.5+Math.sin(time*2)*0.3; for(let i=0;i<5&&i",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 3019,
+      "text": "=0){ const cp=checkpoints[bestCheckpoint]; player.position.set(cp.position.x,5,cp.position.z); }else{ player.position.set(2,3,0); } PS.vel.set(0,0,0);playerAngle=0; } checkCP(); checkFinish(); } function updateCamera(){ const t=new THREE.Vector3(player.position.x,player.position.y+3,player.position.z+8); camera.position.lerp(t,0.08); camera.lookAt(player.position.x,player.position.y+1,player.position.z); } function updateVisuals(time){ const bob=Math.abs(Math.sin(time*16))*0.05; if(player.children[0])player.children[0].position.y=0.9+bob; if(armL){armL.position.y=0.85+bob;armR.position.y=0.85+bob} if(legL){legL.position.y=0.25+bob;legR.position.y=0.25+bob} const wc=Math.sin(time*8)*0.3; if(armL){armL.rotation.x=wc;armR.rotation.x=-wc} if(legL){legL.rotation.x=-wc;legR.rotation.x=wc} cpRings.forEach((r,i)=>{r.rotation.y=time*2+i}); if(finishZone){ const farch=finishZone.children; if(farch[3])farch[3].rotation.y=time*3; if(farch[3])farch[3].position.y=6.5+Math.sin(time*2)*0.3; for(let i=0;i<5&&i",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 4027,
+      "text": "=0){ const cp=checkpoints[bestCheckpoint]; player.position.set(cp.position.x,5,cp.position.z); }else{ player.position.set(2,3,0); } PS.vel.set(0,0,0);playerAngle=0; } checkCP(); checkFinish(); } function updateCamera(){ const t=new THREE.Vector3(player.position.x,player.position.y+3,player.position.z+8); camera.position.lerp(t,0.08); camera.lookAt(player.position.x,player.position.y+1,player.position.z); } function updateVisuals(time){ const bob=Math.abs(Math.sin(time*16))*0.05; if(player.children[0])player.children[0].position.y=0.9+bob; if(armL){armL.position.y=0.85+bob;armR.position.y=0.85+bob} if(legL){legL.position.y=0.25+bob;legR.position.y=0.25+bob} const wc=Math.sin(time*8)*0.3; if(armL){armL.rotation.x=wc;armR.rotation.x=-wc} if(legL){legL.rotation.x=-wc;legR.rotation.x=wc} cpRings.forEach((r,i)=>{r.rotation.y=time*2+i}); if(finishZone){ const farch=finishZone.children; if(farch[3])farch[3].rotation.y=time*3; if(farch[3])farch[3].position.y=6.5+Math.sin(time*2)*0.3; for(let i=0;i<5&&i",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 5037,
+      "text": "=0){ const cp=checkpoints[bestCheckpoint]; player.position.set(cp.position.x,5,cp.position.z); }else{ player.position.set(2,3,0); } PS.vel.set(0,0,0);playerAngle=0; } checkCP(); checkFinish(); } function updateCamera(){ const t=new THREE.Vector3(player.position.x,player.position.y+3,player.position.z+8); camera.position.lerp(t,0.08); camera.lookAt(player.position.x,player.position.y+1,player.position.z); } function updateVisuals(time){ const bob=Math.abs(Math.sin(time*16))*0.05; if(player.children[0])player.children[0].position.y=0.9+bob; if(armL){armL.position.y=0.85+bob;armR.position.y=0.85+bob} if(legL){legL.position.y=0.25+bob;legR.position.y=0.25+bob} const wc=Math.sin(time*8)*0.3; if(armL){armL.rotation.x=wc;armR.rotation.x=-wc} if(legL){legL.rotation.x=-wc;legR.rotation.x=wc} cpRings.forEach((r,i)=>{r.rotation.y=time*2+i}); if(finishZone){ const farch=finishZone.children; if(farch[3])farch[3].rotation.y=time*3; if(farch[3])farch[3].position.y=6.5+Math.sin(time*2)*0.3; for(let i=0;i<5&&i",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 6042,
+      "text": "=0){ const cp=checkpoints[bestCheckpoint]; player.position.set(cp.position.x,5,cp.position.z); }else{ player.position.set(2,3,0); } PS.vel.set(0,0,0);playerAngle=0; } checkCP(); checkFinish(); } function updateCamera(){ const t=new THREE.Vector3(player.position.x,player.position.y+3,player.position.z+8); camera.position.lerp(t,0.08); camera.lookAt(player.position.x,player.position.y+1,player.position.z); } function updateVisuals(time){ const bob=Math.abs(Math.sin(time*16))*0.05; if(player.children[0])player.children[0].position.y=0.9+bob; if(armL){armL.position.y=0.85+bob;armR.position.y=0.85+bob} if(legL){legL.position.y=0.25+bob;legR.position.y=0.25+bob} const wc=Math.sin(time*8)*0.3; if(armL){armL.rotation.x=wc;armR.rotation.x=-wc} if(legL){legL.rotation.x=-wc;legR.rotation.x=wc} cpRings.forEach((r,i)=>{r.rotation.y=time*2+i}); if(finishZone){ const farch=finishZone.children; if(farch[3])farch[3].rotation.y=time*3; if(farch[3])farch[3].position.y=6.5+Math.sin(time*2)*0.3; for(let i=0;i<5&&i",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 7048,
+      "text": "=0){ const cp=checkpoints[bestCheckpoint]; player.position.set(cp.position.x,5,cp.position.z); }else{ player.position.set(2,3,0); } PS.vel.set(0,0,0);playerAngle=0; } checkCP(); checkFinish(); } function updateCamera(){ const t=new THREE.Vector3(player.position.x,player.position.y+3,player.position.z+8); camera.position.lerp(t,0.08); camera.lookAt(player.position.x,player.position.y+1,player.position.z); } function updateVisuals(time){ const bob=Math.abs(Math.sin(time*16))*0.05; if(player.children[0])player.children[0].position.y=0.9+bob; if(armL){armL.position.y=0.85+bob;armR.position.y=0.85+bob} if(legL){legL.position.y=0.25+bob;legR.position.y=0.25+bob} const wc=Math.sin(time*8)*0.3; if(armL){armL.rotation.x=wc;armR.rotation.x=-wc} if(legL){legL.rotation.x=-wc;legR.rotation.x=wc} cpRings.forEach((r,i)=>{r.rotation.y=time*2+i}); if(finishZone){ const farch=finishZone.children; if(farch[3])farch[3].rotation.y=time*3; if(farch[3])farch[3].position.y=6.5+Math.sin(time*2)*0.3; for(let i=0;i<5&&i",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 8051,
+      "text": "=0){ const cp=checkpoints[bestCheckpoint]; player.position.set(cp.position.x,5,cp.position.z); }else{ player.position.set(2,3,0); } PS.vel.set(0,0,0);playerAngle=0; } checkCP(); checkFinish(); } function updateCamera(){ const t=new THREE.Vector3(player.position.x,player.position.y+3,player.position.z+8); camera.position.lerp(t,0.08); camera.lookAt(player.position.x,player.position.y+1,player.position.z); } function updateVisuals(time){ const bob=Math.abs(Math.sin(time*16))*0.05; if(player.children[0])player.children[0].position.y=0.9+bob; if(armL){armL.position.y=0.85+bob;armR.position.y=0.85+bob} if(legL){legL.position.y=0.25+bob;legR.position.y=0.25+bob} const wc=Math.sin(time*8)*0.3; if(armL){armL.rotation.x=wc;armR.rotation.x=-wc} if(legL){legL.rotation.x=-wc;legR.rotation.x=wc} cpRings.forEach((r,i)=>{r.rotation.y=time*2+i}); if(finishZone){ const farch=finishZone.children; if(farch[3])farch[3].rotation.y=time*3; if(farch[3])farch[3].position.y=6.5+Math.sin(time*2)*0.3; for(let i=0;i<5&&i",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 9054,
+      "text": "=0){ const cp=checkpoints[bestCheckpoint]; player.position.set(cp.position.x,5,cp.position.z); }else{ player.position.set(2,3,0); } PS.vel.set(0,0,0);playerAngle=0; } checkCP(); checkFinish(); } function updateCamera(){ const t=new THREE.Vector3(player.position.x,player.position.y+3,player.position.z+8); camera.position.lerp(t,0.08); camera.lookAt(player.position.x,player.position.y+1,player.position.z); } function updateVisuals(time){ const bob=Math.abs(Math.sin(time*16))*0.05; if(player.children[0])player.children[0].position.y=0.9+bob; if(armL){armL.position.y=0.85+bob;armR.position.y=0.85+bob} if(legL){legL.position.y=0.25+bob;legR.position.y=0.25+bob} const wc=Math.sin(time*8)*0.3; if(armL){armL.rotation.x=wc;armR.rotation.x=-wc} if(legL){legL.rotation.x=-wc;legR.rotation.x=wc} cpRings.forEach((r,i)=>{r.rotation.y=time*2+i}); if(finishZone){ const farch=finishZone.children; if(farch[3])farch[3].rotation.y=time*3; if(farch[3])farch[3].position.y=6.5+Math.sin(time*2)*0.3; for(let i=0;i<5&&i",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 10065,
+      "text": "=0){ const cp=checkpoints[bestCheckpoint]; player.position.set(cp.position.x,5,cp.position.z); }else{ player.position.set(2,3,0); } PS.vel.set(0,0,0);playerAngle=0; } checkCP(); checkFinish(); } function updateCamera(){ const t=new THREE.Vector3(player.position.x,player.position.y+3,player.position.z+8); camera.position.lerp(t,0.08); camera.lookAt(player.position.x,player.position.y+1,player.position.z); } function updateVisuals(time){ const bob=Math.abs(Math.sin(time*16))*0.05; if(player.children[0])player.children[0].position.y=0.9+bob; if(armL){armL.position.y=0.85+bob;armR.position.y=0.85+bob} if(legL){legL.position.y=0.25+bob;legR.position.y=0.25+bob} const wc=Math.sin(time*8)*0.3; if(armL){armL.rotation.x=wc;armR.rotation.x=-wc} if(legL){legL.rotation.x=-wc;legR.rotation.x=wc} cpRings.forEach((r,i)=>{r.rotation.y=time*2+i}); if(finishZone){ const farch=finishZone.children; if(farch[3])farch[3].rotation.y=time*3; if(farch[3])farch[3].position.y=6.5+Math.sin(time*2)*0.3; for(let i=0;i<5&&i",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 11067,
+      "text": "=0){ const cp=checkpoints[bestCheckpoint]; player.position.set(cp.position.x,5,cp.position.z); }else{ player.position.set(2,3,0); } PS.vel.set(0,0,0);playerAngle=0; } checkCP(); checkFinish(); } function updateCamera(){ const t=new THREE.Vector3(player.position.x,player.position.y+3,player.position.z+8); camera.position.lerp(t,0.08); camera.lookAt(player.position.x,player.position.y+1,player.position.z); } function updateVisuals(time){ const bob=Math.abs(Math.sin(time*16))*0.05; if(player.children[0])player.children[0].position.y=0.9+bob; if(armL){armL.position.y=0.85+bob;armR.position.y=0.85+bob} if(legL){legL.position.y=0.25+bob;legR.position.y=0.25+bob} const wc=Math.sin(time*8)*0.3; if(armL){armL.rotation.x=wc;armR.rotation.x=-wc} if(legL){legL.rotation.x=-wc;legR.rotation.x=wc} cpRings.forEach((r,i)=>{r.rotation.y=time*2+i}); if(finishZone){ const farch=finishZone.children; if(farch[3])farch[3].rotation.y=time*3; if(farch[3])farch[3].position.y=6.5+Math.sin(time*2)*0.3; for(let i=0;i<5&&i",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 12071,
+      "text": "=0){ const cp=checkpoints[bestCheckpoint]; player.position.set(cp.position.x,5,cp.position.z); }else{ player.position.set(2,3,0); } PS.vel.set(0,0,0);playerAngle=0; } checkCP(); checkFinish(); } function updateCamera(){ const t=new THREE.Vector3(player.position.x,player.position.y+3,player.position.z+8); camera.position.lerp(t,0.08); camera.lookAt(player.position.x,player.position.y+1,player.position.z); } function updateVisuals(time){ const bob=Math.abs(Math.sin(time*16))*0.05; if(player.children[0])player.children[0].position.y=0.9+bob; if(armL){armL.position.y=0.85+bob;armR.position.y=0.85+bob} if(legL){legL.position.y=0.25+bob;legR.position.y=0.25+bob} const wc=Math.sin(time*8)*0.3; if(armL){armL.rotation.x=wc;armR.rotation.x=-wc} if(legL){legL.rotation.x=-wc;legR.rotation.x=wc} cpRings.forEach((r,i)=>{r.rotation.y=time*2+i}); if(finishZone){ const farch=finishZone.children; if(farch[3])farch[3].rotation.y=time*3; if(farch[3])farch[3].position.y=6.5+Math.sin(time*2)*0.3; for(let i=0;i<5&&i",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 13074,
+      "text": "=0){ const cp=checkpoints[bestCheckpoint]; player.position.set(cp.position.x,5,cp.position.z); }else{ player.position.set(2,3,0); } PS.vel.set(0,0,0);playerAngle=0; } checkCP(); checkFinish(); } function updateCamera(){ const t=new THREE.Vector3(player.position.x,player.position.y+3,player.position.z+8); camera.position.lerp(t,0.08); camera.lookAt(player.position.x,player.position.y+1,player.position.z); } function updateVisuals(time){ const bob=Math.abs(Math.sin(time*16))*0.05; if(player.children[0])player.children[0].position.y=0.9+bob; if(armL){armL.position.y=0.85+bob;armR.position.y=0.85+bob} if(legL){legL.position.y=0.25+bob;legR.position.y=0.25+bob} const wc=Math.sin(time*8)*0.3; if(armL){armL.rotation.x=wc;armR.rotation.x=-wc} if(legL){legL.rotation.x=-wc;legR.rotation.x=wc} cpRings.forEach((r,i)=>{r.rotation.y=time*2+i}); if(finishZone){ const farch=finishZone.children; if(farch[3])farch[3].rotation.y=time*3; if(farch[3])farch[3].position.y=6.5+Math.sin(time*2)*0.3; for(let i=0;i<5&&i",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 14077,
+      "text": "=0){ const cp=checkpoints[bestCheckpoint]; player.position.set(cp.position.x,5,cp.position.z); }else{ player.position.set(2,3,0); } PS.vel.set(0,0,0);playerAngle=0; } checkCP(); checkFinish(); } function updateCamera(){ const t=new THREE.Vector3(player.position.x,player.position.y+3,player.position.z+8); camera.position.lerp(t,0.08); camera.lookAt(player.position.x,player.position.y+1,player.position.z); } function updateVisuals(time){ const bob=Math.abs(Math.sin(time*16))*0.05; if(player.children[0])player.children[0].position.y=0.9+bob; if(armL){armL.position.y=0.85+bob;armR.position.y=0.85+bob} if(legL){legL.position.y=0.25+bob;legR.position.y=0.25+bob} const wc=Math.sin(time*8)*0.3; if(armL){armL.rotation.x=wc;armR.rotation.x=-wc} if(legL){legL.rotation.x=-wc;legR.rotation.x=wc} cpRings.forEach((r,i)=>{r.rotation.y=time*2+i}); if(finishZone){ const farch=finishZone.children; if(farch[3])farch[3].rotation.y=time*3; if(farch[3])farch[3].position.y=6.5+Math.sin(time*2)*0.3; for(let i=0;i<5&&i",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 15080,
+      "text": "=0){ const cp=checkpoints[bestCheckpoint]; player.position.set(cp.position.x,5,cp.position.z); }else{ player.position.set(2,3,0); } PS.vel.set(0,0,0);playerAngle=0; } checkCP(); checkFinish(); } function updateCamera(){ const t=new THREE.Vector3(player.position.x,player.position.y+3,player.position.z+8); camera.position.lerp(t,0.08); camera.lookAt(player.position.x,player.position.y+1,player.position.z); } function updateVisuals(time){ const bob=Math.abs(Math.sin(time*16))*0.05; if(player.children[0])player.children[0].position.y=0.9+bob; if(armL){armL.position.y=0.85+bob;armR.position.y=0.85+bob} if(legL){legL.position.y=0.25+bob;legR.position.y=0.25+bob} const wc=Math.sin(time*8)*0.3; if(armL){armL.rotation.x=wc;armR.rotation.x=-wc} if(legL){legL.rotation.x=-wc;legR.rotation.x=wc} cpRings.forEach((r,i)=>{r.rotation.y=time*2+i}); if(finishZone){ const farch=finishZone.children; if(farch[3])farch[3].rotation.y=time*3; if(farch[3])farch[3].position.y=6.5+Math.sin(time*2)*0.3; for(let i=0;i<5&&i",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 16088,
+      "text": "=0){ const cp=checkpoints[bestCheckpoint]; player.position.set(cp.position.x,5,cp.position.z); }else{ player.position.set(2,3,0); } PS.vel.set(0,0,0);playerAngle=0; } checkCP(); checkFinish(); } function updateCamera(){ const t=new THREE.Vector3(player.position.x,player.position.y+3,player.position.z+8); camera.position.lerp(t,0.08); camera.lookAt(player.position.x,player.position.y+1,player.position.z); } function updateVisuals(time){ const bob=Math.abs(Math.sin(time*16))*0.05; if(player.children[0])player.children[0].position.y=0.9+bob; if(armL){armL.position.y=0.85+bob;armR.position.y=0.85+bob} if(legL){legL.position.y=0.25+bob;legR.position.y=0.25+bob} const wc=Math.sin(time*8)*0.3; if(armL){armL.rotation.x=wc;armR.rotation.x=-wc} if(legL){legL.rotation.x=-wc;legR.rotation.x=wc} cpRings.forEach((r,i)=>{r.rotation.y=time*2+i}); if(finishZone){ const farch=finishZone.children; if(farch[3])farch[3].rotation.y=time*3; if(farch[3])farch[3].position.y=6.5+Math.sin(time*2)*0.3; for(let i=0;i<5&&i",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 17095,
+      "text": "=0){ const cp=checkpoints[bestCheckpoint]; player.position.set(cp.position.x,5,cp.position.z); }else{ player.position.set(2,3,0); } PS.vel.set(0,0,0);playerAngle=0; } checkCP(); checkFinish(); } function updateCamera(){ const t=new THREE.Vector3(player.position.x,player.position.y+3,player.position.z+8); camera.position.lerp(t,0.08); camera.lookAt(player.position.x,player.position.y+1,player.position.z); } function updateVisuals(time){ const bob=Math.abs(Math.sin(time*16))*0.05; if(player.children[0])player.children[0].position.y=0.9+bob; if(armL){armL.position.y=0.85+bob;armR.position.y=0.85+bob} if(legL){legL.position.y=0.25+bob;legR.position.y=0.25+bob} const wc=Math.sin(time*8)*0.3; if(armL){armL.rotation.x=wc;armR.rotation.x=-wc} if(legL){legL.rotation.x=-wc;legR.rotation.x=wc} cpRings.forEach((r,i)=>{r.rotation.y=time*2+i}); if(finishZone){ const farch=finishZone.children; if(farch[3])farch[3].rotation.y=time*3; if(farch[3])farch[3].position.y=6.5+Math.sin(time*2)*0.3; for(let i=0;i<5&&i",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 18101,
+      "text": "=0){ const cp=checkpoints[bestCheckpoint]; player.position.set(cp.position.x,5,cp.position.z); }else{ player.position.set(2,3,0); } PS.vel.set(0,0,0);playerAngle=0; } checkCP(); checkFinish(); } function updateCamera(){ const t=new THREE.Vector3(player.position.x,player.position.y+3,player.position.z+8); camera.position.lerp(t,0.08); camera.lookAt(player.position.x,player.position.y+1,player.position.z); } function updateVisuals(time){ const bob=Math.abs(Math.sin(time*16))*0.05; if(player.children[0])player.children[0].position.y=0.9+bob; if(armL){armL.position.y=0.85+bob;armR.position.y=0.85+bob} if(legL){legL.position.y=0.25+bob;legR.position.y=0.25+bob} const wc=Math.sin(time*8)*0.3; if(armL){armL.rotation.x=wc;armR.rotation.x=-wc} if(legL){legL.rotation.x=-wc;legR.rotation.x=wc} cpRings.forEach((r,i)=>{r.rotation.y=time*2+i}); if(finishZone){ const farch=finishZone.children; if(farch[3])farch[3].rotation.y=time*3; if(farch[3])farch[3].position.y=6.5+Math.sin(time*2)*0.3; for(let i=0;i<5&&i",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 19104,
+      "text": "=0){ const cp=checkpoints[bestCheckpoint]; player.position.set(cp.position.x,5,cp.position.z); }else{ player.position.set(2,3,0); } PS.vel.set(0,0,0);playerAngle=0; } checkCP(); checkFinish(); } function updateCamera(){ const t=new THREE.Vector3(player.position.x,player.position.y+3,player.position.z+8); camera.position.lerp(t,0.08); camera.lookAt(player.position.x,player.position.y+1,player.position.z); } function updateVisuals(time){ const bob=Math.abs(Math.sin(time*16))*0.05; if(player.children[0])player.children[0].position.y=0.9+bob; if(armL){armL.position.y=0.85+bob;armR.position.y=0.85+bob} if(legL){legL.position.y=0.25+bob;legR.position.y=0.25+bob} const wc=Math.sin(time*8)*0.3; if(armL){armL.rotation.x=wc;armR.rotation.x=-wc} if(legL){legL.rotation.x=-wc;legR.rotation.x=wc} cpRings.forEach((r,i)=>{r.rotation.y=time*2+i}); if(finishZone){ const farch=finishZone.children; if(farch[3])farch[3].rotation.y=time*3; if(farch[3])farch[3].position.y=6.5+Math.sin(time*2)*0.3; for(let i=0;i<5&&i",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 20121,
+      "text": "=0){ const cp=checkpoints[bestCheckpoint]; player.position.set(cp.position.x,5,cp.position.z); }else{ player.position.set(2,3,0); } PS.vel.set(0,0,0);playerAngle=0; } checkCP(); checkFinish(); } function updateCamera(){ const t=new THREE.Vector3(player.position.x,player.position.y+3,player.position.z+8); camera.position.lerp(t,0.08); camera.lookAt(player.position.x,player.position.y+1,player.position.z); } function updateVisuals(time){ const bob=Math.abs(Math.sin(time*16))*0.05; if(player.children[0])player.children[0].position.y=0.9+bob; if(armL){armL.position.y=0.85+bob;armR.position.y=0.85+bob} if(legL){legL.position.y=0.25+bob;legR.position.y=0.25+bob} const wc=Math.sin(time*8)*0.3; if(armL){armL.rotation.x=wc;armR.rotation.x=-wc} if(legL){legL.rotation.x=-wc;legR.rotation.x=wc} cpRings.forEach((r,i)=>{r.rotation.y=time*2+i}); if(finishZone){ const farch=finishZone.children; if(farch[3])farch[3].rotation.y=time*3; if(farch[3])farch[3].position.y=6.5+Math.sin(time*2)*0.3; for(let i=0;i<5&&i",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 21124,
+      "text": "=0){ const cp=checkpoints[bestCheckpoint]; player.position.set(cp.position.x,5,cp.position.z); }else{ player.position.set(2,3,0); } PS.vel.set(0,0,0);playerAngle=0; } checkCP(); checkFinish(); } function updateCamera(){ const t=new THREE.Vector3(player.position.x,player.position.y+3,player.position.z+8); camera.position.lerp(t,0.08); camera.lookAt(player.position.x,player.position.y+1,player.position.z); } function updateVisuals(time){ const bob=Math.abs(Math.sin(time*16))*0.05; if(player.children[0])player.children[0].position.y=0.9+bob; if(armL){armL.position.y=0.85+bob;armR.position.y=0.85+bob} if(legL){legL.position.y=0.25+bob;legR.position.y=0.25+bob} const wc=Math.sin(time*8)*0.3; if(armL){armL.rotation.x=wc;armR.rotation.x=-wc} if(legL){legL.rotation.x=-wc;legR.rotation.x=wc} cpRings.forEach((r,i)=>{r.rotation.y=time*2+i}); if(finishZone){ const farch=finishZone.children; if(farch[3])farch[3].rotation.y=time*3; if(farch[3])farch[3].position.y=6.5+Math.sin(time*2)*0.3; for(let i=0;i<5&&i",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 22127,
+      "text": "=0){ const cp=checkpoints[bestCheckpoint]; player.position.set(cp.position.x,5,cp.position.z); }else{ player.position.set(2,3,0); } PS.vel.set(0,0,0);playerAngle=0; } checkCP(); checkFinish(); } function updateCamera(){ const t=new THREE.Vector3(player.position.x,player.position.y+3,player.position.z+8); camera.position.lerp(t,0.08); camera.lookAt(player.position.x,player.position.y+1,player.position.z); } function updateVisuals(time){ const bob=Math.abs(Math.sin(time*16))*0.05; if(player.children[0])player.children[0].position.y=0.9+bob; if(armL){armL.position.y=0.85+bob;armR.position.y=0.85+bob} if(legL){legL.position.y=0.25+bob;legR.position.y=0.25+bob} const wc=Math.sin(time*8)*0.3; if(armL){armL.rotation.x=wc;armR.rotation.x=-wc} if(legL){legL.rotation.x=-wc;legR.rotation.x=wc} cpRings.forEach((r,i)=>{r.rotation.y=time*2+i}); if(finishZone){ const farch=finishZone.children; if(farch[3])farch[3].rotation.y=time*3; if(farch[3])farch[3].position.y=6.5+Math.sin(time*2)*0.3; for(let i=0;i<5&&i",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 23134,
+      "text": "=0){ const cp=checkpoints[bestCheckpoint]; player.position.set(cp.position.x,5,cp.position.z); }else{ player.position.set(2,3,0); } PS.vel.set(0,0,0);playerAngle=0; } checkCP(); checkFinish(); } function updateCamera(){ const t=new THREE.Vector3(player.position.x,player.position.y+3,player.position.z+8); camera.position.lerp(t,0.08); camera.lookAt(player.position.x,player.position.y+1,player.position.z); } function updateVisuals(time){ const bob=Math.abs(Math.sin(time*16))*0.05; if(player.children[0])player.children[0].position.y=0.9+bob; if(armL){armL.position.y=0.85+bob;armR.position.y=0.85+bob} if(legL){legL.position.y=0.25+bob;legR.position.y=0.25+bob} const wc=Math.sin(time*8)*0.3; if(armL){armL.rotation.x=wc;armR.rotation.x=-wc} if(legL){legL.rotation.x=-wc;legR.rotation.x=wc} cpRings.forEach((r,i)=>{r.rotation.y=time*2+i}); if(finishZone){ const farch=finishZone.children; if(farch[3])farch[3].rotation.y=time*3; if(farch[3])farch[3].position.y=6.5+Math.sin(time*2)*0.3; for(let i=0;i<5&&i",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 24141,
+      "text": "=0){ const cp=checkpoints[bestCheckpoint]; player.position.set(cp.position.x,5,cp.position.z); }else{ player.position.set(2,3,0); } PS.vel.set(0,0,0);playerAngle=0; } checkCP(); checkFinish(); } function updateCamera(){ const t=new THREE.Vector3(player.position.x,player.position.y+3,player.position.z+8); camera.position.lerp(t,0.08); camera.lookAt(player.position.x,player.position.y+1,player.position.z); } function updateVisuals(time){ const bob=Math.abs(Math.sin(time*16))*0.05; if(player.children[0])player.children[0].position.y=0.9+bob; if(armL){armL.position.y=0.85+bob;armR.position.y=0.85+bob} if(legL){legL.position.y=0.25+bob;legR.position.y=0.25+bob} const wc=Math.sin(time*8)*0.3; if(armL){armL.rotation.x=wc;armR.rotation.x=-wc} if(legL){legL.rotation.x=-wc;legR.rotation.x=wc} cpRings.forEach((r,i)=>{r.rotation.y=time*2+i}); if(finishZone){ const farch=finishZone.children; if(farch[3])farch[3].rotation.y=time*3; if(farch[3])farch[3].position.y=6.5+Math.sin(time*2)*0.3; for(let i=0;i<5&&i",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 25143,
+      "text": "=0){ const cp=checkpoints[bestCheckpoint]; player.position.set(cp.position.x,5,cp.position.z); }else{ player.position.set(2,3,0); } PS.vel.set(0,0,0);playerAngle=0; } checkCP(); checkFinish(); } function updateCamera(){ const t=new THREE.Vector3(player.position.x,player.position.y+3,player.position.z+8); camera.position.lerp(t,0.08); camera.lookAt(player.position.x,player.position.y+1,player.position.z); } function updateVisuals(time){ const bob=Math.abs(Math.sin(time*16))*0.05; if(player.children[0])player.children[0].position.y=0.9+bob; if(armL){armL.position.y=0.85+bob;armR.position.y=0.85+bob} if(legL){legL.position.y=0.25+bob;legR.position.y=0.25+bob} const wc=Math.sin(time*8)*0.3; if(armL){armL.rotation.x=wc;armR.rotation.x=-wc} if(legL){legL.rotation.x=-wc;legR.rotation.x=wc} cpRings.forEach((r,i)=>{r.rotation.y=time*2+i}); if(finishZone){ const farch=finishZone.children; if(farch[3])farch[3].rotation.y=time*3; if(farch[3])farch[3].position.y=6.5+Math.sin(time*2)*0.3; for(let i=0;i<5&&i",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 26146,
+      "text": "=0){ const cp=checkpoints[bestCheckpoint]; player.position.set(cp.position.x,5,cp.position.z); }else{ player.position.set(2,3,0); } PS.vel.set(0,0,0);playerAngle=0; } checkCP(); checkFinish(); } function updateCamera(){ const t=new THREE.Vector3(player.position.x,player.position.y+3,player.position.z+8); camera.position.lerp(t,0.08); camera.lookAt(player.position.x,player.position.y+1,player.position.z); } function updateVisuals(time){ const bob=Math.abs(Math.sin(time*16))*0.05; if(player.children[0])player.children[0].position.y=0.9+bob; if(armL){armL.position.y=0.85+bob;armR.position.y=0.85+bob} if(legL){legL.position.y=0.25+bob;legR.position.y=0.25+bob} const wc=Math.sin(time*8)*0.3; if(armL){armL.rotation.x=wc;armR.rotation.x=-wc} if(legL){legL.rotation.x=-wc;legR.rotation.x=wc} cpRings.forEach((r,i)=>{r.rotation.y=time*2+i}); if(finishZone){ const farch=finishZone.children; if(farch[3])farch[3].rotation.y=time*3; if(farch[3])farch[3].position.y=6.5+Math.sin(time*2)*0.3; for(let i=0;i<5&&i",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 27151,
+      "text": "=0){ const cp=checkpoints[bestCheckpoint]; player.position.set(cp.position.x,5,cp.position.z); }else{ player.position.set(2,3,0); } PS.vel.set(0,0,0);playerAngle=0; } checkCP(); checkFinish(); } function updateCamera(){ const t=new THREE.Vector3(player.position.x,player.position.y+3,player.position.z+8); camera.position.lerp(t,0.08); camera.lookAt(player.position.x,player.position.y+1,player.position.z); } function updateVisuals(time){ const bob=Math.abs(Math.sin(time*16))*0.05; if(player.children[0])player.children[0].position.y=0.9+bob; if(armL){armL.position.y=0.85+bob;armR.position.y=0.85+bob} if(legL){legL.position.y=0.25+bob;legR.position.y=0.25+bob} const wc=Math.sin(time*8)*0.3; if(armL){armL.rotation.x=wc;armR.rotation.x=-wc} if(legL){legL.rotation.x=-wc;legR.rotation.x=wc} cpRings.forEach((r,i)=>{r.rotation.y=time*2+i}); if(finishZone){ const farch=finishZone.children; if(farch[3])farch[3].rotation.y=time*3; if(farch[3])farch[3].position.y=6.5+Math.sin(time*2)*0.3; for(let i=0;i<5&&i",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 28157,
+      "text": "=0){ const cp=checkpoints[bestCheckpoint]; player.position.set(cp.position.x,5,cp.position.z); }else{ player.position.set(2,3,0); } PS.vel.set(0,0,0);playerAngle=0; } checkCP(); checkFinish(); } function updateCamera(){ const t=new THREE.Vector3(player.position.x,player.position.y+3,player.position.z+8); camera.position.lerp(t,0.08); camera.lookAt(player.position.x,player.position.y+1,player.position.z); } function updateVisuals(time){ const bob=Math.abs(Math.sin(time*16))*0.05; if(player.children[0])player.children[0].position.y=0.9+bob; if(armL){armL.position.y=0.85+bob;armR.position.y=0.85+bob} if(legL){legL.position.y=0.25+bob;legR.position.y=0.25+bob} const wc=Math.sin(time*8)*0.3; if(armL){armL.rotation.x=wc;armR.rotation.x=-wc} if(legL){legL.rotation.x=-wc;legR.rotation.x=wc} cpRings.forEach((r,i)=>{r.rotation.y=time*2+i}); if(finishZone){ const farch=finishZone.children; if(farch[3])farch[3].rotation.y=time*3; if(farch[3])farch[3].position.y=6.5+Math.sin(time*2)*0.3; for(let i=0;i<5&&i",
+      "completionSignal": false,
+      "lapSignal": false
+    }
+  ],
+  "completionSignals": 0,
+  "consoleEvents": [
+    {
+      "at": "2026-07-31T04:00:00.354Z",
+      "type": "debug",
+      "text": "[vite] connecting..."
+    },
+    {
+      "at": "2026-07-31T04:00:00.364Z",
+      "type": "debug",
+      "text": "[vite] connected."
+    }
+  ],
+  "pageErrors": []
+}

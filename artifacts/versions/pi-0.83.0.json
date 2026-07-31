@@ -1,0 +1,12 @@
+{
+  "captured_at": "2026-07-31T00:35:00-04:00",
+  "registry": "https://registry.npmjs.org/",
+  "package": "@earendil-works/pi-coding-agent",
+  "dist_tag": "latest",
+  "version": "0.83.0",
+  "published_at": "2026-07-29T22:30:23.309Z",
+  "registry_modified_at": "2026-07-29T22:30:23.703Z",
+  "repository": "https://github.com/earendil-works/pi",
+  "license": "MIT",
+  "integrity": "sha512-uYhF+FsZxogoSX/AxBcUdiY+ZklubwaXyAoEGA2eQwsHcyEAhUYIKh/WLXe/a8+k8eTCmxb+ZN2Zo9mzQtzbWw=="
+}

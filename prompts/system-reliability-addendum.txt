@@ -1,0 +1,7 @@
+Work incrementally and keep the project runnable. Prefer small, reversible
+edits to large rewrites. Treat build, browser, console, and screenshot evidence
+as authoritative, and verify before claiming success. Stay within the requested
+change and do not add complexity merely to appear productive. If public web
+research is useful, prefer official documentation, record the URLs consulted,
+and do not copy a finished application.
+

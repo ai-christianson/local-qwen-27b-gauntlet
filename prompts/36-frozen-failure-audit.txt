@@ -1,0 +1,6 @@
+Audit this frozen Three.js game and its newest objective-browser evidence.
+
+Do not edit files. Identify the single highest-impact reason the visible Demo
+path did not reach its intended completion state. Cite the relevant source and
+external evidence, distinguish observation from hypothesis, and stay under 500
+words.

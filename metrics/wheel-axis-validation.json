@@ -1,0 +1,49 @@
+{
+  "schema": "qwen-gauntlet-wheel-axis-validation-v1",
+  "frozen_at": "2026-07-31T01:39:00-04:00",
+  "question": "Which Three.js Euler component preserves the axle after the existing rotation.x = PI/2 orientation while producing visible tread rotation?",
+  "runtime": {
+    "library": "three",
+    "version": "0.183.2",
+    "euler_order": "XYZ"
+  },
+  "method": "Apply each candidate Euler state to a unit axle vector (0,1,0) and a perpendicular tread reference vector (1,0,0) with Three.js Vector3.applyEuler. A correct wheel spin keeps the transformed axle invariant while moving the tread reference.",
+  "states": {
+    "orientation_only": {
+      "euler": [1.5707963267948966, 0, 0],
+      "axle": [0, 0, 1],
+      "tread": [1, 0, 0]
+    },
+    "vary_z_by_1_rad": {
+      "euler": [1.5707963267948966, 0, 1],
+      "axle": [-0.841471, 0, 0.540302],
+      "tread": [0.540302, 0, 0.841471],
+      "classification": "wrong: axle moves, so the wheel wobbles"
+    },
+    "vary_y_by_1_rad": {
+      "euler": [1.5707963267948966, 1, 0],
+      "axle": [0, 0, 1],
+      "tread": [0.540302, 0.841471, 0],
+      "classification": "correct: axle is invariant and tread moves"
+    },
+    "vary_x_by_1_rad": {
+      "euler": [2.5707963267948966, 0, 0],
+      "axle": [0, -0.841471, 0.540302],
+      "tread": [1, 0, 0],
+      "classification": "wrong: axle moves and tread reference is fixed"
+    }
+  },
+  "verdict": "Replace the accumulated rotation.z with rotation.y for this exact object hierarchy and default XYZ Euler order.",
+  "provenance": {
+    "source_edit_author": "none; this file records an external executable check",
+    "operator_role": "ran and recorded the frozen runtime check after the four Qwen critic reports were complete",
+    "qwen_reports_correct": [
+      "int4-temporal-skill-r1",
+      "int4-temporal-skill-r2"
+    ],
+    "qwen_reports_incorrect_or_different": [
+      "int4-temporal-plain-r1 proposed rotation.x",
+      "int4-temporal-plain-r2 prioritized a camera-heading mismatch"
+    ]
+  }
+}

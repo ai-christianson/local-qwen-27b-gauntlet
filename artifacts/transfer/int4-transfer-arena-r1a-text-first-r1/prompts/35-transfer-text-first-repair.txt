@@ -1,0 +1,8 @@
+Improve this Three.js microgame.
+
+Run it, fix the highest-impact problems, and verify that the visible Demo button
+can reach the intended win or finish state. Keep the existing scope.
+
+For this run, do not open screenshots or other image artifacts. Use source
+inspection, browser console output, DOM text, and executable checks. Leave
+visual scoring to the independent evaluator.

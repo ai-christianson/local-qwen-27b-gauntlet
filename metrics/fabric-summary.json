@@ -1,0 +1,45 @@
+{
+  "schema": "qwen-gauntlet-sanitized-fabric-summary-v1",
+  "privacy": "Derived aggregate only. Raw host, site, address, endpoint, credential, and topology fields are excluded.",
+  "activeDefinition": "GPU utilization >= 70%",
+  "gpu": {
+    "completeSnapshots": 2683,
+    "start": "2026-07-31T00:37:22Z",
+    "end": "2026-07-31T05:55:07Z",
+    "maxActiveCards": 22,
+    "meanActiveCards": 7.6347372344390605,
+    "medianActiveCards": 8,
+    "p95ActiveCards": 16,
+    "percentSnapshotsAtLeast16": 9.839731643682445,
+    "percentSnapshotsAtLeast20": 1.4908684308609765,
+    "meanUtilizationPercent": 29.338713839272714,
+    "maxObservedTemperatureC": 81,
+    "maxObservedPerCardPowerW": 322.86,
+    "p90ActiveCardsByEqualTimeBucket": [
+      18,
+      20,
+      10,
+      14,
+      14,
+      14,
+      12,
+      14,
+      10,
+      10,
+      14,
+      4
+    ]
+  },
+  "router": {
+    "samples": 3138,
+    "start": "2026-07-31T00:50:41Z",
+    "end": "2026-07-31T05:55:09Z",
+    "maxRunning": 13,
+    "maxQueued": 0,
+    "admissionRejectionsDelta": 0,
+    "upstreamErrorsDelta": 0,
+    "requestFailuresDelta": 28,
+    "completedRequestsDelta": 3294,
+    "maxNormalRunning": 13
+  }
+}

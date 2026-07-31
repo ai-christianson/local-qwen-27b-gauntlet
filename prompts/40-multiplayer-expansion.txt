@@ -1,0 +1,7 @@
+The local race has passed its gates. Add the smallest real 2–4 player browser
+lobby and authoritative WebSocket race synchronization you can verify. Include
+nickname, create/join, ready, countdown, server-owned race state, interpolated
+snapshots, and an explicit disconnect outcome. Keep a deterministic offline
+demo path. Exercise two clean browser contexts and record measured behavior;
+do not call a mock or localhost screenshot production-ready netcode.
+

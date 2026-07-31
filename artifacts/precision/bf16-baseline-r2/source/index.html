@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Apex Karts 64</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{overflow:hidden;background:#000;font-family:'Segoe UI',monospace,sans-serif}
+canvas{display:block}
+#hud{position:fixed;top:0;left:0;width:100%;pointer-events:none;z-index:10}
+#speed-bar-container{position:absolute;bottom:20px;right:20px;width:220px;height:30px;background:rgba(0,0,0,0.6);border:3px solid #ffcc00;border-radius:4px;overflow:hidden}
+#speed-bar{height:100%;width:0%;background:linear-gradient(90deg,#00cc44,#ffcc00,#ff3300);transition:width 0.05s}
+#speed-text{position:absolute;bottom:55px;right:20px;color:#fff;font-size:22px;font-weight:bold;text-shadow:2px 2px 0 #000}
+#lap-display{position:absolute;top:20px;left:20px;background:rgba(0,0,0,0.7);border:3px solid #ff6600;border-radius:6px;padding:10px 18px;color:#fff;font-size:16px}
+#lap-display .label{color:#ffcc00;font-size:12px;text-transform:uppercase}
+#lap-display .value{font-size:24px;font-weight:bold;margin-top:2px}
+#time-display{position:absolute;top:20px;right:20px;background:rgba(0,0,0,0.7);border:3px solid #00aaff;border-radius:6px;padding:10px 18px;color:#fff;font-size:16px;text-align:right}
+#time-display .label{color:#00ccff;font-size:12px;text-transform:uppercase}
+#time-display .value{font-size:24px;font-weight:bold;margin-top:2px;font-variant-numeric:tabular-nums}
+#minimap{position:absolute;bottom:20px;left:20px;width:160px;height:160px;background:rgba(0,0,0,0.5);border:3px solid #ff6600;border-radius:6px}
+#overlay{position:fixed;top:0;left:0;width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;background:rgba(0,0,0,0.75);z-index:100;color:#fff}
+#overlay.hidden{display:none}
+#overlay h1{font-size:56px;color:#ffcc00;text-shadow:4px 4px 0 #ff6600,-2px -2px 0 #cc0000;margin-bottom:10px;letter-spacing:2px}
+#overlay h2{font-size:28px;color:#ff8800;text-shadow:2px 2px 0 #aa4400;margin-bottom:30px}
+#overlay .subtitle{font-size:18px;color:#ccc;margin-bottom:40px}
+#overlay .prompt{font-size:22px;color:#00ff88;animation:pulse 1.2s infinite alternate}
+#overlay .controls-info{margin-top:30px;font-size:14px;color:#aaa;text-align:center;line-height:1.8}
+#overlay .result-text{font-size:20px;color:#ffcc00;margin:8px 0}
+@keyframes pulse{from{opacity:1}to{opacity:0.4}}
+#demo-badge{position:absolute;top:20px;left:50%;transform:translateX(-50%);background:rgba(255,50,0,0.8);color:#fff;padding:6px 20px;border-radius:4px;font-size:14px;font-weight:bold;display:none}
+#demo-badge.show{display:block}
+#countdown{position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);font-size:120px;color:#ffcc00;font-weight:bold;text-shadow:6px 6px 0 #ff6600;z-index:200;display:none}
+</style>
+</head>
+<body>
+<div id="hud">
+  <div id="lap-display"><div class="label">Lap</div><div class="value" id="lap-value">0 / 1</div></div>
+  <div id="time-display"><div class="label">Time</div><div class="value" id="time-value">0:00.00</div></div>
+  <div id="speed-text">0 km/h</div>
+  <div id="speed-bar-container"><div id="speed-bar"></div></div>
+  <canvas id="minimap" width="160" height="160"></canvas>
+  <div id="demo-badge">DEMO MODE</div>
+</div>
+<div id="countdown"></div>
+<div id="overlay">
+  <h1>APEX KARTS 64</h1>
+  <h2>&#129332; Turbo Circuit &#129332;</h2>
+  <div class="subtitle">A Retro Kart Racing Microgame</div>
+  <div class="prompt" id="start-prompt">Press ENTER or SPACE to Start</div>
+  <div class="prompt" id="demo-prompt" style="margin-top:10px;font-size:16px;color:#ff8800">Press SHIFT+D for Demo Mode</div>
+  <div class="controls-info">
+    <strong>Controls:</strong><br>
+    &#8593; / W &#8212; Accelerate &nbsp; &#8595; / S &#8212; Brake/Reverse<br>
+    &#8592; / A &nbsp; &#8594; / D &#8212; Steer &nbsp;&nbsp; SPACE &#8212; Handbrake<br>
+    ENTER &#8212; Start Race &nbsp; SHIFT+D &#8212; Toggle Demo
+  </div>
+</div>
+<script type="importmap">
+{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js"}}
+</script>
+<script type="module" src="game.js"></script>
+</body>
+</html>

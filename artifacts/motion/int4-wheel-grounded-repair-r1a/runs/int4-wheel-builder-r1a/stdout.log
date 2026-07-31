@@ -1,0 +1,20 @@
+
+
+**Summary of the repair:**
+
+The critic's single highest-impact diagnosis was correct: wheels were spinning around the wrong axis.
+
+**Change in `index.html` (line 360-362):**
+| Before | After |
+|---|---|
+| `c.rotation.z+=wheelRPM` | `c.rotation.y+=wheelRPM` |
+| `wheelRPM=KS.spd*dt*2.5` | `wheelRPM=KS.spd*dt*2.86` |
+| Comment: "spin around local Z" | Comment: "spin around local Y (the axle...)" |
+
+**Why it works:** `CylinderGeometry` builds along +Z. After `rotation.x=PI/2`, the circular face lies in the XY plane with the axle along local Y. Rotating `z` spins the face in-plane (invisible edge-on); rotating `y` rolls the circular face (visible as wheel spinning).
+
+**Verification:**
+- 4 consecutive racing frames show faceted wheel silhouettes changing orientation — wheels are spinning
+- Demo completes at ~10s with 101 km/h top speed (same as before)
+- Title screen, START RACE, and DEMO MODE all functional
+- No completion weakening or gameplay changes

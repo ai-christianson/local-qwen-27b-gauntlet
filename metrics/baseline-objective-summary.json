@@ -1,0 +1,442 @@
+{
+  "schema": "qwen-gauntlet-baseline-summary-v1",
+  "note": "boot_clean is a narrow executable boot/capture check, not the full Gate 0 or microgame gate",
+  "seeds": [
+    {
+      "seed": 1,
+      "run": "int4-baseline-s1",
+      "site": "site-a",
+      "precision": "int4",
+      "model": "qwen36-27b",
+      "pi": "0.83.0",
+      "prompt_sha256": "b8574eb6f99d2733322875c384eda7271903804edbda97f464e0a19e13184516",
+      "exit_code": "controller-hard-stop",
+      "started_at": "2026-07-31T00:34:20+00:00",
+      "finished_at": "2026-07-31T01:15:18+00:00",
+      "browser": {
+        "http_status": 200,
+        "canvas_count": 1,
+        "distinct_screenshot_hashes": 1,
+        "cadence_fps": 60.2,
+        "completion_signals": 0,
+        "console_error_count": 1,
+        "page_error_count": 0,
+        "first_error": "Failed to load resource: the server responded with a status of 500 (Internal Server Error)",
+        "boot_clean": false
+      },
+      "pi_session": {
+        "assistant_turns": 35,
+        "tool_results": 35,
+        "tool_errors": 4,
+        "provider_reported_total_tokens": 1919847,
+        "provider_reported_output_tokens": 52729,
+        "tools": {
+          "bash": 28,
+          "write": 4,
+          "read": 3
+        }
+      }
+    },
+    {
+      "seed": 2,
+      "run": "int4-baseline-s2",
+      "site": "site-a",
+      "precision": "int4",
+      "model": "qwen36-27b",
+      "pi": "0.83.0",
+      "prompt_sha256": "b8574eb6f99d2733322875c384eda7271903804edbda97f464e0a19e13184516",
+      "exit_code": "controller-hard-stop",
+      "started_at": "2026-07-31T00:34:20+00:00",
+      "finished_at": "2026-07-31T01:15:18+00:00",
+      "browser": {
+        "http_status": 200,
+        "canvas_count": 2,
+        "distinct_screenshot_hashes": 5,
+        "cadence_fps": 13.8,
+        "completion_signals": 0,
+        "console_error_count": 0,
+        "page_error_count": 0,
+        "first_error": null,
+        "boot_clean": true
+      },
+      "pi_session": {
+        "assistant_turns": 42,
+        "tool_results": 42,
+        "tool_errors": 1,
+        "provider_reported_total_tokens": 1904859,
+        "provider_reported_output_tokens": 51087,
+        "tools": {
+          "bash": 20,
+          "write": 13,
+          "read": 9
+        }
+      }
+    },
+    {
+      "seed": 3,
+      "run": "int4-baseline-s3",
+      "site": "site-b",
+      "precision": "int4",
+      "model": "qwen36-27b",
+      "pi": "0.83.0",
+      "prompt_sha256": "b8574eb6f99d2733322875c384eda7271903804edbda97f464e0a19e13184516",
+      "exit_code": "controller-hard-stop",
+      "started_at": "2026-07-31T00:34:21+00:00",
+      "finished_at": "2026-07-31T01:15:19+00:00",
+      "browser": {
+        "http_status": 200,
+        "canvas_count": 1,
+        "distinct_screenshot_hashes": 1,
+        "cadence_fps": 60.2,
+        "completion_signals": 0,
+        "console_error_count": 1,
+        "page_error_count": 0,
+        "first_error": "Failed to load resource: the server responded with a status of 500 (Internal Server Error)",
+        "boot_clean": false
+      },
+      "pi_session": {
+        "assistant_turns": 41,
+        "tool_results": 41,
+        "tool_errors": 2,
+        "provider_reported_total_tokens": 1955998,
+        "provider_reported_output_tokens": 62284,
+        "tools": {
+          "bash": 22,
+          "write": 11,
+          "read": 8
+        }
+      }
+    },
+    {
+      "seed": 4,
+      "run": "int4-baseline-s4",
+      "site": "site-c",
+      "precision": "int4",
+      "model": "qwen36-27b",
+      "pi": "0.83.0",
+      "prompt_sha256": "b8574eb6f99d2733322875c384eda7271903804edbda97f464e0a19e13184516",
+      "exit_code": "controller-hard-stop",
+      "started_at": "2026-07-31T00:34:21+00:00",
+      "finished_at": "2026-07-31T01:15:18+00:00",
+      "browser": {
+        "http_status": 200,
+        "canvas_count": 1,
+        "distinct_screenshot_hashes": 1,
+        "cadence_fps": 60.2,
+        "completion_signals": 0,
+        "console_error_count": 1,
+        "page_error_count": 0,
+        "first_error": "Failed to load resource: the server responded with a status of 500 (Internal Server Error)",
+        "boot_clean": false
+      },
+      "pi_session": {
+        "assistant_turns": 54,
+        "tool_results": 54,
+        "tool_errors": 4,
+        "provider_reported_total_tokens": 2334558,
+        "provider_reported_output_tokens": 53983,
+        "tools": {
+          "bash": 24,
+          "write": 21,
+          "read": 8,
+          "edit": 1
+        }
+      }
+    },
+    {
+      "seed": 5,
+      "run": "int4-baseline-s5",
+      "site": "site-a",
+      "precision": "int4",
+      "model": "qwen36-27b",
+      "pi": "0.83.0",
+      "prompt_sha256": "b8574eb6f99d2733322875c384eda7271903804edbda97f464e0a19e13184516",
+      "exit_code": "controller-hard-stop",
+      "started_at": "2026-07-31T00:37:54+00:00",
+      "finished_at": "2026-07-31T01:18:43+00:00",
+      "browser": {
+        "http_status": 200,
+        "canvas_count": 1,
+        "distinct_screenshot_hashes": 1,
+        "cadence_fps": 60.2,
+        "completion_signals": 0,
+        "console_error_count": 1,
+        "page_error_count": 0,
+        "first_error": "Failed to load resource: the server responded with a status of 500 (Internal Server Error)",
+        "boot_clean": false
+      },
+      "pi_session": {
+        "assistant_turns": 52,
+        "tool_results": 52,
+        "tool_errors": 10,
+        "provider_reported_total_tokens": 2289363,
+        "provider_reported_output_tokens": 55498,
+        "tools": {
+          "bash": 34,
+          "write": 9,
+          "edit": 3,
+          "read": 6
+        }
+      }
+    },
+    {
+      "seed": 6,
+      "run": "int4-baseline-s6",
+      "site": "site-a",
+      "precision": "int4",
+      "model": "qwen36-27b",
+      "pi": "0.83.0",
+      "prompt_sha256": "b8574eb6f99d2733322875c384eda7271903804edbda97f464e0a19e13184516",
+      "exit_code": "controller-hard-stop",
+      "started_at": "2026-07-31T00:37:54+00:00",
+      "finished_at": "2026-07-31T01:18:43+00:00",
+      "browser": {
+        "http_status": 200,
+        "canvas_count": 1,
+        "distinct_screenshot_hashes": 5,
+        "cadence_fps": 60.1,
+        "completion_signals": 0,
+        "console_error_count": 1,
+        "page_error_count": 0,
+        "first_error": "Failed to load resource: the server responded with a status of 500 (Internal Server Error)",
+        "boot_clean": false
+      },
+      "pi_session": {
+        "assistant_turns": 46,
+        "tool_results": 46,
+        "tool_errors": 5,
+        "provider_reported_total_tokens": 2577070,
+        "provider_reported_output_tokens": 46812,
+        "tools": {
+          "bash": 34,
+          "write": 8,
+          "read": 4
+        }
+      }
+    },
+    {
+      "seed": 7,
+      "run": "int4-baseline-s7",
+      "site": "site-b",
+      "precision": "int4",
+      "model": "qwen36-27b",
+      "pi": "0.83.0",
+      "prompt_sha256": "b8574eb6f99d2733322875c384eda7271903804edbda97f464e0a19e13184516",
+      "exit_code": "controller-hard-stop",
+      "started_at": "2026-07-31T00:37:54+00:00",
+      "finished_at": "2026-07-31T01:18:43+00:00",
+      "browser": {
+        "http_status": 200,
+        "canvas_count": 1,
+        "distinct_screenshot_hashes": 1,
+        "cadence_fps": 60.2,
+        "completion_signals": 0,
+        "console_error_count": 1,
+        "page_error_count": 0,
+        "first_error": "Failed to load resource: the server responded with a status of 500 (Internal Server Error)",
+        "boot_clean": false
+      },
+      "pi_session": {
+        "assistant_turns": 73,
+        "tool_results": 73,
+        "tool_errors": 8,
+        "provider_reported_total_tokens": 3430188,
+        "provider_reported_output_tokens": 41214,
+        "tools": {
+          "bash": 38,
+          "write": 10,
+          "edit": 10,
+          "read": 15
+        }
+      }
+    },
+    {
+      "seed": 8,
+      "run": "int4-baseline-s8",
+      "site": "site-c",
+      "precision": "int4",
+      "model": "qwen36-27b",
+      "pi": "0.83.0",
+      "prompt_sha256": "b8574eb6f99d2733322875c384eda7271903804edbda97f464e0a19e13184516",
+      "exit_code": "controller-hard-stop",
+      "started_at": "2026-07-31T00:38:22+00:00",
+      "finished_at": "2026-07-31T01:19:16+00:00",
+      "browser": {
+        "http_status": 200,
+        "canvas_count": 1,
+        "distinct_screenshot_hashes": 5,
+        "cadence_fps": 60.1,
+        "completion_signals": 0,
+        "console_error_count": 1,
+        "page_error_count": 0,
+        "first_error": "Failed to load resource: the server responded with a status of 500 (Internal Server Error)",
+        "boot_clean": false
+      },
+      "pi_session": {
+        "assistant_turns": 41,
+        "tool_results": 41,
+        "tool_errors": 5,
+        "provider_reported_total_tokens": 2040635,
+        "provider_reported_output_tokens": 51816,
+        "tools": {
+          "write": 8,
+          "bash": 26,
+          "read": 7
+        }
+      }
+    },
+    {
+      "seed": 9,
+      "run": "int4-baseline-s9",
+      "site": "site-a",
+      "precision": "int4",
+      "model": "qwen36-27b",
+      "pi": "0.83.0",
+      "prompt_sha256": "b8574eb6f99d2733322875c384eda7271903804edbda97f464e0a19e13184516",
+      "exit_code": 1,
+      "started_at": "2026-07-31T00:47:50+00:00",
+      "finished_at": "2026-07-31T01:27:47+00:00",
+      "browser": {
+        "http_status": 200,
+        "canvas_count": 1,
+        "distinct_screenshot_hashes": 1,
+        "cadence_fps": 60.2,
+        "completion_signals": 0,
+        "console_error_count": 1,
+        "page_error_count": 0,
+        "first_error": "Failed to load resource: the server responded with a status of 500 (Internal Server Error)",
+        "boot_clean": false
+      },
+      "pi_session": {
+        "assistant_turns": 78,
+        "tool_results": 77,
+        "tool_errors": 3,
+        "provider_reported_total_tokens": 4198506,
+        "provider_reported_output_tokens": 48506,
+        "tools": {
+          "bash": 47,
+          "write": 10,
+          "read": 16,
+          "edit": 4
+        }
+      }
+    },
+    {
+      "seed": 10,
+      "run": "int4-baseline-s10",
+      "site": "site-a",
+      "precision": "int4",
+      "model": "qwen36-27b",
+      "pi": "0.83.0",
+      "prompt_sha256": "b8574eb6f99d2733322875c384eda7271903804edbda97f464e0a19e13184516",
+      "exit_code": 124,
+      "started_at": "2026-07-31T00:47:50+00:00",
+      "finished_at": "2026-07-31T01:27:50+00:00",
+      "browser": {
+        "http_status": 200,
+        "canvas_count": 2,
+        "distinct_screenshot_hashes": 1,
+        "cadence_fps": 60.2,
+        "completion_signals": 0,
+        "console_error_count": 0,
+        "page_error_count": 1,
+        "first_error": "this.buildDecorations is not a function",
+        "boot_clean": false
+      },
+      "pi_session": {
+        "assistant_turns": 73,
+        "tool_results": 88,
+        "tool_errors": 10,
+        "provider_reported_total_tokens": 2711281,
+        "provider_reported_output_tokens": 46898,
+        "tools": {
+          "bash": 62,
+          "write": 17,
+          "read": 6,
+          "edit": 3
+        }
+      }
+    },
+    {
+      "seed": 11,
+      "run": "int4-baseline-s11",
+      "site": "site-b",
+      "precision": "int4",
+      "model": "qwen36-27b",
+      "pi": "0.83.0",
+      "prompt_sha256": "b8574eb6f99d2733322875c384eda7271903804edbda97f464e0a19e13184516",
+      "exit_code": 124,
+      "started_at": "2026-07-31T00:47:50+00:00",
+      "finished_at": "2026-07-31T01:27:50+00:00",
+      "browser": {
+        "http_status": 200,
+        "canvas_count": 1,
+        "distinct_screenshot_hashes": 1,
+        "cadence_fps": 60.2,
+        "completion_signals": 0,
+        "console_error_count": 1,
+        "page_error_count": 0,
+        "first_error": "Failed to load resource: the server responded with a status of 500 (Internal Server Error)",
+        "boot_clean": false
+      },
+      "pi_session": {
+        "assistant_turns": 76,
+        "tool_results": 76,
+        "tool_errors": 7,
+        "provider_reported_total_tokens": 3617063,
+        "provider_reported_output_tokens": 48367,
+        "tools": {
+          "bash": 56,
+          "write": 7,
+          "read": 8,
+          "edit": 5
+        }
+      }
+    },
+    {
+      "seed": 12,
+      "run": "int4-baseline-s12",
+      "site": "site-c",
+      "precision": "int4",
+      "model": "qwen36-27b",
+      "pi": "0.83.0",
+      "prompt_sha256": "b8574eb6f99d2733322875c384eda7271903804edbda97f464e0a19e13184516",
+      "exit_code": 124,
+      "started_at": "2026-07-31T00:47:50+00:00",
+      "finished_at": "2026-07-31T01:27:50+00:00",
+      "browser": {
+        "http_status": 200,
+        "canvas_count": 2,
+        "distinct_screenshot_hashes": 5,
+        "cadence_fps": 10.9,
+        "completion_signals": 0,
+        "console_error_count": 0,
+        "page_error_count": 61,
+        "first_error": "Cannot read properties of undefined (reading 'getDelta')",
+        "boot_clean": false
+      },
+      "pi_session": {
+        "assistant_turns": 61,
+        "tool_results": 61,
+        "tool_errors": 12,
+        "provider_reported_total_tokens": 3251128,
+        "provider_reported_output_tokens": 38912,
+        "tools": {
+          "bash": 39,
+          "write": 11,
+          "edit": 2,
+          "read": 9
+        }
+      }
+    }
+  ],
+  "aggregates": {
+    "total_seeds": 12,
+    "boot_clean_seeds": 1,
+    "reached_completion_seeds": 0,
+    "seeds_with_browser_error": 11,
+    "provider_reported_total_tokens": 32230496,
+    "provider_reported_output_tokens": 598106,
+    "tool_errors": 71
+  }
+}

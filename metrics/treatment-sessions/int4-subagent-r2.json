@@ -1,0 +1,102 @@
+{
+  "schema": "qwen-gauntlet-pi-session-summary-v1",
+  "sessionFiles": [
+    "2026-07-31T01-46-30-297Z_019fb5d9-fe19-7065-82f9-965dcd21f110.jsonl"
+  ],
+  "messages": {
+    "assistant": 47,
+    "user": 1,
+    "toolResult": 50,
+    "other": 0
+  },
+  "providers": {
+    "routerd": 47
+  },
+  "models": {
+    "qwen36-27b": 47
+  },
+  "stopReasons": {
+    "toolUse": 46,
+    "stop": 1
+  },
+  "tools": {
+    "bash": 30,
+    "read": 8,
+    "edit": 9,
+    "write": 3
+  },
+  "sourceMutationCalls": [
+    {
+      "timestamp": "2026-07-31T01:47:05.073Z",
+      "tool": "edit",
+      "path": null
+    },
+    {
+      "timestamp": "2026-07-31T01:47:43.577Z",
+      "tool": "edit",
+      "path": "/home/qg/workspace/apex-karts-64/index.html"
+    },
+    {
+      "timestamp": "2026-07-31T01:47:54.033Z",
+      "tool": "edit",
+      "path": null
+    },
+    {
+      "timestamp": "2026-07-31T01:48:31.674Z",
+      "tool": "edit",
+      "path": "/home/qg/workspace/apex-karts-64/index.html"
+    },
+    {
+      "timestamp": "2026-07-31T01:48:51.022Z",
+      "tool": "edit",
+      "path": null
+    },
+    {
+      "timestamp": "2026-07-31T01:48:54.641Z",
+      "tool": "edit",
+      "path": "/home/qg/workspace/apex-karts-64/index.html"
+    },
+    {
+      "timestamp": "2026-07-31T01:49:03.411Z",
+      "tool": "write",
+      "path": "/home/qg/workspace/apex-karts-64/test_smoke.js"
+    },
+    {
+      "timestamp": "2026-07-31T01:51:28.049Z",
+      "tool": "write",
+      "path": "/home/qg/workspace/apex-karts-64/test_smoke.js"
+    },
+    {
+      "timestamp": "2026-07-31T01:52:04.780Z",
+      "tool": "write",
+      "path": "/home/qg/workspace/apex-karts-64/test_debug.js"
+    },
+    {
+      "timestamp": "2026-07-31T01:52:33.264Z",
+      "tool": "edit",
+      "path": "/home/qg/workspace/apex-karts-64/index.html"
+    },
+    {
+      "timestamp": "2026-07-31T01:53:25.587Z",
+      "tool": "edit",
+      "path": null
+    },
+    {
+      "timestamp": "2026-07-31T01:53:33.478Z",
+      "tool": "edit",
+      "path": "/home/qg/workspace/apex-karts-64/test_smoke.js"
+    }
+  ],
+  "usage": {
+    "input": 1032918,
+    "output": 11592,
+    "cacheRead": 0,
+    "cacheWrite": 0,
+    "reasoning": 0,
+    "totalTokens": 1044510
+  },
+  "toolErrors": 10,
+  "firstTimestamp": "2026-07-31T01:46:30.297Z",
+  "lastTimestamp": "2026-07-31T01:55:50.812Z",
+  "malformedLines": 0
+}

@@ -1,0 +1,67 @@
+{
+  "schema": "qwen-gauntlet-pi-session-summary-v1",
+  "sessionFiles": [
+    "2026-07-31T03-10-19-196Z_019fb626-ba3c-7ac7-9077-4fd6260c9714.jsonl"
+  ],
+  "messages": {
+    "assistant": 30,
+    "user": 1,
+    "toolResult": 29,
+    "other": 0
+  },
+  "providers": {
+    "routerd": 30
+  },
+  "models": {
+    "qwen36-27b": 30
+  },
+  "stopReasons": {
+    "toolUse": 29,
+    "stop": 1
+  },
+  "tools": {
+    "bash": 14,
+    "read": 10,
+    "edit": 4,
+    "write": 1
+  },
+  "sourceMutationCalls": [
+    {
+      "timestamp": "2026-07-31T03:10:38.241Z",
+      "tool": "edit",
+      "path": "/home/qg/workspace/apex-karts-64/index.html"
+    },
+    {
+      "timestamp": "2026-07-31T03:11:52.798Z",
+      "tool": "edit",
+      "path": "/home/qg/workspace/apex-karts-64/index.html"
+    },
+    {
+      "timestamp": "2026-07-31T03:13:25.526Z",
+      "tool": "write",
+      "path": "/home/qg/workspace/apex-karts-64/test_task1.js"
+    },
+    {
+      "timestamp": "2026-07-31T03:15:22.094Z",
+      "tool": "edit",
+      "path": "/home/qg/workspace/apex-karts-64/index.html"
+    },
+    {
+      "timestamp": "2026-07-31T03:21:24.966Z",
+      "tool": "edit",
+      "path": "/home/qg/workspace/apex-karts-64/index.html"
+    }
+  ],
+  "usage": {
+    "input": 718975,
+    "output": 17889,
+    "cacheRead": 0,
+    "cacheWrite": 0,
+    "reasoning": 0,
+    "totalTokens": 736864
+  },
+  "toolErrors": 3,
+  "firstTimestamp": "2026-07-31T03:10:19.196Z",
+  "lastTimestamp": "2026-07-31T03:23:34.114Z",
+  "malformedLines": 0
+}

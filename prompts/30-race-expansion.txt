@@ -1,0 +1,6 @@
+The one-lap microgame has passed its gates. Add two or three AI racers and
+original escalating announcer feedback tied to real race events. Keep the
+presentation playful and late-1990s low-poly, but copy no protected assets or
+audio. Preserve determinism and every existing test. Add the smallest new
+executable checks needed to prove race order and announcer rate limiting.
+

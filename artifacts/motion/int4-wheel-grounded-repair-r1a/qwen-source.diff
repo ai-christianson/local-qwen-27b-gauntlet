@@ -1,0 +1,15 @@
+--- artifacts/motion/int4-temporal-skill-r1/workspace/apex-karts-64/index.html	2026-07-31 00:39:00
++++ artifacts/motion/int4-wheel-grounded-repair-r1a/workspace/apex-karts-64/index.html	2026-07-31 01:47:47
+@@ -357,9 +357,9 @@
+ var heading=KS.h+KS.da;
+ KS.x+=Math.sin(heading)*KS.spd*dt;KS.z+=Math.cos(heading)*KS.spd*dt;KS.y=gth(KS.x,KS.z)+.5;
+ kart.position.set(KS.x,KS.y,KS.z);kart.rotation.y=heading;
+-// Wheel rotation: spin around local Z (the axle after rotation.x=PI/2)
+-var wheelRPM=KS.spd*dt*2.5;
+-kw.forEach(function(wg){wg.children.forEach(function(c){c.rotation.z+=wheelRPM;});});
++// Wheel rotation: spin around local Y (the axle after rotation.x=PI/2)
++var wheelRPM=KS.spd*dt*2.86;
++kw.forEach(function(wg){wg.children.forEach(function(c){c.rotation.y+=wheelRPM;});});
+ // Drift particles & shake
+ if(KS.drift&&Math.abs(KS.spd)>8){
+   var backX=KS.x-Math.sin(KS.h)*.8,backZ=KS.z-Math.cos(KS.h)*.8;

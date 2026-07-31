@@ -1,0 +1,47 @@
+
+
+Now I have the full picture. Here is the diagnosis:
+
+---
+
+## Diagnosis: Camera Look-At Uses `KS.h` (Base Heading) While Kart Visuals Use `KS.h + KS.da` (Drift Heading) — Camera Disconnects from Kart During Drift
+
+### Facts from source
+
+| Line | Code | Meaning |
+|------|------|---------|
+| 352 | `KS.da += ctrl.s * dt * 1.5;` | Drift angle accumulates during drift |
+| 354 | `KS.h += ta + KS.da;` | Base heading absorbs drift angle each frame |
+| 357 | `var heading = KS.h + KS.da;` | Visual/physical heading = base + drift |
+| 358 | `KS.x += Math.sin(heading) * KS.spd * dt;` | **Movement** uses `heading` |
+| 359 | `kart.rotation.y = heading;` | **Visual rotation** uses `heading` |
+| 439 | `tX = KS.x - Math.sin(KS.h) * dist;` | **Camera position** uses `KS.h` (no drift) |
+| 443 | `cam.lookAt(KS.x + Math.sin(KS.h) * 15, ...)` | **Camera lookAt** uses `KS.h` (no drift) |
+
+### Facts from the frames
+
+- **Frame 000000 (0:00)**: Kart at start line, no drift — camera and kart aligned.
+- **Frame 000240 (0:04)**: Kart on a left-hand curve, body visibly angled toward the outside of the turn (drift active). The camera remains behind the kart but is looking along the base heading rather than the kart's actual facing direction — the kart body appears rotated relative to the camera's frame of reference.
+- **Ordered-motion-contact-3s.png, row 2 frames**: Kart drifting through curves; the kart body orientation and the camera's apparent "forward" direction disagree. The kart body tilts one way while the camera still frames the track ahead as if the kart were not drifting.
+
+### Root cause
+
+During drift, `heading = KS.h + KS.da` is used for **both** the kart's visual rotation and its movement direction. But `updateCam()` uses bare `KS.h` (which does not include the current-frame `KS.da`) for both the camera's follow position and the `lookAt` target. This creates a **motion-coherence break**: the kart body and its travel direction are coherently coupled to each other, but the camera is not coupled to either — it follows a lagging, drift-angle-stripped heading. The player sees the kart visually "slide" away from the camera's implied forward axis, producing a disorienting disconnect between what the kart appears to be doing and where the camera is watching.
+
+### Smallest plausible repair
+
+In `updateCam()`, replace bare `KS.h` with `KS.h + KS.da` (the same `heading` value used for the kart):
+
+```javascript
+function updateCam(){
+    var h = KS.h + KS.da;  // use actual heading, matching kart visuals
+    var dist=8,hgt=5,tX=KS.x-Math.sin(h)*dist,tZ=KS.z-Math.cos(h)*dist,tY=KS.y+hgt;
+    cS.x+=(tX-cS.x)*.08;cS.y+=(tY-cS.y)*.08;cS.z+=(tZ-cS.z)*.08;
+    var cp={x:cS.x,y:cS.y,z:cS.z};
+    applyCamShake(cp);
+    cam.position.set(cp.x,cp.y,cp.z);
+    cam.lookAt(KS.x+Math.sin(h)*15,KS.y+2,KS.z+Math.cos(h)*15);
+}
+```
+
+One added variable `h` carrying the drift-corrected heading, applied to both camera follow target and `lookAt`. This restores coherence: camera, kart body, and movement direction all track the same heading angle.

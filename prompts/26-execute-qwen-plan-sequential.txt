@@ -1,0 +1,50 @@
+Implement the attached Qwen-authored three-task plan in ranked order. Work on
+one task at a time and check the game after each task. Preserve the deterministic
+Demo button and completion state. Inspect no more than eight screenshots in
+this session, keep the browser console clean, and leave the game playable.
+
+QWEN_PLAN_START
+Now I have a thorough understanding of the game. Here's the ranked plan:
+
+---
+
+## Apex Karts 64 — Ranked Improvement Plan
+
+### 1. Replace Blocky Track Barriers with a Continuous Ribbon Mesh
+
+**Problem:** The track barriers are individual `BoxGeometry` chunks placed every 3rd/5th track point, creating a visible stair-step/jagged "fence" effect (prominent in every racing screenshot). This is the single most visually jarring element — it makes the track look unfinished and pulls attention away from the kart.
+
+**Fix:** Replace the discrete barrier boxes with a single extruded mesh (or two: inner curb + outer wall) that follows the track spline. Build it the same way the road surface is built (from `TP` + `TN` normals), but offset outward. Use a smooth material (e.g., gradient red/white for curbs, solid blue-gray for outer walls). This is a pure visual swap — no physics or gameplay changes needed since barriers are cosmetic only (physics uses track width distance check).
+
+**Acceptance check:** In a screenshot at any curve, the barrier edge reads as a smooth, continuous line with no visible segmentation or stair-stepping. The outer wall and curb appear as clean bands hugging the track.
+
+---
+
+### 2. Add Camera Dynamic Roll and Speed-Adaptive Look-Ahead
+
+**Problem:** The camera uses a fixed lerp (`*.08`) to follow the kart and always looks at a fixed point 15 units ahead. During drifts and hard turns, the camera feels floaty and disconnected — it doesn't lean into the action or anticipate turns. This makes motion feel inert and reduces the sense of speed.
+
+**Fix:** Two small additions to `updateCam()`:
+- **Roll:** Tilt the camera around the forward axis proportional to lateral acceleration (steer input × speed, and extra during `KS.drift`). Clamp to ±8°. Smooth with lerp.
+- **Speed-adaptive look-ahead:** Increase the look-at distance at higher speeds (e.g., `15 + spd * 0.3`) so the camera reveals more track ahead when fast, giving a sense of velocity and better turn anticipation.
+
+This is ~10 lines of math added to the existing `updateCam()` function.
+
+**Acceptance check:** During a drift, the camera visibly tilts toward the direction of the slide. On a straightaway at full speed, more track is visible ahead than when stopped. Camera motion looks organic, not jittery.
+
+---
+
+### 3. Make Demo AI Curvature-Aware for Reliable Lap Completion
+
+**Problem:** The demo AI (`demoCtrl`) looks ahead a fixed 50–80 track points and steers toward that target at constant speed. In tight curves (especially the elevation change area around waypoints 8–13), the AI can oversteer, go off-track, or get stuck, causing the demo to not reliably complete a full lap. The `test_demo.js` output would show the kart wandering or stalling.
+
+**Fix:** Compute local track curvature from the angle between consecutive track normals (`TN`). Reduce the AI's lookahead distance proportionally to curvature (tight turn = look closer ahead), and add a speed cap in curves (`if (curvature > threshold) accel *= 0.4`). Also add a "return to track" correction: when `!KS.onTrk`, steer toward the nearest track point instead of the forward lookahead target.
+
+This keeps the demo on-track through all turns and produces a clean, watchable lap.
+
+**Acceptance check:** Run `node test_demo.js` — the AI completes 1+ full laps without getting stuck or wandering off-track for more than 2 seconds. Final state shows `lap >= 1` and `gm === 'finished'`.
+
+---
+
+**Independence note:** All three tasks touch separate subsystems (scene geometry, camera code, AI logic) and can be committed and verified one at a time.
+QWEN_PLAN_END

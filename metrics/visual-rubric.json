@@ -1,0 +1,29 @@
+{
+  "schema": "qwen-gauntlet-visual-rubric-v1",
+  "frozen_at": "2026-07-30T23:07:00-04:00",
+  "total": 100,
+  "dimensions": {
+    "coherent_original_art_direction": 20,
+    "composition_depth_and_gameplay_readability": 20,
+    "lighting_materials_atmosphere_and_shaders": 20,
+    "motion_camera_and_animation_coherence": 15,
+    "particles_impacts_and_state_feedback": 15,
+    "hud_typography_and_finish": 10
+  },
+  "anchors": {
+    "0-29": "broken or unpresentable prototype",
+    "30-49": "legible programmer art",
+    "50-64": "coherent hobby-game presentation",
+    "65-77": "appealing indie prototype",
+    "78-88": "near-professional vertical slice",
+    "89-95": "shipped high-budget presentation quality"
+  },
+  "hard_rules": [
+    "Function and visuals are scored separately; a visual score cannot override a failed completion gate.",
+    "A black, static, or uncaught-error capture receives no credit for visual polish hidden behind the failure.",
+    "Wrong wheel or prop rotation, implausible steering orientation, camera jumps, or obvious animation discontinuities reduce motion coherence even when a still frame looks attractive.",
+    "Offline fixed-step footage may support visual inspection but cannot earn real-time performance credit.",
+    "Copied protected characters, tracks, levels, logos, audio, or assets invalidate originality credit.",
+    "All judged arms use the same viewport, seed contract, capture method, and randomized anonymous presentation order."
+  ]
+}

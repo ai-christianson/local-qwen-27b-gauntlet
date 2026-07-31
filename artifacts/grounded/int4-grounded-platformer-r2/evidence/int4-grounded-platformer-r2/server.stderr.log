@@ -1,0 +1,33 @@
+4:39:57 AM [vite] (client) Pre-transform error: Failed to resolve import "three" from "index.html?html-proxy&index=0.js". Does the file exist?
+  Plugin: vite:import-analysis
+  File: /home/qg/workspace/skybound64/index.html?html-proxy&index=0.js:41:24
+  1  |  
+  2  |  import * as THREE from 'three';
+     |                          ^
+  3  |  
+  4  |  // ─── Globals ───
+4:39:58 AM [vite] (client) Pre-transform error: Failed to resolve import "three" from "index.html?html-proxy&index=0.js". Does the file exist?
+  Plugin: vite:import-analysis
+  File: /home/qg/workspace/skybound64/index.html?html-proxy&index=0.js:41:24
+  1  |  
+  2  |  import * as THREE from 'three';
+     |                          ^
+  3  |  
+  4  |  // ─── Globals ───
+4:39:58 AM [vite] Internal server error: Failed to resolve import "three" from "index.html?html-proxy&index=0.js". Does the file exist?
+  Plugin: vite:import-analysis
+  File: /home/qg/workspace/skybound64/index.html?html-proxy&index=0.js:41:24
+  1  |  
+  2  |  import * as THREE from 'three';
+     |                          ^
+  3  |  
+  4  |  // ─── Globals ───
+      at TransformPluginContext._formatLog (file:///home/qg/runtime/node_modules/vite/dist/node/chunks/node.js:31011:39)
+      at TransformPluginContext.error (file:///home/qg/runtime/node_modules/vite/dist/node/chunks/node.js:31008:14)
+      at normalizeUrl (file:///home/qg/runtime/node_modules/vite/dist/node/chunks/node.js:27957:18)
+      at async file:///home/qg/runtime/node_modules/vite/dist/node/chunks/node.js:28025:30
+      at async Promise.all (index 0)
+      at async TransformPluginContext.transform (file:///home/qg/runtime/node_modules/vite/dist/node/chunks/node.js:27993:4)
+      at async EnvironmentPluginContainer.transform (file:///home/qg/runtime/node_modules/vite/dist/node/chunks/node.js:30796:14)
+      at async loadAndTransform (file:///home/qg/runtime/node_modules/vite/dist/node/chunks/node.js:20594:26)
+      at async viteTransformMiddleware (file:///home/qg/runtime/node_modules/vite/dist/node/chunks/node.js:25092:20)

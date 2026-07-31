@@ -1,0 +1,4 @@
+Inspect the running game and make the single highest-value improvement you can
+finish without breaking a passing gate. You may consult public official
+documentation if it is useful. Record any URLs you use, do not copy a finished
+game or protected assets, and verify the result yourself.
