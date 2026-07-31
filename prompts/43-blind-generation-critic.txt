@@ -1,0 +1,5 @@
+Read the game source and the attached ordered screenshots. Without changing
+files or running the game, predict whether the fixed Demo path reached a
+genuine lap finish within 45 seconds. Answer PASS or FAIL, give confidence from
+0 to 100, and cite concrete source or frame evidence. Do not assume a finish
+overlay is truthful.
