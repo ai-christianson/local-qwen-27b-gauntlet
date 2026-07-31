@@ -1,6 +1,6 @@
 {
-  "schema": "qwen-gauntlet-results-summary-v2",
-  "frozen_at": "2026-07-31T03:12:00-04:00",
+  "schema": "qwen-gauntlet-results-summary-v3",
+  "frozen_at": "2026-07-31T04:00:00-04:00",
   "subject": {
     "model": "Qwen3.6-27B",
     "agent": "@earendil-works/pi-coding-agent@0.83.0",
@@ -88,9 +88,12 @@
     "known_remaining_defect": "pre-existing post-finish reset overlay remains"
   },
   "blind_generation_critics": {
+    "detailed_source": "metrics/generation-critic-calibration.json",
     "n": 8,
     "correct": 7,
     "accuracy": 0.875,
+    "positive_truth_arms": 0,
+    "negative_truth_arms": 8,
     "confusion": {
       "true_positive": 0,
       "false_positive": 1,
@@ -99,8 +102,14 @@
     },
     "pass_precision": 0,
     "pass_recall": null,
+    "always_fail_baseline_correct": 8,
+    "always_fail_baseline_accuracy": 1,
+    "accuracy_delta_vs_always_fail": -0.125,
+    "balanced_accuracy": null,
+    "success_selection_estimable": false,
     "mean_confidence": 95.875,
-    "source_mutation_calls": 0
+    "source_mutation_calls": 0,
+    "interpretation": "Every corrected label was FAIL. The useful result is the seed-5 evaluator audit, not headline accuracy; this cohort cannot estimate true-positive selection."
   },
   "transfer": {
     "distinct_genres": 3,
