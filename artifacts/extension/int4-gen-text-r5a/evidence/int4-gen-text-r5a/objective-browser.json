@@ -1,0 +1,1683 @@
+{
+  "schema": "qwen-gauntlet-objective-browser-v3",
+  "startedAt": "2026-07-31T06:59:43.259Z",
+  "finishedAt": "2026-07-31T07:00:34.313Z",
+  "url": "http://127.0.0.1:4173/?demo=1&seed=1337",
+  "httpStatus": 200,
+  "initialDom": {
+    "title": "Apex Karts 64",
+    "text": "LAP 1/3 P1 0 km/h 0:00.00 🏎️ APEX KARTS 64 Procedural Racing START RACE DEMO MODE Arrow Keys / WASD — Steer & Accelerate SPACE — Brake / Reverse RACE COMPLETE! RACE AGAIN",
+    "canvases": [
+      {
+        "width": 1920,
+        "height": 1080,
+        "clientWidth": 1920,
+        "clientHeight": 1080
+      }
+    ],
+    "buttons": [
+      {
+        "text": "START RACE",
+        "disabled": false
+      },
+      {
+        "text": "DEMO MODE",
+        "disabled": false
+      },
+      {
+        "text": "RACE AGAIN",
+        "disabled": false
+      }
+    ]
+  },
+  "finalDom": {
+    "title": "Apex Karts 64",
+    "text": "LAP 3/3 P1 175 km/h 0:15.09 🏎️ APEX KARTS 64 Procedural Racing START RACE DEMO MODE Arrow Keys / WASD — Steer & Accelerate SPACE — Brake / Reverse 1 RACE COMPLETE! RACE AGAIN",
+    "canvases": [
+      {
+        "width": 1920,
+        "height": 1080,
+        "clientWidth": 1920,
+        "clientHeight": 1080
+      }
+    ]
+  },
+  "actions": [
+    {
+      "at": "2026-07-31T06:59:46.920Z",
+      "action": "click",
+      "rule": "demo",
+      "text": "DEMO MODE"
+    },
+    {
+      "at": "2026-07-31T06:59:50.641Z",
+      "action": "fixed-keyboard-sequence",
+      "sequence": "ArrowUp 3.6s; ArrowLeft 0.8s; ArrowRight 0.8s"
+    },
+    {
+      "at": "2026-07-31T07:00:30.998Z",
+      "action": "keypress",
+      "key": "r",
+      "rule": "fixed-reset-probe"
+    }
+  ],
+  "screenshots": [
+    {
+      "filename": "objective-02s.png",
+      "sha256": "a985c6f9d6de1c5712976b7ec9aed76df37fb3fd5961175ab3c458462c2ff3ae",
+      "bytes": 747507
+    },
+    {
+      "filename": "objective-06s.png",
+      "sha256": "64d57ae084fe8a2dd6f2561cc5dbd2a690276e219aa327666a62b8d55a33d776",
+      "bytes": 78882
+    },
+    {
+      "filename": "objective-16s.png",
+      "sha256": "6c6ace4ffa2aca80a87a977ed5f1c34efa6b0f160380b27c0a913dee25e29819",
+      "bytes": 92195
+    },
+    {
+      "filename": "objective-45s.png",
+      "sha256": "09d6670aacf814ee6b5ae4ec76aa81254244c3ba9c93826ce653fe0d42e7d225",
+      "bytes": 78779
+    },
+    {
+      "filename": "objective-after-reset.png",
+      "sha256": "b9990e93a3a6bfe07a716e7798a11c3d58508a6849a79675eb27e85bcf86b58c",
+      "bytes": 98456
+    }
+  ],
+  "distinctScreenshotHashes": 5,
+  "cadence": {
+    "durationMs": 10000,
+    "frames": 366,
+    "fps": 36.6,
+    "intervalMs": {
+      "p50": 33.29999999999927,
+      "p95": 33.399999999999636,
+      "p99": 33.400000000001455,
+      "max": 33.5
+    }
+  },
+  "textTimeline": [
+    {
+      "elapsedMs": 29,
+      "text": "LAP 1/3 P1 175 km/h 0:14.33 🏎️ APEX KARTS 64 Procedural Racing START RACE DEMO MODE Arrow Keys / WASD — Steer & Accelerate SPACE — Brake / Reverse RACE COMPLETE! RACE AGAIN",
+      "completionSignal": true,
+      "lapSignal": true
+    },
+    {
+      "elapsedMs": 1062,
+      "text": "LAP 1/3 P1 175 km/h 0:15.36 🏎️ APEX KARTS 64 Procedural Racing START RACE DEMO MODE Arrow Keys / WASD — Steer & Accelerate SPACE — Brake / Reverse RACE COMPLETE! RACE AGAIN",
+      "completionSignal": true,
+      "lapSignal": true
+    },
+    {
+      "elapsedMs": 2076,
+      "text": "LAP 2/3 P1 175 km/h 0:11.52 🏎️ APEX KARTS 64 Procedural Racing START RACE DEMO MODE Arrow Keys / WASD — Steer & Accelerate SPACE — Brake / Reverse RACE COMPLETE! RACE AGAIN",
+      "completionSignal": true,
+      "lapSignal": true
+    },
+    {
+      "elapsedMs": 3088,
+      "text": "LAP 2/3 P1 175 km/h 0:11.52 🏎️ APEX KARTS 64 Procedural Racing START RACE DEMO MODE Arrow Keys / WASD — Steer & Accelerate SPACE — Brake / Reverse RACE COMPLETE! RACE AGAIN",
+      "completionSignal": true,
+      "lapSignal": true
+    },
+    {
+      "elapsedMs": 4099,
+      "text": "LAP 2/3 P1 175 km/h 0:11.52 🏎️ APEX KARTS 64 Procedural Racing START RACE DEMO MODE Arrow Keys / WASD — Steer & Accelerate SPACE — Brake / Reverse RACE COMPLETE! RACE AGAIN",
+      "completionSignal": true,
+      "lapSignal": true
+    },
+    {
+      "elapsedMs": 5111,
+      "text": "LAP 2/3 P1 175 km/h 0:11.52 🏎️ APEX KARTS 64 Procedural Racing START RACE DEMO MODE Arrow Keys / WASD — Steer & Accelerate SPACE — Brake / Reverse RACE COMPLETE! RACE AGAIN",
+      "completionSignal": true,
+      "lapSignal": true
+    },
+    {
+      "elapsedMs": 6126,
+      "text": "LAP 2/3 P1 175 km/h 0:11.52 🏎️ APEX KARTS 64 Procedural Racing START RACE DEMO MODE Arrow Keys / WASD — Steer & Accelerate SPACE — Brake / Reverse RACE COMPLETE! RACE AGAIN",
+      "completionSignal": true,
+      "lapSignal": true
+    },
+    {
+      "elapsedMs": 7156,
+      "text": "LAP 2/3 P1 175 km/h 0:11.52 🏎️ APEX KARTS 64 Procedural Racing START RACE DEMO MODE Arrow Keys / WASD — Steer & Accelerate SPACE — Brake / Reverse RACE COMPLETE! RACE AGAIN",
+      "completionSignal": true,
+      "lapSignal": true
+    },
+    {
+      "elapsedMs": 8173,
+      "text": "LAP 2/3 P1 175 km/h 0:11.52 🏎️ APEX KARTS 64 Procedural Racing START RACE DEMO MODE Arrow Keys / WASD — Steer & Accelerate SPACE — Brake / Reverse RACE COMPLETE! RACE AGAIN",
+      "completionSignal": true,
+      "lapSignal": true
+    },
+    {
+      "elapsedMs": 9192,
+      "text": "LAP 2/3 P1 175 km/h 0:11.52 🏎️ APEX KARTS 64 Procedural Racing START RACE DEMO MODE Arrow Keys / WASD — Steer & Accelerate SPACE — Brake / Reverse RACE COMPLETE! RACE AGAIN",
+      "completionSignal": true,
+      "lapSignal": true
+    },
+    {
+      "elapsedMs": 10236,
+      "text": "LAP 2/3 P1 175 km/h 0:11.52 🏎️ APEX KARTS 64 Procedural Racing START RACE DEMO MODE Arrow Keys / WASD — Steer & Accelerate SPACE — Brake / Reverse RACE COMPLETE! RACE AGAIN",
+      "completionSignal": true,
+      "lapSignal": true
+    },
+    {
+      "elapsedMs": 11266,
+      "text": "LAP 2/3 P1 175 km/h 0:11.52 🏎️ APEX KARTS 64 Procedural Racing START RACE DEMO MODE Arrow Keys / WASD — Steer & Accelerate SPACE — Brake / Reverse RACE COMPLETE! RACE AGAIN",
+      "completionSignal": true,
+      "lapSignal": true
+    },
+    {
+      "elapsedMs": 12273,
+      "text": "LAP 2/3 P1 175 km/h 0:11.52 🏎️ APEX KARTS 64 Procedural Racing START RACE DEMO MODE Arrow Keys / WASD — Steer & Accelerate SPACE — Brake / Reverse RACE COMPLETE! RACE AGAIN",
+      "completionSignal": true,
+      "lapSignal": true
+    },
+    {
+      "elapsedMs": 13301,
+      "text": "LAP 2/3 P1 175 km/h 0:11.52 🏎️ APEX KARTS 64 Procedural Racing START RACE DEMO MODE Arrow Keys / WASD — Steer & Accelerate SPACE — Brake / Reverse RACE COMPLETE! RACE AGAIN",
+      "completionSignal": true,
+      "lapSignal": true
+    },
+    {
+      "elapsedMs": 14321,
+      "text": "LAP 2/3 P1 175 km/h 0:11.52 🏎️ APEX KARTS 64 Procedural Racing START RACE DEMO MODE Arrow Keys / WASD — Steer & Accelerate SPACE — Brake / Reverse RACE COMPLETE! RACE AGAIN",
+      "completionSignal": true,
+      "lapSignal": true
+    },
+    {
+      "elapsedMs": 15345,
+      "text": "LAP 2/3 P1 154 km/h 0:11.52 🏎️ APEX KARTS 64 Procedural Racing START RACE DEMO MODE Arrow Keys / WASD — Steer & Accelerate SPACE — Brake / Reverse RACE COMPLETE! RACE AGAIN",
+      "completionSignal": true,
+      "lapSignal": true
+    },
+    {
+      "elapsedMs": 16349,
+      "text": "LAP 2/3 P1 175 km/h 0:11.52 🏎️ APEX KARTS 64 Procedural Racing START RACE DEMO MODE Arrow Keys / WASD — Steer & Accelerate SPACE — Brake / Reverse RACE COMPLETE! RACE AGAIN",
+      "completionSignal": true,
+      "lapSignal": true
+    },
+    {
+      "elapsedMs": 17354,
+      "text": "LAP 3/3 P1 175 km/h 0:15.09 🏎️ APEX KARTS 64 Procedural Racing START RACE DEMO MODE Arrow Keys / WASD — Steer & Accelerate SPACE — Brake / Reverse RACE COMPLETE! RACE AGAIN",
+      "completionSignal": true,
+      "lapSignal": true
+    },
+    {
+      "elapsedMs": 18369,
+      "text": "LAP 3/3 P1 175 km/h 0:15.09 🏎️ APEX KARTS 64 Procedural Racing START RACE DEMO MODE Arrow Keys / WASD — Steer & Accelerate SPACE — Brake / Reverse RACE COMPLETE! RACE AGAIN",
+      "completionSignal": true,
+      "lapSignal": true
+    },
+    {
+      "elapsedMs": 19385,
+      "text": "LAP 3/3 P1 175 km/h 0:15.09 🏎️ APEX KARTS 64 Procedural Racing START RACE DEMO MODE Arrow Keys / WASD — Steer & Accelerate SPACE — Brake / Reverse RACE COMPLETE! RACE AGAIN",
+      "completionSignal": true,
+      "lapSignal": true
+    },
+    {
+      "elapsedMs": 20389,
+      "text": "LAP 3/3 P1 175 km/h 0:15.09 🏎️ APEX KARTS 64 Procedural Racing START RACE DEMO MODE Arrow Keys / WASD — Steer & Accelerate SPACE — Brake / Reverse RACE COMPLETE! RACE AGAIN",
+      "completionSignal": true,
+      "lapSignal": true
+    },
+    {
+      "elapsedMs": 21406,
+      "text": "LAP 3/3 P1 175 km/h 0:15.09 🏎️ APEX KARTS 64 Procedural Racing START RACE DEMO MODE Arrow Keys / WASD — Steer & Accelerate SPACE — Brake / Reverse RACE COMPLETE! RACE AGAIN",
+      "completionSignal": true,
+      "lapSignal": true
+    },
+    {
+      "elapsedMs": 22432,
+      "text": "LAP 3/3 P1 175 km/h 0:15.09 🏎️ APEX KARTS 64 Procedural Racing START RACE DEMO MODE Arrow Keys / WASD — Steer & Accelerate SPACE — Brake / Reverse RACE COMPLETE! RACE AGAIN",
+      "completionSignal": true,
+      "lapSignal": true
+    },
+    {
+      "elapsedMs": 23445,
+      "text": "LAP 3/3 P1 175 km/h 0:15.09 🏎️ APEX KARTS 64 Procedural Racing START RACE DEMO MODE Arrow Keys / WASD — Steer & Accelerate SPACE — Brake / Reverse RACE COMPLETE! RACE AGAIN",
+      "completionSignal": true,
+      "lapSignal": true
+    },
+    {
+      "elapsedMs": 24473,
+      "text": "LAP 3/3 P1 175 km/h 0:15.09 🏎️ APEX KARTS 64 Procedural Racing START RACE DEMO MODE Arrow Keys / WASD — Steer & Accelerate SPACE — Brake / Reverse RACE COMPLETE! RACE AGAIN",
+      "completionSignal": true,
+      "lapSignal": true
+    },
+    {
+      "elapsedMs": 25504,
+      "text": "LAP 3/3 P1 175 km/h 0:15.09 🏎️ APEX KARTS 64 Procedural Racing START RACE DEMO MODE Arrow Keys / WASD — Steer & Accelerate SPACE — Brake / Reverse RACE COMPLETE! RACE AGAIN",
+      "completionSignal": true,
+      "lapSignal": true
+    },
+    {
+      "elapsedMs": 26529,
+      "text": "LAP 3/3 P1 175 km/h 0:15.09 🏎️ APEX KARTS 64 Procedural Racing START RACE DEMO MODE Arrow Keys / WASD — Steer & Accelerate SPACE — Brake / Reverse RACE COMPLETE! RACE AGAIN",
+      "completionSignal": true,
+      "lapSignal": true
+    },
+    {
+      "elapsedMs": 27558,
+      "text": "LAP 3/3 P1 175 km/h 0:15.09 🏎️ APEX KARTS 64 Procedural Racing START RACE DEMO MODE Arrow Keys / WASD — Steer & Accelerate SPACE — Brake / Reverse RACE COMPLETE! RACE AGAIN",
+      "completionSignal": true,
+      "lapSignal": true
+    },
+    {
+      "elapsedMs": 28567,
+      "text": "LAP 3/3 P1 175 km/h 0:15.09 🏎️ APEX KARTS 64 Procedural Racing START RACE DEMO MODE Arrow Keys / WASD — Steer & Accelerate SPACE — Brake / Reverse RACE COMPLETE! RACE AGAIN",
+      "completionSignal": true,
+      "lapSignal": true
+    }
+  ],
+  "completionSignals": 29,
+  "consoleEvents": [
+    {
+      "at": "2026-07-31T06:59:43.406Z",
+      "type": "debug",
+      "text": "[vite] connecting..."
+    },
+    {
+      "at": "2026-07-31T06:59:43.442Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.443Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.444Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.448Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.448Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.448Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.448Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.449Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.449Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.449Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.457Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.457Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.457Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.457Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.457Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.457Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.457Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.457Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.457Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.457Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.457Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.457Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.458Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.458Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.458Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.458Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.458Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.458Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.458Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.458Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.458Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.458Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.466Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.466Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.466Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.466Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.466Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.466Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.466Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.466Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.466Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.466Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.466Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.466Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.466Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.466Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.467Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.467Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.467Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.467Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.467Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.467Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.467Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.467Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.467Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.467Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.467Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.467Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.467Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.467Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.467Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.467Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.467Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.467Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.468Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.468Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.468Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.468Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.468Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.468Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.468Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.468Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.468Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.468Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.468Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.468Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.468Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.468Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.472Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.472Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.472Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.473Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.473Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.473Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.473Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.473Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.473Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.473Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.473Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.473Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.473Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.473Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.473Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.473Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.473Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.473Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.473Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.473Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.473Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.473Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.473Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.473Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.473Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.473Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.473Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.473Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.473Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.473Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.473Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.473Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.473Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.473Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.473Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.473Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.473Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.474Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.474Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.474Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.474Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.474Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.474Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.476Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.476Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.476Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.476Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.476Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.476Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.476Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.476Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.476Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.476Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.476Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.476Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.476Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.476Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.476Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.476Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.476Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.476Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.476Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.476Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.476Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.476Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.476Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.476Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.476Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.476Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.476Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.476Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.476Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.476Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.476Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.476Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.476Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.476Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.477Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.477Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.477Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.477Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.477Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.477Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.477Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.477Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.477Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.479Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.479Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.479Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.479Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.479Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.479Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.479Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.479Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.480Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.480Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.480Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.480Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.480Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.480Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.480Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.480Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.480Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.480Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.480Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.480Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.480Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.480Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.480Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.480Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.480Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.480Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.480Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.480Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.480Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.480Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.480Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.480Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.480Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.480Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.480Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.480Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.480Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.480Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.480Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.480Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.480Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.480Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.480Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.481Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.481Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.482Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.482Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.482Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.482Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.482Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.482Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.482Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.482Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.482Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.482Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.482Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.482Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.483Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.483Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.483Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.483Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.483Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.483Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.483Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.484Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.484Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.484Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.484Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.485Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.486Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.486Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.486Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.487Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.487Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.487Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.487Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.487Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.488Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.488Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.488Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.488Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.488Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.488Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.488Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.488Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.488Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.488Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.489Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.489Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.490Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.490Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.491Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.491Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.491Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.491Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.491Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.491Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.491Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.491Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.491Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.491Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.491Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.491Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.492Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.493Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.493Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.493Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.494Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.494Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.494Z",
+      "type": "warning",
+      "text": "THREE.MeshLambertMaterial: 'flatShading' is not a property of this material."
+    },
+    {
+      "at": "2026-07-31T06:59:43.861Z",
+      "type": "warning",
+      "text": "[.WebGL-0x10740015a000]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels"
+    },
+    {
+      "at": "2026-07-31T06:59:43.906Z",
+      "type": "warning",
+      "text": "[.WebGL-0x10740015a000]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels"
+    },
+    {
+      "at": "2026-07-31T06:59:44.067Z",
+      "type": "debug",
+      "text": "[vite] connected."
+    },
+    {
+      "at": "2026-07-31T06:59:44.067Z",
+      "type": "warning",
+      "text": "[.WebGL-0x10740015a000]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels"
+    },
+    {
+      "at": "2026-07-31T06:59:44.109Z",
+      "type": "warning",
+      "text": "[.WebGL-0x10740015a000]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels (this message will no longer repeat)"
+    }
+  ],
+  "pageErrors": []
+}

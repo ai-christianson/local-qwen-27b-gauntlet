@@ -42,6 +42,14 @@ for (let seed = 1; seed <= 8; seed += 1) {
   const evidence = readJson(
     path.join(root, "evidence", run, "objective-browser.json"),
   );
+  const visibilityAudit = readJson(
+    path.join(
+      root,
+      "evidence",
+      `${run}-visibility-audit`,
+      "audit.json",
+    ),
+  );
   const provenance = readJson(
     path.join(root, "runs", run, "provenance", "run.json"),
   );
@@ -56,12 +64,26 @@ for (let seed = 1; seed <= 8; seed += 1) {
   const canvasCount = evidence?.initialDom?.canvases?.length ?? 0;
   const distinctScreenshots = evidence?.distinctScreenshotHashes ?? 0;
   const finalText = evidence?.finalDom?.text ?? "";
+  const initialText = evidence?.initialDom?.text ?? "";
   const timelineCompletion =
     evidence?.textTimeline?.some((item) => item.completionSignal) ?? false;
-  const completion =
+  const frozenTextCandidate =
     (evidence?.completionSignals ?? 0) > 0 ||
     timelineCompletion ||
     completionPattern.test(finalText);
+  const completionTextPresentInitially = completionPattern.test(initialText);
+  const auditCompletion =
+    visibilityAudit !== null &&
+    [
+      visibilityAudit.firstVisibleCompletionElapsedMs,
+      visibilityAudit.firstFinishedStateElapsedMs,
+    ].some((value) => value !== null && value <= 45_000);
+  const completion =
+    visibilityAudit !== null
+      ? auditCompletion
+      : frozenTextCandidate && !completionTextPresentInitially;
+  const auditCorrectedFalsePositive =
+    visibilityAudit !== null && frozenTextCandidate && !auditCompletion;
   const parserWindowMiss =
     completion &&
     (evidence?.completionSignals ?? 0) === 0 &&
@@ -98,7 +120,16 @@ for (let seed = 1; seed <= 8; seed += 1) {
       distinct_screenshot_hashes: distinctScreenshots,
       cadence_fps: evidence?.cadence?.fps ?? null,
       completion_signals: evidence?.completionSignals ?? 0,
+      frozen_text_candidate: frozenTextCandidate,
+      completion_text_present_initially: completionTextPresentInitially,
       completion,
+      visibility_audit_present: visibilityAudit !== null,
+      first_visible_completion_elapsed_ms:
+        visibilityAudit?.firstVisibleCompletionElapsedMs ?? null,
+      first_finished_state_elapsed_ms:
+        visibilityAudit?.firstFinishedStateElapsedMs ?? null,
+      audit_corrected_false_positive: auditCorrectedFalsePositive,
+      audit_final_state: visibilityAudit?.final?.commonState ?? null,
       parser_window_miss: parserWindowMiss,
       console_error_count: consoleErrors.length,
       page_error_count: pageErrors.length,
@@ -137,6 +168,12 @@ const summary = {
     boot_clean_wilson95: wilson95(bootClean, rows.length),
     parser_window_misses: rows.filter(
       (row) => row.browser.parser_window_miss,
+    ).length,
+    frozen_text_candidates: rows.filter(
+      (row) => row.browser.frozen_text_candidate,
+    ).length,
+    audit_corrected_false_positives: rows.filter(
+      (row) => row.browser.audit_corrected_false_positive,
     ).length,
     arms_with_browser_error: rows.filter(
       (row) =>

@@ -1,0 +1,11 @@
+Build a polished, playable Three.js browser microgame called Apex Karts 64.
+Start small: one original low-poly circuit, one controllable kart, one lap, and
+a clear start and finish. Give it the cheerful chunky feel of a late-1990s
+console kart racer without copying protected characters, tracks, names, audio,
+or assets. Use only code-made procedural art. Add arcade keyboard controls, a
+deterministic seed, and a demo mode that Playwright can drive. Run it, inspect
+real screenshots, and make the basic loop actually work. Do not add multiplayer
+yet.
+
+Before using screenshots, inspect text, files, and browser errors. Use
+screenshots only when they can answer a specific question.

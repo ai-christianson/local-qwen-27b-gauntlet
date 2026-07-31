@@ -1,24 +1,31 @@
 {
-  "schema": "qwen-gauntlet-cleanup-v1",
-  "completed_at": "2026-07-31T06:04:07Z",
+  "schema": "qwen-gauntlet-cleanup-v2",
+  "completed_at": "2026-07-31T07:24:00Z",
   "scope": {
     "vm_hosts": 3,
-    "registered_rows": 54,
-    "live_experiment_vms_removed": 51,
-    "already_retired_rows_reconciled": 3
+    "registered_rows_across_all_waves": 78,
+    "live_experiment_vms_removed": 75,
+    "already_retired_rows_reconciled": 3,
+    "tail_extension_vms_removed": 24,
+    "temporary_loopback_tls_bridges_removed": 3
   },
   "procedure": [
     "Dry-run every registry row.",
     "Require each live PID command line to identify its registered arm.",
     "Treat an absent directory as stale only when its registered PID is also dead.",
     "Terminate and remove only registered experiment-arm resources.",
-    "Archive each registry."
+    "Archive each registry.",
+    "Validate each temporary bridge PID command line before termination.",
+    "Remove only the exact bridge PID, log, listener, and temporary audit files."
   ],
   "verification": {
     "active_registry_absent_on_all_hosts": true,
     "experiment_arm_directories_absent_on_all_hosts": true,
     "experiment_qemu_processes_absent_on_all_hosts": true,
-    "archived_registry_present_on_all_hosts": true
+    "temporary_bridge_pid_and_log_absent_on_all_hosts": true,
+    "temporary_bridge_listener_absent_on_all_hosts": true,
+    "archived_registry_present_on_all_hosts": true,
+    "archived_registries_per_host": 4
   },
   "redaction": "Private hostnames, addresses, PIDs, ports, and filesystem topology are intentionally omitted."
 }

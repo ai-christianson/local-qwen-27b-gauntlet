@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Apex Karts 64</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{overflow:hidden;background:#000;font-family:'Courier New',monospace}
+canvas{display:block}
+#hud{position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none}
+#hud-top{display:flex;justify-content:space-between;padding:12px 20px}
+.hud-box{background:rgba(0,0,0,0.6);border:2px solid #ffcc00;border-radius:6px;padding:6px 14px;color:#fff;font-size:18px;font-weight:bold;letter-spacing:1px}
+.hud-box span{color:#ffcc00}
+#speed-bar-container{position:absolute;bottom:20px;right:20px;width:200px;height:24px;background:rgba(0,0,0,0.6);border:2px solid #ffcc00;border-radius:12px;overflow:hidden}
+#speed-bar{height:100%;width:0%;background:linear-gradient(90deg,#44cc44,#ffcc00,#ff4444);border-radius:10px;transition:width 0.1s}
+#speed-label{position:absolute;bottom:48px;right:20px;color:#ffcc00;font-size:14px;font-weight:bold;text-shadow:1px 1px #000}
+#countdown{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:120px;font-weight:900;color:#ffcc00;text-shadow:4px 4px 0 #000,-2px -2px 0 #ff6600;display:none}
+#overlay{position:absolute;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.85);display:flex;flex-direction:column;align-items:center;justify-content:center;color:#fff;pointer-events:auto;z-index:5}
+#overlay h1{font-size:52px;color:#ffcc00;margin-bottom:4px;text-shadow:3px 3px 0 #cc4400;letter-spacing:3px}
+#overlay h2{font-size:20px;color:#aaa;margin-bottom:30px;letter-spacing:2px}
+#overlay .ci{font-size:16px;color:#88ccff;margin:6px 0}
+#overlay button,#finish-overlay button{margin-top:20px;padding:14px 40px;font-size:22px;font-family:'Courier New',monospace;font-weight:bold;background:#ffcc00;color:#222;border:none;border-radius:8px;cursor:pointer;letter-spacing:2px;pointer-events:auto}
+#overlay button:hover,#finish-overlay button:hover{background:#ffe044}
+#btn-demo,#btn-demo2{background:#44aaff!important}
+#btn-demo:hover,#btn-demo2:hover{background:#66ccff!important}
+#minimap{position:absolute;bottom:20px;left:20px;width:160px;height:160px;background:rgba(0,0,0,0.5);border:2px solid #ffcc00;border-radius:8px}
+#lap-flash{position:absolute;top:40%;left:50%;transform:translate(-50%,-50%);font-size:48px;font-weight:900;color:#44ff44;text-shadow:3px 3px 0 #000;display:none}
+#finish-overlay{position:absolute;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.8);display:none;flex-direction:column;align-items:center;justify-content:center;color:#fff;pointer-events:auto;z-index:10}
+#finish-overlay h1{font-size:48px;color:#ffcc00;text-shadow:3px 3px 0 #cc4400}
+#finish-overlay .result{font-size:24px;color:#fff;margin:10px 0}
+</style>
+</head>
+<body>
+<div id="hud">
+  <div id="hud-top">
+    <div class="hud-box">LAP <span id="hud-lap">0/3</span></div>
+    <div class="hud-box">TIME <span id="hud-time">00:00.0</span></div>
+    <div class="hud-box">POS <span id="hud-pos">1st</span></div>
+  </div>
+  <div id="speed-label">SPEED</div>
+  <div id="speed-bar-container"><div id="speed-bar"></div></div>
+  <canvas id="minimap"></canvas>
+  <div id="countdown"></div>
+  <div id="lap-flash"></div>
+</div>
+<div id="overlay">
+  <h1>APEX KARTS 64</h1>
+  <h2>CHERRY GROVE CANYON</h2>
+  <div class="ci">ARROW KEYS / WASD -- Steer &amp; Accelerate</div>
+  <div class="ci">SPACE -- Brake / Reverse</div>
+  <div class="ci">R -- Reset Kart</div>
+  <button id="btn-start">START RACE</button>
+  <button id="btn-demo">DEMO MODE</button>
+</div>
+<div id="finish-overlay">
+  <h1>RACE COMPLETE!</h1>
+  <div class="result" id="finish-time"></div>
+  <div class="result" id="finish-best"></div>
+  <button id="btn-restart">RACE AGAIN</button>
+  <button id="btn-demo2">DEMO MODE</button>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="game.js"></script>
+</body>
+</html>

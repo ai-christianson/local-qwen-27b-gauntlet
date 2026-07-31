@@ -1,0 +1,21 @@
+* { margin:0; padding:0; box-sizing:border-box; }
+body { overflow:hidden; background:#000; font-family:'Courier New',monospace; }
+canvas#game-canvas { display:block; }
+#hud { position:fixed;top:0;left:0;width:100%;pointer-events:none;display:flex;justify-content:space-between;padding:12px 20px;z-index:10; }
+#hud > div { background:rgba(0,0,0,0.6);color:#fff;padding:8px 16px;border-radius:4px;font-size:18px;font-weight:bold;text-shadow:2px 2px 0 #000; }
+#hud .lap-display { color:#FFD700; }
+#hud .time-display { color:#00FF88; }
+#hud .pos-display { color:#FF6B6B; }
+#overlay { position:fixed;top:0;left:0;width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;background:rgba(0,0,0,0.75);z-index:20;transition:opacity 0.5s; }
+#overlay.hidden { opacity:0;pointer-events:none; }
+#overlay h1 { font-size:52px;color:#FFD700;text-shadow:4px 4px 0 #FF4500,6px 6px 0 #8B0000;margin-bottom:10px;letter-spacing:4px; }
+#overlay h2 { font-size:28px;color:#FF6B6B;text-shadow:3px 3px 0 #8B0000;margin-bottom:20px; }
+#overlay .subtitle { font-size:16px;color:#ccc;margin-bottom:30px; }
+#overlay .controls { color:#aaa;font-size:14px;text-align:center;line-height:1.8;margin-bottom:20px; }
+#overlay .btn { background:linear-gradient(180deg,#FFD700,#FF8C00);color:#4a0000;border:none;padding:14px 48px;font-size:22px;font-weight:bold;cursor:pointer;border-radius:6px;text-transform:uppercase;box-shadow:0 4px 0 #8B4500,0 6px 12px rgba(0,0,0,0.5);pointer-events:all;font-family:inherit;transition:transform 0.1s,box-shadow 0.1s; }
+#overlay .btn:hover { transform:translateY(-2px); }
+#overlay .btn:active { transform:translateY(2px);box-shadow:0 0 0 #8B4500; }
+#overlay .btn-d { background:linear-gradient(180deg,#00CC88,#006644);margin-top:10px;font-size:16px;padding:10px 30px;color:#fff; }
+#countdown { position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);font-size:120px;font-weight:bold;color:#FFD700;text-shadow:6px 6px 0 #FF4500,8px 8px 0 #8B0000;z-index:25;display:none; }
+#minimap { position:fixed;bottom:12px;right:12px;width:160px;height:160px;background:rgba(0,0,0,0.6);border-radius:6px;z-index:10;pointer-events:none; }
+#demo-badge { position:fixed;top:12px;left:50%;transform:translateX(-50%);background:rgba(255,107,107,0.8);color:#fff;padding:4px 12px;border-radius:4px;font-size:12px;font-weight:bold;z-index:15;display:none; }

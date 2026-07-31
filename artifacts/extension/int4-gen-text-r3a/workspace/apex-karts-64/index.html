@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Apex Karts 64</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#000;overflow:hidden;font-family:'Courier New',monospace}
+canvas{display:block}
+#ui{position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:10}
+#hud{position:absolute;top:20px;right:20px;background:rgba(0,0,0,.75);border:2px solid #f60;border-radius:8px;padding:12px 16px;color:#fff;font-size:14px;text-align:right;min-width:180px}
+.hl{color:#fa0;font-size:11px;text-transform:uppercase}
+.hv{font-size:20px;font-weight:bold;margin-bottom:8px}
+.hv.s{color:#0f8}.hv.t{color:#fc0}.hv.l{color:#f60}
+#spb{width:100%;height:8px;background:#333;border-radius:4px;margin:4px 0 8px}
+#spg{height:100%;width:0%;background:linear-gradient(90deg,#0f8,#fc0,#f30);border-radius:4px;transition:width .1s}
+#msg{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);color:#fff;font-size:48px;font-weight:bold;text-align:center;text-shadow:3px 3px 0 #f30,-1px -1px 0 #f30;display:none;z-index:20;white-space:pre-line}
+#start{position:absolute;top:0;left:0;width:100%;height:100%;background:linear-gradient(180deg,#1a0a2e,#0d1b2a);display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:30;pointer-events:auto}
+#start h1{font-size:64px;color:#f60;text-shadow:4px 4px 0 #300,0 0 30px rgba(255,102,0,.5);margin-bottom:10px;letter-spacing:4px}
+#start .su{font-size:18px;color:#fa0;margin-bottom:40px;letter-spacing:2px}
+#start .pr{font-size:20px;color:#0f8;animation:pls 1.5s infinite}
+#start .ct{margin-top:30px;font-size:13px;color:#888;text-align:center;line-height:1.8}
+#start .db{margin-top:20px;font-size:16px;color:#f6f;cursor:pointer;pointer-events:auto;border:1px solid #f6f;padding:8px 20px;background:0 0;border-radius:4px;font-family:'Courier New',monospace}
+@keyframes pls{0%,100%{opacity:1}50%{opacity:.4}}
+#mini{position:absolute;bottom:20px;left:20px;width:150px;height:150px;background:rgba(0,0,0,.75);border:2px solid #f60;border-radius:8px}
+#mini canvas{width:100%;height:100%}
+#lp{position:absolute;top:35%;left:50%;transform:translate(-50%,-50%);font-size:36px;font-weight:bold;color:#0f8;text-shadow:2px 2px 0 #000;display:none;z-index:25;text-align:center}
+</style>
+</head>
+<body>
+<div id="ui">
+<div id="hud">
+<div class="hl">Speed</div><div class="hv s" id="hSpd">0 km/h</div>
+<div id="spb"><div id="spg"></div></div>
+<div class="hl">Time</div><div class="hv t" id="hTime">00:00.00</div>
+<div class="hl">Lap</div><div class="hv l" id="hLap">0 / 1</div>
+</div>
+<div id="msg"></div><div id="lp"></div>
+<div id="mini"><canvas width="150" height="150"></canvas></div>
+</div>
+<div id="start">
+<h1>APEX KARTS 64</h1>
+<div class="su">NEON CIRCUIT</div>
+<div class="pr" id="startPrompt">PRESS SPACE OR ENTER TO RACE</div>
+<button class="db" id="demoBtn">DEMO MODE (D)</button>
+<div class="ct">WASD / Arrows &mdash; Steer<br>SPACE &mdash; Brake &nbsp;|&nbsp; SHIFT &mdash; Boost<br>D &mdash; Demo Mode &nbsp;|&nbsp; R &mdash; Reset</div>
+</div>
+<script type="importmap">{"imports":{"three":"./node_modules/three/build/three.module.js"}}</script>
+<script type="module" src="game.js"></script>
+</body>
+</html>

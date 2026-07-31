@@ -1,0 +1,31 @@
+
+
+FAIL - Confidence: 95
+
+**Evidence:**
+
+**Screenshots (Frames 3-5):** The kart is stuck motionless on grass **off the track** from 0:06.05 through 0:25.95 (and beyond). Speed reads **0** in every frame after the initial start. The kart never makes progress around the track — it goes off-road within ~6 seconds and never recovers. The "after-reset" frame is identical to 0:25.95, confirming no further progress even after a reset.
+
+**Source code — demo AI flaw:**
+```js
+const demoLA=0.12; // look-ahead on [0,1] track parameter
+```
+The demo AI's `demoLA` of **0.12** is extremely short-sighted. The AI computes a target point only 12% of the full loop ahead, then steers toward it. With the track being a figure-8 shape with sharp transitions, this tiny look-ahead causes the kart to overshoot or misalign early in the lap, veer off-track, and then get stuck.
+
+**Source code — off-track recovery is insufficient:**
+```js
+if(!kartOnTrack){kartSpd*=(1-C.offFric);kartSpd=Math.min(kartSpd,C.maxSpd*C.offSpd)}
+// C.offFric=0.06, C.offSpd=0.35
+```
+Off-track, speed decays by 6% per frame and is capped at 35% of max speed (≈1 unit/s). Once the kart hits grass with speed 0, it stays at 0 — the off-road friction prevents any recovery. The demo AI never generates steering input that gets the kart back on the asphalt.
+
+**Source code — lap completion requires checkpoints:**
+```js
+function checkCP(){
+  // must pass all 5 checkpoints at t=0.15, 0.35, 0.55, 0.75, 0.92
+  // only then: lapDone=true; state='finished'; showResults()
+}
+```
+The kart never reaches any checkpoint — it's stuck on grass near the start area. No checkpoints are triggered, so `lapDone` is never set to `true`. The game never reaches the finished state.
+
+**Verdict:** The demo path is broken — the AI goes off-track within 6 seconds, stalls with zero speed, and cannot recover. **No lap is completed**, let alone within 45 seconds.

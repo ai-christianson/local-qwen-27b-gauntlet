@@ -385,3 +385,60 @@ The BF16 runs took 16.3 and 20.7 minutes and consumed 774,253 and 2,017,522
 provider-reported tokens, respectively. A further exact-prompt matched repair
 pair is justified because INT4's text-first condition had a mixed 1/2 result;
 that comparison can test reliability without claiming broad model superiority.
+
+## Text-first transfer from repair to generation was weak
+
+Eight preregistered empty-workspace INT4 builders received the original
+reasonable game brief plus one reusable sentence: inspect text, files, and
+browser errors before spending screenshots. Every arm ran for the fixed
+20-minute cap in a fresh VM.
+
+- 6/8 were boot-clean;
+- 0/8 reached the corrected externally verified Demo completion gate;
+- the Wilson 95% interval for completion is 0–32.4%;
+- two arms retained browser errors;
+- the eight builder sessions reported about 9.29 million tokens in aggregate.
+
+This follow-up is historically compared with the original 0/12 empty-workspace
+baseline, not randomized concurrently with it. The same observation-budget
+sentence therefore produced no accepted generation signal, despite improving
+boot cleanliness descriptively. It was much less reliable for generation
+(0/8) than for repair from a booting parent (5/10). Compact observation
+management appears to help Qwen stay productive; it does not supply the missing
+decomposition, state design, and verification needed for dependable greenfield
+construction.
+
+The excluded first launch remains in the record. Its guests could not reach
+inference because containment rejected the laptop-resolved private route.
+Eight zero-source `Connection error` sessions were frozen as harness failures.
+A one-guest connectivity probe then found a managed-hosts overwrite before any
+replacement scored task ran. Only after a narrow loopback TLS pass-through and
+guest-host mapping passed an authenticated no-tools probe were the eight scored
+arms launched.
+
+## A blind Qwen critic caught the controller evaluator's false positive
+
+Fresh read-only Qwen critics saw source plus five ordered screenshots, but not
+the objective-browser JSON or external label. Their corrected predictions were
+7/8 accurate, with TP=0, FP=1, FN=0, and TN=7. Pass precision was zero and
+recall was undefined because no generation arm passed.
+
+The critics were excellent at obvious dead games: frozen countdowns, a Vite
+overlay, missing Demo input, and a black/erroring viewport. The two harder cases
+show why confidence alone is not the deciding evidence:
+
+- seed 1 was labeled PASS at 92% because source-level physics suggested
+  continuous throttle should complete in roughly 43 seconds; the independent
+  browser trace showed no completion;
+- seed 5 was labeled FAIL at 95%. The frozen text evaluator initially called it
+  a pass because `RACE COMPLETE!` existed in an opacity-zero results screen
+  from the initial menu onward. A read-only post-hoc audit found no visible
+  completion, `kartFinished=false`, and the game still racing at 45.16 seconds.
+  The builder's own longer test finished at about 46.3 seconds. Qwen was right;
+  the controller evaluator was wrong.
+
+The Qwen critic did not see the flawed completion count, so it did not merely
+echo a correction. This is a concrete case where same-model artifact review
+improved experimental validity. It does not justify trusting critics blindly:
+seed 1 remained a 92%-confidence false positive. The reusable method is mutual
+audit plus executable state/visibility checks.

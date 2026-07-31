@@ -1,0 +1,38 @@
+
+
+Looking at this carefully, let me analyze the game source and screenshots together.
+
+**Source code analysis:**
+
+The demo mode flow:
+1. `btn-demo` click → `reset(true)` → `startCD()` → countdown (3→2→1→GO!) → `st.go = true; st.raceStart = Date.now()`
+2. Timer: `st.tt = (Date.now() - st.raceStart) / 1000` — only computed when `st.go` is true
+3. Lap completion requires passing all 8 checkpoints then returning to CP 0 (`st.cn > CPC`)
+4. Race finishes at 3 laps (`st.lap >= C.laps`), calling `showFinish()`
+
+**Screenshot evidence:**
+
+| Frame | File | Lap | Timer | Content |
+|-------|------|-----|-------|---------|
+| ~2s | objective-02s.png | 0/3 | 00:00.0 | Title screen |
+| ~6s | objective-06s.png | 0/3 | 00:00.0 | "GO!" countdown end |
+| ~16s | objective-16s.png | 0/3 | 00:00.0 | Black viewport |
+| ~45s | objective-45s.png | 0/3 | 00:00.0 | Black viewport |
+| post-reset | objective-after-reset.png | 0/3 | 00:00.0 | Black viewport |
+
+**Critical finding: The timer is 00:00.0 at 45 seconds.**
+
+In `game.js`, `st.tt = (Date.now() - st.raceStart) / 1000` runs every frame when `st.go` is true. At 45 seconds post-countdown, if the race were running, `st.tt` would be ~45 and display as `00:45.0`. The fact that it reads `00:00.0` proves `st.tt` is 0, which can only happen if **`st.go` is false** (the timer update inside `if (st.go)` never executes).
+
+The `reset()` function sets `st.go = false`. The "after-reset" filename confirms a reset occurred. The black viewport at 16s suggests the kart was reset underground (into the ground plane) where the camera can't render anything visible — the fog color (0x87CEEB) wouldn't show if the camera is inside geometry.
+
+**Evidence summary:**
+- Timer = 00:00.0 at 45s → `st.go` is false → race not running
+- Lap counter = 0/3 throughout → zero laps completed
+- No finish overlay visible → `showFinish()` never called
+- Black viewport → kart stuck underground after reset, demo AI trapped
+- `st.cCP = -1` after reset → no checkpoints even reachable
+
+**FAIL** — Confidence: **95**
+
+The demo AI never completed a lap. The timer at 00:00.0 after 45+ seconds is definitive proof the race clock never advanced, because the source code only updates `st.tt` when `st.go` is true, and `reset()` sets `st.go = false`. The black viewport confirms the kart is stuck (likely underground), and the "after-reset" frame confirms a reset interrupted the demo run.

@@ -1,0 +1,224 @@
+{
+  "schema": "qwen-gauntlet-completion-baseline-audit-v1",
+  "scope": "Every non-staging objective-browser.json retained under artifacts. This detects baseline text contamination; it does not by itself prove final visibility.",
+  "completion_pattern": "\\b(finish(?:ed)?|complete(?:d)?|victory|you win|race over|(?:arena|level|stage) cleared)\\b",
+  "aggregates": {
+    "evidence_files": 58,
+    "completion_candidate_files": 18,
+    "candidates_with_completion_phrase_present_initially": 1
+  },
+  "contaminated_candidates": [
+    {
+      "path": "artifacts/extension/int4-gen-text-r5a/evidence/int4-gen-text-r5a/objective-browser.json",
+      "schema": "qwen-gauntlet-objective-browser-v3",
+      "completion_signals": 29,
+      "final_completion_phrase": true,
+      "candidate": true,
+      "completion_phrase_present_initially": true,
+      "distinct_screenshot_hashes": 5,
+      "console_error_count": 0,
+      "page_error_count": 0
+    }
+  ],
+  "candidates": [
+    {
+      "path": "artifacts/extension/int4-gen-text-r5a/evidence/int4-gen-text-r5a/objective-browser.json",
+      "schema": "qwen-gauntlet-objective-browser-v3",
+      "completion_signals": 29,
+      "final_completion_phrase": true,
+      "candidate": true,
+      "completion_phrase_present_initially": true,
+      "distinct_screenshot_hashes": 5,
+      "console_error_count": 0,
+      "page_error_count": 0
+    },
+    {
+      "path": "artifacts/grounded/int4-arena-grounded-repair-r2/evidence/int4-arena-grounded-repair-r2/objective-browser.json",
+      "schema": "qwen-gauntlet-objective-browser-v2",
+      "completion_signals": 3,
+      "final_completion_phrase": true,
+      "candidate": true,
+      "completion_phrase_present_initially": false,
+      "distinct_screenshot_hashes": 5,
+      "console_error_count": 0,
+      "page_error_count": 0
+    },
+    {
+      "path": "artifacts/grounded/int4-grounded-arena-r1/evidence/int4-grounded-arena-r1/objective-browser.json",
+      "schema": "qwen-gauntlet-objective-browser-v2",
+      "completion_signals": 0,
+      "final_completion_phrase": true,
+      "candidate": true,
+      "completion_phrase_present_initially": false,
+      "distinct_screenshot_hashes": 5,
+      "console_error_count": 0,
+      "page_error_count": 0
+    },
+    {
+      "path": "artifacts/motion/int4-motion-audit-r1/review/objective-browser.json",
+      "schema": "qwen-gauntlet-objective-browser-v2",
+      "completion_signals": 29,
+      "final_completion_phrase": true,
+      "candidate": true,
+      "completion_phrase_present_initially": false,
+      "distinct_screenshot_hashes": 4,
+      "console_error_count": 0,
+      "page_error_count": 0
+    },
+    {
+      "path": "artifacts/motion/int4-motion-grounded-repair-r1/evidence/int4-motion-grounded-repair-r1/objective-browser.json",
+      "schema": "qwen-gauntlet-objective-browser-v3",
+      "completion_signals": 28,
+      "final_completion_phrase": false,
+      "candidate": true,
+      "completion_phrase_present_initially": false,
+      "distinct_screenshot_hashes": 5,
+      "console_error_count": 0,
+      "page_error_count": 0
+    },
+    {
+      "path": "artifacts/motion/int4-motion-grounded-repair-r1/review/objective-browser.json",
+      "schema": "qwen-gauntlet-objective-browser-v2",
+      "completion_signals": 29,
+      "final_completion_phrase": true,
+      "candidate": true,
+      "completion_phrase_present_initially": false,
+      "distinct_screenshot_hashes": 4,
+      "console_error_count": 0,
+      "page_error_count": 0
+    },
+    {
+      "path": "artifacts/motion/int4-wheel-grounded-repair-r1a/evidence/int4-wheel-builder-r1a/objective-browser.json",
+      "schema": "qwen-gauntlet-objective-browser-v3",
+      "completion_signals": 25,
+      "final_completion_phrase": true,
+      "candidate": true,
+      "completion_phrase_present_initially": false,
+      "distinct_screenshot_hashes": 5,
+      "console_error_count": 0,
+      "page_error_count": 0
+    },
+    {
+      "path": "artifacts/parallel/int4-qwen-plan-parallel-r1/objective-browser.json",
+      "schema": "qwen-gauntlet-objective-browser-v1",
+      "completion_signals": 29,
+      "final_completion_phrase": true,
+      "candidate": true,
+      "completion_phrase_present_initially": false,
+      "distinct_screenshot_hashes": 4,
+      "console_error_count": 0,
+      "page_error_count": 0
+    },
+    {
+      "path": "artifacts/reliability/int4-text-first-r11/evidence/int4-text-first-r11/objective-browser.json",
+      "schema": "qwen-gauntlet-objective-browser-v3",
+      "completion_signals": 0,
+      "final_completion_phrase": true,
+      "candidate": true,
+      "completion_phrase_present_initially": false,
+      "distinct_screenshot_hashes": 5,
+      "console_error_count": 0,
+      "page_error_count": 0
+    },
+    {
+      "path": "artifacts/reliability/int4-text-first-r4/evidence/int4-text-first-r4/objective-browser.json",
+      "schema": "qwen-gauntlet-objective-browser-v3",
+      "completion_signals": 0,
+      "final_completion_phrase": true,
+      "candidate": true,
+      "completion_phrase_present_initially": false,
+      "distinct_screenshot_hashes": 5,
+      "console_error_count": 0,
+      "page_error_count": 0
+    },
+    {
+      "path": "artifacts/reliability/int4-text-first-r7/evidence/int4-text-first-r7/objective-browser.json",
+      "schema": "qwen-gauntlet-objective-browser-v3",
+      "completion_signals": 27,
+      "final_completion_phrase": true,
+      "candidate": true,
+      "completion_phrase_present_initially": false,
+      "distinct_screenshot_hashes": 4,
+      "console_error_count": 0,
+      "page_error_count": 0
+    },
+    {
+      "path": "artifacts/reliability/int4-text-first-r8/evidence/int4-text-first-r8/objective-browser.json",
+      "schema": "qwen-gauntlet-objective-browser-v3",
+      "completion_signals": 20,
+      "final_completion_phrase": true,
+      "candidate": true,
+      "completion_phrase_present_initially": false,
+      "distinct_screenshot_hashes": 4,
+      "console_error_count": 0,
+      "page_error_count": 0
+    },
+    {
+      "path": "artifacts/sequential/int4-qwen-plan-sequential-r1/objective-browser.json",
+      "schema": "qwen-gauntlet-objective-browser-v1",
+      "completion_signals": 29,
+      "final_completion_phrase": true,
+      "candidate": true,
+      "completion_phrase_present_initially": false,
+      "distinct_screenshot_hashes": 4,
+      "console_error_count": 0,
+      "page_error_count": 0
+    },
+    {
+      "path": "artifacts/transfer/int4-transfer-kart-r2a/objective-browser.json",
+      "schema": "qwen-gauntlet-objective-browser-v1",
+      "completion_signals": 2,
+      "final_completion_phrase": false,
+      "candidate": true,
+      "completion_phrase_present_initially": false,
+      "distinct_screenshot_hashes": 4,
+      "console_error_count": 0,
+      "page_error_count": 0
+    },
+    {
+      "path": "artifacts/visual/int4-visual-gamedev-plain-r1/evidence/int4-visual-gamedev-plain-r1/objective-browser.json",
+      "schema": "qwen-gauntlet-objective-browser-v3",
+      "completion_signals": 28,
+      "final_completion_phrase": true,
+      "candidate": true,
+      "completion_phrase_present_initially": false,
+      "distinct_screenshot_hashes": 5,
+      "console_error_count": 0,
+      "page_error_count": 0
+    },
+    {
+      "path": "artifacts/visual/int4-visual-gamedev-skills-r1/evidence/int4-visual-gamedev-skills-r1/objective-browser.json",
+      "schema": "qwen-gauntlet-objective-browser-v3",
+      "completion_signals": 25,
+      "final_completion_phrase": true,
+      "candidate": true,
+      "completion_phrase_present_initially": false,
+      "distinct_screenshot_hashes": 5,
+      "console_error_count": 0,
+      "page_error_count": 0
+    },
+    {
+      "path": "artifacts/visual/int4-visual-skills-r1/evidence/int4-visual-skills-r1/objective-browser.json",
+      "schema": "qwen-gauntlet-objective-browser-v2",
+      "completion_signals": 23,
+      "final_completion_phrase": true,
+      "candidate": true,
+      "completion_phrase_present_initially": false,
+      "distinct_screenshot_hashes": 5,
+      "console_error_count": 0,
+      "page_error_count": 0
+    },
+    {
+      "path": "artifacts/visual/int4-visual-skills-text-first-r2/evidence/int4-visual-skills-text-first-r2/objective-browser.json",
+      "schema": "qwen-gauntlet-objective-browser-v2",
+      "completion_signals": 29,
+      "final_completion_phrase": true,
+      "candidate": true,
+      "completion_phrase_present_initially": false,
+      "distinct_screenshot_hashes": 4,
+      "console_error_count": 0,
+      "page_error_count": 0
+    }
+  ],
+  "conclusion": "Only the tail-generation seed 5 candidate contained a completion phrase at baseline. Its separate state/visibility audit corrected the verdict to fail. Earlier accepted text-first repair and grounded-arena artifacts were not affected by this specific baseline-contamination bug."
+}

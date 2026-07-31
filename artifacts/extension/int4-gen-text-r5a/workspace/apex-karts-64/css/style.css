@@ -1,0 +1,190 @@
+/* Apex Karts 64 - Retro Styling */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  overflow: hidden;
+  background: #000;
+  font-family: 'Arial Black', 'Impact', sans-serif;
+  user-select: none;
+}
+
+#game-container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+}
+
+#game-canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  image-rendering: pixelated;
+}
+
+/* UI Overlay */
+#ui-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+/* HUD */
+#hud {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  right: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.racing #hud,
+.finished #hud,
+.countdown #hud {
+  opacity: 1;
+}
+
+#hud > div {
+  background: rgba(0, 0, 0, 0.6);
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  border-radius: 8px;
+  padding: 8px 14px;
+  color: #fff;
+  font-size: 18px;
+  text-shadow: 2px 2px 0 #000;
+  min-width: 80px;
+  text-align: center;
+}
+
+#speed-display {
+  font-size: 22px !important;
+  color: #ffcc00 !important;
+}
+
+/* Screens */
+.screen {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  pointer-events: auto;
+  opacity: 0;
+  transition: opacity 0.4s;
+  z-index: 10;
+}
+
+.screen:not(.active) {
+  pointer-events: none !important;
+  z-index: 0;
+}
+
+.screen.active {
+  opacity: 1;
+}
+
+/* Start Screen */
+#start-screen {
+  background: radial-gradient(ellipse at center, rgba(20, 40, 80, 0.9) 0%, rgba(5, 10, 30, 0.95) 100%);
+}
+
+#start-screen h1 {
+  font-size: 52px;
+  color: #ff4444;
+  text-shadow: 4px 4px 0 #000, -2px -2px 0 #ffcc00;
+  margin-bottom: 8px;
+  letter-spacing: 3px;
+}
+
+#start-screen .subtitle {
+  font-size: 20px;
+  color: #aaa;
+  margin-bottom: 40px;
+}
+
+/* Menu Buttons */
+.menu-btn {
+  pointer-events: auto;
+  background: linear-gradient(180deg, #ff6644 0%, #cc3322 100%);
+  border: 3px solid #ffaa00;
+  border-radius: 12px;
+  color: #fff;
+  font-family: 'Arial Black', 'Impact', sans-serif;
+  font-size: 22px;
+  padding: 14px 40px;
+  margin: 8px;
+  cursor: pointer;
+  text-shadow: 2px 2px 0 #000;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+  transition: transform 0.1s, box-shadow 0.1s;
+  min-width: 220px;
+}
+
+.menu-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.7);
+}
+
+.menu-btn:active {
+  transform: scale(0.98);
+}
+
+#menu-buttons {
+  display: flex;
+  gap: 12px;
+}
+
+.controls-info {
+  margin-top: 40px;
+  color: #889;
+  font-size: 14px;
+  text-align: center;
+  line-height: 1.8;
+}
+
+/* Countdown */
+#countdown {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 80px;
+  color: #fff;
+  text-shadow: 4px 4px 0 #000;
+  font-weight: bold;
+  pointer-events: none;
+}
+
+/* Results Screen */
+#results-screen {
+  background: rgba(0, 0, 0, 0.7);
+}
+
+#results-screen h2 {
+  font-size: 48px;
+  color: #FFD700;
+  text-shadow: 3px 3px 0 #000;
+  margin-bottom: 20px;
+}
+
+#final-time {
+  color: #fff;
+  margin-bottom: 30px;
+}

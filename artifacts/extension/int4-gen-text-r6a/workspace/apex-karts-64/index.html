@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Apex Karts 64</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#000;overflow:hidden;font-family:'Courier New',monospace}
+#hud{position:absolute;top:0;left:0;width:100%;padding:12px 20px;display:flex;justify-content:space-between;align-items:flex-start;pointer-events:none;z-index:10}
+.hud-box{background:rgba(0,0,0,0.65);border:3px solid #ff6600;border-radius:8px;padding:10px 16px;color:#fff;text-shadow:2px 2px #000}
+.hud-box h2{font-size:13px;color:#ffcc00;margin-bottom:4px;text-transform:uppercase}
+.hud-box .val{font-size:22px;font-weight:bold}
+#speed-bar-outer{width:160px;height:16px;background:#333;border:2px solid #ff6600;border-radius:8px;overflow:hidden;margin-top:6px}
+#speed-bar-inner{height:100%;width:0%;background:linear-gradient(90deg,#00ff44,#ffcc00,#ff3300);transition:width 0.05s}
+#overlay{position:absolute;top:0;left:0;width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;background:rgba(0,0,20,0.88);z-index:20;transition:opacity 0.5s}
+#overlay.hidden{opacity:0;pointer-events:none}
+#overlay h1{font-size:52px;color:#ff6600;text-shadow:4px 4px #cc0000,0 0 30px #ff660088;margin-bottom:4px;letter-spacing:3px}
+#overlay h3{font-size:18px;color:#ffcc00;text-shadow:2px 2px #333;margin-bottom:24px;letter-spacing:6px;text-transform:uppercase}
+#overlay .sub{color:#aaa;font-size:14px;margin:6px 0}
+#overlay .start-msg{color:#00ff88;font-size:22px;margin-top:28px;animation:blink 1s infinite}
+#overlay .results{color:#fff;font-size:20px;margin:8px 0}
+#overlay .results span{color:#ffcc00}
+@keyframes blink{50%{opacity:0.3}}
+#countdown{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:120px;font-weight:bold;color:#ff6600;text-shadow:6px 6px #cc0000,0 0 60px #ff660088;z-index:25;display:none}
+#minimap-container{position:absolute;bottom:20px;right:20px;width:180px;height:180px;background:rgba(0,0,0,0.6);border:3px solid #ff6600;border-radius:50%;z-index:10;pointer-events:none;display:none}
+#minimap-canvas{width:100%;height:100%;border-radius:50%}
+</style>
+<script type="importmap">{"imports":{"three":"./three.module.js"}}</script>
+</head>
+<body>
+<div id="hud" style="display:none">
+  <div class="hud-box"><h2>Lap</h2><div class="val" id="lap-val">0 / 1</div></div>
+  <div class="hud-box" style="text-align:center"><h2>Time</h2><div class="val" id="time-val">00:00.0</div></div>
+  <div class="hud-box" style="text-align:right"><h2>Speed</h2><div class="val" id="speed-val">0 <small>km/h</small></div><div id="speed-bar-outer"><div id="speed-bar-inner"></div></div></div>
+</div>
+<div id="countdown"></div>
+<div id="minimap-container"><canvas id="minimap-canvas" width="180" height="180"></canvas></div>
+<div id="overlay">
+  <h1>Apex Karts 64</h1>
+  <h3>Grand Prix</h3>
+  <p class="sub">Arrow Keys / WASD &mdash; Steer &amp; Accelerate</p>
+  <p class="sub">Space &mdash; Brake</p>
+  <p class="sub">R &mdash; Reset</p>
+  <p class="start-msg" id="start-prompt">Press ENTER to Start</p>
+  <div id="results" style="display:none"></div>
+</div>
+
+<script type="module">
+import * as THREE from 'three';
+
+(function(){
+// ============ SEEDED PRNG ============
+function mulberry32(s){return function(){s|=0;s=s+0x6D2B79F5|0;let t=Math.imul(s^s>>>15,1|s);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296}}
+const SEED=42;const rng=mulberry32(SEED);
+
+// ============ TRACK ============
+const TRACK_CP=[new THREE.Vector3(0,0,0),new THREE.Vector3(30,0,-10),new THREE.Vector3(60,0,5),new THREE.Vector3(75,0,30),new THREE.Vector3(60,0,55),new THREE.Vector3(30,0,60),new THREE.Vector3(5,0,50),new THREE.Vector3(-15,0,35),new THREE.Vector3(-25,0,10),new THREE.Vector3(-15,0,-10)];
+const TS=200;const TW=12;
+const trackCurve=new THREE.CatmullRomCurve3(TRACK_CP,true,'centripetal',0.5);
+const tS=[];
+for(let i=0;i<TS;i++){const t=i/TS;const tg=trackCurve.getTangentAt(t);const nr=new THREE.Vector3().crossVectors(tg,new THREE.Vector3(0,1,0)).normalize();tS.push({pos:trackCurve.getPointAt(t),tan:tg,nor:nr})}
+function tAt(t){t=((t%1)+1)%1;const i=t*TS|0;const n=((i+1)%TS);const f=t*TS-(t*TS|0);return{pos:new THREE.Vector3().lerpVectors(tS[i].pos,tS[n].pos,f),tan:new THREE.Vector3().lerpVectors(tS[i].tan,tS[n].tan,f).normalize(),nor:new THREE.Vector3().lerpVectors(tS[i].nor,tS[n].nor,f).normalize()}}
+function closestTrackT(p){let md=1e9,bt=0;for(let i=0;i<TS;i++){const d=tS[i].pos.distanceTo(p);if(d<md){md=d;bt=i/TS}}return{t:bt,d:md}}
+
+// ============ SCENE ============
+const scene=new THREE.Scene();scene.background=new THREE.Color(0x87CEEB);scene.fog=new THREE.FogExp2(0x87CEEB,0.004);
+const camera=new THREE.PerspectiveCamera(65,innerWidth/innerHeight,0.5,500);
+const renderer=new THREE.WebGLRenderer({antialias:true});renderer.setSize(innerWidth,innerHeight);renderer.shadowMap.enabled=true;renderer.shadowMap.type=THREE.PCFSoftShadowMap;renderer.setPixelRatio(Math.min(devicePixelRatio,2));document.body.appendChild(renderer.domElement);
+scene.add(new THREE.AmbientLight(0x8899bb,0.6));
+const dl=new THREE.DirectionalLight(0xfff4e0,1.2);dl.position.set(50,80,30);dl.castShadow=true;dl.shadow.mapSize.set(2048,2048);dl.shadow.camera.left=-80;dl.shadow.camera.right=80;dl.shadow.camera.top=80;dl.shadow.camera.bottom=-80;dl.shadow.camera.near=10;dl.shadow.camera.far=200;scene.add(dl);
+scene.add(new THREE.HemisphereLight(0x87CEEB,0x445522,0.4));
+const gnd=new THREE.Mesh(new THREE.PlaneGeometry(400,400),new THREE.MeshLambertMaterial({color:0x4a8c3f}));gnd.rotation.x=-Math.PI/2;gnd.position.y=-0.1;gnd.receiveShadow=true;scene.add(gnd);
+
+// ============ BUILD TRACK ============
+{const pos=[],uv=[],idx=[],nor=[];for(let i=0;i<=TS;i++){const t=(i%TS)/TS;const inf=tAt(t);const n=inf.nor;const L=inf.pos.clone().add(n.clone().multiplyScalar(TW/2));const R=inf.pos.clone().add(n.clone().multiplyScalar(-TW/2));pos.push(L.x,0.1,L.z,R.x,0.1,R.z);uv.push(0,t*40,1,t*40);nor.push(0,1,0,0,1,0);const v=i*2;if(i<TS){idx.push(v,v+1,v+2,v+1,v+3,v+2)}}const tg=new THREE.BufferGeometry();tg.setAttribute('position',new THREE.Float32BufferAttribute(pos,3));tg.setAttribute('uv',new THREE.Float32BufferAttribute(uv,2));tg.setAttribute('normal',new THREE.Float32BufferAttribute(nor,3));tg.setIndex(idx);tg.computeVertexNormals();const tc=document.createElement('canvas');tc.width=512;tc.height=512;const cx=tc.getContext('2d');cx.fillStyle='#666666';cx.fillRect(0,0,512,512);for(let i=0;i<3000;i++){const x=rng()*512,y=rng()*512,b=80+rng()*40;cx.fillStyle='rgb('+b+','+b+','+b+')';cx.fillRect(x,y,2,2)}cx.fillStyle='#fff';cx.fillRect(0,0,6,512);cx.fillRect(506,0,6,512);cx.fillStyle='#ffcc00';for(let y=0;y<512;y+=40)cx.fillRect(250,y,12,20);const tx=new THREE.CanvasTexture(tc);tx.wrapS=tx.wrapT=THREE.RepeatWrapping;const tm=new THREE.MeshLambertMaterial({map:tx});const tk=new THREE.Mesh(tg,tm);tk.receiveShadow=true;scene.add(tk)}
+
+// Curbs
+for(let i=0;i<100;i++){const inf=tAt(i/100);for(const s of[-1,1]){const p=inf.pos.clone().add(inf.nor.clone().multiplyScalar(s*(TW/2+0.4)));const cg=new THREE.BoxGeometry(0.8,0.25,2.5);const cm=new THREE.MeshLambertMaterial({color:(i%2)?0xff2222:0xffffff});const cb=new THREE.Mesh(cg,cm);cb.position.copy(p);cb.rotation.y=Math.atan2(inf.tan.x,inf.tan.z);cb.castShadow=true;cb.receiveShadow=true;scene.add(cb)}}
+
+// Start/finish line
+{const inf=tAt(0);const sc=document.createElement('canvas');sc.width=128;sc.height=128;const cx=sc.getContext('2d');for(let x=0;x<128;x+=16)for(let y=0;y<128;y+=16){cx.fillStyle=((x/16+y/16)%2)?'#222':'#fff';cx.fillRect(x,y,16,16)}const st=new THREE.CanvasTexture(sc);const sl=new THREE.Mesh(new THREE.PlaneGeometry(TW,3),new THREE.MeshLambertMaterial({map:st}));sl.position.copy(inf.pos);sl.position.y=0.15;sl.rotation.x=-Math.PI/2;sl.rotation.z=Math.atan2(inf.nor.x,inf.nor.z)-Math.PI/2;scene.add(sl);
+for(const s of[-1,1]){const pp=inf.pos.clone().add(inf.nor.clone().multiplyScalar(s*(TW/2+1)));const pg=new THREE.Mesh(new THREE.CylinderGeometry(0.2,0.3,3,8),new THREE.MeshLambertMaterial({color:0xffcc00}));pg.position.copy(pp);pg.position.y=1.5;pg.castShadow=true;scene.add(pg);const fg=new THREE.Mesh(new THREE.PlaneGeometry(1.5,1),new THREE.MeshLambertMaterial({color:0x00cc00,side:THREE.DoubleSide}));fg.position.copy(pp);fg.position.y=3.2;fg.position.x+=s*0.8;scene.add(fg)}}
+
+// ============ SCENERY ============
+for(let i=0;i<40;i++){const inf=tAt(rng());const s=rng()>0.5?1:-1;const d=TW/2+3+rng()*15;const p=inf.pos.clone().add(inf.nor.clone().multiplyScalar(s*d));const g=new THREE.Group();const tk=new THREE.Mesh(new THREE.CylinderGeometry(0.3,0.5,2,6),new THREE.MeshLambertMaterial({color:0x8B4513}));tk.position.y=1;tk.castShadow=true;g.add(tk);const cols=[0x228B22,0x2d992d,0x1a7a1a];for(let j=0;j<3;j++){const r=2.5-j*0.7;const f=new THREE.Mesh(new THREE.ConeGeometry(r,1.5-j*0.3,7),new THREE.MeshLambertMaterial({color:cols[j]}));f.position.y=2+j*0.8;f.castShadow=true;g.add(f)}g.position.copy(p);scene.add(g)}
+for(let i=0;i<20;i++){const inf=tAt(rng());const s=rng()>0.5?1:-1;const d=TW/2+5+rng()*20;const p=inf.pos.clone().add(inf.nor.clone().multiplyScalar(s*d));const sc=0.5+rng()*1.5;const rg=new THREE.DodecahedronGeometry(sc,1);const pa=rg.attributes.position;for(let j=0;j<pa.count;j++){pa.setY(j,pa.getY(j)*0.5+(rng()-0.5)*0.2*sc);pa.setX(j,pa.getX(j)+(rng()-0.5)*0.3*sc);pa.setZ(j,pa.getZ(j)+(rng()-0.5)*0.3*sc)}rg.computeVertexNormals();const rk=new THREE.Mesh(rg,new THREE.MeshLambertMaterial({color:0x888888+Math.floor(rng()*0x222222)}));rk.position.copy(p);rk.position.y=0.3;rk.castShadow=true;scene.add(rk)}
+for(let i=0;i<25;i++){const inf=tAt(rng());const s=rng()>0.5?1:-1;const d=TW/2+2+rng()*5;const p=inf.pos.clone().add(inf.nor.clone().multiplyScalar(s*d));const sc=0.8+rng()*1.2;const cols=[0x33aa33,0x44bb44,0x2d9933];for(let j=0;j<3;j++){const b=new THREE.Mesh(new THREE.SphereGeometry(sc*(0.8+j*0.3),6,5),new THREE.MeshLambertMaterial({color:cols[j%3]}));b.position.set(p.x+(rng()-0.5)*sc,0.4*sc,p.z+(rng()-0.5)*sc);b.castShadow=true;scene.add(b)}}
+
+// ============ BUILD KART ============
+function mkKart(col,acc){
+const g=new THREE.Group();
+const ch=new THREE.Mesh(new THREE.BoxGeometry(1.4,0.6,2.2),new THREE.MeshLambertMaterial({color:col}));ch.position.y=0.55;ch.castShadow=true;g.add(ch);
+const hd=new THREE.Mesh(new THREE.BoxGeometry(1.2,0.5,0.8),new THREE.MeshLambertMaterial({color:col}));hd.position.set(0,0.85,-0.9);hd.rotation.x=-0.2;hd.castShadow=true;g.add(hd);
+const en=new THREE.Mesh(new THREE.BoxGeometry(1.0,0.7,0.6),new THREE.MeshLambertMaterial({color:0x444444}));en.position.set(0,0.6,1.0);en.castShadow=true;g.add(en);
+const ex=new THREE.Mesh(new THREE.CylinderGeometry(0.08,0.1,0.8,6),new THREE.MeshLambertMaterial({color:0x333333}));ex.position.set(0.6,0.8,1.2);ex.rotation.z=Math.PI/2-0.3;g.add(ex);
+const sw=new THREE.Mesh(new THREE.TorusGeometry(0.2,0.04,6,8),new THREE.MeshLambertMaterial({color:0x222222}));sw.position.set(0,1.1,-0.5);sw.rotation.x=-Math.PI/3;g.add(sw);
+const sp=new THREE.Mesh(new THREE.BoxGeometry(1.6,0.08,0.3),new THREE.MeshLambertMaterial({color:acc}));sp.position.set(0,1.4,0.9);sp.castShadow=true;g.add(sp);
+for(const s of[-0.5,0.5]){const su=new THREE.Mesh(new THREE.BoxGeometry(0.08,0.4,0.08),new THREE.MeshLambertMaterial({color:acc}));su.position.set(s,1.2,0.9);g.add(su)}
+const wps=[[-0.7,0.25,-0.8],[0.7,0.25,-0.8],[-0.7,0.25,0.8],[0.7,0.25,0.8]];const wm=[];
+for(const wp of wps){const x=wp[0],y=wp[1],z=wp[2];const w=new THREE.Mesh(new THREE.CylinderGeometry(0.35,0.35,0.25,8),new THREE.MeshLambertMaterial({color:0x222222}));w.position.set(x,y,z);w.rotation.z=Math.PI/2;w.castShadow=true;g.add(w);wm.push(w);const ti=new THREE.Mesh(new THREE.TorusGeometry(0.35,0.1,4,8),new THREE.MeshLambertMaterial({color:0x333333}));ti.position.set(x,y,z);ti.rotation.y=Math.PI/2;g.add(ti)}
+g.userData.wheels=wm;return g}
+
+const playerKart=mkKart(0xee2200,0xffcc00);
+const aiKart=mkKart(0x2244cc,0x44ff88);
+scene.add(playerKart,aiKart);
+
+// ============ GAME STATE ============
+let st=0,raceTime=0,playerLap=0,playerCrossed=false,countdownT=0,countdownN=3;
+const player={pos:new THREE.Vector3(),vel:new THREE.Vector3(),heading:0,speed:0,onTrack:true};
+const ai={t:0.02,speed:0,lap:0,finished:false,finishTime:0};
+
+function initPositions(){
+const si=tAt(0);
+playerKart.position.copy(si.pos);playerKart.position.x+=si.nor.x*1.5;playerKart.position.z+=si.nor.z*1.5;playerKart.position.y=0;
+playerKart.rotation.y=Math.atan2(si.tan.x,si.tan.z);
+player.pos.copy(playerKart.position);player.heading=playerKart.rotation.y;player.speed=0;player.vel.set(0,0,0);
+const aiOff=si.pos.clone().add(si.nor.clone().multiplyScalar(-1.5));
+aiKart.position.copy(aiOff);aiKart.position.y=0;
+aiKart.rotation.y=Math.atan2(si.tan.x,si.tan.z);
+ai.t=0.02;ai.speed=0;ai.lap=0;ai.finished=false}
+
+// ============ INPUT ============
+const keys={};
+addEventListener('keydown',function(e){keys[e.code]=true;if(e.code==='Enter'&&st===0)startRace();if(e.code==='KeyR'&&st===2)resetPos();e.preventDefault()});
+addEventListener('keyup',function(e){keys[e.code]=false});
+let demoMode=location.search.includes('demo');
+if(demoMode){console.log('[Apex Karts 64] Demo mode');setTimeout(function(){if(st===0)startRace()},2000)}
+window.startGame=function(){if(st===0)startRace()};
+
+function startRace(){st=1;document.getElementById('overlay').classList.add('hidden');document.getElementById('hud').style.display='flex';document.getElementById('minimap-container').style.display='block';countdownT=0;countdownN=3;raceTime=0;playerLap=0;playerCrossed=false;initPositions()}
+function resetPos(){const si=tAt(0);player.pos.copy(si.pos);player.pos.x+=si.nor.x*1.5;player.pos.z+=si.nor.z*1.5;player.pos.y=0;player.heading=Math.atan2(si.tan.x,si.tan.z);player.speed=0;player.vel.set(0,0,0)}
+
+// ============ UPDATE ============
+function update(dt){
+if(st===1){countdownT+=dt;if(countdownT>1){countdownT=0;countdownN--;if(countdownN<=0){st=2;document.getElementById('countdown').style.display='none';return}}const el=document.getElementById('countdown');el.style.display='block';el.textContent=countdownN>0?countdownN:'GO!';el.style.color=countdownN>0?'#ff6600':'#00ff44';return}
+if(st!==2)return;
+raceTime+=dt;
+
+// Player physics
+const accel=keys['ArrowUp']||keys['KeyW'];
+const brake=keys['ArrowDown']||keys['KeyS'];
+const left=keys['ArrowLeft']||keys['KeyA'];
+const right=keys['ArrowRight']||keys['KeyD'];
+const brk=keys['Space'];
+
+const maxSpd=player.onTrack?28:14;
+const accelRate=player.onTrack?18:8;
+const drag=0.97;
+const turnRate=2.5;
+
+if(accel)player.speed+=accelRate*dt;
+if(brake)player.speed*=0.95;
+if(brk)player.speed*=0.92;
+player.speed*=Math.pow(drag,dt*60);
+player.speed=Math.max(-8,Math.min(maxSpd,player.speed));
+
+if(Math.abs(player.speed)>0.5){
+const dir=player.speed>0?1:-1;
+if(left)player.heading+=turnRate*dir*dt;
+if(right)player.heading-=turnRate*dir*dt;
+}
+
+player.vel.x=Math.sin(player.heading)*player.speed;
+player.vel.z=Math.cos(player.heading)*player.speed;
+player.pos.add(player.vel.clone().multiplyScalar(dt));
+player.pos.y=0;
+
+// Track collision
+const ct=closestTrackT(player.pos);
+player.onTrack=ct.d<TW/2;
+if(!player.onTrack){
+const dir2=ct.pos.clone().sub(player.pos).normalize();
+player.pos.add(dir2.multiplyScalar(5*dt));
+if(player.speed>maxSpd)player.speed*=0.95;
+}
+
+// Lap detection
+const curT=ct.t;
+if(curT<0.08&&!playerCrossed){
+if(player.speed>0){
+playerCrossed=true;
+if(playerLap>0){finishRace();return}
+playerLap++;
+}}
+if(curT>0.92)playerCrossed=false;
+
+// Update player kart mesh
+playerKart.position.copy(player.pos);
+playerKart.rotation.y=player.heading;
+const ws=player.speed*dt*3;
+playerKart.userData.wheels.forEach(function(w){w.rotation.x+=ws});
+
+// AI update
+updateAI(dt);
+
+// Camera
+updateCamera(dt);
+
+// HUD
+document.getElementById('lap-val').textContent=playerLap+' / 1';
+document.getElementById('speed-val').innerHTML=Math.abs(player.speed*3.6|0)+' <small>km/h</small>';
+document.getElementById('speed-bar-inner').style.width=(Math.abs(player.speed)/maxSpd*100)+'%';
+const m=Math.floor(raceTime/60),s=raceTime%60;
+document.getElementById('time-val').textContent=String(m).padStart(2,'0')+':'+(s<10?'0':'')+s.toFixed(1);
+
+// Minimap
+updateMinimap()}
+
+function updateAI(dt){
+if(ai.finished)return;
+ai.t+=dt/35;
+if(ai.t>=1){ai.t-=1;ai.lap++;if(ai.lap>=1){ai.finished=true;ai.finishTime=raceTime}}
+const inf=tAt(ai.t);
+aiKart.position.copy(inf.pos);aiKart.position.x+=inf.nor.x*-1.5;aiKart.position.z+=inf.nor.z*-1.5;aiKart.position.y=0;
+aiKart.rotation.y=Math.atan2(inf.tan.x,inf.tan.z);
+const ws2=dt*3;aiKart.userData.wheels.forEach(function(w){w.rotation.x+=ws2})}
+
+function updateCamera(dt){
+const behind=player.heading+Math.PI;
+const cx=player.pos.x+Math.sin(behind)*8;
+const cz=player.pos.z+Math.cos(behind)*8;
+const cy=5;
+const lookTarget=new THREE.Vector3(player.pos.x,2,player.pos.z);
+const curPos=camera.position;
+curPos.x+=(cx-curPos.x)*Math.min(1,dt*8);
+curPos.y+=(cy-curPos.y)*Math.min(1,dt*8);
+curPos.z+=(cz-curPos.z)*Math.min(1,dt*8);
+camera.lookAt(lookTarget)}
+
+function updateMinimap(){
+const mc=document.getElementById('minimap-canvas');
+const cx=mc.getContext('2d');
+cx.clearRect(0,0,180,180);
+cx.strokeStyle='#555';cx.lineWidth=4;cx.beginPath();
+for(let i=0;i<=TS;i++){const inf=tAt(i/TS);const mx=(inf.pos.x+40)/150*180;const my=(-inf.z+70)/150*180;if(i===0)cx.moveTo(mx,my);else cx.lineTo(mx,my)}
+cx.closePath();cx.stroke();
+const px=(player.pos.x+40)/150*180;const py=(-player.pos.z+70)/150*180;
+cx.fillStyle='#ff2200';cx.beginPath();cx.arc(px,py,5,0,Math.PI*2);cx.fill();
+const aiInf=tAt(ai.t);const ax=(aiInf.pos.x+40)/150*180;const ay=(-aiInf.pos.z+70)/150*180;
+cx.fillStyle='#2244ff';cx.beginPath();cx.arc(ax,ay,4,0,Math.PI*2);cx.fill()}
+
+function finishRace(){
+st=3;
+const m=Math.floor(raceTime/60),s=raceTime%60;
+const timeStr=String(m).padStart(2,'0')+':'+(s<10?'0':'')+s.toFixed(1);
+const res=document.getElementById('results');
+res.style.display='block';
+let msg='Finished in <span>'+timeStr+'</span>';
+if(!ai.finished||raceTime<ai.finishTime)msg+= '<p class="results">You won vs <span>Speedy</span>!</p>';
+else msg+='<p class="results"><span>Speedy</span> won! Time: '+ai.finishTime.toFixed(1)+'</p>';
+res.innerHTML= '<p class="results">'+msg+'</p>';
+document.getElementById('overlay').classList.remove('hidden');
+document.getElementById('start-prompt').textContent='Press ENTER to Play Again';
+document.getElementById('start-prompt').style.display='block'}
+
+// ============ RENDER LOOP ============
+let lastTime=0;
+function loop(t){
+requestAnimationFrame(loop);
+const dt=Math.min(0.05,(t-lastTime)/1000);lastTime=t;
+update(dt);
+renderer.render(scene,camera)}
+
+initPositions();
+requestAnimationFrame(loop);
+
+addEventListener('resize',function(){camera.aspect=innerWidth/innerHeight;camera.updateProjectionMatrix();renderer.setSize(innerWidth,innerHeight)});
+
+})();
+</script>
+</body>
+</html>

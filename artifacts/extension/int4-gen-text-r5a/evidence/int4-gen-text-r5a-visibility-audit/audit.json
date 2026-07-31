@@ -1,0 +1,993 @@
+{
+  "schema": "qwen-gauntlet-completion-visibility-audit-v1",
+  "note": "Post-hoc diagnostic for evaluator validity; it does not replace the frozen primary evidence without an explicit correction record.",
+  "initial": {
+    "elapsedMs": -1,
+    "visibleCompletionElements": [],
+    "commonState": {
+      "gameState": "menu",
+      "kartFinished": false,
+      "kartLap": 1,
+      "kartTotalLaps": 3,
+      "elapsedTime": 0,
+      "globalMode": null
+    }
+  },
+  "timeline": [
+    {
+      "elapsedMs": 3732,
+      "visibleCompletionElements": [],
+      "commonState": {
+        "gameState": "countdown",
+        "kartFinished": false,
+        "kartLap": 1,
+        "kartTotalLaps": 3,
+        "elapsedTime": 3.8436000000000923,
+        "globalMode": null
+      }
+    },
+    {
+      "elapsedMs": 4259,
+      "visibleCompletionElements": [],
+      "commonState": {
+        "gameState": "countdown",
+        "kartFinished": false,
+        "kartLap": 1,
+        "kartTotalLaps": 3,
+        "elapsedTime": 4.365000000000001,
+        "globalMode": null
+      }
+    },
+    {
+      "elapsedMs": 4779,
+      "visibleCompletionElements": [],
+      "commonState": {
+        "gameState": "racing",
+        "kartFinished": false,
+        "kartLap": 1,
+        "kartTotalLaps": 3,
+        "elapsedTime": 4.889399999999908,
+        "globalMode": null
+      }
+    },
+    {
+      "elapsedMs": 5308,
+      "visibleCompletionElements": [],
+      "commonState": {
+        "gameState": "racing",
+        "kartFinished": false,
+        "kartLap": 1,
+        "kartTotalLaps": 3,
+        "elapsedTime": 5.400399999999908,
+        "globalMode": null
+      }
+    },
+    {
+      "elapsedMs": 5818,
+      "visibleCompletionElements": [],
+      "commonState": {
+        "gameState": "racing",
+        "kartFinished": false,
+        "kartLap": 1,
+        "kartTotalLaps": 3,
+        "elapsedTime": 5.912899999999908,
+        "globalMode": null
+      }
+    },
+    {
+      "elapsedMs": 6327,
+      "visibleCompletionElements": [],
+      "commonState": {
+        "gameState": "racing",
+        "kartFinished": false,
+        "kartLap": 1,
+        "kartTotalLaps": 3,
+        "elapsedTime": 6.414600000000093,
+        "globalMode": null
+      }
+    },
+    {
+      "elapsedMs": 6834,
+      "visibleCompletionElements": [],
+      "commonState": {
+        "gameState": "racing",
+        "kartFinished": false,
+        "kartLap": 1,
+        "kartTotalLaps": 3,
+        "elapsedTime": 6.926100000000094,
+        "globalMode": null
+      }
+    },
+    {
+      "elapsedMs": 7345,
+      "visibleCompletionElements": [],
+      "commonState": {
+        "gameState": "racing",
+        "kartFinished": false,
+        "kartLap": 1,
+        "kartTotalLaps": 3,
+        "elapsedTime": 7.449899999999907,
+        "globalMode": null
+      }
+    },
+    {
+      "elapsedMs": 7866,
+      "visibleCompletionElements": [],
+      "commonState": {
+        "gameState": "racing",
+        "kartFinished": false,
+        "kartLap": 1,
+        "kartTotalLaps": 3,
+        "elapsedTime": 7.9602999999998145,
+        "globalMode": null
+      }
+    },
+    {
+      "elapsedMs": 8377,
+      "visibleCompletionElements": [],
+      "commonState": {
+        "gameState": "racing",
+        "kartFinished": false,
+        "kartLap": 1,
+        "kartTotalLaps": 3,
+        "elapsedTime": 8.479100000000093,
+        "globalMode": null
+      }
+    },
+    {
+      "elapsedMs": 8898,
+      "visibleCompletionElements": [],
+      "commonState": {
+        "gameState": "racing",
+        "kartFinished": false,
+        "kartLap": 1,
+        "kartTotalLaps": 3,
+        "elapsedTime": 9.000899999999904,
+        "globalMode": null
+      }
+    },
+    {
+      "elapsedMs": 9426,
+      "visibleCompletionElements": [],
+      "commonState": {
+        "gameState": "racing",
+        "kartFinished": false,
+        "kartLap": 1,
+        "kartTotalLaps": 3,
+        "elapsedTime": 9.538100000000087,
+        "globalMode": null
+      }
+    },
+    {
+      "elapsedMs": 9957,
+      "visibleCompletionElements": [],
+      "commonState": {
+        "gameState": "racing",
+        "kartFinished": false,
+        "kartLap": 1,
+        "kartTotalLaps": 3,
+        "elapsedTime": 10.05379999999981,
+        "globalMode": null
+      }
+    },
+    {
+      "elapsedMs": 10481,
+      "visibleCompletionElements": [],
+      "commonState": {
+        "gameState": "racing",
+        "kartFinished": false,
+        "kartLap": 1,
+        "kartTotalLaps": 3,
+        "elapsedTime": 10.59370000000018,
+        "globalMode": null
+      }
+    },
+    {
+      "elapsedMs": 11014,
+      "visibleCompletionElements": [],
+      "commonState": {
+        "gameState": "racing",
+        "kartFinished": false,
+        "kartLap": 1,
+        "kartTotalLaps": 3,
+        "elapsedTime": 11.11299999999999,
+        "globalMode": null
+      }
+    },
+    {
+      "elapsedMs": 11532,
+      "visibleCompletionElements": [],
+      "commonState": {
+        "gameState": "racing",
+        "kartFinished": false,
+        "kartLap": 1,
+        "kartTotalLaps": 3,
+        "elapsedTime": 11.62870000000018,
+        "globalMode": null
+      }
+    },
+    {
+      "elapsedMs": 12043,
+      "visibleCompletionElements": [],
+      "commonState": {
+        "gameState": "racing",
+        "kartFinished": false,
+        "kartLap": 1,
+        "kartTotalLaps": 3,
+        "elapsedTime": 12.154299999999806,
+        "globalMode": null
+      }
+    },
+    {
+      "elapsedMs": 12567,
+      "visibleCompletionElements": [],
+      "commonState": {
+        "gameState": "racing",
+        "kartFinished": false,
+        "kartLap": 1,
+        "kartTotalLaps": 3,
+        "elapsedTime": 12.6528999999999,
+        "globalMode": null
+      }
+    },
+    {
+      "elapsedMs": 13070,
+      "visibleCompletionElements": [],
+      "commonState": {
+        "gameState": "racing",
+        "kartFinished": false,
+        "kartLap": 1,
+        "kartTotalLaps": 3,
+        "elapsedTime": 13.177100000000086,
+        "globalMode": null
+      }
+    },
+    {
+      "elapsedMs": 13592,
+      "visibleCompletionElements": [],
+      "commonState": {
+        "gameState": "racing",
+        "kartFinished": false,
+        "kartLap": 1,
+        "kartTotalLaps": 3,
+        "elapsedTime": 13.6798999999999,
+        "globalMode": null
+      }
+    },
+    {
+      "elapsedMs": 14103,
+      "visibleCompletionElements": [],
+      "commonState": {
+        "gameState": "racing",
+        "kartFinished": false,
+        "kartLap": 1,
+        "kartTotalLaps": 3,
+        "elapsedTime": 14.210999999999991,
+        "globalMode": null
+      }
+    },
+    {
+      "elapsedMs": 14633,
+      "visibleCompletionElements": [],
+      "commonState": {
+        "gameState": "racing",
+        "kartFinished": false,
+        "kartLap": 1,
+        "kartTotalLaps": 3,
+        "elapsedTime": 14.736499999999992,
+        "globalMode": null
+      }
+    },
+    {
+      "elapsedMs": 15154,
+      "visibleCompletionElements": [],
+      "commonState": {
+        "gameState": "racing",
+        "kartFinished": false,
+        "kartLap": 1,
+        "kartTotalLaps": 3,
+        "elapsedTime": 15.243299999999804,
+        "globalMode": null
+      }
+    },
+    {
+      "elapsedMs": 15667,
+      "visibleCompletionElements": [],
+      "commonState": {
+        "gameState": "racing",
+        "kartFinished": false,
+        "kartLap": 1,
+        "kartTotalLaps": 3,
+        "elapsedTime": 15.769799999999805,
+        "globalMode": null
+      }
+    },
+    {
+      "elapsedMs": 16190,
+      "visibleCompletionElements": [],
+      "commonState": {
+        "gameState": "racing",
+        "kartFinished": false,
+        "kartLap": 2,
+        "kartTotalLaps": 3,
+        "elapsedTime": 16.286200000000175,
+        "globalMode": null
+      }
+    },
+    {
+      "elapsedMs": 16705,
+      "visibleCompletionElements": [],
+      "commonState": {
+        "gameState": "racing",
+        "kartFinished": false,
+        "kartLap": 2,
+        "kartTotalLaps": 3,
+        "elapsedTime": 16.800799999999796,
+        "globalMode": null
+      }
+    },
+    {
+      "elapsedMs": 17217,
+      "visibleCompletionElements": [],
+      "commonState": {
+        "gameState": "racing",
+        "kartFinished": false,
+        "kartLap": 2,
+        "kartTotalLaps": 3,
+        "elapsedTime": 17.30189999999989,
+        "globalMode": null
+      }
+    },
+    {
+      "elapsedMs": 17723,
+      "visibleCompletionElements": [],
+      "commonState": {
+        "gameState": "racing",
+        "kartFinished": false,
+        "kartLap": 2,
+        "kartTotalLaps": 3,
+        "elapsedTime": 17.823700000000162,
+        "globalMode": null
+      }
+    },
+    {
+      "elapsedMs": 18241,
+      "visibleCompletionElements": [],
+      "commonState": {
+        "gameState": "racing",
+        "kartFinished": false,
+        "kartLap": 2,
+        "kartTotalLaps": 3,
+        "elapsedTime": 18.347499999999982,
+        "globalMode": null
+      }
+    },
+    {
+      "elapsedMs": 18765,
+      "visibleCompletionElements": [],
+      "commonState": {
+        "gameState": "racing",
+        "kartFinished": false,
+        "kartLap": 2,
+        "kartTotalLaps": 3,
+        "elapsedTime": 18.866799999999795,
+        "globalMode": null
+      }
+    },
+    {
+      "elapsedMs": 19283,
+      "visibleCompletionElements": [],
+      "commonState": {
+        "gameState": "racing",
+        "kartFinished": false,
+        "kartLap": 2,
+        "kartTotalLaps": 3,
+        "elapsedTime": 19.382100000000072,
+        "globalMode": null
+      }
+    },
+    {
+      "elapsedMs": 19799,
+      "visibleCompletionElements": [],
+      "commonState": {
+        "gameState": "racing",
+        "kartFinished": false,
+        "kartLap": 2,
+        "kartTotalLaps": 3,
+        "elapsedTime": 19.90149999999998,
+        "globalMode": null
+      }
+    },
+    {
+      "elapsedMs": 20317,
+      "visibleCompletionElements": [],
+      "commonState": {
+        "gameState": "racing",
+        "kartFinished": false,
+        "kartLap": 2,
+        "kartTotalLaps": 3,
+        "elapsedTime": 20.41779999999979,
+        "globalMode": null
+      }
+    },
+    {
+      "elapsedMs": 20834,
+      "visibleCompletionElements": [],
+      "commonState": {
+        "gameState": "racing",
+        "kartFinished": false,
+        "kartLap": 2,
+        "kartTotalLaps": 3,
+        "elapsedTime": 20.93489999999989,
+        "globalMode": null
+      }
+    },
+    {
+      "elapsedMs": 21349,
+      "visibleCompletionElements": [],
+      "commonState": {
+        "gameState": "racing",
+        "kartFinished": false,
+        "kartLap": 2,
+        "kartTotalLaps": 3,
+        "elapsedTime": 21.458399999999884,
+        "globalMode": null
+      }
+    },
+    {
+      "elapsedMs": 21880,
+      "visibleCompletionElements": [],
+      "commonState": {
+        "gameState": "racing",
+        "kartFinished": false,
+        "kartLap": 2,
+        "kartTotalLaps": 3,
+        "elapsedTime": 21.993700000000167,
+        "globalMode": null
+      }
+    },
+    {
+      "elapsedMs": 22409,
+      "visibleCompletionElements": [],
+      "commonState": {
+        "gameState": "racing",
+        "kartFinished": false,
+        "kartLap": 2,
+        "kartTotalLaps": 3,
+        "elapsedTime": 22.49920000000016,
+        "globalMode": null
+      }
+    },
+    {
+      "elapsedMs": 22915,
+      "visibleCompletionElements": [],
+      "commonState": {
+        "gameState": "racing",
+        "kartFinished": false,
+        "kartLap": 2,
+        "kartTotalLaps": 3,
+        "elapsedTime": 23.024600000000074,
+        "globalMode": null
+      }
+    },
+    {
+      "elapsedMs": 23439,
+      "visibleCompletionElements": [],
+      "commonState": {
+        "gameState": "racing",
+        "kartFinished": false,
+        "kartLap": 2,
+        "kartTotalLaps": 3,
+        "elapsedTime": 23.54449999999997,
+        "globalMode": null
+      }
+    },
+    {
+      "elapsedMs": 23963,
+      "visibleCompletionElements": [],
+      "commonState": {
+        "gameState": "racing",
+        "kartFinished": false,
+        "kartLap": 2,
+        "kartTotalLaps": 3,
+        "elapsedTime": 24.071299999999773,
+        "globalMode": null
+      }
+    },
+    {
+      "elapsedMs": 24487,
+      "visibleCompletionElements": [],
+      "commonState": {
+        "gameState": "racing",
+        "kartFinished": false,
+        "kartLap": 2,
+        "kartTotalLaps": 3,
+        "elapsedTime": 24.59220000000014,
+        "globalMode": null
+      }
+    },
+    {
+      "elapsedMs": 25006,
+      "visibleCompletionElements": [],
+      "commonState": {
+        "gameState": "racing",
+        "kartFinished": false,
+        "kartLap": 2,
+        "kartTotalLaps": 3,
+        "elapsedTime": 25.113999999999947,
+        "globalMode": null
+      }
+    },
+    {
+      "elapsedMs": 25531,
+      "visibleCompletionElements": [],
+      "commonState": {
+        "gameState": "racing",
+        "kartFinished": false,
+        "kartLap": 2,
+        "kartTotalLaps": 3,
+        "elapsedTime": 25.63410000000005,
+        "globalMode": null
+      }
+    },
+    {
+      "elapsedMs": 26052,
+      "visibleCompletionElements": [],
+      "commonState": {
+        "gameState": "racing",
+        "kartFinished": false,
+        "kartLap": 2,
+        "kartTotalLaps": 3,
+        "elapsedTime": 26.162999999999965,
+        "globalMode": null
+      }
+    },
+    {
+      "elapsedMs": 26580,
+      "visibleCompletionElements": [],
+      "commonState": {
+        "gameState": "racing",
+        "kartFinished": false,
+        "kartLap": 2,
+        "kartTotalLaps": 3,
+        "elapsedTime": 26.690600000000053,
+        "globalMode": null
+      }
+    },
+    {
+      "elapsedMs": 27113,
+      "visibleCompletionElements": [],
+      "commonState": {
+        "gameState": "racing",
+        "kartFinished": false,
+        "kartLap": 2,
+        "kartTotalLaps": 3,
+        "elapsedTime": 27.204799999999775,
+        "globalMode": null
+      }
+    },
+    {
+      "elapsedMs": 27622,
+      "visibleCompletionElements": [],
+      "commonState": {
+        "gameState": "racing",
+        "kartFinished": false,
+        "kartLap": 2,
+        "kartTotalLaps": 3,
+        "elapsedTime": 27.713200000000146,
+        "globalMode": null
+      }
+    },
+    {
+      "elapsedMs": 28127,
+      "visibleCompletionElements": [],
+      "commonState": {
+        "gameState": "racing",
+        "kartFinished": false,
+        "kartLap": 2,
+        "kartTotalLaps": 3,
+        "elapsedTime": 28.231999999999964,
+        "globalMode": null
+      }
+    },
+    {
+      "elapsedMs": 28649,
+      "visibleCompletionElements": [],
+      "commonState": {
+        "gameState": "racing",
+        "kartFinished": false,
+        "kartLap": 2,
+        "kartTotalLaps": 3,
+        "elapsedTime": 28.742600000000056,
+        "globalMode": null
+      }
+    },
+    {
+      "elapsedMs": 29158,
+      "visibleCompletionElements": [],
+      "commonState": {
+        "gameState": "racing",
+        "kartFinished": false,
+        "kartLap": 2,
+        "kartTotalLaps": 3,
+        "elapsedTime": 29.24929999999977,
+        "globalMode": null
+      }
+    },
+    {
+      "elapsedMs": 29671,
+      "visibleCompletionElements": [],
+      "commonState": {
+        "gameState": "racing",
+        "kartFinished": false,
+        "kartLap": 2,
+        "kartTotalLaps": 3,
+        "elapsedTime": 29.763799999999765,
+        "globalMode": null
+      }
+    },
+    {
+      "elapsedMs": 30185,
+      "visibleCompletionElements": [],
+      "commonState": {
+        "gameState": "racing",
+        "kartFinished": false,
+        "kartLap": 2,
+        "kartTotalLaps": 3,
+        "elapsedTime": 30.270200000000134,
+        "globalMode": null
+      }
+    },
+    {
+      "elapsedMs": 30689,
+      "visibleCompletionElements": [],
+      "commonState": {
+        "gameState": "racing",
+        "kartFinished": false,
+        "kartLap": 2,
+        "kartTotalLaps": 3,
+        "elapsedTime": 30.79170000000014,
+        "globalMode": null
+      }
+    },
+    {
+      "elapsedMs": 31208,
+      "visibleCompletionElements": [],
+      "commonState": {
+        "gameState": "racing",
+        "kartFinished": false,
+        "kartLap": 3,
+        "kartTotalLaps": 3,
+        "elapsedTime": 31.313299999999764,
+        "globalMode": null
+      }
+    },
+    {
+      "elapsedMs": 31743,
+      "visibleCompletionElements": [],
+      "commonState": {
+        "gameState": "racing",
+        "kartFinished": false,
+        "kartLap": 3,
+        "kartTotalLaps": 3,
+        "elapsedTime": 31.839099999999576,
+        "globalMode": null
+      }
+    },
+    {
+      "elapsedMs": 32260,
+      "visibleCompletionElements": [],
+      "commonState": {
+        "gameState": "racing",
+        "kartFinished": false,
+        "kartLap": 3,
+        "kartTotalLaps": 3,
+        "elapsedTime": 32.35759999999957,
+        "globalMode": null
+      }
+    },
+    {
+      "elapsedMs": 32777,
+      "visibleCompletionElements": [],
+      "commonState": {
+        "gameState": "racing",
+        "kartFinished": false,
+        "kartLap": 3,
+        "kartTotalLaps": 3,
+        "elapsedTime": 32.875699999999675,
+        "globalMode": null
+      }
+    },
+    {
+      "elapsedMs": 33298,
+      "visibleCompletionElements": [],
+      "commonState": {
+        "gameState": "racing",
+        "kartFinished": false,
+        "kartLap": 3,
+        "kartTotalLaps": 3,
+        "elapsedTime": 33.40609999999959,
+        "globalMode": null
+      }
+    },
+    {
+      "elapsedMs": 33832,
+      "visibleCompletionElements": [],
+      "commonState": {
+        "gameState": "racing",
+        "kartFinished": false,
+        "kartLap": 3,
+        "kartTotalLaps": 3,
+        "elapsedTime": 33.921499999999966,
+        "globalMode": null
+      }
+    },
+    {
+      "elapsedMs": 34342,
+      "visibleCompletionElements": [],
+      "commonState": {
+        "gameState": "racing",
+        "kartFinished": false,
+        "kartLap": 3,
+        "kartTotalLaps": 3,
+        "elapsedTime": 34.44379999999978,
+        "globalMode": null
+      }
+    },
+    {
+      "elapsedMs": 34862,
+      "visibleCompletionElements": [],
+      "commonState": {
+        "gameState": "racing",
+        "kartFinished": false,
+        "kartLap": 3,
+        "kartTotalLaps": 3,
+        "elapsedTime": 34.95329999999979,
+        "globalMode": null
+      }
+    },
+    {
+      "elapsedMs": 35379,
+      "visibleCompletionElements": [],
+      "commonState": {
+        "gameState": "racing",
+        "kartFinished": false,
+        "kartLap": 3,
+        "kartTotalLaps": 3,
+        "elapsedTime": 35.466899999999875,
+        "globalMode": null
+      }
+    },
+    {
+      "elapsedMs": 35889,
+      "visibleCompletionElements": [],
+      "commonState": {
+        "gameState": "racing",
+        "kartFinished": false,
+        "kartLap": 3,
+        "kartTotalLaps": 3,
+        "elapsedTime": 35.9756999999997,
+        "globalMode": null
+      }
+    },
+    {
+      "elapsedMs": 36400,
+      "visibleCompletionElements": [],
+      "commonState": {
+        "gameState": "racing",
+        "kartFinished": false,
+        "kartLap": 3,
+        "kartTotalLaps": 3,
+        "elapsedTime": 36.49659999999962,
+        "globalMode": null
+      }
+    },
+    {
+      "elapsedMs": 36920,
+      "visibleCompletionElements": [],
+      "commonState": {
+        "gameState": "racing",
+        "kartFinished": false,
+        "kartLap": 3,
+        "kartTotalLaps": 3,
+        "elapsedTime": 37.029,
+        "globalMode": null
+      }
+    },
+    {
+      "elapsedMs": 37446,
+      "visibleCompletionElements": [],
+      "commonState": {
+        "gameState": "racing",
+        "kartFinished": false,
+        "kartLap": 3,
+        "kartTotalLaps": 3,
+        "elapsedTime": 37.55479999999983,
+        "globalMode": null
+      }
+    },
+    {
+      "elapsedMs": 37971,
+      "visibleCompletionElements": [],
+      "commonState": {
+        "gameState": "racing",
+        "kartFinished": false,
+        "kartLap": 3,
+        "kartTotalLaps": 3,
+        "elapsedTime": 38.05709999999963,
+        "globalMode": null
+      }
+    },
+    {
+      "elapsedMs": 38477,
+      "visibleCompletionElements": [],
+      "commonState": {
+        "gameState": "racing",
+        "kartFinished": false,
+        "kartLap": 3,
+        "kartTotalLaps": 3,
+        "elapsedTime": 38.563,
+        "globalMode": null
+      }
+    },
+    {
+      "elapsedMs": 38986,
+      "visibleCompletionElements": [],
+      "commonState": {
+        "gameState": "racing",
+        "kartFinished": false,
+        "kartLap": 3,
+        "kartTotalLaps": 3,
+        "elapsedTime": 39.07439999999991,
+        "globalMode": null
+      }
+    },
+    {
+      "elapsedMs": 39497,
+      "visibleCompletionElements": [],
+      "commonState": {
+        "gameState": "racing",
+        "kartFinished": false,
+        "kartLap": 3,
+        "kartTotalLaps": 3,
+        "elapsedTime": 39.5785,
+        "globalMode": null
+      }
+    },
+    {
+      "elapsedMs": 40000,
+      "visibleCompletionElements": [],
+      "commonState": {
+        "gameState": "racing",
+        "kartFinished": false,
+        "kartLap": 3,
+        "kartTotalLaps": 3,
+        "elapsedTime": 40.081,
+        "globalMode": null
+      }
+    },
+    {
+      "elapsedMs": 40504,
+      "visibleCompletionElements": [],
+      "commonState": {
+        "gameState": "racing",
+        "kartFinished": false,
+        "kartLap": 3,
+        "kartTotalLaps": 3,
+        "elapsedTime": 40.589499999999994,
+        "globalMode": null
+      }
+    },
+    {
+      "elapsedMs": 41008,
+      "visibleCompletionElements": [],
+      "commonState": {
+        "gameState": "racing",
+        "kartFinished": false,
+        "kartLap": 3,
+        "kartTotalLaps": 3,
+        "elapsedTime": 41.09949999999999,
+        "globalMode": null
+      }
+    },
+    {
+      "elapsedMs": 41521,
+      "visibleCompletionElements": [],
+      "commonState": {
+        "gameState": "racing",
+        "kartFinished": false,
+        "kartLap": 3,
+        "kartTotalLaps": 3,
+        "elapsedTime": 41.623299999999816,
+        "globalMode": null
+      }
+    },
+    {
+      "elapsedMs": 42045,
+      "visibleCompletionElements": [],
+      "commonState": {
+        "gameState": "racing",
+        "kartFinished": false,
+        "kartLap": 3,
+        "kartTotalLaps": 3,
+        "elapsedTime": 42.144699999999716,
+        "globalMode": null
+      }
+    },
+    {
+      "elapsedMs": 42567,
+      "visibleCompletionElements": [],
+      "commonState": {
+        "gameState": "racing",
+        "kartFinished": false,
+        "kartLap": 3,
+        "kartTotalLaps": 3,
+        "elapsedTime": 42.6663999999999,
+        "globalMode": null
+      }
+    },
+    {
+      "elapsedMs": 43089,
+      "visibleCompletionElements": [],
+      "commonState": {
+        "gameState": "racing",
+        "kartFinished": false,
+        "kartLap": 3,
+        "kartTotalLaps": 3,
+        "elapsedTime": 43.1818999999999,
+        "globalMode": null
+      }
+    },
+    {
+      "elapsedMs": 43604,
+      "visibleCompletionElements": [],
+      "commonState": {
+        "gameState": "racing",
+        "kartFinished": false,
+        "kartLap": 3,
+        "kartTotalLaps": 3,
+        "elapsedTime": 43.697500000000005,
+        "globalMode": null
+      }
+    },
+    {
+      "elapsedMs": 44120,
+      "visibleCompletionElements": [],
+      "commonState": {
+        "gameState": "racing",
+        "kartFinished": false,
+        "kartLap": 3,
+        "kartTotalLaps": 3,
+        "elapsedTime": 44.222799999999815,
+        "globalMode": null
+      }
+    },
+    {
+      "elapsedMs": 44641,
+      "visibleCompletionElements": [],
+      "commonState": {
+        "gameState": "racing",
+        "kartFinished": false,
+        "kartLap": 3,
+        "kartTotalLaps": 3,
+        "elapsedTime": 44.743,
+        "globalMode": null
+      }
+    }
+  ],
+  "final": {
+    "elapsedMs": 45164,
+    "visibleCompletionElements": [],
+    "commonState": {
+      "gameState": "racing",
+      "kartFinished": false,
+      "kartLap": 3,
+      "kartTotalLaps": 3,
+      "elapsedTime": 45.25989999999992,
+      "globalMode": null
+    }
+  },
+  "firstVisibleCompletionElapsedMs": null,
+  "firstFinishedStateElapsedMs": null,
+  "errors": []
+}

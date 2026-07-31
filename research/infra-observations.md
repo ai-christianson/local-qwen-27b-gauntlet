@@ -85,6 +85,29 @@ public artifact. Raw controller logs use sanitized site/host labels.
   22 of 24 cards above the active threshold, but did not keep all cards there.
   Zero persistent scheduler queue and zero admission rejections favored holding
   rather than adding uncontrolled load.
+- The tail replication exposed a containment/endpoint mismatch. A normal laptop
+  model hostname resolved to a private route that disposable guests were
+  intentionally forbidden to reach. Eight Pi wrappers failed before source
+  creation; containment behaved correctly, but the harness lacked a declared
+  guest path to inference.
+- A narrow replacement bridge bound only to each VM host's loopback, forwarded
+  opaque TLS bytes, and exposed one host-gateway port to its guests. Guest
+  egress remained restricted to that exact address and port. This restored
+  inference access without weakening the general private-range block or
+  terminating TLS in the bridge.
+- Cloud-init's managed-hosts phase overwrote an early hostname mapping. A
+  single no-tools connectivity probe caught that before the replacement task
+  fan-out. Moving the mapping into the final provisioning step and requiring an
+  unauthenticated authorization failure plus an authenticated `OK` response
+  made the launch reliable.
+- The reusable lesson is to gate large VM fan-outs on three cheap preflights:
+  name resolution to the intended guest gateway, transport/authentication
+  reachability, and one model response through the exact Pi provider path.
+  These checks should run before any scored prompt and should leave no source
+  behind.
+- Temporary bridges are experiment infrastructure, not ambient services. Their
+  exact PID files, listener ports, and command lines are included in the final
+  cleanup proof so removal can be narrow and auditable.
 
 ## Candidate optimizations to test, not conclusions
 
@@ -104,3 +127,6 @@ public artifact. Raw controller logs use sanitized site/host labels.
 7. Compare a direct controlled request at each ingress/listener boundary to find
    where Pi's now-confirmed priority headers are lost or ignored before changing
    production routing policy.
+8. Bake the exact provider-host mapping and preflight into the golden guest
+   image or launcher metadata, while keeping credentials runtime-only and
+   containment default-deny.

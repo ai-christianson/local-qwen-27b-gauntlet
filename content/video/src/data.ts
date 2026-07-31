@@ -12,6 +12,9 @@ export const experiment = {
   baselineBoot: "1 / 12",
   boundedEarly: "1 / 2",
   boundedFinal: "5 / 10",
+  generationExtension: "0 / 8",
+  generationBoot: "6 / 8",
+  criticCalibration: "7 / 8",
   grounded: "2 / 1 / 1",
   transfer: "kart ✓ · arena ✓ after critique · platformer partial",
   skillResult: "No visual-quality win",
@@ -23,7 +26,7 @@ export const experiment = {
   } satisfies PrecisionResult,
   verdictHeadline: "A SMALL MODEL CAN IMPROVE—IF THE EVIDENCE IS BETTER.",
   verdictBody:
-    "More agents alone did not create AAA quality. Compact observation budgets and fresh, artifact-grounded critics produced real repairs; self-tests, visual critics, public skills, and BF16 still failed in important ways.",
+    "More agents alone did not create AAA quality. Compact evidence and fresh critics produced real repairs—and one Qwen critic caught our evaluator's false positive. Self-tests, public skills, BF16, and greenfield generation still failed in important ways.",
   repo: "PUBLIC REPO + RAW EVIDENCE",
 };
 

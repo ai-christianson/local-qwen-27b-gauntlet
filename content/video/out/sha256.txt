@@ -1,2 +1,3 @@
-37e55d71eaa7d11bf25adc9d0b93620e111f4cc0cf5d992d1a522ead465da05b  content/video/out/qwen-gauntlet-1080p60.mp4
+f4e04f03c9198eacd12b3fc87447b32a9fa8306715afe3bb525390460fde5aeb  content/video/out/qwen-gauntlet-1080p60.mp4
 4238bf2dd0466a9cada2dec07b6b3e8894e49d6d7731911c8b438232af124a6a  content/video/out/poster.png
+4739c7734489df7fad0931735c793bd7eac6dca4637a19ab847facf7bee1d287  content/video/out/qa/qwen-gauntlet-v11-full-contact.jpg

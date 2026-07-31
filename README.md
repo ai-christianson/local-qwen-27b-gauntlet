@@ -14,6 +14,8 @@ Hard cutoff: **2026-07-31 06:00 America/New_York**.
 
 - Empty-workspace INT4 baseline: **0/12 externally complete**.
 - Replicated text-first repair condition: **5/10 complete**.
+- Text-first empty-workspace tail replication: **0/8 corrected complete**,
+  despite 6/8 boot-clean.
 - Official BF16: **0/2 baseline and 0/2 matched repair**.
 - Grounded Qwen critic→builder handoffs: **2 passes, 1 partial, 1 fail**.
 - Peak serving load: **22/24 active cards**, with no persistent queue or
@@ -22,13 +24,13 @@ Hard cutoff: **2026-07-31 06:00 America/New_York**.
 - Multiplayer gate: **not reached**.
 
 The most useful finding was not “loop longer.” Ordered temporal evidence,
-multiple independent Qwen critics, and a cheap executable Three.js check
-exposed a real wheel-axis defect and selected the correct Qwen-authored
-diagnosis. See [RESULTS.md](RESULTS.md).
+multiple independent Qwen critics, and cheap executable checks exposed a real
+wheel-axis defect—and one blind Qwen critic caught a false positive in the
+controller-authored evaluator. See [RESULTS.md](RESULTS.md).
 
 ## Watch the result
 
-[Watch or download the final 84-second 1080p60 video](content/video/out/qwen-gauntlet-1080p60.mp4).
+[Watch or download the final 91-second 1080p60 video](content/video/out/qwen-gauntlet-1080p60.mp4).
 It combines real Pi-in-progress capture, fixed-step gameplay, matched
 comparisons, infrastructure telemetry, and the final verdict. The automated
 video QA and review contact sheet are retained in

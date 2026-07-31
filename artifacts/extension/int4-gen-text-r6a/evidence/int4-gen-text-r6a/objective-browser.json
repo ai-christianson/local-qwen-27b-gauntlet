@@ -1,0 +1,310 @@
+{
+  "schema": "qwen-gauntlet-objective-browser-v3",
+  "startedAt": "2026-07-31T06:59:43.586Z",
+  "finishedAt": "2026-07-31T07:00:37.688Z",
+  "url": "http://127.0.0.1:4173/?demo=1&seed=1337",
+  "httpStatus": 200,
+  "initialDom": {
+    "title": "Apex Karts 64",
+    "text": "LAP 0 / 1 TIME 00:00.0 SPEED 0 km/h Apex Karts 64 GRAND PRIX Arrow Keys / WASD — Steer & Accelerate Space — Brake R — Reset Press ENTER to Start",
+    "canvases": [
+      {
+        "width": 180,
+        "height": 180,
+        "clientWidth": 174,
+        "clientHeight": 174
+      },
+      {
+        "width": 1920,
+        "height": 1080,
+        "clientWidth": 1920,
+        "clientHeight": 1080
+      }
+    ],
+    "buttons": []
+  },
+  "finalDom": {
+    "title": "Apex Karts 64",
+    "text": "LAP 0 / 1 TIME 00:18.4 SPEED 0 km/h Apex Karts 64 GRAND PRIX Arrow Keys / WASD — Steer & Accelerate Space — Brake R — Reset Press ENTER to Start",
+    "canvases": [
+      {
+        "width": 180,
+        "height": 180,
+        "clientWidth": 174,
+        "clientHeight": 174
+      },
+      {
+        "width": 1920,
+        "height": 1080,
+        "clientWidth": 1920,
+        "clientHeight": 1080
+      }
+    ]
+  },
+  "actions": [
+    {
+      "at": "2026-07-31T06:59:47.533Z",
+      "action": "keypress",
+      "key": "Enter",
+      "rule": "no-visible-start-button"
+    },
+    {
+      "at": "2026-07-31T06:59:51.720Z",
+      "action": "fixed-keyboard-sequence",
+      "sequence": "ArrowUp 3.6s; ArrowLeft 0.8s; ArrowRight 0.8s"
+    },
+    {
+      "at": "2026-07-31T07:00:33.903Z",
+      "action": "keypress",
+      "key": "r",
+      "rule": "fixed-reset-probe"
+    }
+  ],
+  "screenshots": [
+    {
+      "filename": "objective-02s.png",
+      "sha256": "53e278675f24662cff546f7f805161f6e0f97e8927787b848929f0d1f69f1d40",
+      "bytes": 179535
+    },
+    {
+      "filename": "objective-06s.png",
+      "sha256": "9d607d42b4e21939d9c54360ab366498d6ca47d647311df06126649211ba82c7",
+      "bytes": 169510
+    },
+    {
+      "filename": "objective-16s.png",
+      "sha256": "22f4a51b62b5cf60e4aba734dc355d1b5b4d52e2ec899b787e91a8598bb76155",
+      "bytes": 232643
+    },
+    {
+      "filename": "objective-45s.png",
+      "sha256": "dc9bb3817629ed5e01ad2877e0d0f42d158952a158eccab23d9bbb51583d67e0",
+      "bytes": 231948
+    },
+    {
+      "filename": "objective-after-reset.png",
+      "sha256": "3ec946743501ff2781a7a09dd14208bbd144e572f0b5473f8e9b1c77f919c3f8",
+      "bytes": 231815
+    }
+  ],
+  "distinctScreenshotHashes": 5,
+  "cadence": {
+    "durationMs": 10000,
+    "frames": 84,
+    "fps": 8.4,
+    "intervalMs": {
+      "p50": 116.70000000000073,
+      "p95": 133.40000000000146,
+      "p99": 150,
+      "max": 150
+    }
+  },
+  "textTimeline": [
+    {
+      "elapsedMs": 129,
+      "text": "LAP 0 / 1 TIME 00:04.3 SPEED 0 km/h Apex Karts 64 GRAND PRIX Arrow Keys / WASD — Steer & Accelerate Space — Brake R — Reset Press ENTER to Start",
+      "completionSignal": false,
+      "lapSignal": true
+    },
+    {
+      "elapsedMs": 1246,
+      "text": "LAP 0 / 1 TIME 00:04.7 SPEED 0 km/h Apex Karts 64 GRAND PRIX Arrow Keys / WASD — Steer & Accelerate Space — Brake R — Reset Press ENTER to Start",
+      "completionSignal": false,
+      "lapSignal": true
+    },
+    {
+      "elapsedMs": 2317,
+      "text": "LAP 0 / 1 TIME 00:05.2 SPEED 0 km/h Apex Karts 64 GRAND PRIX Arrow Keys / WASD — Steer & Accelerate Space — Brake R — Reset Press ENTER to Start",
+      "completionSignal": false,
+      "lapSignal": true
+    },
+    {
+      "elapsedMs": 3426,
+      "text": "LAP 0 / 1 TIME 00:05.6 SPEED 0 km/h Apex Karts 64 GRAND PRIX Arrow Keys / WASD — Steer & Accelerate Space — Brake R — Reset Press ENTER to Start",
+      "completionSignal": false,
+      "lapSignal": true
+    },
+    {
+      "elapsedMs": 4523,
+      "text": "LAP 0 / 1 TIME 00:06.1 SPEED 0 km/h Apex Karts 64 GRAND PRIX Arrow Keys / WASD — Steer & Accelerate Space — Brake R — Reset Press ENTER to Start",
+      "completionSignal": false,
+      "lapSignal": true
+    },
+    {
+      "elapsedMs": 5601,
+      "text": "LAP 0 / 1 TIME 00:06.5 SPEED 0 km/h Apex Karts 64 GRAND PRIX Arrow Keys / WASD — Steer & Accelerate Space — Brake R — Reset Press ENTER to Start",
+      "completionSignal": false,
+      "lapSignal": true
+    },
+    {
+      "elapsedMs": 6692,
+      "text": "LAP 0 / 1 TIME 00:07.0 SPEED 0 km/h Apex Karts 64 GRAND PRIX Arrow Keys / WASD — Steer & Accelerate Space — Brake R — Reset Press ENTER to Start",
+      "completionSignal": false,
+      "lapSignal": true
+    },
+    {
+      "elapsedMs": 7780,
+      "text": "LAP 0 / 1 TIME 00:07.4 SPEED 0 km/h Apex Karts 64 GRAND PRIX Arrow Keys / WASD — Steer & Accelerate Space — Brake R — Reset Press ENTER to Start",
+      "completionSignal": false,
+      "lapSignal": true
+    },
+    {
+      "elapsedMs": 8859,
+      "text": "LAP 0 / 1 TIME 00:07.9 SPEED 0 km/h Apex Karts 64 GRAND PRIX Arrow Keys / WASD — Steer & Accelerate Space — Brake R — Reset Press ENTER to Start",
+      "completionSignal": false,
+      "lapSignal": true
+    },
+    {
+      "elapsedMs": 9930,
+      "text": "LAP 0 / 1 TIME 00:08.3 SPEED 0 km/h Apex Karts 64 GRAND PRIX Arrow Keys / WASD — Steer & Accelerate Space — Brake R — Reset Press ENTER to Start",
+      "completionSignal": false,
+      "lapSignal": true
+    },
+    {
+      "elapsedMs": 11041,
+      "text": "LAP 0 / 1 TIME 00:08.8 SPEED 0 km/h Apex Karts 64 GRAND PRIX Arrow Keys / WASD — Steer & Accelerate Space — Brake R — Reset Press ENTER to Start",
+      "completionSignal": false,
+      "lapSignal": true
+    },
+    {
+      "elapsedMs": 12122,
+      "text": "LAP 0 / 1 TIME 00:09.2 SPEED 0 km/h Apex Karts 64 GRAND PRIX Arrow Keys / WASD — Steer & Accelerate Space — Brake R — Reset Press ENTER to Start",
+      "completionSignal": false,
+      "lapSignal": true
+    },
+    {
+      "elapsedMs": 13225,
+      "text": "LAP 0 / 1 TIME 00:09.7 SPEED 0 km/h Apex Karts 64 GRAND PRIX Arrow Keys / WASD — Steer & Accelerate Space — Brake R — Reset Press ENTER to Start",
+      "completionSignal": false,
+      "lapSignal": true
+    },
+    {
+      "elapsedMs": 14297,
+      "text": "LAP 0 / 1 TIME 00:10.2 SPEED 0 km/h Apex Karts 64 GRAND PRIX Arrow Keys / WASD — Steer & Accelerate Space — Brake R — Reset Press ENTER to Start",
+      "completionSignal": false,
+      "lapSignal": true
+    },
+    {
+      "elapsedMs": 15303,
+      "text": "LAP 0 / 1 TIME 00:10.6 SPEED 0 km/h Apex Karts 64 GRAND PRIX Arrow Keys / WASD — Steer & Accelerate Space — Brake R — Reset Press ENTER to Start",
+      "completionSignal": false,
+      "lapSignal": true
+    },
+    {
+      "elapsedMs": 16391,
+      "text": "LAP 0 / 1 TIME 00:11.0 SPEED 0 km/h Apex Karts 64 GRAND PRIX Arrow Keys / WASD — Steer & Accelerate Space — Brake R — Reset Press ENTER to Start",
+      "completionSignal": false,
+      "lapSignal": true
+    },
+    {
+      "elapsedMs": 17444,
+      "text": "LAP 0 / 1 TIME 00:11.5 SPEED 0 km/h Apex Karts 64 GRAND PRIX Arrow Keys / WASD — Steer & Accelerate Space — Brake R — Reset Press ENTER to Start",
+      "completionSignal": false,
+      "lapSignal": true
+    },
+    {
+      "elapsedMs": 18541,
+      "text": "LAP 0 / 1 TIME 00:11.9 SPEED 0 km/h Apex Karts 64 GRAND PRIX Arrow Keys / WASD — Steer & Accelerate Space — Brake R — Reset Press ENTER to Start",
+      "completionSignal": false,
+      "lapSignal": true
+    },
+    {
+      "elapsedMs": 19600,
+      "text": "LAP 0 / 1 TIME 00:12.4 SPEED 0 km/h Apex Karts 64 GRAND PRIX Arrow Keys / WASD — Steer & Accelerate Space — Brake R — Reset Press ENTER to Start",
+      "completionSignal": false,
+      "lapSignal": true
+    },
+    {
+      "elapsedMs": 20677,
+      "text": "LAP 0 / 1 TIME 00:12.8 SPEED 0 km/h Apex Karts 64 GRAND PRIX Arrow Keys / WASD — Steer & Accelerate Space — Brake R — Reset Press ENTER to Start",
+      "completionSignal": false,
+      "lapSignal": true
+    },
+    {
+      "elapsedMs": 21783,
+      "text": "LAP 0 / 1 TIME 00:13.3 SPEED 0 km/h Apex Karts 64 GRAND PRIX Arrow Keys / WASD — Steer & Accelerate Space — Brake R — Reset Press ENTER to Start",
+      "completionSignal": false,
+      "lapSignal": true
+    },
+    {
+      "elapsedMs": 22850,
+      "text": "LAP 0 / 1 TIME 00:13.7 SPEED 0 km/h Apex Karts 64 GRAND PRIX Arrow Keys / WASD — Steer & Accelerate Space — Brake R — Reset Press ENTER to Start",
+      "completionSignal": false,
+      "lapSignal": true
+    },
+    {
+      "elapsedMs": 23937,
+      "text": "LAP 0 / 1 TIME 00:14.2 SPEED 0 km/h Apex Karts 64 GRAND PRIX Arrow Keys / WASD — Steer & Accelerate Space — Brake R — Reset Press ENTER to Start",
+      "completionSignal": false,
+      "lapSignal": true
+    },
+    {
+      "elapsedMs": 25038,
+      "text": "LAP 0 / 1 TIME 00:14.6 SPEED 0 km/h Apex Karts 64 GRAND PRIX Arrow Keys / WASD — Steer & Accelerate Space — Brake R — Reset Press ENTER to Start",
+      "completionSignal": false,
+      "lapSignal": true
+    },
+    {
+      "elapsedMs": 26142,
+      "text": "LAP 0 / 1 TIME 00:15.1 SPEED 0 km/h Apex Karts 64 GRAND PRIX Arrow Keys / WASD — Steer & Accelerate Space — Brake R — Reset Press ENTER to Start",
+      "completionSignal": false,
+      "lapSignal": true
+    },
+    {
+      "elapsedMs": 27218,
+      "text": "LAP 0 / 1 TIME 00:15.5 SPEED 0 km/h Apex Karts 64 GRAND PRIX Arrow Keys / WASD — Steer & Accelerate Space — Brake R — Reset Press ENTER to Start",
+      "completionSignal": false,
+      "lapSignal": true
+    },
+    {
+      "elapsedMs": 28323,
+      "text": "LAP 0 / 1 TIME 00:16.0 SPEED 0 km/h Apex Karts 64 GRAND PRIX Arrow Keys / WASD — Steer & Accelerate Space — Brake R — Reset Press ENTER to Start",
+      "completionSignal": false,
+      "lapSignal": true
+    }
+  ],
+  "completionSignals": 0,
+  "consoleEvents": [
+    {
+      "at": "2026-07-31T06:59:43.756Z",
+      "type": "debug",
+      "text": "[vite] connecting..."
+    },
+    {
+      "at": "2026-07-31T06:59:43.763Z",
+      "type": "debug",
+      "text": "[vite] connected."
+    },
+    {
+      "at": "2026-07-31T06:59:43.932Z",
+      "type": "log",
+      "text": "[Apex Karts 64] Demo mode"
+    },
+    {
+      "at": "2026-07-31T06:59:43.949Z",
+      "type": "warning",
+      "text": "THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead."
+    },
+    {
+      "at": "2026-07-31T06:59:44.621Z",
+      "type": "warning",
+      "text": "[.WebGL-0x3ab40015a600]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels"
+    },
+    {
+      "at": "2026-07-31T06:59:44.755Z",
+      "type": "warning",
+      "text": "[.WebGL-0x3ab40015a600]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels"
+    },
+    {
+      "at": "2026-07-31T06:59:44.883Z",
+      "type": "warning",
+      "text": "[.WebGL-0x3ab40015a600]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels"
+    },
+    {
+      "at": "2026-07-31T06:59:45.011Z",
+      "type": "warning",
+      "text": "[.WebGL-0x3ab40015a600]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels (this message will no longer repeat)"
+    }
+  ],
+  "pageErrors": []
+}

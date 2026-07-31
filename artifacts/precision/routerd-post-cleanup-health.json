@@ -1,6 +1,6 @@
 {
-  "schema": "qwen-gauntlet-routerd-post-cleanup-health-v1",
-  "checked_at": "2026-07-31T06:05:03Z",
+  "schema": "qwen-gauntlet-routerd-post-cleanup-health-v2",
+  "checked_at": "2026-07-31T07:24:46Z",
   "client": {
     "pi_version": "0.83.0",
     "provider": "routerd",
@@ -12,5 +12,6 @@
     "exit_code": 0
   },
   "experiment_vm_cleanup_verified": true,
+  "temporary_bridge_cleanup_verified": true,
   "privacy": "No credential, endpoint, address, backend identifier, or private hostname is stored."
 }

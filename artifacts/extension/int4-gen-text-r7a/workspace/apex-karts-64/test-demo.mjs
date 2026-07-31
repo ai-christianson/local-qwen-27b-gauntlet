@@ -1,0 +1,33 @@
+import { chromium } from 'playwright';
+(async()=>{
+  const b = await chromium.launch({headless:true});
+  const p = await b.newPage();
+  const errors = [];
+  p.on('console', msg => { if(msg.type()==='error') errors.push(msg.text()); });
+  p.on('pageerror', err => errors.push(err.message));
+  await p.goto('http://localhost:8080/');
+  await p.waitForTimeout(3000);
+  await p.click('#mode-demo');
+  await p.waitForTimeout(500);
+  await p.keyboard.press('Enter');
+  await p.waitForTimeout(5000);
+  await p.screenshot({path:'demo_start.png'});
+  await p.waitForTimeout(5000);
+  await p.screenshot({path:'demo_drive1.png'});
+  await p.waitForTimeout(5000);
+  await p.screenshot({path:'demo_drive2.png'});
+  await p.waitForTimeout(8000);
+  await p.screenshot({path:'demo_drive3.png'});
+  await p.waitForTimeout(10000);
+  await p.screenshot({path:'demo_drive4.png'});
+  await p.waitForTimeout(1000);
+  if(errors.length > 0) console.log('Errors:', errors.join('\n'));
+  else console.log('No errors');
+  const st = await p.evaluate(() => state);
+  const cp = await p.evaluate(() => curCP);
+  const done = await p.evaluate(() => lapDone);
+  const lt = await p.evaluate(() => lapTime);
+  console.log('State:', st, 'CP:', cp, 'Done:', done, 'Time:', lt);
+  if(done) { await p.screenshot({path:'demo_finished.png'}); console.log('LAP COMPLETE!'); }
+  await b.close();
+})();

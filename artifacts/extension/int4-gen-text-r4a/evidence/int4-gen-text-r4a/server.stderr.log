@@ -1,0 +1,13 @@
+6:59:43 AM [vite] Internal server error: Failed to parse source for import analysis because the content contains invalid JS syntax. If you are using JSX, make sure to name the file with the .jsx or .tsx extension.
+  Plugin: vite:import-analysis
+  File: /home/qg/workspace/apex-karts-64/game.js:279:1
+  277 |  if(typeof THREE!=='undefined')init();
+  278 |  else{const check=()=>{if(typeof THREE!=='undefined')init();else setTimeout(check,100)};check()}
+  279 |  })();
+      |   ^
+  280 |  
+      at TransformPluginContext._formatLog (file:///home/qg/runtime/node_modules/vite/dist/node/chunks/node.js:31011:39)
+      at TransformPluginContext.error (file:///home/qg/runtime/node_modules/vite/dist/node/chunks/node.js:31008:14)
+      at TransformPluginContext.transform (file:///home/qg/runtime/node_modules/vite/dist/node/chunks/node.js:27921:10)
+      at async EnvironmentPluginContainer.transform (file:///home/qg/runtime/node_modules/vite/dist/node/chunks/node.js:30796:14)
+      at async loadAndTransform (file:///home/qg/runtime/node_modules/vite/dist/node/chunks/node.js:20594:26)

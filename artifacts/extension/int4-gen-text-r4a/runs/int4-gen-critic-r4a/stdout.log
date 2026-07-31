@@ -1,0 +1,21 @@
+
+
+**FAIL**
+
+**Confidence: 100**
+
+**Evidence:**
+
+1. **All five screenshots are identical** — every frame (0s, 6s, 16s, 45s, and after-reset) shows the exact same Vite error overlay blocking the game. The menu buttons ("RACE", "DEMO MODE") are dimmed behind the overlay but never interacted with. The game **never starts**.
+
+2. **Source confirms the blocker** — `game.js:279` shows the IIFE closing:
+   ```js
+   if(typeof THREE!=='undefined')init();
+   else{const check=()=>{if(typeof THREE!=='undefined')init();else setTimeout(check,100)};check()}
+   })();
+   ```
+   Vite's `plugin:vite:import-analysis` rejects this as "invalid JS syntax" (likely a false positive on the IIFE structure), preventing the entire application from bootstrapping. `init()` is never called, so `demoAI()`, `updatePhysics()`, and `checkCP()` never run.
+
+3. **No lap finish is possible** — even if the game ran, `checkCP()` requires collecting all 4 checkpoints (`totalCP=4`) and returning near the start line (`cp.idx<10`) to increment `lapCount` to 1, which triggers `finishRace()`. With `init()` blocked, `demoRng` is never assigned, `mode` stays `'menu'`, and the demo loop never executes.
+
+**Conclusion:** The demo path never runs — the Vite compilation error prevents the application from initializing. No lap can be finished within 45 seconds or at all.

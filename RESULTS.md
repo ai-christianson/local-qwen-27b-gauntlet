@@ -41,6 +41,7 @@ model. It was only the controller/editor.
 | --- | ---: | ---: | --- |
 | INT4, fresh empty workspace | 0/12 | 1/12 | ordinary short product prompt |
 | INT4, text-first repair | 5/10 | 10/10 parent already booted | same frozen weak parent and 20-minute prompt |
+| INT4, text-first empty workspace | 0/8 corrected | 6/8 | one reusable sentence; historical comparison |
 | BF16, fresh empty workspace | 0/2 | 1/2 | one false lap; one unresolved import |
 | BF16, text-first repair | 0/2 | 2/2 parent already booted | about 2.88M tokens total |
 
@@ -53,6 +54,25 @@ Two text-first successes completed after the evaluator's 30-second
 text-sampling window but before its frozen 45-second final DOM/frame. Their raw
 `completionSignals: 0` fields are preserved and labeled parser-window misses.
 
+The tail replication deliberately tested whether the same sentence transferred
+from repair to generation. It did not: 0/8 passed the corrected 45-second gate
+(Wilson 95% interval 0–32.4%), although 6/8 booted cleanly. This is not a
+concurrent randomized comparison with the original 0/12.
+
+The frozen text metric initially said 1/8. Seed 5 contained
+`RACE COMPLETE!` in an opacity-zero results screen from the initial menu, so all
+29 text samples were false signals. A post-hoc read-only audit found the game
+still racing at 45.16 seconds, `kartFinished=false`, lap 3/3, with no visible
+completion element. The builder's own longer test finished at roughly 46.3
+seconds. The repository preserves both the original metric and the explicit
+correction.
+
+A follow-up baseline-contamination scan checked all 58 retained non-staging
+browser-evidence files. Eighteen had a frozen completion candidate; seed 5 was
+the only one with completion language already present in `initialDom`. The
+earlier 5/10 repair result and grounded-arena passes are not affected by this
+specific hidden-baseline-text bug.
+
 ### Grounded critic → fresh builder
 
 | Artifact | Qwen critic diagnosis | External outcome |
@@ -64,6 +84,19 @@ text-sampling window but before its frozen 45-second final DOM/frame. Their raw
 
 The strongest arena critic needed about 42,000 provider-reported tokens to find
 a causal ordering bug that million-token builders had missed.
+
+### Blind critic calibration
+
+Eight fresh read-only Qwen critics saw source plus five ordered screenshots but
+not evaluator JSON or external labels. They predicted 7/8 corrected failures:
+TP=0, FP=1, FN=0, TN=7. The 87.5% accuracy cannot measure success selection
+because no arm passed.
+
+The important case is seed 5. Qwen called it FAIL at 95% confidence; the frozen
+controller text metric called it a pass. The visibility/state audit showed Qwen
+was right. Seed 1 was still a 92%-confidence Qwen false positive, so the lesson
+is mutual audit plus executable checks—not replacing evaluator trust with
+critic trust.
 
 ### Parallelism
 
@@ -159,19 +192,23 @@ The production INT4 configuration was restored byte-for-byte. Routerd returned
 active with zero restarts, both INT4 lanes loaded, a healthy models endpoint,
 and a successful end-to-end Qwen completion probe.
 
-After evidence export and acceptance, the registry-scoped cleanup removed 51
-live experiment VMs across three hosts and reconciled three already-retired
-rows. Post-cleanup checks found no experiment registry, arm directory, or QEMU
-process left on any host, and each registry was archived. A fresh Pi 0.83.0
-request to `routerd/qwen36-27b` returned exactly `OK` after cleanup.
+After evidence export and acceptance, the registry-scoped cleanup removed 75
+live experiment VMs across all waves on three hosts and reconciled three
+already-retired rows. This includes 24 tail-extension VMs. It also validated
+and removed three temporary loopback TLS bridges. Post-cleanup checks found no
+experiment registry, arm directory, QEMU process, bridge PID/log, or bridge
+listener left on any host; four registry archives remain per host. A fresh,
+ephemeral, no-tools Pi 0.83.0 request to `routerd/qwen36-27b` returned exactly
+`OK` after cleanup.
 
 ## Final video QA
 
-The published cut is 84 seconds at 1920×1080 and 60 fps (5,040 frames).
-Automated review counted 4,362 visually distinct encoded frames, or 51.93 per
-second, and passed the temporal-change check. Human review of the final contact
-sheet found no black or frozen scene. The cut explicitly labels fixed-step
-gameplay as offline capture and retains the failed and wonky results.
+The published cut is 91 seconds at 1920×1080 and 60 fps (5,460 frames).
+Automated review counted 4,727 visually distinct encoded frames, or 51.95 per
+second, and passed the container, temporal-change, and smooth-motion checks.
+Human review of the full 13-scene contact sheet found no black or frozen scene.
+The cut explicitly labels fixed-step gameplay as offline capture, adds the
+eight-arm correction grid, and retains the failed and wonky results.
 
 ## How we know this is Qwen, not GPT-5.6 Sol
 
@@ -206,20 +243,24 @@ design and presentation; it did not create the measured game patches.
   needed a generic parser revision.
 - Frame-step video fixed capture smoothness, not the game's physics, art, or
   live performance.
+- The v3 completion parser accepted hidden result text; a Qwen critic and
+  post-hoc visibility/state audit corrected the false positive.
 
 ## Answering the original questions
 
 **Does it work with a model this small?**  
 For bounded diagnosis and repair, sometimes: 5/10 in the replicated text-first
-repair condition and two strong cross-artifact grounded handoffs. For autonomous
-AAA-like game creation, no evidence here supports that claim.
+repair condition and two strong cross-artifact grounded handoffs. The same
+simple scaffold went 0/8 on fresh generation. For autonomous AAA-like game
+creation, no evidence here supports that claim.
 
 **Did we learn something reusable?**  
 Yes. Observation budgeting was more valuable than raw continuation. Fresh
 critics helped when they cited a mechanism that predicted external evidence.
 Multiple cheap critics plus executable selection were stronger than trusting
-one confident report. Precision and generic skill availability were not
-substitutes for that structure.
+one confident report. A Qwen critic even caught the controller evaluator's
+false positive. Precision and generic skill availability were not substitutes
+for that structure.
 
 **Was the Gauntlet idea hype?**  
 The label is underspecified. Public examples combine many agents, repeated

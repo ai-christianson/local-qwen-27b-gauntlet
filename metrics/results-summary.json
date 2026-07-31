@@ -1,6 +1,6 @@
 {
-  "schema": "qwen-gauntlet-results-summary-v1",
-  "frozen_at": "2026-07-31T01:55:30-04:00",
+  "schema": "qwen-gauntlet-results-summary-v2",
+  "frozen_at": "2026-07-31T03:12:00-04:00",
   "subject": {
     "model": "Qwen3.6-27B",
     "agent": "@earendil-works/pi-coding-agent@0.83.0",
@@ -26,6 +26,18 @@
       "accepted": 5,
       "late_passes": 2,
       "wilson_95_percent": [0.2366, 0.7634]
+    },
+    {
+      "id": "int4-text-first-empty-workspace-extension",
+      "precision": "INT4",
+      "task": "empty-workspace generation with one reusable text-first sentence",
+      "n": 8,
+      "accepted": 0,
+      "boot_clean": 6,
+      "wilson_95_percent": [0, 0.3244],
+      "frozen_text_candidates": 1,
+      "audit_corrected_false_positives": 1,
+      "historical_comparison_only": true
     },
     {
       "id": "bf16-empty-workspace",
@@ -74,6 +86,21 @@
     "page_errors": 0,
     "console_errors": 0,
     "known_remaining_defect": "pre-existing post-finish reset overlay remains"
+  },
+  "blind_generation_critics": {
+    "n": 8,
+    "correct": 7,
+    "accuracy": 0.875,
+    "confusion": {
+      "true_positive": 0,
+      "false_positive": 1,
+      "false_negative": 0,
+      "true_negative": 7
+    },
+    "pass_precision": 0,
+    "pass_recall": null,
+    "mean_confidence": 95.875,
+    "source_mutation_calls": 0
   },
   "transfer": {
     "distinct_genres": 3,

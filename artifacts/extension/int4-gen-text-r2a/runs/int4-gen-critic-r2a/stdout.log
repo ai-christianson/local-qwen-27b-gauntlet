@@ -1,0 +1,20 @@
+
+
+FAIL
+
+Confidence: 95
+
+Evidence:
+
+**Frame-by-frame analysis:**
+- **00:01.16** (img 2): Kart starts at the checkered start/finish line. HUD shows "LAP 1/2" — two laps are required.
+- **00:11.67** (img 3): Kart is already off-track on open green terrain, nowhere near the racing line shown on the minimap.
+- **00:41.69** (img 4): Kart is floating in empty sky with no ground visible — it has fallen off the map entirely.
+- **00:44.95** (img 5): Kart remains stuck in the void. Lap counter still reads "LAP 1/2"; no lap was ever completed.
+
+**Key facts:**
+1. The race requires **2 laps** (LAP 1/2 visible on HUD), but the kart never even completes the first lap. It drives off-track within ~10 seconds and falls into the void by ~41 seconds.
+2. There is **no finish overlay**, no "LAP 2/2" transition, and no lap-completion indicator at any point.
+3. The minimap in the last two frames still shows the track outline but the kart's position is effectively lost off-map.
+
+The Demo path went immediately off-course, fell off the map, and never approached a finish line crossing after the start. No genuine lap finish occurred within the 45-second window.

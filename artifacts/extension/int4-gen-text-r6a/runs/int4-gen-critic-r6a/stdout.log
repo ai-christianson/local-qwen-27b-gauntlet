@@ -1,0 +1,44 @@
+
+
+# FAIL — Confidence: 100
+
+## Evidence
+
+### Source code lap-detection logic (index.html):
+```js
+// Lap detection
+const curT = ct.t;
+if (curT < 0.08 && !playerCrossed) {
+    if (player.speed > 0) {
+        playerCrossed = true;
+        if (playerLap > 0) { finishRace(); return }   // finish requires lap > 0
+        playerLap++;                                      // first crossing: lap 0→1
+    }
+}
+if (curT > 0.92) playerCrossed = false;
+```
+A genuine finish requires: (1) cross start/finish line with speed > 0 to increment `playerLap` from 0→1, (2) drive around the track (past `curT > 0.92`) to reset `playerCrossed`, (3) cross the line **again** to trigger `finishRace()`.
+
+### Demo mode provides zero input:
+```js
+let demoMode = location.search.includes('demo');
+if (demoMode) {
+    setTimeout(function(){ if(st===0) startRace() }, 2000);
+}
+```
+The `?demo` flag only auto-starts the race — no acceleration/steering keys are ever set.
+
+### Screenshot evidence (all racing frames):
+
+| Screenshot | Time | Lap | Speed | Position |
+|---|---|---|---|---|
+| objective-16s.png | 00:04.1 | 0 / 1 | 0 km/h | stationary on start/finish line |
+| objective-45s.png | 00:16.6 | 0 / 1 | 0 km/h | same pixel-identical position |
+| objective-after-reset.png | 00:18.3 | 0 / 1 | 0 km/h | same pixel-identical position |
+
+- **Lap counter never advances from 0/1** — `playerLap` stays 0, meaning no crossing was ever registered (the kart begins at `curT ≈ 0.0` inside the 0.08 zone, so `playerCrossed` is set `true` immediately on the first frame and never cleared because the kart never moves away past `curT > 0.92`).
+- **Speed remains 0 km/h throughout** — confirming no acceleration input occurred.
+- **The red player kart is visually frozen on the checkered start/finish line** in every racing frame; only the race timer advances (04.1 → 16.6 → 18.3).
+- The blue AI kart *is* moving on the track (visible in the distance), confirming the game loop is running — but the player kart received no input and completed **zero** laps.
+
+The demo path never crossed the finish line a second time, and `finishRace()` was never called. No lap finish occurred within 45 seconds (or ever, under demo-only input).

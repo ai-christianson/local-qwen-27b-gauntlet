@@ -1,0 +1,316 @@
+{
+  "schema": "qwen-gauntlet-objective-browser-v3",
+  "startedAt": "2026-07-31T06:59:43.213Z",
+  "finishedAt": "2026-07-31T07:00:35.964Z",
+  "url": "http://127.0.0.1:4173/?demo=1&seed=1337",
+  "httpStatus": 200,
+  "initialDom": {
+    "title": "Apex Karts 64",
+    "text": "APEX KARTS 64 ~ Circuit: Turbine Ridge ~ RACE DEMO MODE CONTROLS ↑/W Accelerate ↓/S Brake ←/A →/D Steer SPACE Boost SHIFT Drift M Minimap",
+    "canvases": [
+      {
+        "width": 134,
+        "height": 134,
+        "clientWidth": 0,
+        "clientHeight": 0
+      }
+    ],
+    "buttons": [
+      {
+        "text": "RACE",
+        "disabled": false
+      },
+      {
+        "text": "DEMO MODE",
+        "disabled": false
+      },
+      {
+        "text": "RACE AGAIN",
+        "disabled": false
+      },
+      {
+        "text": "MAIN MENU",
+        "disabled": false
+      }
+    ]
+  },
+  "finalDom": {
+    "title": "Apex Karts 64",
+    "text": "APEX KARTS 64 ~ Circuit: Turbine Ridge ~ RACE DEMO MODE CONTROLS ↑/W Accelerate ↓/S Brake ←/A →/D Steer SPACE Boost SHIFT Drift M Minimap",
+    "canvases": [
+      {
+        "width": 134,
+        "height": 134,
+        "clientWidth": 0,
+        "clientHeight": 0
+      }
+    ]
+  },
+  "actions": [
+    {
+      "at": "2026-07-31T06:59:47.716Z",
+      "action": "click-error",
+      "rule": "demo",
+      "text": "DEMO MODE",
+      "error": "locator.click: Timeout 2000ms exceeded.\nCall log:\n  - waiting for getByRole('button', { name: /demo/i }).first()\n    - locator resolved to <button id=\"bd\" class=\"mb\">DEMO MODE</button>\n  - attempting click action\n    2 × waiting for element to be visible, enabled and stable\n      - element is visible, enabled and stable\n      - scrolling into view if needed\n      - done scrolling\n      - <vite-error-overlay></vite-error-overlay> intercepts pointer events\n    - retrying click action\n    - waiting 20ms\n    2 × waiting for element to be visible, enabled and stable\n      - element is visible, enabled and stable\n      - scrolling into view if needed\n      - done scrolling\n      - <vite-error-overlay></vite-error-overlay> intercepts pointer events\n    - retrying click action\n      - waiting 100ms\n    4 × waiting for element to be visible, enabled and stable\n      - element is visible, enabled and stable\n      - scrolling into view if needed\n      - done scrolling\n      - <vite-error-overlay>"
+    },
+    {
+      "at": "2026-07-31T06:59:49.730Z",
+      "action": "click-error",
+      "rule": "start-play-race",
+      "text": "RACE",
+      "error": "locator.click: Timeout 2000ms exceeded.\nCall log:\n  - waiting for getByRole('button', { name: /start|play|race/i }).first()\n    - locator resolved to <button id=\"bp\" class=\"mb\">RACE</button>\n  - attempting click action\n    2 × waiting for element to be visible, enabled and stable\n      - element is visible, enabled and stable\n      - scrolling into view if needed\n      - done scrolling\n      - <vite-error-overlay></vite-error-overlay> intercepts pointer events\n    - retrying click action\n    - waiting 20ms\n    2 × waiting for element to be visible, enabled and stable\n      - element is visible, enabled and stable\n      - scrolling into view if needed\n      - done scrolling\n      - <vite-error-overlay></vite-error-overlay> intercepts pointer events\n    - retrying click action\n      - waiting 100ms\n    4 × waiting for element to be visible, enabled and stable\n      - element is visible, enabled and stable\n      - scrolling into view if needed\n      - done scrolling\n      - <vite-error-ov"
+    },
+    {
+      "at": "2026-07-31T06:59:49.734Z",
+      "action": "keypress",
+      "key": "Enter",
+      "rule": "no-visible-start-button"
+    },
+    {
+      "at": "2026-07-31T06:59:53.356Z",
+      "action": "fixed-keyboard-sequence",
+      "sequence": "ArrowUp 3.6s; ArrowLeft 0.8s; ArrowRight 0.8s"
+    },
+    {
+      "at": "2026-07-31T07:00:32.855Z",
+      "action": "keypress",
+      "key": "r",
+      "rule": "fixed-reset-probe"
+    }
+  ],
+  "screenshots": [
+    {
+      "filename": "objective-02s.png",
+      "sha256": "8c82d4804d95a03985ccd0d118d7c6565aea0967fb05cfc65ccd1c15d0469eb6",
+      "bytes": 135824
+    },
+    {
+      "filename": "objective-06s.png",
+      "sha256": "8c82d4804d95a03985ccd0d118d7c6565aea0967fb05cfc65ccd1c15d0469eb6",
+      "bytes": 135824
+    },
+    {
+      "filename": "objective-16s.png",
+      "sha256": "8c82d4804d95a03985ccd0d118d7c6565aea0967fb05cfc65ccd1c15d0469eb6",
+      "bytes": 135824
+    },
+    {
+      "filename": "objective-45s.png",
+      "sha256": "8c82d4804d95a03985ccd0d118d7c6565aea0967fb05cfc65ccd1c15d0469eb6",
+      "bytes": 135824
+    },
+    {
+      "filename": "objective-after-reset.png",
+      "sha256": "8c82d4804d95a03985ccd0d118d7c6565aea0967fb05cfc65ccd1c15d0469eb6",
+      "bytes": 135824
+    }
+  ],
+  "distinctScreenshotHashes": 1,
+  "cadence": {
+    "durationMs": 10000,
+    "frames": 602,
+    "fps": 60.2,
+    "intervalMs": {
+      "p50": 16.69999999999891,
+      "p95": 16.700000000000728,
+      "p99": 16.799999999999272,
+      "max": 16.80000000000291
+    }
+  },
+  "textTimeline": [
+    {
+      "elapsedMs": 5,
+      "text": "APEX KARTS 64 ~ Circuit: Turbine Ridge ~ RACE DEMO MODE CONTROLS ↑/W Accelerate ↓/S Brake ←/A →/D Steer SPACE Boost SHIFT Drift M Minimap",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 1010,
+      "text": "APEX KARTS 64 ~ Circuit: Turbine Ridge ~ RACE DEMO MODE CONTROLS ↑/W Accelerate ↓/S Brake ←/A →/D Steer SPACE Boost SHIFT Drift M Minimap",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 2017,
+      "text": "APEX KARTS 64 ~ Circuit: Turbine Ridge ~ RACE DEMO MODE CONTROLS ↑/W Accelerate ↓/S Brake ←/A →/D Steer SPACE Boost SHIFT Drift M Minimap",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 3023,
+      "text": "APEX KARTS 64 ~ Circuit: Turbine Ridge ~ RACE DEMO MODE CONTROLS ↑/W Accelerate ↓/S Brake ←/A →/D Steer SPACE Boost SHIFT Drift M Minimap",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 4029,
+      "text": "APEX KARTS 64 ~ Circuit: Turbine Ridge ~ RACE DEMO MODE CONTROLS ↑/W Accelerate ↓/S Brake ←/A →/D Steer SPACE Boost SHIFT Drift M Minimap",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 5038,
+      "text": "APEX KARTS 64 ~ Circuit: Turbine Ridge ~ RACE DEMO MODE CONTROLS ↑/W Accelerate ↓/S Brake ←/A →/D Steer SPACE Boost SHIFT Drift M Minimap",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 6042,
+      "text": "APEX KARTS 64 ~ Circuit: Turbine Ridge ~ RACE DEMO MODE CONTROLS ↑/W Accelerate ↓/S Brake ←/A →/D Steer SPACE Boost SHIFT Drift M Minimap",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 7047,
+      "text": "APEX KARTS 64 ~ Circuit: Turbine Ridge ~ RACE DEMO MODE CONTROLS ↑/W Accelerate ↓/S Brake ←/A →/D Steer SPACE Boost SHIFT Drift M Minimap",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 8052,
+      "text": "APEX KARTS 64 ~ Circuit: Turbine Ridge ~ RACE DEMO MODE CONTROLS ↑/W Accelerate ↓/S Brake ←/A →/D Steer SPACE Boost SHIFT Drift M Minimap",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 9056,
+      "text": "APEX KARTS 64 ~ Circuit: Turbine Ridge ~ RACE DEMO MODE CONTROLS ↑/W Accelerate ↓/S Brake ←/A →/D Steer SPACE Boost SHIFT Drift M Minimap",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 10061,
+      "text": "APEX KARTS 64 ~ Circuit: Turbine Ridge ~ RACE DEMO MODE CONTROLS ↑/W Accelerate ↓/S Brake ←/A →/D Steer SPACE Boost SHIFT Drift M Minimap",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 11067,
+      "text": "APEX KARTS 64 ~ Circuit: Turbine Ridge ~ RACE DEMO MODE CONTROLS ↑/W Accelerate ↓/S Brake ←/A →/D Steer SPACE Boost SHIFT Drift M Minimap",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 12072,
+      "text": "APEX KARTS 64 ~ Circuit: Turbine Ridge ~ RACE DEMO MODE CONTROLS ↑/W Accelerate ↓/S Brake ←/A →/D Steer SPACE Boost SHIFT Drift M Minimap",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 13076,
+      "text": "APEX KARTS 64 ~ Circuit: Turbine Ridge ~ RACE DEMO MODE CONTROLS ↑/W Accelerate ↓/S Brake ←/A →/D Steer SPACE Boost SHIFT Drift M Minimap",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 14081,
+      "text": "APEX KARTS 64 ~ Circuit: Turbine Ridge ~ RACE DEMO MODE CONTROLS ↑/W Accelerate ↓/S Brake ←/A →/D Steer SPACE Boost SHIFT Drift M Minimap",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 15090,
+      "text": "APEX KARTS 64 ~ Circuit: Turbine Ridge ~ RACE DEMO MODE CONTROLS ↑/W Accelerate ↓/S Brake ←/A →/D Steer SPACE Boost SHIFT Drift M Minimap",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 16094,
+      "text": "APEX KARTS 64 ~ Circuit: Turbine Ridge ~ RACE DEMO MODE CONTROLS ↑/W Accelerate ↓/S Brake ←/A →/D Steer SPACE Boost SHIFT Drift M Minimap",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 17098,
+      "text": "APEX KARTS 64 ~ Circuit: Turbine Ridge ~ RACE DEMO MODE CONTROLS ↑/W Accelerate ↓/S Brake ←/A →/D Steer SPACE Boost SHIFT Drift M Minimap",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 18103,
+      "text": "APEX KARTS 64 ~ Circuit: Turbine Ridge ~ RACE DEMO MODE CONTROLS ↑/W Accelerate ↓/S Brake ←/A →/D Steer SPACE Boost SHIFT Drift M Minimap",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 19108,
+      "text": "APEX KARTS 64 ~ Circuit: Turbine Ridge ~ RACE DEMO MODE CONTROLS ↑/W Accelerate ↓/S Brake ←/A →/D Steer SPACE Boost SHIFT Drift M Minimap",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 20112,
+      "text": "APEX KARTS 64 ~ Circuit: Turbine Ridge ~ RACE DEMO MODE CONTROLS ↑/W Accelerate ↓/S Brake ←/A →/D Steer SPACE Boost SHIFT Drift M Minimap",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 21117,
+      "text": "APEX KARTS 64 ~ Circuit: Turbine Ridge ~ RACE DEMO MODE CONTROLS ↑/W Accelerate ↓/S Brake ←/A →/D Steer SPACE Boost SHIFT Drift M Minimap",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 22122,
+      "text": "APEX KARTS 64 ~ Circuit: Turbine Ridge ~ RACE DEMO MODE CONTROLS ↑/W Accelerate ↓/S Brake ←/A →/D Steer SPACE Boost SHIFT Drift M Minimap",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 23129,
+      "text": "APEX KARTS 64 ~ Circuit: Turbine Ridge ~ RACE DEMO MODE CONTROLS ↑/W Accelerate ↓/S Brake ←/A →/D Steer SPACE Boost SHIFT Drift M Minimap",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 24134,
+      "text": "APEX KARTS 64 ~ Circuit: Turbine Ridge ~ RACE DEMO MODE CONTROLS ↑/W Accelerate ↓/S Brake ←/A →/D Steer SPACE Boost SHIFT Drift M Minimap",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 25139,
+      "text": "APEX KARTS 64 ~ Circuit: Turbine Ridge ~ RACE DEMO MODE CONTROLS ↑/W Accelerate ↓/S Brake ←/A →/D Steer SPACE Boost SHIFT Drift M Minimap",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 26144,
+      "text": "APEX KARTS 64 ~ Circuit: Turbine Ridge ~ RACE DEMO MODE CONTROLS ↑/W Accelerate ↓/S Brake ←/A →/D Steer SPACE Boost SHIFT Drift M Minimap",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 27149,
+      "text": "APEX KARTS 64 ~ Circuit: Turbine Ridge ~ RACE DEMO MODE CONTROLS ↑/W Accelerate ↓/S Brake ←/A →/D Steer SPACE Boost SHIFT Drift M Minimap",
+      "completionSignal": false,
+      "lapSignal": false
+    },
+    {
+      "elapsedMs": 28153,
+      "text": "APEX KARTS 64 ~ Circuit: Turbine Ridge ~ RACE DEMO MODE CONTROLS ↑/W Accelerate ↓/S Brake ←/A →/D Steer SPACE Boost SHIFT Drift M Minimap",
+      "completionSignal": false,
+      "lapSignal": false
+    }
+  ],
+  "completionSignals": 0,
+  "consoleEvents": [
+    {
+      "at": "2026-07-31T06:59:43.292Z",
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 500 (Internal Server Error)"
+    },
+    {
+      "at": "2026-07-31T06:59:43.528Z",
+      "type": "debug",
+      "text": "[vite] connecting..."
+    },
+    {
+      "at": "2026-07-31T06:59:43.536Z",
+      "type": "debug",
+      "text": "[vite] connected."
+    }
+  ],
+  "pageErrors": []
+}

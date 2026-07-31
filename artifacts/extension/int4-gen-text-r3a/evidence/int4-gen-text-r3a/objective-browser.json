@@ -1,0 +1,316 @@
+{
+  "schema": "qwen-gauntlet-objective-browser-v3",
+  "startedAt": "2026-07-31T06:59:42.793Z",
+  "finishedAt": "2026-07-31T07:00:39.357Z",
+  "url": "http://127.0.0.1:4173/?demo=1&seed=1337",
+  "httpStatus": 200,
+  "initialDom": {
+    "title": "Apex Karts 64",
+    "text": "SPEED 0 km/h TIME 00:00.00 LAP 0 / 1 APEX KARTS 64 NEON CIRCUIT PRESS SPACE OR ENTER TO RACE DEMO MODE (D) WASD / Arrows — Steer SPACE — Brake | SHIFT — Boost D — Demo Mode | R — Reset",
+    "canvases": [
+      {
+        "width": 1920,
+        "height": 1080,
+        "clientWidth": 1920,
+        "clientHeight": 1080
+      },
+      {
+        "width": 150,
+        "height": 150,
+        "clientWidth": 146,
+        "clientHeight": 146
+      }
+    ],
+    "buttons": [
+      {
+        "text": "DEMO MODE (D)",
+        "disabled": false
+      }
+    ]
+  },
+  "finalDom": {
+    "title": "Apex Karts 64",
+    "text": "SPEED 0 km/h TIME 00:00.00 LAP 0 / 1 APEX KARTS 64 NEON CIRCUIT PRESS SPACE OR ENTER TO RACE DEMO MODE (D) WASD / Arrows — Steer SPACE — Brake | SHIFT — Boost D — Demo Mode | R — Reset",
+    "canvases": [
+      {
+        "width": 1920,
+        "height": 1080,
+        "clientWidth": 1920,
+        "clientHeight": 1080
+      },
+      {
+        "width": 150,
+        "height": 150,
+        "clientWidth": 146,
+        "clientHeight": 146
+      }
+    ]
+  },
+  "actions": [
+    {
+      "at": "2026-07-31T06:59:48.416Z",
+      "action": "click",
+      "rule": "demo",
+      "text": "DEMO MODE (D)"
+    },
+    {
+      "at": "2026-07-31T06:59:52.787Z",
+      "action": "fixed-keyboard-sequence",
+      "sequence": "ArrowUp 3.6s; ArrowLeft 0.8s; ArrowRight 0.8s"
+    },
+    {
+      "at": "2026-07-31T07:00:35.335Z",
+      "action": "keypress",
+      "key": "r",
+      "rule": "fixed-reset-probe"
+    }
+  ],
+  "screenshots": [
+    {
+      "filename": "objective-02s.png",
+      "sha256": "5dbadf6c98ba5962b0c69bebcd83a3e61809f9462d541494c0b75e43aca3ca06",
+      "bytes": 96588
+    },
+    {
+      "filename": "objective-06s.png",
+      "sha256": "a917031a57739ee81c8af8547070bef3133b8c54fb7a7da4d988350ee48e831d",
+      "bytes": 143171
+    },
+    {
+      "filename": "objective-16s.png",
+      "sha256": "c9d451128499693f791c90c6e3b7ddb178583508638b9074d0d85bf30c7130a5",
+      "bytes": 145379
+    },
+    {
+      "filename": "objective-45s.png",
+      "sha256": "bc223ea8fd2423d3ea5e64fbe789026c6cf7275ccdd182b9a9049bf7bade23e9",
+      "bytes": 145495
+    },
+    {
+      "filename": "objective-after-reset.png",
+      "sha256": "2a0dcb88d953336d98625c56509337683b2ea5221d76dd34447ffc2a52549458",
+      "bytes": 96349
+    }
+  ],
+  "distinctScreenshotHashes": 5,
+  "cadence": {
+    "durationMs": 10000,
+    "frames": 77,
+    "fps": 7.7,
+    "intervalMs": {
+      "p50": 133.3000000000011,
+      "p95": 150,
+      "p99": 150.10000000000036,
+      "max": 150.10000000000036
+    }
+  },
+  "textTimeline": [
+    {
+      "elapsedMs": 135,
+      "text": "SPEED 0 km/h TIME 00:06.25 LAP 0 / 1 GO!",
+      "completionSignal": false,
+      "lapSignal": true
+    },
+    {
+      "elapsedMs": 1201,
+      "text": "SPEED 0 km/h TIME 00:06.65 LAP 0 / 1 GO!",
+      "completionSignal": false,
+      "lapSignal": true
+    },
+    {
+      "elapsedMs": 2239,
+      "text": "SPEED 0 km/h TIME 00:07.05 LAP 0 / 1 GO!",
+      "completionSignal": false,
+      "lapSignal": true
+    },
+    {
+      "elapsedMs": 3313,
+      "text": "SPEED 0 km/h TIME 00:07.45 LAP 0 / 1 GO!",
+      "completionSignal": false,
+      "lapSignal": true
+    },
+    {
+      "elapsedMs": 4351,
+      "text": "SPEED 0 km/h TIME 00:07.85 LAP 0 / 1 GO!",
+      "completionSignal": false,
+      "lapSignal": true
+    },
+    {
+      "elapsedMs": 5397,
+      "text": "SPEED 0 km/h TIME 00:08.25 LAP 0 / 1 GO!",
+      "completionSignal": false,
+      "lapSignal": true
+    },
+    {
+      "elapsedMs": 6458,
+      "text": "SPEED 0 km/h TIME 00:08.65 LAP 0 / 1 GO!",
+      "completionSignal": false,
+      "lapSignal": true
+    },
+    {
+      "elapsedMs": 7507,
+      "text": "SPEED 0 km/h TIME 00:09.05 LAP 0 / 1 GO!",
+      "completionSignal": false,
+      "lapSignal": true
+    },
+    {
+      "elapsedMs": 8564,
+      "text": "SPEED 0 km/h TIME 00:09.45 LAP 0 / 1 GO!",
+      "completionSignal": false,
+      "lapSignal": true
+    },
+    {
+      "elapsedMs": 9637,
+      "text": "SPEED 0 km/h TIME 00:09.85 LAP 0 / 1 GO!",
+      "completionSignal": false,
+      "lapSignal": true
+    },
+    {
+      "elapsedMs": 10689,
+      "text": "SPEED 0 km/h TIME 00:10.25 LAP 0 / 1 GO!",
+      "completionSignal": false,
+      "lapSignal": true
+    },
+    {
+      "elapsedMs": 11739,
+      "text": "SPEED 0 km/h TIME 00:10.65 LAP 0 / 1 GO!",
+      "completionSignal": false,
+      "lapSignal": true
+    },
+    {
+      "elapsedMs": 12785,
+      "text": "SPEED 0 km/h TIME 00:11.05 LAP 0 / 1 GO!",
+      "completionSignal": false,
+      "lapSignal": true
+    },
+    {
+      "elapsedMs": 13832,
+      "text": "SPEED 0 km/h TIME 00:11.45 LAP 0 / 1 GO!",
+      "completionSignal": false,
+      "lapSignal": true
+    },
+    {
+      "elapsedMs": 14881,
+      "text": "SPEED 0 km/h TIME 00:11.85 LAP 0 / 1 GO!",
+      "completionSignal": false,
+      "lapSignal": true
+    },
+    {
+      "elapsedMs": 15932,
+      "text": "SPEED 0 km/h TIME 00:12.25 LAP 0 / 1 GO!",
+      "completionSignal": false,
+      "lapSignal": true
+    },
+    {
+      "elapsedMs": 16984,
+      "text": "SPEED 0 km/h TIME 00:12.65 LAP 0 / 1 GO!",
+      "completionSignal": false,
+      "lapSignal": true
+    },
+    {
+      "elapsedMs": 18044,
+      "text": "SPEED 0 km/h TIME 00:13.05 LAP 0 / 1 GO!",
+      "completionSignal": false,
+      "lapSignal": true
+    },
+    {
+      "elapsedMs": 19111,
+      "text": "SPEED 0 km/h TIME 00:13.45 LAP 0 / 1 GO!",
+      "completionSignal": false,
+      "lapSignal": true
+    },
+    {
+      "elapsedMs": 20183,
+      "text": "SPEED 0 km/h TIME 00:13.85 LAP 0 / 1 GO!",
+      "completionSignal": false,
+      "lapSignal": true
+    },
+    {
+      "elapsedMs": 21265,
+      "text": "SPEED 0 km/h TIME 00:14.25 LAP 0 / 1 GO!",
+      "completionSignal": false,
+      "lapSignal": true
+    },
+    {
+      "elapsedMs": 22329,
+      "text": "SPEED 0 km/h TIME 00:14.65 LAP 0 / 1 GO!",
+      "completionSignal": false,
+      "lapSignal": true
+    },
+    {
+      "elapsedMs": 23397,
+      "text": "SPEED 0 km/h TIME 00:15.05 LAP 0 / 1 GO!",
+      "completionSignal": false,
+      "lapSignal": true
+    },
+    {
+      "elapsedMs": 24457,
+      "text": "SPEED 0 km/h TIME 00:15.45 LAP 0 / 1 GO!",
+      "completionSignal": false,
+      "lapSignal": true
+    },
+    {
+      "elapsedMs": 25515,
+      "text": "SPEED 0 km/h TIME 00:15.85 LAP 0 / 1 GO!",
+      "completionSignal": false,
+      "lapSignal": true
+    },
+    {
+      "elapsedMs": 26588,
+      "text": "SPEED 0 km/h TIME 00:16.25 LAP 0 / 1 GO!",
+      "completionSignal": false,
+      "lapSignal": true
+    },
+    {
+      "elapsedMs": 27643,
+      "text": "SPEED 0 km/h TIME 00:16.65 LAP 0 / 1 GO!",
+      "completionSignal": false,
+      "lapSignal": true
+    },
+    {
+      "elapsedMs": 28697,
+      "text": "SPEED 0 km/h TIME 00:17.05 LAP 0 / 1 GO!",
+      "completionSignal": false,
+      "lapSignal": true
+    }
+  ],
+  "completionSignals": 0,
+  "consoleEvents": [
+    {
+      "at": "2026-07-31T06:59:42.898Z",
+      "type": "debug",
+      "text": "[vite] connecting..."
+    },
+    {
+      "at": "2026-07-31T06:59:42.903Z",
+      "type": "debug",
+      "text": "[vite] connected."
+    },
+    {
+      "at": "2026-07-31T06:59:43.035Z",
+      "type": "warning",
+      "text": "THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead."
+    },
+    {
+      "at": "2026-07-31T06:59:43.471Z",
+      "type": "warning",
+      "text": "[.WebGL-0x215400157200]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels"
+    },
+    {
+      "at": "2026-07-31T06:59:43.626Z",
+      "type": "warning",
+      "text": "[.WebGL-0x215400157200]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels"
+    },
+    {
+      "at": "2026-07-31T06:59:43.775Z",
+      "type": "warning",
+      "text": "[.WebGL-0x215400157200]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels"
+    },
+    {
+      "at": "2026-07-31T06:59:43.918Z",
+      "type": "warning",
+      "text": "[.WebGL-0x215400157200]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels (this message will no longer repeat)"
+    }
+  ],
+  "pageErrors": []
+}

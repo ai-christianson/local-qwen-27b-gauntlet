@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Apex Karts 64</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="game-container">
+  <canvas id="game-canvas"></canvas>
+  <div id="ui-overlay">
+    <div id="hud">
+      <div id="lap-display">LAP <span id="current-lap">1</span>/<span id="total-laps">3</span></div>
+      <div id="position-display">P<span id="position">1</span></div>
+      <div id="speed-display"><span id="speed">0</span> km/h</div>
+      <div id="time-display"><span id="lap-time">0:00.00</span></div>
+    </div>
+    <div id="start-screen" class="screen active">
+      <h1>🏎️ APEX KARTS 64</h1>
+      <p class="subtitle">Procedural Racing</p>
+      <div id="menu-buttons">
+        <button id="btn-start" class="menu-btn">START RACE</button>
+        <button id="btn-demo" class="menu-btn">DEMO MODE</button>
+      </div>
+      <div class="controls-info">
+        <p>Arrow Keys / WASD — Steer &amp; Accelerate</p>
+        <p>SPACE — Brake / Reverse</p>
+      </div>
+    </div>
+    <div id="race-screen" class="screen">
+      <div id="countdown" class="countdown"></div>
+    </div>
+    <div id="results-screen" class="screen">
+      <h2>RACE COMPLETE!</h2>
+      <div id="final-time"></div>
+      <button id="btn-restart" class="menu-btn">RACE AGAIN</button>
+    </div>
+  </div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="js/utils.js"></script>
+<script src="js/track.js"></script>
+<script src="js/kart.js"></script>
+<script src="js/decorations.js"></script>
+<script src="js/demo.js"></script>
+<script src="js/game.js"></script>
+</body>
+</html>

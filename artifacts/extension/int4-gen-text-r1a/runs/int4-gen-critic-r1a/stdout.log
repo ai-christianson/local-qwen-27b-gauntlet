@@ -1,0 +1,70 @@
+
+
+I'll analyze the game source code and the screenshots to determine if the demo path completes a genuine lap within 45 seconds.
+
+**PASS — Confidence: 92**
+
+## Source Evidence
+
+### Demo Key Sequence (`DK` array in `game.js`):
+```js
+const DK=[
+  {c:'KeyW',d:50},
+  {c:null,d:30},
+  {c:'ArrowRight',d:40},
+  {c:'KeyW',d:60},
+  {c:null,d:30},
+  {c:'ArrowLeft',d:50},
+  {c:'KeyW',d:80},
+  {c:'Space',d:40},
+  {c:'KeyW',d:100}
+];
+```
+
+### Critical Timing Bug in `updDemo()`:
+```js
+demoTimer += dt;           // dt is in SECONDS
+const cur = DK[demoIdx % DK.length];
+if (demoTimer > cur.d) {   // cur.d is 50 (intended as ms)
+    demoTimer = 0; demoIdx++; ...
+}
+```
+
+`demoTimer` accumulates in **seconds** but is compared against values like `50`, `30`, `40`. The first step (`KeyW`, `d:50`) stays active for **~50 real seconds** before the next demo key fires. Within the 45-second window, **only the first step (continuous `KeyW` acceleration) executes** — no steering, no drift.
+
+### Physics Under Continuous Acceleration:
+```js
+if (acc > 0) kart.spd += (acc * 30 * bm) * dt;   // accel rate: 30/s
+kart.spd = Math.min(ms, kart.spd);                 // ms = 12 (no drift)
+// ...
+kart.t = (kart.t + fs * 0.002) % 1;               // fs = kart.spd * dt
+```
+
+- **Time to max speed**: 12 / 30 = **0.4s**
+- **dt at max speed**: 0.002 × 12 = 0.024 per second
+- **Lap completion**: kart.t needs to increment by ~1.0 total → **~41.7s at max speed alone**
+- **With acceleration ramp**: ~0.4s accel + (1.0 − 0.048) / 0.024 ≈ **~43 seconds**
+
+### Lap Detection Logic (truthful, not just an overlay):
+```js
+if (pt > 0.9 && kart.t < 0.1) {       // crossed finish line
+    kart.lap++;
+    if (kart.lap >= 1 && !kart.fin) {
+        kart.fin = true; kart.fT = rTime;
+    }
+}
+```
+The finish is triggered by actual positional progress through the track curve, not by an arbitrary timer. The overlay is merely readout.
+
+### Frame Evidence:
+- **Frame 1**: Title screen — pre-race
+- **Frame 2**: Countdown "1" — race hasn't started; timer at `0:00.0`, Lap `0/1`
+- **Frames 3–5**: Identical starting position; HUD still shows `0/1` laps, timer `0:00.0`
+
+These frames only show the countdown/early-start moments (~3–4 seconds in) and confirm the race begins normally. They do **not** contradict the ~43-second lap time predicted by physics.
+
+## Verdict
+
+The demo path's first step (`KeyW` held for ~50 seconds) provides continuous acceleration sufficient to reach max speed and lap the track in approximately **42–44 seconds** — within the 45-second window. The finish is backed by genuine positional tracking (`kart.t` wrapping from >0.9 to <0.1), not a cosmetic overlay.
+
+**PASS, confidence 92.**

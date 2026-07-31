@@ -1,0 +1,161 @@
+{
+  "schema": "qwen-gauntlet-pi-session-summary-v1",
+  "sessionFiles": [
+    "2026-07-31T06-38-51-261Z_019fb6e5-a57c-77e5-8b64-55a42ba76b85.jsonl"
+  ],
+  "messages": {
+    "assistant": 49,
+    "user": 1,
+    "toolResult": 49,
+    "other": 0
+  },
+  "providers": {
+    "routerd": 49
+  },
+  "models": {
+    "qwen36-27b": 49
+  },
+  "stopReasons": {
+    "toolUse": 49
+  },
+  "tools": {
+    "bash": 16,
+    "write": 13,
+    "read": 9,
+    "edit": 11
+  },
+  "sourceMutationCalls": [
+    {
+      "timestamp": "2026-07-31T06:38:55.924Z",
+      "tool": "write",
+      "path": "/home/qg/workspace/apex-karts-64/index.html"
+    },
+    {
+      "timestamp": "2026-07-31T06:39:09.577Z",
+      "tool": "write",
+      "path": "/home/qg/workspace/apex-karts-64/js/utils.js"
+    },
+    {
+      "timestamp": "2026-07-31T06:39:17.337Z",
+      "tool": "write",
+      "path": "/home/qg/workspace/apex-karts-64/js/track.js"
+    },
+    {
+      "timestamp": "2026-07-31T06:39:44.255Z",
+      "tool": "write",
+      "path": "/home/qg/workspace/apex-karts-64/js/kart.js"
+    },
+    {
+      "timestamp": "2026-07-31T06:40:24.552Z",
+      "tool": "write",
+      "path": "/home/qg/workspace/apex-karts-64/js/decorations.js"
+    },
+    {
+      "timestamp": "2026-07-31T06:41:12.667Z",
+      "tool": "write",
+      "path": "/home/qg/workspace/apex-karts-64/js/demo.js"
+    },
+    {
+      "timestamp": "2026-07-31T06:41:27.513Z",
+      "tool": "write",
+      "path": "/home/qg/workspace/apex-karts-64/js/game.js"
+    },
+    {
+      "timestamp": "2026-07-31T06:42:00.648Z",
+      "tool": "write",
+      "path": "/home/qg/workspace/apex-karts-64/css/style.css"
+    },
+    {
+      "timestamp": "2026-07-31T06:42:40.512Z",
+      "tool": "write",
+      "path": "/home/qg/workspace/apex-karts-64/test-game.mjs"
+    },
+    {
+      "timestamp": "2026-07-31T06:43:06.489Z",
+      "tool": "write",
+      "path": "/home/qg/workspace/apex-karts-64/test-game.js"
+    },
+    {
+      "timestamp": "2026-07-31T06:44:01.969Z",
+      "tool": "write",
+      "path": "/home/qg/workspace/apex-karts-64/test-game.js"
+    },
+    {
+      "timestamp": "2026-07-31T06:45:37.604Z",
+      "tool": "edit",
+      "path": "/home/qg/workspace/apex-karts-64/css/style.css"
+    },
+    {
+      "timestamp": "2026-07-31T06:45:56.573Z",
+      "tool": "edit",
+      "path": null
+    },
+    {
+      "timestamp": "2026-07-31T06:46:40.372Z",
+      "tool": "edit",
+      "path": "/home/qg/workspace/apex-karts-64/js/game.js"
+    },
+    {
+      "timestamp": "2026-07-31T06:47:20.445Z",
+      "tool": "edit",
+      "path": "/home/qg/workspace/apex-karts-64/js/track.js"
+    },
+    {
+      "timestamp": "2026-07-31T06:48:00.083Z",
+      "tool": "edit",
+      "path": null
+    },
+    {
+      "timestamp": "2026-07-31T06:48:42.418Z",
+      "tool": "edit",
+      "path": "/home/qg/workspace/apex-karts-64/js/game.js"
+    },
+    {
+      "timestamp": "2026-07-31T06:50:07.480Z",
+      "tool": "edit",
+      "path": "/home/qg/workspace/apex-karts-64/js/track.js"
+    },
+    {
+      "timestamp": "2026-07-31T06:51:12.557Z",
+      "tool": "edit",
+      "path": null
+    },
+    {
+      "timestamp": "2026-07-31T06:51:31.251Z",
+      "tool": "edit",
+      "path": "/home/qg/workspace/apex-karts-64/js/game.js"
+    },
+    {
+      "timestamp": "2026-07-31T06:51:36.427Z",
+      "tool": "edit",
+      "path": null
+    },
+    {
+      "timestamp": "2026-07-31T06:51:55.081Z",
+      "tool": "write",
+      "path": "/home/qg/workspace/apex-karts-64/js/game.js"
+    },
+    {
+      "timestamp": "2026-07-31T06:53:12.910Z",
+      "tool": "write",
+      "path": "/home/qg/workspace/apex-karts-64/test-demo-race.js"
+    },
+    {
+      "timestamp": "2026-07-31T06:55:54.988Z",
+      "tool": "edit",
+      "path": "/home/qg/workspace/apex-karts-64/js/track.js"
+    }
+  ],
+  "usage": {
+    "input": 1281163,
+    "output": 37214,
+    "cacheRead": 0,
+    "cacheWrite": 0,
+    "reasoning": 0,
+    "totalTokens": 1318377
+  },
+  "toolErrors": 9,
+  "firstTimestamp": "2026-07-31T06:38:51.261Z",
+  "lastTimestamp": "2026-07-31T06:57:46.693Z",
+  "malformedLines": 0
+}

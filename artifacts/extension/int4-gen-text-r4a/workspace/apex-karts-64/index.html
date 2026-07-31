@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Apex Karts 64</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#000;overflow:hidden;font-family:'Courier New',monospace}
+canvas{display:block}
+#hud{position:absolute;top:0;left:0;width:100%;pointer-events:none;padding:16px;display:flex;justify-content:space-between}
+.hb{background:rgba(0,0,0,0.6);border:3px solid #f60;border-radius:8px;padding:8px 14px;color:#fff}
+.lb{color:#fa0;font-size:11px;text-transform:uppercase}
+.vl{font-size:20px;font-weight:bold}
+#sb{width:120px;height:10px;background:#333;border-radius:4px;margin-top:4px}
+#sf{height:100%;background:linear-gradient(90deg,#0c0,#fc0,#f30);border-radius:4px;width:0%}
+#ss{position:absolute;top:0;left:0;width:100%;height:100%;background:linear-gradient(180deg,#1a0a2e,#16213e 50%,#0f3460);display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:100;color:#fff}
+#ss h1{font-size:64px;text-shadow:4px 4px 0 #f60,8px 8px 0 #c30;margin-bottom:8px;letter-spacing:4px}
+#ss h2{font-size:24px;color:#fa0;margin-bottom:40px;font-weight:normal}
+.mb{pointer-events:all;cursor:pointer;background:linear-gradient(180deg,#f60,#c30);border:3px solid #fa0;color:#fff;font-family:'Courier New',monospace;font-size:22px;padding:14px 48px;border-radius:8px;margin:8px;text-shadow:2px 2px 0 rgba(0,0,0,.5);transition:transform .1s}
+.mb:hover{transform:scale(1.08)}
+#ci{margin-top:36px;color:#8ac;font-size:13px;text-align:center;line-height:2}
+#cd{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:120px;font-weight:bold;color:#fc0;text-shadow:4px 4px 0 #f30;display:none;z-index:90;pointer-events:none}
+#fs{position:absolute;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.8);display:none;flex-direction:column;align-items:center;justify-content:center;z-index:100;color:#fff}
+#fs h1{font-size:56px;color:#fc0;text-shadow:3px 3px 0 #f60}
+#fs .time{font-size:28px;margin:20px 0}
+#mm{position:absolute;bottom:16px;right:16px;width:140px;height:140px;background:rgba(0,0,0,.6);border:3px solid #f60;border-radius:8px;pointer-events:none;display:none}
+#mm canvas{border-radius:5px}
+</style>
+</head>
+<body>
+<div id="ss"><h1>APEX KARTS 64</h1><h2>~ Circuit: Turbine Ridge ~</h2>
+<button class="mb" id="bp">RACE</button>
+<button class="mb" id="bd">DEMO MODE</button>
+<div id="ci"><strong>CONTROLS</strong><br>&#8593;/W Accelerate &#8595;/S Brake<br>&#8592;/A &#8594;/D Steer SPACE Boost SHIFT Drift M Minimap</div></div>
+<div id="hud" style="display:none">
+<div class="hb"><div class="lb">LAP</div><div class="vl"><span id="hl">0</span>/1</div></div>
+<div class="hb" style="text-align:center"><div class="lb">TIME</div><div class="vl" id="ht">0:00.0</div></div>
+<div class="hb" style="text-align:right"><div class="lb">SPEED</div><div class="vl"><span id="hs">0</span> km/h</div><div id="sb"><div id="sf"></div></div></div>
+</div>
+<div id="cd"></div>
+<div id="fs"><h1>LAP COMPLETE!</h1><div class="time" id="ft">0:00.0</div>
+<button class="mb" id="br" style="pointer-events:all">RACE AGAIN</button>
+<button class="mb" id="bm" style="pointer-events:all">MAIN MENU</button></div>
+<div id="mm"><canvas id="mc" width="134" height="134"></canvas></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="game.js"></script>
+</body>
+</html>

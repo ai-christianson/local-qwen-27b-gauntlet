@@ -1,9 +1,10 @@
 # Public evidence package
 
-This directory contains exact copies of all 35 Pi JSONL trajectories that were
+This directory contains exact copies of all 60 Pi JSONL trajectories that were
 both extracted from the disposable VMs and retained in the working tree. They
-cover the source-mutating builders and read-only critics used in the reported
-comparisons. `trajectories.sha256` hashes every public copy.
+cover the source-mutating builders, read-only critics, and eight excluded
+connection-harness failures used in the reported comparisons.
+`trajectories.sha256` hashes every public copy.
 
 Before publication, the trajectories and every other tracked candidate were
 scanned for:
@@ -13,9 +14,11 @@ scanned for:
 - private Routerd/Grafana endpoint patterns;
 - environment assignments containing secret values.
 
-No matching value was found in these trajectory files. They are copied
-byte-for-byte rather than rewritten, so model messages, tool calls, errors,
-usage, and source mutations remain inspectable.
+No private fabric address, credential, endpoint, or host alias was found. Two
+trajectories contain `10.0.2.15`, the standard isolated QEMU user-network guest
+address printed by a development server. It is not an inference or host-fabric
+endpoint. The files are copied byte-for-byte rather than rewritten, so model
+messages, tool calls, errors, usage, and source mutations remain inspectable.
 
 Additional raw VM archives stay in the private working bundle because they
 duplicate source, browser dependencies, and private operational metadata. Their

@@ -1,5 +1,6 @@
 condition,precision,task,n,accepted,boot_clean,late_passes
 int4-empty-workspace,INT4,empty-workspace generation,12,0,1,0
 int4-text-first-repair,INT4,frozen weak-parent repair,10,5,10,2
+int4-text-first-empty-workspace-extension,INT4,empty-workspace generation plus reusable text-first sentence,8,0,6,0
 bf16-empty-workspace,official BF16,empty-workspace generation,2,0,1,0
 bf16-text-first-repair,official BF16,frozen weak-parent repair,2,0,2,0

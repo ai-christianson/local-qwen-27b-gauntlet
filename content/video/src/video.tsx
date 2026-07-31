@@ -367,6 +367,58 @@ const FirstAha: React.FC = () => (
   </Base>
 );
 
+const ExtensionAudit: React.FC = () => (
+  <Base
+    kicker="TAIL REPLICATION · FRESH EMPTY WORKSPACES"
+    title="The trick did not transfer—and Qwen caught our bad score"
+  >
+    <MediaFrame
+      label="8 FRESH TEXT-FIRST GENERATION ARMS"
+      note="FROZEN 45-SECOND GATE"
+      x={54}
+      y={182}
+      width={1240}
+      height={720}
+      color={C.red}
+    >
+      <Img
+        src={staticFile("media/extension-grid.png")}
+        style={{
+          width: "100%",
+          height: "100%",
+          objectFit: "contain",
+          backgroundColor: C.ink,
+        }}
+      />
+    </MediaFrame>
+    <div style={{position: "absolute", left: 1335, right: 54, top: 185, display: "grid", gap: 14}}>
+      <Stat value={experiment.generationExtension} label="CORRECTED COMPLETIONS" color={C.red} />
+      <Stat value={experiment.generationBoot} label="BOOT-CLEAN" color={C.yellow} />
+      <Stat value={experiment.criticCalibration} label="BLIND QWEN CRITICS CORRECT" color={C.cyan} />
+      <div style={{fontSize: 20, color: C.muted, lineHeight: 1.42, marginTop: 4}}>
+        Frozen text scoring said 1/8. But the phrase was hidden in the menu.
+        At 45.16s: racing, lap 3/3, finished false. Qwen said FAIL at 95%.
+        The post-hoc visibility audit agreed.
+      </div>
+    </div>
+    <div
+      style={{
+        position: "absolute",
+        left: 54,
+        right: 54,
+        bottom: 38,
+        fontFamily: mono,
+        color: C.yellow,
+        fontSize: 16,
+        textAlign: "center",
+        letterSpacing: 0.8,
+      }}
+    >
+      CONTROLLER EVALUATOR WAS WRONG · ORIGINAL METRIC + CORRECTION BOTH RETAINED
+    </div>
+  </Base>
+);
+
 const Grounded: React.FC = () => (
   <Base kicker="GAUNTLET MECHANISM" title="Fresh critics helped only when the evidence was causal">
     <MediaFrame label="ARENA REPAIR" note="3 → 2 → 0 ENEMIES · REAL SCORE PROGRESSION" x={55} y={177} width={1185} height={790} color={C.green}>
@@ -658,13 +710,14 @@ export const QwenGauntletVideo: React.FC = () => (
     <Sequence from={300} durationInFrames={420}><Rules /></Sequence>
     <Sequence from={720} durationInFrames={480}><Baseline /></Sequence>
     <Sequence from={1200} durationInFrames={480}><FirstAha /></Sequence>
-    <Sequence from={1680} durationInFrames={480}><Grounded /></Sequence>
-    <Sequence from={2160} durationInFrames={420}><Breadth /></Sequence>
-    <Sequence from={2580} durationInFrames={480}><Motion /></Sequence>
-    <Sequence from={3060} durationInFrames={420}><TemporalAha /></Sequence>
-    <Sequence from={3480} durationInFrames={420}><Precision /></Sequence>
-    <Sequence from={3900} durationInFrames={420}><Gpu /></Sequence>
-    <Sequence from={4320} durationInFrames={480}><Verdict /></Sequence>
-    <Sequence from={4800} durationInFrames={240}><End /></Sequence>
+    <Sequence from={1680} durationInFrames={420}><ExtensionAudit /></Sequence>
+    <Sequence from={2100} durationInFrames={480}><Grounded /></Sequence>
+    <Sequence from={2580} durationInFrames={420}><Breadth /></Sequence>
+    <Sequence from={3000} durationInFrames={480}><Motion /></Sequence>
+    <Sequence from={3480} durationInFrames={420}><TemporalAha /></Sequence>
+    <Sequence from={3900} durationInFrames={420}><Precision /></Sequence>
+    <Sequence from={4320} durationInFrames={420}><Gpu /></Sequence>
+    <Sequence from={4740} durationInFrames={480}><Verdict /></Sequence>
+    <Sequence from={5220} durationInFrames={240}><End /></Sequence>
   </AbsoluteFill>
 );

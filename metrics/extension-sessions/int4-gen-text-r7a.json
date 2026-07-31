@@ -1,0 +1,91 @@
+{
+  "schema": "qwen-gauntlet-pi-session-summary-v1",
+  "sessionFiles": [
+    "2026-07-31T06-38-49-937Z_019fb6e5-a051-773b-be20-9591eef1770e.jsonl"
+  ],
+  "messages": {
+    "assistant": 44,
+    "user": 1,
+    "toolResult": 44,
+    "other": 0
+  },
+  "providers": {
+    "routerd": 44
+  },
+  "models": {
+    "qwen36-27b": 44
+  },
+  "stopReasons": {
+    "toolUse": 44
+  },
+  "tools": {
+    "bash": 31,
+    "write": 8,
+    "edit": 2,
+    "read": 3
+  },
+  "sourceMutationCalls": [
+    {
+      "timestamp": "2026-07-31T06:38:55.285Z",
+      "tool": "write",
+      "path": "/home/qg/workspace/apex-karts-64/index.html"
+    },
+    {
+      "timestamp": "2026-07-31T06:40:02.068Z",
+      "tool": "write",
+      "path": "/home/qg/workspace/apex-karts-64/index.html"
+    },
+    {
+      "timestamp": "2026-07-31T06:41:54.900Z",
+      "tool": "write",
+      "path": "/home/qg/workspace/apex-karts-64/index.html"
+    },
+    {
+      "timestamp": "2026-07-31T06:42:23.990Z",
+      "tool": "write",
+      "path": null
+    },
+    {
+      "timestamp": "2026-07-31T06:44:34.752Z",
+      "tool": "write",
+      "path": "/home/qg/workspace/apex-karts-64/game.js"
+    },
+    {
+      "timestamp": "2026-07-31T06:50:33.436Z",
+      "tool": "write",
+      "path": "/home/qg/workspace/apex-karts-64/test-load.mjs"
+    },
+    {
+      "timestamp": "2026-07-31T06:50:39.751Z",
+      "tool": "write",
+      "path": "/home/qg/workspace/apex-karts-64/test-load.mjs"
+    },
+    {
+      "timestamp": "2026-07-31T06:52:27.294Z",
+      "tool": "edit",
+      "path": "/home/qg/workspace/apex-karts-64/test-load.mjs"
+    },
+    {
+      "timestamp": "2026-07-31T06:53:04.460Z",
+      "tool": "write",
+      "path": "/home/qg/workspace/apex-karts-64/test-race.mjs"
+    },
+    {
+      "timestamp": "2026-07-31T06:53:36.121Z",
+      "tool": "edit",
+      "path": null
+    }
+  ],
+  "usage": {
+    "input": 1905260,
+    "output": 40357,
+    "cacheRead": 0,
+    "cacheWrite": 0,
+    "reasoning": 0,
+    "totalTokens": 1945617
+  },
+  "toolErrors": 9,
+  "firstTimestamp": "2026-07-31T06:38:49.937Z",
+  "lastTimestamp": "2026-07-31T06:58:08.667Z",
+  "malformedLines": 0
+}

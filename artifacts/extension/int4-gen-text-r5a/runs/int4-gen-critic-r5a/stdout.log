@@ -1,0 +1,17 @@
+
+
+**FAIL** — Confidence: **95**
+
+**Evidence:**
+
+1. **Lap tracking logic** (kart.js `updateLaps()`): A lap completes only after `crossedHalf` is true (progress 0.4–0.6, i.e., spline index 80–120) and then the kart returns to `progress < 0.15` (index < 30). The HUD shows `Math.min(this.kart.lap, this.kart.totalLaps)`.
+
+2. **Screenshot at 45s (objective-45s.png)**: Kart is on a mid-track curve — not at the start/finish line. With 200 spline points across control points spanning ~190×150 units, the track is ~700 units around. At maxSpeed=35 u/s with turn losses, a single lap takes ~25+ seconds, but the demo never reaches the start/finish line in the 45s frame.
+
+3. **Screenshot after-reset (objective-after-reset.png)**: Kart is at the checkered start/finish line, and the HUD prominently shows **"1"** (from `#current-lap`). If a lap had been completed, this would read **"2"**. The value is the default `this.lap = 1` set in `setStartPoint()`.
+
+4. **No finish overlay**: The `results-screen` div (`<h2>RACE COMPLETE!</h2>`) never appears. In game.js, `this.state = 'finished'` triggers only when `this.kart.finished` is true, which requires `this.kart.lap > this.kart.totalLaps` (i.e., lap > 3). No screenshot shows this screen.
+
+5. **Demo timing**: Racing state begins ~4.5s after demo start (3.5s countdown + "GO!" display). Even with 40s of racing time, the demo kart follows only a portion of the track and never completes a full circuit.
+
+**Conclusion**: The demo kart never completed even one lap. The "1" at the finish line after reset is the default initial value, not a completed lap indicator.

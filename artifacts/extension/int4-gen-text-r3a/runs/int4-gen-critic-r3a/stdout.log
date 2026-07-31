@@ -1,0 +1,54 @@
+
+
+# FAIL
+
+**Confidence: 95/100**
+
+## Evidence
+
+### Source Code Bug: Countdown Never Completes
+
+The `updateCountdown` function has a critical path flaw in `/home/qg/workspace/apex-karts-64/game.js`:
+
+```javascript
+function updateCountdown(dt){
+  if(GS.cdPhase===0)return;
+  GS.cdTimer+=dt;
+  if(GS.cdPhase===1){
+    const phases=[{t:0.5,text:'3'},{t:1.5,text:'2'},{t:2.5,text:'1'},{t:3.5,text:'GO!'},{t:4.5,text:''}];
+    for(let i=phases.length-1;i>=0;i--){
+      if(GS.cdTimer>=phases[i].t){
+        if(phases[i].text){showMsg(phases[i].text);if(phases[i].text==='GO!'){GS.cdPhase=2;GS.started=true;}}
+        else{hideMsg();GS.cdPhase=3;}
+        break;
+      }
+    }
+  }
+}
+```
+
+Once `cdPhase` transitions to **2** (on "GO!" at timer 3.5s), the `if(GS.cdPhase===1)` guard prevents any further advancement to phase 3. **Phase 2 has no handler**, so the countdown freezes permanently at "GO!".
+
+### Physics Blocked by Phase Gate
+
+```javascript
+function updatePhysics(dt){
+  if(!GS.started||GS.finished||GS.cdPhase<3)return;
+  // ... kart movement, checkpoint tracking
+}
+```
+
+Physics requires `cdPhase >= 3` to run. Since phase 3 is never reached, **physics never executes** — the kart never accelerates, never moves along the track, and checkpoints are never evaluated.
+
+### Frame Evidence
+
+| Screenshot | Time | Lap | Speed | Visual |
+|---|---|---|---|---|
+| objective-02s | 00:02.00 | 0/1 | 0 km/h | Countdown "2" — phase 1 |
+| objective-06s | 00:06.15 | 0/1 | 0 km/h | "GO!" frozen — stuck in phase 2 |
+| objective-16s | 00:17.65 | 0/1 | 0 km/h | "GO!" still frozen — phase 2 indefinitely |
+| objective-after-reset | — | — | — | Returned to title screen |
+
+The kart sits motionless behind the start/finish arch in every racing frame. Speed is 0 km/h, lap is 0/1, and the kart's minimap position never changes from the starting dot. The sequence ends with a reset back to the menu, not a finish screen.
+
+The demo sequence (`generateDemo()`) only spans 38 seconds and requires functional physics — neither condition is met. **No lap was completed.**
