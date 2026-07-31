@@ -420,8 +420,10 @@ arms launched.
 
 Fresh read-only Qwen critics saw source plus five ordered screenshots, but not
 the objective-browser JSON or external label. Their corrected predictions were
-7/8 accurate, with TP=0, FP=1, FN=0, and TN=7. Pass precision was zero and
-recall was undefined because no generation arm passed.
+7/8 accurate, with TP=0, FP=1, FN=0, and TN=7. Every label was FAIL, so an
+always-FAIL rule would score 8/8. Qwen underperformed that trivial baseline by
+12.5 percentage points; pass recall and balanced accuracy were undefined.
+This cohort cannot measure whether Qwen can select a true success.
 
 The critics were excellent at obvious dead games: frozen countdowns, a Vite
 overlay, missing Demo input, and a black/erroring viewport. The two harder cases
@@ -439,6 +441,7 @@ show why confidence alone is not the deciding evidence:
 
 The Qwen critic did not see the flawed completion count, so it did not merely
 echo a correction. This is a concrete case where same-model artifact review
-improved experimental validity. It does not justify trusting critics blindly:
-seed 1 remained a 92%-confidence false positive. The reusable method is mutual
-audit plus executable state/visibility checks.
+improved experimental validity. It does not make the cohort's headline
+accuracy informative or justify trusting critics blindly: seed 1 remained a
+92%-confidence false positive, and an always-FAIL rule was better overall. The
+reusable method is mutual audit plus executable state/visibility checks.

@@ -16,9 +16,12 @@ read but could not run or change the game.
 | 7 | fail | fail | 95 | true negative |
 | 8 | fail | fail | 95 | true negative |
 
-Accuracy was 7/8 (87.5%), with TP=0, FP=1, FN=0, and TN=7. Treating externally
-verified completion as the positive class, pass precision was zero and pass
-recall was undefined because no arm passed. Mean stated confidence was 95.875.
+Raw accuracy was 7/8 (87.5%), with TP=0, FP=1, FN=0, and TN=7. But every
+external label was FAIL: an always-FAIL rule would score 8/8 (100%). Qwen was
+therefore 12.5 percentage points below that trivial baseline. Treating
+externally verified completion as the positive class, pass precision was zero,
+pass recall and balanced accuracy were undefined, and this cohort cannot
+measure success selection. Mean stated confidence was 95.875.
 
 The critic correctly recognized seven failures. Seed 5 is the important case:
 the frozen evaluator initially counted it as a pass because hidden
@@ -33,11 +36,13 @@ Seed 1 remains a high-confidence false positive. The critic mathematically
 inferred that continuous throttle should finish despite the frozen browser
 evidence showing no progress.
 
-This is still evidence against using one confident same-model critic as the
-sole outcome selector. It is also direct evidence that a fresh Qwen critic can
-audit a controller-authored evaluator and catch a real false positive. The
-best arrangement is disagreement plus an independent executable mechanism
-check—not automatic trust in either side.
+The useful critic result is the seed-5 case study, not 87.5% accuracy. It is
+direct evidence that a fresh Qwen critic can audit a controller-authored
+evaluator and catch a real false positive. The cohort as a whole is evidence
+against using one confident same-model critic as the sole selector: it contains
+no true-positive opportunity and Qwen added one false pass relative to the
+always-FAIL baseline. The best arrangement is disagreement plus an independent
+executable mechanism check—not automatic trust in either side.
 
 The machine-readable source of truth is
 [`generation-critic-calibration.json`](generation-critic-calibration.json), and

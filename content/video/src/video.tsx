@@ -394,11 +394,12 @@ const ExtensionAudit: React.FC = () => (
     <div style={{position: "absolute", left: 1335, right: 54, top: 185, display: "grid", gap: 14}}>
       <Stat value={experiment.generationExtension} label="CORRECTED COMPLETIONS" color={C.red} />
       <Stat value={experiment.generationBoot} label="BOOT-CLEAN" color={C.yellow} />
-      <Stat value={experiment.criticCalibration} label="BLIND QWEN CRITICS CORRECT" color={C.cyan} />
+      <Stat value={experiment.criticCalibration} label="QWEN · ALWAYS-FAIL BASELINE 8/8" color={C.yellow} />
       <div style={{fontSize: 20, color: C.muted, lineHeight: 1.42, marginTop: 4}}>
         Frozen text scoring said 1/8. But the phrase was hidden in the menu.
         At 45.16s: racing, lap 3/3, finished false. Qwen said FAIL at 95%.
-        The post-hoc visibility audit agreed.
+        The post-hoc visibility audit agreed. But all eight labels were FAIL,
+        so this cohort cannot calibrate success selection.
       </div>
     </div>
     <div

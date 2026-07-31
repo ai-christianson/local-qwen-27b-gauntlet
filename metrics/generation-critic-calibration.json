@@ -142,13 +142,19 @@
       "fn": 0,
       "tn": 7
     },
+    "positive_truth_arms": 0,
+    "negative_truth_arms": 8,
     "pass_precision": 0,
     "pass_recall": null,
     "fail_specificity": 0.875,
+    "always_fail_baseline_correct": 8,
+    "always_fail_baseline_accuracy": 1,
+    "accuracy_delta_vs_always_fail": -0.125,
+    "balanced_accuracy": null,
     "mean_reported_confidence": 95.875,
     "provider_reported_total_tokens": 458606,
     "provider_reported_output_tokens": 23241,
     "source_mutation_calls": 0
   },
-  "interpretation": "Seven failures were classified correctly, including the one arm that the frozen text-only evaluator initially misclassified. One critic still produced a high-confidence false positive. Because no arm passed the corrected external gate, positive-class selection quality is not estimable in this extension."
+  "interpretation": "Seven failures were classified correctly, including the one arm that the frozen text-only evaluator initially misclassified. One critic still produced a high-confidence false positive. Every external label was FAIL, so an always-FAIL rule would score 8/8 and the Qwen critics scored 7/8. This cohort cannot estimate positive-class selection quality; its useful evidence is the seed-5 evaluator audit, not headline accuracy."
 }

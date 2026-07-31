@@ -67,6 +67,10 @@ const fn = count("FN");
 const tn = count("TN");
 const divide = (numerator, denominator) =>
   denominator === 0 ? null : numerator / denominator;
+const positiveTruthArms = tp + fn;
+const negativeTruthArms = tn + fp;
+const accuracy = divide(tp + tn, arms.length);
+const alwaysFailAccuracy = divide(negativeTruthArms, arms.length);
 
 const output = {
   schema: "qwen-gauntlet-generation-critic-calibration-v1",
@@ -77,11 +81,23 @@ const output = {
   aggregates: {
     total_arms: arms.length,
     correct: arms.filter((arm) => arm.correct).length,
-    accuracy: divide(tp + tn, arms.length),
+    accuracy,
     confusion: {tp, fp, fn, tn},
+    positive_truth_arms: positiveTruthArms,
+    negative_truth_arms: negativeTruthArms,
     pass_precision: divide(tp, tp + fp),
     pass_recall: divide(tp, tp + fn),
     fail_specificity: divide(tn, tn + fp),
+    always_fail_baseline_correct: negativeTruthArms,
+    always_fail_baseline_accuracy: alwaysFailAccuracy,
+    accuracy_delta_vs_always_fail:
+      accuracy === null || alwaysFailAccuracy === null
+        ? null
+        : accuracy - alwaysFailAccuracy,
+    balanced_accuracy:
+      positiveTruthArms === 0
+        ? null
+        : (divide(tp, positiveTruthArms) + divide(tn, negativeTruthArms)) / 2,
     mean_reported_confidence:
       arms.reduce((sum, arm) => sum + arm.critic_confidence, 0) / arms.length,
     provider_reported_total_tokens: arms.reduce(
@@ -98,7 +114,7 @@ const output = {
     ),
   },
   interpretation:
-    "Seven failures were classified correctly, including the one arm that the frozen text-only evaluator initially misclassified. One critic still produced a high-confidence false positive. Because no arm passed the corrected external gate, positive-class selection quality is not estimable in this extension.",
+    "Seven failures were classified correctly, including the one arm that the frozen text-only evaluator initially misclassified. One critic still produced a high-confidence false positive. Every external label was FAIL, so an always-FAIL rule would score 8/8 and the Qwen critics scored 7/8. This cohort cannot estimate positive-class selection quality; its useful evidence is the seed-5 evaluator audit, not headline accuracy.",
 };
 
 fs.mkdirSync(path.dirname(outputPath), {recursive: true});

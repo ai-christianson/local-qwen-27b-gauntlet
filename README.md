@@ -33,11 +33,12 @@ controller-authored evaluator. See [RESULTS.md](RESULTS.md).
 [Watch or download the final 91-second 1080p60 video](content/video/out/qwen-gauntlet-1080p60.mp4).
 It combines real Pi-in-progress capture, fixed-step gameplay, matched
 comparisons, infrastructure telemetry, and the final verdict. The automated
-v1.2 video QA is
-[`qwen-gauntlet-v12-video-qa.json`](content/video/out/qa/qwen-gauntlet-v12-video-qa.json),
+v1.3 video QA is
+[`qwen-gauntlet-v13-video-qa.json`](content/video/out/qa/qwen-gauntlet-v13-video-qa.json),
 and its full review contact sheet is retained beside it. Earlier `80-*` QA files
 describe the superseded 84-second v1.0 cut; `qwen-gauntlet-v11-*` files describe
-the superseded v1.1 cut. Both remain only as versioned provenance.
+the superseded v1.1 cut; and `qwen-gauntlet-v12-*` files describe the
+superseded v1.2 cut. All remain only as versioned provenance.
 
 The first game is **Apex Karts 64**: an original, code-generated low-poly kart
 microgame with late-1990s console-kart energy. A hierarchical transfer suite

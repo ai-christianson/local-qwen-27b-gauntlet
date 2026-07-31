@@ -32,9 +32,9 @@ the honest result: 0/12 one-shot games completed. a simple text-first repair con
 ### Post 2
 
 ```text
-the early repair win was simple: stop opening screenshots. inspect source and browser state first, then use a small image budget.
+the repair scaffold was simple: inspect source and browser state first, then use a small image budget.
 
-Qwen stopped thrashing into the 12-image limit and found actual state bugs. but it did not transfer to greenfield generation: 0/8 inside the same gate.
+5/10 repair runs passed externally. that is not a matched causal estimate—and the same sentence went 0/8 on greenfield generation.
 ```
 
 ### Post 3

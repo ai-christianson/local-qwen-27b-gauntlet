@@ -23,3 +23,16 @@ This is not an independent-model judge: all critics use the same Qwen weights
 as the builders. It tests whether a fresh artifact-reading context can
 recognize the success or failure of same-model output, not whether Qwen agrees
 with itself.
+
+## Post-outcome calibration limit
+
+All eight corrected external labels were FAIL. Raw accuracy is therefore not a
+useful selector metric: an always-FAIL rule scores 8/8, while the Qwen critics
+score 7/8 because of one false pass. Pass recall and balanced accuracy are
+undefined. The cohort can support the seed-5 evaluator-audit case study, but it
+cannot measure whether Qwen recognizes a true success.
+
+A future balanced calibration must freeze pass/fail membership before critic
+launch and include externally verified positives. It was not added post hoc to
+this time box because selecting a balanced set after inspecting outcomes would
+answer a different, operator-conditioned question.

@@ -89,10 +89,11 @@ a causal ordering bug that million-token builders had missed.
 
 Eight fresh read-only Qwen critics saw source plus five ordered screenshots but
 not evaluator JSON or external labels. They predicted 7/8 corrected failures:
-TP=0, FP=1, FN=0, TN=7. The 87.5% accuracy cannot measure success selection
-because no arm passed.
+TP=0, FP=1, FN=0, TN=7. Every external label was FAIL, so an always-FAIL rule
+would score 8/8. Qwen's 87.5% raw accuracy was 12.5 points below that trivial
+baseline, and the cohort cannot measure success selection.
 
-The important case is seed 5. Qwen called it FAIL at 95% confidence; the frozen
+The useful case study is seed 5. Qwen called it FAIL at 95% confidence; the frozen
 controller text metric called it a pass. The visibility/state audit showed Qwen
 was right. Seed 1 was still a 92%-confidence Qwen false positive, so the lesson
 is mutual audit plus executable checks—not replacing evaluator trust with
@@ -204,7 +205,7 @@ ephemeral, no-tools Pi 0.83.0 request to `routerd/qwen36-27b` returned exactly
 ## Final video QA
 
 The published cut is 91 seconds at 1920×1080 and 60 fps (5,460 frames).
-Automated review counted 4,727 visually distinct encoded frames, or 51.95 per
+Automated review counted 4,731 visually distinct encoded frames, or 52.00 per
 second, and passed the container, temporal-change, and smooth-motion checks.
 Human review of the full 13-scene contact sheet found no black or frozen scene.
 The cut explicitly labels fixed-step gameplay as offline capture, adds the
