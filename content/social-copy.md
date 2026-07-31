@@ -48,9 +48,9 @@ hidden "RACE COMPLETE" text made our metric say 1/8. Qwen said FAIL at 95%. a vi
 ### Post 4
 
 ```text
-separately, 4 Qwen critics disagreed on a wheel wobble. a tiny Three.js math check selected the right axis; a fresh Qwen builder made one source edit and preserved completion.
+4 Qwen critics disagreed on wheel wobble. a six-line Three.js check selected the right axis; a fresh Qwen builder made one edit and kept completion.
 
-prompts, failures, Pi trajectories, source diffs, metrics, screenshots and 1080p60 offline video:
+prompts, failures, trajectories, source, metrics + 1080p60 offline video:
 https://github.com/ai-christianson/local-qwen-27b-gauntlet
 ```
 
