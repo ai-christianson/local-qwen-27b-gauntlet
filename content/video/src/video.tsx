@@ -334,7 +334,7 @@ const Baseline: React.FC = () => (
 );
 
 const FirstAha: React.FC = () => (
-  <Base kicker="FIRST A-HA" title="Less visual thrashing unlocked more reasoning">
+  <Base kicker="FIRST A-HA" title="Less visual thrashing helped repair—not generation">
     <MediaFrame label="FIXED-STEP GAMEPLAY" note="OFFLINE VIRTUAL TIME · 1080P60" x={60} y={184} width={1130} height={760} color={C.green}>
       <OffthreadVideo
         src={staticFile("media/kart-fixed.mp4")}

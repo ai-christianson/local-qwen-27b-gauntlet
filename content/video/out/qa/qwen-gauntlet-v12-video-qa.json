@@ -1,0 +1,34 @@
+{
+  "schema": "qwen-gauntlet-video-qa-v2",
+  "video": "qwen-gauntlet-1080p60.mp4",
+  "contact_sheet": "qwen-gauntlet-v12-full-contact.jpg",
+  "container": {
+    "codec": "h264",
+    "width": 1920,
+    "height": 1080,
+    "avg_frame_rate": "60/1",
+    "duration_seconds": 91.000000,
+    "minimum_duration_seconds": 90,
+    "frame_count": 5460,
+    "pass": true
+  },
+  "temporal_change": {
+    "method": "1 Hz successive-frame absolute difference; YAVG signal",
+    "samples": 90,
+    "mean": 7.263304328,
+    "max": 76.534200000,
+    "samples_at_or_above_0_5": 42,
+    "samples_at_or_above_1_0": 37,
+    "pass": true
+  },
+  "smooth_motion": {
+    "method": "FFmpeg mpdecimate visually-distinct frame count divided by duration",
+    "distinct_frames": 4727,
+    "estimated_distinct_frames_per_second": 51.945055,
+    "minimum_distinct_frames_per_second": 45,
+    "pass": true
+  },
+  "automated_accept": true,
+  "human_contact_sheet_review_required": true,
+  "human_contact_sheet_review": "pass: 13 populated and visually varied scenes; no black or frozen scene; three grid cells are intentionally unused"
+}
